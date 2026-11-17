@@ -276,6 +276,96 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .chip{border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--muted)}
 .chip.ok{border-color:rgba(6,149,214,.5);color:var(--accent)}
 
+/* ficha institucional */
+.ficha{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin:56px 0 8px}
+.ficha>div{padding:20px 24px 20px 0;border-bottom:1px solid var(--line)}
+.ficha .ficha-name{grid-column:1/-1}
+.ficha .ficha-name dd{font-size:clamp(19px,1.7vw,24px);font-weight:500;letter-spacing:-.01em}
+.ficha dt{color:var(--dim);margin-bottom:6px}
+.ficha dd{font-size:16px}
+.ficha a{color:var(--accent)}
+.ficha a:hover{text-decoration:underline}
+@media (max-width:820px){.ficha{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ficha{grid-template-columns:1fr}}
+
+/* recursos humanos */
+.rrhh{margin-top:56px}
+.rrhh-counts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rrhh-counts div{padding:24px 0}
+.rrhh-counts b{display:block;font-size:clamp(44px,5vw,72px);font-weight:300;letter-spacing:-.04em;line-height:1}
+.rrhh-counts span{color:var(--muted);font-size:15px}
+.rrhh-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.rrhh-lists>div{border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2);padding:26px}
+.rrhh-lists h3{color:var(--accent);font-size:12.5px;font-weight:500;letter-spacing:.01em;margin-bottom:14px}
+.rrhh-lists ul{list-style:none}
+.rrhh-lists li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:16px}
+.rrhh-lists li:first-child{border-top:0}
+.rrhh-lists li a:hover{color:var(--accent)}
+.rrhh-lists li span{color:var(--muted);font-size:14px;text-align:right}
+.src{color:var(--dim);margin-top:18px}
+.src a{color:var(--accent)}
+@media (max-width:820px){.rrhh-lists{grid-template-columns:1fr}.rrhh-lists li{flex-direction:column;gap:2px}.rrhh-lists li span{text-align:left}}
+
+/* producción CyT (BICyT) */
+.cyt{margin:48px 0 56px;padding:28px;border:1px solid var(--line);border-radius:var(--r)}
+.cyt>p{color:var(--muted)}
+.cyt ul{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin:18px 0}
+.cyt b{display:block;font-size:clamp(34px,3.6vw,52px);font-weight:300;letter-spacing:-.04em;line-height:1.05;color:var(--accent)}
+.cyt span{color:var(--muted);font-size:14px;line-height:1.35;display:block;margin-top:6px}
+.cyt>a{color:var(--accent)}
+@media (max-width:900px){.cyt ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:480px){.cyt ul{grid-template-columns:repeat(2,1fr)}}
+.svc-more{margin-top:28px;color:var(--muted)}
+.svc-more a{color:var(--accent);white-space:nowrap}
+
+/* compromiso con la sociedad */
+.soc{position:relative;padding-bottom:clamp(88px,12vw,168px)}
+.soc-hero{position:relative;height:clamp(420px,72vh,760px);overflow:hidden;background:#1a0607}
+.soc-hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.soc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,4,6,.05) 30%,rgba(20,4,6,.82) 100%)}
+.soc-hero-txt{position:absolute;left:0;right:0;bottom:clamp(32px,6vw,72px);z-index:2;color:#fff}
+.soc-hero-txt .mono{display:block;color:rgba(255,255,255,.8);margin-bottom:16px}
+.soc-hero-txt h2{max-width:16ch;color:#fff}
+.soc-day{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,6vw,96px);align-items:center;margin-top:clamp(64px,8vw,112px)}
+.soc-date{display:block;color:#C8102E;margin-bottom:18px}
+.soc-day h3{font-size:clamp(30px,3.4vw,48px);letter-spacing:-.03em;margin-bottom:22px}
+.soc-day p+p{margin-top:18px;color:var(--muted);max-width:60ch}
+.soc-day blockquote{margin:28px 0;padding-left:20px;border-left:3px solid #C8102E;font-size:19px;line-height:1.45;max-width:52ch}
+.soc-day cite{display:block;margin-top:8px;font-style:normal;color:var(--muted);font-size:14px}
+.soc-day .social{display:inline-flex}
+.soc-vid{border-radius:var(--r);overflow:hidden;aspect-ratio:9/16;max-height:640px;background:#1a0607;justify-self:center;width:100%;max-width:360px}
+.soc-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.soc-gal{display:grid;grid-template-columns:1fr 1fr 1fr 1.6fr;gap:12px;margin-top:clamp(56px,7vw,96px)}
+.soc-gal figure{border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:var(--bg-3)}
+.soc-gal figure:last-child{aspect-ratio:auto}
+.soc-gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.soc-gal figure:hover img{transform:scale(1.04)}
+.soc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(56px,7vw,96px)}
+.soc-card{border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.soc-card i{font-size:34px;color:#C8102E}
+.soc-card h3{font-size:22px;margin:20px 0 10px}
+.soc-card p{color:var(--muted);font-size:16px}
+@media (max-width:900px){
+  .soc-day{grid-template-columns:1fr}
+  .soc-gal{grid-template-columns:1fr 1fr}
+  .soc-gal figure:last-child{aspect-ratio:3/4}
+  .soc-cards{grid-template-columns:1fr}
+}
+
+/* consulta de servicios */
+.sq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);margin-top:clamp(56px,7vw,96px);padding:clamp(28px,4vw,48px);border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line);scroll-margin-top:96px}
+.sq-intro h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.025em;margin-bottom:14px}
+.sq-intro p{color:var(--muted)}
+.sq-who{display:flex;gap:12px;align-items:center;margin-top:28px;font-size:15px}
+.sq-who i{font-size:36px;color:var(--accent)}
+.sq-who b{color:var(--text);font-weight:600}
+.sq-form{margin-top:0}
+@media (max-width:900px){.sq{grid-template-columns:1fr}}
+
+/* mapa */
+.map{margin-top:56px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);height:clamp(280px,36vw,420px);background:var(--bg-3)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
 /* proyecto institucional */
 .pi-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
 .pi-kicker{display:block;color:var(--accent);margin-bottom:22px}
@@ -617,7 +707,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <a href="#equipo">Equipo</a>
       <a href="#produccion">Producción</a>
       <a href="#servicios">Servicios</a>
-      <a href="#divulgacion">Divulgación</a>
+      <a href="#sociedad">Sociedad</a>
       <a href="#noticias">Noticias</a>
     </nav>
     <a href="#contacto" class="btn btn-primary nav-cta mag">Contacto</a>
@@ -633,7 +723,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <a href="#equipo">Equipo</a>
   <a href="#produccion">Producción</a>
   <a href="#servicios">Servicios</a>
-  <a href="#divulgacion">Divulgación</a>
+  <a href="#sociedad">Sociedad</a>
   <a href="#noticias">Noticias</a>
   <a href="#contacto">Contacto</a>
 </div>
@@ -683,6 +773,15 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div class="stat rv"><b data-count="13">13</b><span>Países de los coautores internacionales</span></div>
       <div class="stat rv"><b data-count="175">175</b><span>Apariciones en medios desde 2020</span></div>
     </div>
+    <dl class="ficha rv">
+      <div class="ficha-name"><dt class="mono">Nombre oficial</dt><dd>Instituto de Investigaciones en Medicina Molecular y Celular Aplicada del Bicentenario</dd></div>
+      <div><dt class="mono">Tipo</dt><dd>Unidad Ejecutora del CONICET</dd></div>
+      <div><dt class="mono">Dependencias</dt><dd>CONICET · UNT · SIPROSA</dd></div>
+      <div><dt class="mono">Dirección</dt><dd><a href="#directora">Dra. Rosana N. Chehín</a></dd></div>
+      <div><dt class="mono">Vicedirección</dt><dd><a href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener">Dr. César Luis Ávila</a></dd></div>
+      <div><dt class="mono">Sede</dt><dd><a href="#contacto">Pasaje Dorrego 1080, San Miguel de Tucumán</a></dd></div>
+      <div><dt class="mono">Ficha oficial</dt><dd><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">CONICET BICyT <i class="ph ph-arrow-up-right"></i></a></dd></div>
+    </dl>
     <figure class="band" id="band">
       <div class="band-img"><img src="img/laboratorio-equipo.jpg" alt="Investigadores, becarios y personal del IMMCA en el laboratorio de producción de proteínas" loading="lazy"></div>
       <figcaption class="mono">Laboratorio de producción y purificación de proteínas del IMMCA, San Miguel de Tucumán.</figcaption>
@@ -1027,15 +1126,36 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener" aria-label="Rosana Chehín, ficha en CONICET"><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener" aria-label="César Luis Ávila, ficha en CONICET"><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/16251" target="_blank" rel="noopener" aria-label="Esteban Vera Pingitore, ficha en CONICET"><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/analia-silvina-chaves" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/sergio-benjamin-socias" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/diego-ploper" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/22601" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15880" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/329877" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/325889" target="_blank" rel="noopener" aria-label="Rodrigo Tomás Grau, ficha en CONICET"><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
     </div>
-    <div class="team-more">
-      <div class="rv"><b>Becarios</b><span>Doctorales y posdoctorales del CONICET, la Agencia I+D+i y la UNT.</span></div>
-      <div class="rv"><b>Personal de apoyo</b><span>Profesionales y técnicos de la Carrera del Personal de Apoyo (CPA).</span></div>
-      <div class="rv"><b>Administración</b><span>Gestión de proyectos, compras y vinculación tecnológica.</span></div>
+    <div class="rrhh">
+      <div class="rrhh-counts rv">
+        <div><b>7</b><span>Investigadores</span></div>
+        <div><b>4</b><span>Becarios</span></div>
+        <div><b>2</b><span>Personal de apoyo</span></div>
+      </div>
+      <div class="rrhh-lists">
+        <div class="rv">
+          <h3 class="mono">Becarios</h3>
+          <ul>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/339437" target="_blank" rel="noopener">María del Milagro Terán</a><span>Beca posdoctoral, temas estratégicos</span></li>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/457388" target="_blank" rel="noopener">Ana Valentina Budeguer Isa</a><span>Beca doctoral, temas estratégicos</span></li>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/457527" target="_blank" rel="noopener">María Laura Guayán</a><span>Beca doctoral, temas estratégicos</span></li>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/469804" target="_blank" rel="noopener">Álvaro Luna Mercado</a><span>Beca doctoral</span></li>
+          </ul>
+        </div>
+        <div class="rv">
+          <h3 class="mono">Personal de apoyo</h3>
+          <ul>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/348975" target="_blank" rel="noopener">Luciana María Sari</a><span>Profesional adjunta</span></li>
+            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/340168" target="_blank" rel="noopener">Sabrina Sequeira</a><span>Profesional asistente</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="src mono rv">Fuente: ficha oficial del IMMCA en <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">CONICET (BICyT)</a>. A esto se suman docentes de la UNT, tesistas y estudiantes de grado.</p>
     </div>
   </div>
   <div class="reels" id="reels">
@@ -1123,6 +1243,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         </ul>
       </div>
     </div>
+    <div class="cyt rv">
+      <p class="mono">Producción científica y tecnológica registrada en CONICET</p>
+      <ul>
+        <li><b>29</b><span>Artículos</span></li>
+        <li><b>6</b><span>Libros</span></li>
+        <li><b>2</b><span>Capítulos de libro</span></li>
+        <li><b>56</b><span>Trabajos en eventos científicos</span></li>
+        <li><b>1</b><span>Tesis</span></li>
+        <li><b>7</b><span>Servicios tecnológicos</span></li>
+      </ul>
+      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver el detalle en BICyT <i class="ph ph-arrow-up-right"></i></a>
+    </div>
     <div class="lib-tools rv">
       <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
       <div class="filters" id="filters"></div>
@@ -1137,17 +1269,99 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <section class="sec" id="servicios" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="rv">Servicios para la comunidad científica y la industria</h2>
+      <h2 class="rv">Oferta tecnológica</h2>
+      <p class="lead rv">Siete Servicios Tecnológicos de Alto Nivel (STAN) del CONICET, para grupos de investigación, organismos públicos y empresas.</p>
     </div>
     <div class="svc" id="svc">
-      <a class="svc-row rv" href="#contacto" data-img="0"><h3>Proteínas recombinantes</h3><p>Producción y purificación a mediana escala de proteínas para investigación en neurociencias.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#contacto" data-img="1"><h3>Aislamiento de PBMC</h3><p>Obtención de células mononucleares de sangre periférica para estudios inmunológicos.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#contacto" data-img="2"><h3>Microscopía confocal</h3><p>Adquisición y análisis de imágenes con equipamiento de última generación, único en la región.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#contacto" data-img="3"><h3>I+D con empresas</h3><p>Convenios de desarrollo conjunto, como los firmados con SkyBio y BACON SAIC.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Agregación proteica y neurodegeneración</h3><p>Evaluamos si extractos, formulaciones o compuestos modulan la agregación de alfa-sinucleína o tau.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Actividad biológica en cultivos celulares</h3><p>Ensayos in vitro en líneas SH-SY5Y, HEK, BV2 y otras, para fármacos, productos biotecnológicos o extractos naturales.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Microscopía confocal</h3><p>Imágenes de fluorescencia de alta resolución de cultivos, embriones, larvas de pez cebra, C.&nbsp;elegans o nanomateriales.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Dispersión dinámica de luz (DLS)</h3><p>Tamaño de partículas entre 0,3&nbsp;nm y 8&nbsp;µm, y potencial Z, en suspensión o solución.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Espectroscopía automatizada</h3><p>Absorbancia, fluorescencia y luminiscencia en lector de microplacas.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="3"><h3>Análisis estadístico de datos</h3><p>Procesamiento, análisis e interpretación de datos para proyectos de I+D, publicaciones y presentaciones.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Anticuerpos anti-SARS-CoV-2</h3><p>ELISA con antígeno S-RBD, desarrollado para reforzar el diagnóstico del Ministerio de Salud de Tucumán.</p><i class="ph ph-arrow-right arr"></i></a>
+    </div>
+    <p class="svc-more rv">También firmamos convenios de I+D con empresas, como los de SkyBio y BACON SAIC. <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver la oferta en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+
+    <div class="sq" id="consulta-servicios">
+      <div class="sq-intro rv">
+        <h3>Consultá por un servicio</h3>
+        <p>Contanos qué necesitás y te respondemos con disponibilidad, condiciones y presupuesto.</p>
+        <p class="sq-who"><i class="ph ph-user-circle"></i><span>Responsable de servicios<br><b>Sabrina Sequeira</b></span></p>
+      </div>
+      <form class="cform sq-form rv" id="sform" novalidate>
+        <div class="field"><label for="sf-nombre">Nombre y apellido</label><input id="sf-nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
+        <div class="field"><label for="sf-org">Institución o empresa</label><input id="sf-org" autocomplete="organization"></div>
+        <div class="field"><label for="sf-mail">Correo electrónico</label><input id="sf-mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
+        <div class="field"><label for="sf-tel">Teléfono (opcional)</label><input id="sf-tel" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="sf-svc">Servicio</label><select id="sf-svc">
+          <option>Agregación proteica y neurodegeneración</option>
+          <option>Actividad biológica en cultivos celulares</option>
+          <option>Microscopía confocal</option>
+          <option>Dispersión dinámica de luz (DLS)</option>
+          <option>Espectroscopía automatizada</option>
+          <option>Análisis estadístico de datos</option>
+          <option>Anticuerpos anti-SARS-CoV-2</option>
+          <option>Convenio de I+D</option>
+          <option>Otro</option>
+        </select></div>
+        <div class="field full"><label for="sf-msg">Descripción de la muestra o del pedido</label><textarea id="sf-msg" rows="5" required placeholder="Tipo y cantidad de muestras, plazos, objetivo del estudio…"></textarea><small class="err">Contanos qué necesitás.</small></div>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar consulta <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con la consulta lista para enviar.</p></div>
+      </form>
     </div>
   </div>
   <div class="svc-float" id="svcfloat" aria-hidden="true">
     <img src="img/mesada.jpg" alt=""><img src="img/campana.jpg" alt=""><img src="img/microscopia-confocal.jpg" alt=""><img src="img/fachada-equipo.jpg" alt="">
+  </div>
+</section>
+
+<!-- COMPROMISO CON LA SOCIEDAD -->
+<section class="soc" id="sociedad">
+  <div class="soc-hero">
+    <img src="img/parkinson-casa-historica.jpg" alt="Integrantes del IMMCA, pacientes y familias frente a la Casa Histórica de la Independencia iluminada de rojo, el 11 de abril de 2026" loading="lazy">
+    <div class="wrap soc-hero-txt">
+      <span class="mono">Compromiso con la sociedad</span>
+      <h2 class="rv">Investigamos el Parkinson pensando en quienes viven con él.</h2>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="soc-day">
+      <div class="soc-day-txt">
+        <span class="mono soc-date">11 de abril de 2026 · Día Mundial del Parkinson</span>
+        <h3 class="rv">Tucumán se iluminó de rojo</h3>
+        <p class="lead rv">Por iniciativa del IMMCA, la Casa Histórica de la Independencia, el Monumento al Bicentenario, el Rectorado de la UNT y otros edificios de la provincia se encendieron de rojo a las 19 horas, como en muchas ciudades del mundo.</p>
+        <p class="rv">El rojo es el color del tulipán, símbolo internacional de la enfermedad. Frente a la Casa Histórica nos reunimos investigadores, becarios, pacientes, familias y cuidadores, con lecturas, música y baile. Pedimos a la comunidad que fuera con una prenda roja y que compartiera el mensaje: una enfermedad que muchas veces es silenciosa necesita ser vista.</p>
+        <blockquote class="rv">«La concientización es un paso fundamental para mejorar la calidad de vida de las personas con Parkinson.»<cite>Rosana Chehín, directora del IMMCA</cite></blockquote>
+        <a class="social rv" href="https://noasur.conicet.gov.ar/tucuman-se-suma-a-una-iniciativa-de-concientizacion-por-el-dia-mundial-del-parkinson/" target="_blank" rel="noopener"><i class="ph ph-newspaper"></i>Leer la nota en CONICET NOA Sur</a>
+      </div>
+      <figure class="soc-vid rv"><video src="video/parkinson.mp4" poster="video/parkinson.jpg" muted loop playsinline preload="none" aria-label="Lecturas frente a la Casa Histórica iluminada de rojo"></video></figure>
+    </div>
+
+    <div class="soc-gal">
+      <figure class="rv"><img src="img/parkinson-tango.jpg" alt="Una pareja baila tango frente a la Casa Histórica iluminada de rojo" loading="lazy"></figure>
+      <figure class="rv"><img src="img/parkinson-bombo.jpg" alt="Un músico toca el bombo legüero junto a la pared iluminada de rojo" loading="lazy"></figure>
+      <figure class="rv"><img src="img/parkinson-baile.jpg" alt="Vecinas y vecinos bailan en la vereda de la Casa Histórica" loading="lazy"></figure>
+      <figure class="rv"><img src="img/parkinson-casa-historica-2.jpg" alt="Foto grupal frente a la puerta de la Casa Histórica" loading="lazy"></figure>
+    </div>
+
+    <div class="soc-cards">
+      <article class="soc-card rv">
+        <i class="ph-thin ph-users-three"></i>
+        <h3>Red Argentina de Parkinson</h3>
+        <p>Integramos la red que une a investigadores, profesionales y asociaciones de pacientes de todo el país.</p>
+      </article>
+      <article class="soc-card rv">
+        <i class="ph-thin ph-chats-circle"></i>
+        <h3>Charlas para pacientes y familias</h3>
+        <p>Contamos qué se investiga y qué se sabe hoy, en lenguaje claro: desde los encuentros «Café con ALMA» en 2019 hasta el congreso de la Asociación Parkinson Neuquén en 2024.</p>
+      </article>
+      <article class="soc-card rv">
+        <i class="ph-thin ph-globe-hemisphere-west"></i>
+        <h3>Genética del Parkinson en Latinoamérica</h3>
+        <p>Participamos del consorcio LARGE-PD, que estudia la genética de la enfermedad en poblaciones latinoamericanas.</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1225,7 +1439,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div>
       <h2 class="rv">Investiguemos <span class="accent">juntos</span>.</h2>
       <p class="lead rv" style="margin-top:28px">Colaboraciones científicas, servicios, becas o prensa: escribinos o acercate al instituto.</p>
-      <form class="cform rv" id="cform" data-email="" novalidate hidden>
+      <form class="cform rv" id="cform" data-email="immca@unt.edu.ar" novalidate hidden>
         <div class="field"><label for="cf-nombre">Nombre y apellido</label><input id="cf-nombre" name="nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
         <div class="field"><label for="cf-mail">Correo electrónico</label><input id="cf-mail" name="mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
         <div class="field"><label for="cf-motivo">Motivo</label><select id="cf-motivo" name="motivo"><option>Colaboración científica</option><option>Servicios</option><option>Becas y doctorado</option><option>Prensa</option><option>Otro</option></select></div>
@@ -1235,10 +1449,16 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
     <div class="contact-card rv">
       <div class="cinfo"><i class="ph ph-map-pin"></i><div><small>Dirección</small><a href="https://www.google.com/maps/search/?api=1&query=Pasaje+Dorrego+1080+San+Miguel+de+Tucuman" target="_blank" rel="noopener">Pasaje Cnel. Manuel Dorrego 1080<br>San Miguel de Tucumán (4000), Argentina</a></div></div>
+      <div class="cinfo"><i class="ph ph-envelope-simple"></i><div><small>Correo</small><a href="mailto:immca@unt.edu.ar">immca@unt.edu.ar</a></div></div>
       <div class="cinfo"><i class="ph ph-phone"></i><div><small>Teléfono</small><a href="tel:+543814207915">+54 381 420-7915</a></div></div>
       <div class="cinfo"><i class="ph ph-instagram-logo"></i><div><small>Instagram</small><a href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener">@immca.lab</a></div></div>
       <div class="cinfo"><i class="ph ph-buildings"></i><div><small>Dependencia</small>CONICET, Universidad Nacional de Tucumán y Sistema Provincial de Salud</div></div>
     </div>
+  </div>
+  <div class="wrap">
+    <figure class="map rv">
+      <iframe title="Mapa: IMMCA, Pasaje Dorrego 1080, San Miguel de Tucumán" src="https://maps.google.com/maps?q=Pasaje%20Dorrego%201080%2C%20San%20Miguel%20de%20Tucum%C3%A1n&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </figure>
   </div>
 </section>
 
@@ -1258,7 +1478,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
     <div class="foot-lock" aria-hidden="true">
       <svg class="foot-iso" viewBox="-100 -86.6 200 173.2"><path class="b1" fill="#ED1C24" d="M-50 -86.6H-3.5L-76.75 40.3L-100 0Z"/><path class="b2" fill="#730A0E" d="M3.5 -86.6H50L100 0L76.75 40.3Z"/><path class="b3" fill="#400404" d="M-73 46.7H73L50 86.6H-50Z"/></svg>
-      <div><span class="foot-word">IMMCA</span><span class="foot-long">Instituto de Investigación en Medicina<br>Molecular y Celular Aplicada</span></div>
+      <div><span class="foot-word">IMMCA</span><span class="foot-long">Instituto de Investigaciones en Medicina<br>Molecular y Celular Aplicada del Bicentenario</span></div>
     </div>
     <div class="foot-legal">
       <span>Contenidos bajo licencia Creative Commons Reconocimiento 2.5 Argentina.</span>
@@ -1560,11 +1780,26 @@ if (cf.dataset.email) {
     location.href = `mailto:${cf.dataset.email}?subject=${encodeURIComponent('[Web IMMCA] ' + $('#cf-motivo').value)}&body=${encodeURIComponent(body)}`;
   });
 }
-// los servicios llevan al formulario con el motivo ya elegido
-$$('.svc-row').forEach(r => r.addEventListener('click', () => { if (!cf.hidden) { $('#cf-motivo').value = 'Servicios'; if (!$('#cf-msg').value) $('#cf-msg').value = `Consulta por el servicio de ${r.querySelector('h3').textContent.toLowerCase()}.`; } }));
+/* ============ Consulta de servicios: va a la responsable de servicios ============ */
+// la dirección se arma acá para que no quede escrita entera en el HTML
+const sqTo = ['sabriseq', 'gmail.com'].join('@');
+const sform = $('#sform');
+// cada servicio de la lista abre el formulario con ese servicio elegido
+$$('.svc-row').forEach(r => r.addEventListener('click', () => { const t = r.querySelector('h3').textContent; const o = [...$('#sf-svc').options].find(o => o.text === t); if (o) $('#sf-svc').value = o.value; }));
+sform.addEventListener('submit', e => {
+  e.preventDefault();
+  let ok = true;
+  [['sf-nombre', v => v.trim().length > 1], ['sf-mail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)], ['sf-msg', v => v.trim().length > 4]].forEach(([id, test]) => {
+    const f = $('#' + id), good = test(f.value); f.closest('.field').classList.toggle('bad', !good); f.setAttribute('aria-invalid', !good); if (!good && ok) { f.focus(); ok = false; }
+  });
+  if (!ok) return;
+  const v = id => $('#' + id).value.trim();
+  const body = `Servicio: ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
+  location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+});
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */
-const vids = $$('.reel video');
+const vids = $$('.reel video, .soc-vid video');
 const vio = new IntersectionObserver(ens => ens.forEach(en => {
   const v = en.target;
   if (en.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; if (!reduce) v.play().catch(() => {}); }
