@@ -121,7 +121,20 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .brand-long{font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:300;text-transform:uppercase;font-size:17px;letter-spacing:.02em;line-height:1.2;color:var(--muted);margin-top:14px}
 .brand-sub{border-left:1px solid var(--line-2);padding-left:14px;color:var(--muted);line-height:1.25;font-size:11px}
 .nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{padding:8px 14px;border-radius:999px;font-size:15px;color:var(--muted);transition:color .3s,background .3s}
+.nav-links a{padding:8px 14px;border-radius:999px;font-size:15px;color:var(--muted);white-space:nowrap;transition:color .3s,background .3s}
+.nav-links>a,.dd>a{display:inline-flex;align-items:center;gap:4px}
+.dd>a i{font-size:12px;opacity:.6;transition:transform .3s}
+.dd{position:relative}
+.dd-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:220px;padding:8px;border-radius:14px;background:var(--bg);border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(17,17,17,.28);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .25s,transform .25s var(--ease),visibility 0s .25s}
+.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s var(--ease)}
+.dd:hover>a i,.dd:focus-within>a i{transform:rotate(180deg)}
+.nav-links .dd-menu a{border-radius:10px;padding:9px 12px;font-size:14.5px}
+.nav-links .dd-menu a.on{background:none}
+.nav-links .dd-menu a:hover{background:var(--accent-soft);color:var(--accent)}
+.msub{display:flex;flex-wrap:wrap;gap:4px 18px;padding:6px 0 10px;border-bottom:1px solid var(--line)}
+.mmenu .msub a{font-size:17px;font-weight:500;color:var(--muted);border:0;padding:2px 0}
+@media (max-width:1366px){.nav-links{gap:0}.nav-links>a,.dd>a{padding:8px 9px;font-size:14px}.brand-sub{display:none}}
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
 .nav-cta{height:42px;padding:0 20px;font-size:15px}
 .burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);place-items:center;font-size:20px}
@@ -129,7 +142,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .mmenu.open{clip-path:circle(150% at calc(100% - 40px) 36px);visibility:visible}
 .mmenu a{font-size:34px;font-weight:600;letter-spacing:-.02em;padding:6px 0;border-bottom:1px solid var(--line)}
 .mclose{position:absolute;top:14px;right:var(--gutter)}
-@media (max-width:1080px){.nav-links{display:none}.burger{display:grid}.nav-cta{display:none}}
+@media (max-width:1200px){.nav-links{display:none}.burger{display:grid}.nav-cta{display:none}}
 @media (max-width:520px){.brand-sub{display:none}}
 
 /* ---------- hero ---------- */
@@ -737,12 +750,26 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <span class="brand-sub mono">CONICET<br>UNT · SIPROSA</span>
     </a>
     <nav class="nav-links" aria-label="Principal">
-      <a href="#instituto">Instituto</a>
-      <a href="#investigacion">Investigación</a>
-      <a href="#directora">Dirección</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#produccion">Producción</a>
-      <a href="#servicios">Servicios</a>
+      <div class="dd">
+        <a href="#instituto" aria-haspopup="true">Quiénes somos<i class="ph ph-caret-down"></i></a>
+        <div class="dd-menu">
+          <a href="#instituto">El instituto</a>
+          <a href="#historia">Historia</a>
+          <a href="#proyecto">Proyecto institucional</a>
+          <a href="#directora">Autoridades</a>
+        </div>
+      </div>
+      <a href="#investigacion">Líneas de investigación</a>
+      <a href="#equipo">Nuestro equipo</a>
+      <div class="dd">
+        <a href="#biblioteca" aria-haspopup="true">Producción científica<i class="ph ph-caret-down"></i></a>
+        <div class="dd-menu">
+          <a href="#biblioteca">Artículos</a>
+          <a href="#produccion">Patentes</a>
+          <a href="#proyectos">Proyectos</a>
+        </div>
+      </div>
+      <a href="#servicios">Servicios tecnológicos</a>
       <a href="#sociedad">Sociedad</a>
       <a href="#noticias">Noticias</a>
     </nav>
@@ -753,12 +780,13 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 
 <div class="mmenu" id="mmenu" aria-hidden="true">
   <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
-  <a href="#instituto">Instituto</a>
-  <a href="#investigacion">Investigación</a>
-  <a href="#directora">Dirección</a>
-  <a href="#equipo">Equipo</a>
-  <a href="#produccion">Producción</a>
-  <a href="#servicios">Servicios</a>
+  <a href="#instituto">Quiénes somos</a>
+  <div class="msub"><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#directora">Autoridades</a></div>
+  <a href="#investigacion">Líneas de investigación</a>
+  <a href="#equipo">Nuestro equipo</a>
+  <a href="#biblioteca">Producción científica</a>
+  <div class="msub"><a href="#biblioteca">Artículos</a><a href="#produccion">Patentes</a><a href="#proyectos">Proyectos</a></div>
+  <a href="#servicios">Servicios tecnológicos</a>
   <a href="#sociedad">Sociedad</a>
   <a href="#noticias">Noticias</a>
   <a href="#contacto">Contacto</a>
@@ -992,6 +1020,80 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
+<!-- DIRECTORA -->
+<section class="sec" id="directora">
+  <div class="wrap dir">
+    <div>
+      <figure class="portrait clip" id="portrait">
+        <img src="img/rosana-chehin.jpg" alt="Retrato de la Dra. Rosana Chehín con guardapolvo del IMMCA en el laboratorio" loading="lazy">
+      </figure>
+      <div class="portrait-cap mono">
+        <span>Directora por concurso desde 2021</span>
+        <a href="https://orcid.org/0000-0003-3504-7952" target="_blank" rel="noopener">ORCID <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <div>
+      <h2 class="rv">Dra. Rosana Chehín</h2>
+      <p class="dir-role rv">Directora del IMMCA</p>
+      <div class="dir-bio rv">
+        <p><strong>Investigadora Principal del CONICET y Profesora Titular de Química Biológica en la Universidad Nacional de Tucumán.</strong> Bioquímica con el primer promedio de su promoción y Doctora en Bioquímica con calificación sobresaliente.</p>
+        <p>Se formó en espectroscopía de proteínas en la Universidad del País Vasco y fue profesora invitada en la Universidad Paris-Est. Fue Secretaria de Ciencia, Arte e Innovación Tecnológica de la UNT y hoy integra la Academia de Ciencias Médicas de Tucumán y el comité editorial de Frontiers in Aging Neuroscience.</p>
+      </div>
+      <div class="dir-figs">
+        <div class="rv"><b data-count="52">52</b><span>artículos en revistas internacionales</span></div>
+        <div class="rv"><b data-count="3">3</b><span>patentes como inventora en toda su carrera</span></div>
+        <div class="rv"><b data-count="9">9</b><span>tesis doctorales dirigidas</span></div>
+        <div class="rv"><b>+<span data-count="30">30</span></b><span>becarios e investigadores formados</span></div>
+      </div>
+      <div class="dir-tabs rv">
+        <div class="tabs-nav" role="tablist">
+          <button role="tab" aria-selected="true" data-tab="t-cargos">Cargos</button>
+          <button role="tab" aria-selected="false" data-tab="t-form">Formación</button>
+          <button role="tab" aria-selected="false" data-tab="t-proy">Proyectos recientes</button>
+        </div>
+        <div class="tab-panel on" id="t-cargos" role="tabpanel">
+          <div class="row"><span class="mono">2021</span><span>Directora del IMMCA (CONICET, UNT, SIPROSA)</span></div>
+          <div class="row"><span class="mono">2022</span><span>Profesora Titular, Química Biológica II, FBQF, UNT</span></div>
+          <div class="row"><span class="mono">2019</span><span>Consejo Directivo del CCT CONICET NOA Sur</span></div>
+          <div class="row"><span class="mono">2018</span><span>Investigadora Principal del CONICET</span></div>
+          <div class="row"><span class="mono">2014</span><span>Secretaria de Ciencia, Arte e Innovación Tecnológica, UNT (hasta 2016)</span></div>
+        </div>
+        <div class="tab-panel" id="t-form" role="tabpanel">
+          <div class="row"><span class="mono">1991</span><span>Bioquímica, UNT. Primer promedio de la promoción</span></div>
+          <div class="row"><span class="mono">1995</span><span>Doctora en Bioquímica, UNT. Calificación 10</span></div>
+          <div class="row"><span class="mono">1996</span><span>Posdoctorado, Universidad del País Vasco (Gobierno Vasco)</span></div>
+          <div class="row"><span class="mono">2011</span><span>Profesora invitada, Glycanes Research Team, Université Paris-Est</span></div>
+          <div class="row"><span class="mono">2013</span><span>Estancia en INSERM, Instituto del Cerebro (ICM), París</span></div>
+        </div>
+        <div class="tab-panel" id="t-proy" role="tabpanel">
+          <div class="row"><span class="mono">2025</span><span>Optimización de Pegasus para su aplicación clínica (CONICET PIETR)</span></div>
+          <div class="row"><span class="mono">2024</span><span>Nuevas tecnologías diagnósticas para el sistema público de salud (Mincyt y Minsal)</span></div>
+          <div class="row"><span class="mono">2022</span><span>France Alzheimer: tetraciclinas multimodales, nodo argentino</span></div>
+          <div class="row"><span class="mono">2022</span><span>Test diagnóstico para enfermedades neurodegenerativas (PITES)</span></div>
+          <div class="row"><span class="mono">2022</span><span>Inmuno-radiotrazadores para diagnóstico premotor del Parkinson (PICT)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="marq" aria-label="Distinciones">
+    <div class="marq-track">
+      <!-- duplicado para el loop -->
+      <span class="marq-item"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
+      <span class="marq-item"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
+      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
+      <span class="marq-item"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
+      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
+      <span class="marq-item"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
+      <span class="marq-item" aria-hidden="true"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
+    </div>
+  </div>
+</section>
+
 <!-- LÍNEAS -->
 <section class="sec" id="investigacion">
   <div class="wrap">
@@ -1133,85 +1235,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
-<!-- DIRECTORA -->
-<section class="sec" id="directora">
-  <div class="wrap dir">
-    <div>
-      <figure class="portrait clip" id="portrait">
-        <img src="img/rosana-chehin.jpg" alt="Retrato de la Dra. Rosana Chehín con guardapolvo del IMMCA en el laboratorio" loading="lazy">
-      </figure>
-      <div class="portrait-cap mono">
-        <span>Directora por concurso desde 2021</span>
-        <a href="https://orcid.org/0000-0003-3504-7952" target="_blank" rel="noopener">ORCID <i class="ph ph-arrow-up-right"></i></a>
-      </div>
-    </div>
-    <div>
-      <h2 class="rv">Dra. Rosana Chehín</h2>
-      <p class="dir-role rv">Directora del IMMCA</p>
-      <div class="dir-bio rv">
-        <p><strong>Investigadora Principal del CONICET y Profesora Titular de Química Biológica en la Universidad Nacional de Tucumán.</strong> Bioquímica con el primer promedio de su promoción y Doctora en Bioquímica con calificación sobresaliente.</p>
-        <p>Se formó en espectroscopía de proteínas en la Universidad del País Vasco y fue profesora invitada en la Universidad Paris-Est. Fue Secretaria de Ciencia, Arte e Innovación Tecnológica de la UNT y hoy integra la Academia de Ciencias Médicas de Tucumán y el comité editorial de Frontiers in Aging Neuroscience.</p>
-      </div>
-      <div class="dir-figs">
-        <div class="rv"><b data-count="52">52</b><span>artículos en revistas internacionales</span></div>
-        <div class="rv"><b data-count="3">3</b><span>patentes como inventora en toda su carrera</span></div>
-        <div class="rv"><b data-count="9">9</b><span>tesis doctorales dirigidas</span></div>
-        <div class="rv"><b>+<span data-count="30">30</span></b><span>becarios e investigadores formados</span></div>
-      </div>
-      <div class="dir-tabs rv">
-        <div class="tabs-nav" role="tablist">
-          <button role="tab" aria-selected="true" data-tab="t-cargos">Cargos</button>
-          <button role="tab" aria-selected="false" data-tab="t-form">Formación</button>
-          <button role="tab" aria-selected="false" data-tab="t-proy">Proyectos recientes</button>
-        </div>
-        <div class="tab-panel on" id="t-cargos" role="tabpanel">
-          <div class="row"><span class="mono">2021</span><span>Directora del IMMCA (CONICET, UNT, SIPROSA)</span></div>
-          <div class="row"><span class="mono">2022</span><span>Profesora Titular, Química Biológica II, FBQF, UNT</span></div>
-          <div class="row"><span class="mono">2019</span><span>Consejo Directivo del CCT CONICET NOA Sur</span></div>
-          <div class="row"><span class="mono">2018</span><span>Investigadora Principal del CONICET</span></div>
-          <div class="row"><span class="mono">2014</span><span>Secretaria de Ciencia, Arte e Innovación Tecnológica, UNT (hasta 2016)</span></div>
-        </div>
-        <div class="tab-panel" id="t-form" role="tabpanel">
-          <div class="row"><span class="mono">1991</span><span>Bioquímica, UNT. Primer promedio de la promoción</span></div>
-          <div class="row"><span class="mono">1995</span><span>Doctora en Bioquímica, UNT. Calificación 10</span></div>
-          <div class="row"><span class="mono">1996</span><span>Posdoctorado, Universidad del País Vasco (Gobierno Vasco)</span></div>
-          <div class="row"><span class="mono">2011</span><span>Profesora invitada, Glycanes Research Team, Université Paris-Est</span></div>
-          <div class="row"><span class="mono">2013</span><span>Estancia en INSERM, Instituto del Cerebro (ICM), París</span></div>
-        </div>
-        <div class="tab-panel" id="t-proy" role="tabpanel">
-          <div class="row"><span class="mono">2025</span><span>Optimización de Pegasus para su aplicación clínica (CONICET PIETR)</span></div>
-          <div class="row"><span class="mono">2024</span><span>Nuevas tecnologías diagnósticas para el sistema público de salud (Mincyt y Minsal)</span></div>
-          <div class="row"><span class="mono">2022</span><span>France Alzheimer: tetraciclinas multimodales, nodo argentino</span></div>
-          <div class="row"><span class="mono">2022</span><span>Test diagnóstico para enfermedades neurodegenerativas (PITES)</span></div>
-          <div class="row"><span class="mono">2022</span><span>Inmuno-radiotrazadores para diagnóstico premotor del Parkinson (PICT)</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="marq" aria-label="Distinciones">
-    <div class="marq-track">
-      <!-- duplicado para el loop -->
-      <span class="marq-item"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
-      <span class="marq-item"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
-      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
-      <span class="marq-item"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
-      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
-      <span class="marq-item"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
-    </div>
-  </div>
-</section>
-
 <!-- EQUIPO -->
 <section class="sec" id="equipo" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="rv">Las personas detrás de cada resultado</h2>
+      <h2 class="rv">Nuestro equipo</h2>
       <p class="lead rv">Cada nombre lleva a su ficha oficial en CONICET, con sus temas, proyectos y producción.</p>
     </div>
     <figure class="photo-wide clip" id="teamphoto">
@@ -1267,6 +1295,51 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
+<!-- BIBLIOTECA -->
+<section class="sec" id="biblioteca">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Producción científica</h2>
+      <p class="lead rv">Tres décadas de trabajos del grupo. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
+    </div>
+    <div class="prod">
+      <div class="prod-fig rv">
+        <b><span data-count="67">67</span>%</b>
+        <p>de todos los artículos de SIPROSA en PubMed son del IMMCA: 30 de 45, en solo siete años de existencia.</p>
+      </div>
+      <div class="prod-fig rv">
+        <b><span data-count="83">83</span>%</b>
+        <p>de los artículos de SIPROSA con coautoría internacional son del IMMCA: 20 de 24.</p>
+      </div>
+      <div class="prod-world rv">
+        <p class="mono">Coautores en 13 países</p>
+        <ul class="countries">
+          <li>Francia</li><li>Brasil</li><li>España</li><li>Alemania</li><li>Reino Unido</li><li>Italia</li><li>Estados Unidos</li><li>Chile</li><li>Perú</li><li>Colombia</li><li>México</li><li>Puerto Rico</li><li>Guadalupe</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cyt rv">
+      <p class="mono">Producción científica y tecnológica registrada en CONICET</p>
+      <ul>
+        <li><b>29</b><span>Artículos</span></li>
+        <li><b>6</b><span>Libros</span></li>
+        <li><b>2</b><span>Capítulos de libro</span></li>
+        <li><b>56</b><span>Trabajos en eventos científicos</span></li>
+        <li><b>1</b><span>Tesis</span></li>
+        <li><b>7</b><span>Servicios tecnológicos</span></li>
+      </ul>
+      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver el detalle en BICyT <i class="ph ph-arrow-up-right"></i></a>
+    </div>
+    <div class="lib-tools rv">
+      <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="lib-meta mono"><span id="libcount">Cargando publicaciones</span><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="oaonly" style="accent-color:var(--accent)"> Solo con PDF</label></div>
+    <div class="lib-list" id="liblist" aria-live="polite"></div>
+    <div class="lib-more"><button class="btn btn-ghost" id="libmore" hidden>Ver más publicaciones <i class="ph ph-arrow-down"></i></button></div>
+  </div>
+</section>
+
 <!-- PRODUCCIÓN: PATENTES -->
 <section class="sec" id="produccion" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
@@ -1315,56 +1388,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
-<!-- BIBLIOTECA -->
-<section class="sec" id="biblioteca">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="rv">Biblioteca de publicaciones</h2>
-      <p class="lead rv">Tres décadas de trabajos del grupo. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
-    </div>
-    <div class="prod">
-      <div class="prod-fig rv">
-        <b><span data-count="67">67</span>%</b>
-        <p>de todos los artículos de SIPROSA en PubMed son del IMMCA: 30 de 45, en solo siete años de existencia.</p>
-      </div>
-      <div class="prod-fig rv">
-        <b><span data-count="83">83</span>%</b>
-        <p>de los artículos de SIPROSA con coautoría internacional son del IMMCA: 20 de 24.</p>
-      </div>
-      <div class="prod-world rv">
-        <p class="mono">Coautores en 13 países</p>
-        <ul class="countries">
-          <li>Francia</li><li>Brasil</li><li>España</li><li>Alemania</li><li>Reino Unido</li><li>Italia</li><li>Estados Unidos</li><li>Chile</li><li>Perú</li><li>Colombia</li><li>México</li><li>Puerto Rico</li><li>Guadalupe</li>
-        </ul>
-      </div>
-    </div>
-    <div class="cyt rv">
-      <p class="mono">Producción científica y tecnológica registrada en CONICET</p>
-      <ul>
-        <li><b>29</b><span>Artículos</span></li>
-        <li><b>6</b><span>Libros</span></li>
-        <li><b>2</b><span>Capítulos de libro</span></li>
-        <li><b>56</b><span>Trabajos en eventos científicos</span></li>
-        <li><b>1</b><span>Tesis</span></li>
-        <li><b>7</b><span>Servicios tecnológicos</span></li>
-      </ul>
-      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver el detalle en BICyT <i class="ph ph-arrow-up-right"></i></a>
-    </div>
-    <div class="lib-tools rv">
-      <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
-      <div class="filters" id="filters"></div>
-    </div>
-    <div class="lib-meta mono"><span id="libcount">Cargando publicaciones</span><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="oaonly" style="accent-color:var(--accent)"> Solo con PDF</label></div>
-    <div class="lib-list" id="liblist" aria-live="polite"></div>
-    <div class="lib-more"><button class="btn btn-ghost" id="libmore" hidden>Ver más publicaciones <i class="ph ph-arrow-down"></i></button></div>
-  </div>
-</section>
-
 <!-- SERVICIOS -->
 <section class="sec" id="servicios" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="rv">Oferta tecnológica</h2>
+      <h2 class="rv">Servicios tecnológicos</h2>
       <p class="lead rv">Servicios Tecnológicos de Alto Nivel (STAN) del CONICET para empresas, organismos públicos e instituciones de I+D. Cinco de ellos están en <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plataforma de servicios del CONICET NOA Sur.</p>
     </div>
     <div class="svc" id="svc">
@@ -1769,7 +1797,14 @@ ScrollTrigger.create({start: 0, end: 'max', onUpdate: s => {
   nav.classList.toggle('scrolled', s.scroll() > 40);
   nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 600 && !mm.classList.contains('open'));
 }});
-$$('.nav-links a').forEach(a => { const sec = $(a.getAttribute('href')); if (sec) ScrollTrigger.create({trigger: sec, start: 'top 50%', end: 'bottom 50%', refreshPriority: -1, onToggle: s => a.classList.toggle('on', s.isActive)}); }); // -1: se calcula después de la línea de tiempo fijada
+// cada ítem del menú se marca mientras se lee su sección o cualquiera de su submenú
+$$('.nav-links > a, .nav-links > .dd').forEach(item => {
+  const a = item.matches('a') ? item : item.querySelector(':scope > a');
+  const ids = [...new Set([a, ...$$('.dd-menu a', item)].map(x => x.getAttribute('href')))];
+  const on = new Set();
+  ids.forEach(id => { const sec = $(id); if (sec) ScrollTrigger.create({trigger: sec, start: 'top 50%', end: 'bottom 50%', refreshPriority: -1, // -1: se calcula después de la línea de tiempo fijada
+    onToggle: s => { s.isActive ? on.add(id) : on.delete(id); a.classList.toggle('on', on.size > 0); }}); });
+});
 
 /* logo de la barra: aparece cuando el logo grande del hero sale de pantalla */
 new IntersectionObserver(([en]) => nav.classList.toggle('brand-on', !en.isIntersecting), {rootMargin: '-72px 0px 0px 0px'}).observe($('.hero-logo'));
