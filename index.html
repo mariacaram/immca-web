@@ -383,6 +383,21 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .sq-form{margin-top:0}
 @media (max-width:900px){.sq{grid-template-columns:1fr}}
 
+/* publicaciones de Instagram del Día del Parkinson */
+.soc-reels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-top:clamp(56px,7vw,96px)}
+.soc-reels-txt{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.2fr;gap:12px 48px;align-items:start;margin-bottom:12px}
+.soc-reels-txt h3{grid-row:span 3}
+@media (max-width:900px){.soc-reels-txt{grid-template-columns:1fr}.soc-reels-txt h3{grid-row:auto}}
+.soc-reels-txt h3{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.025em;margin-bottom:16px}
+.soc-reels-txt p{color:var(--muted);max-width:52ch}
+.soc-reels-txt p+p{margin-top:14px}
+.soc-reels-txt .social{display:inline-flex;margin-top:12px;justify-self:start}
+.ig-embed{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.ig-embed iframe{display:block;width:100%;height:680px;border:0}
+.ig-embed figcaption{padding:10px 14px;color:var(--dim);border-top:1px solid var(--line)}
+@media (max-width:1080px){.soc-reels{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.soc-reels{grid-template-columns:1fr}.ig-embed{max-width:400px;width:100%;justify-self:center}}
+
 /* mapa */
 .map{margin-top:56px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);height:clamp(280px,36vw,420px);background:var(--bg-3)}
 .map iframe{width:100%;height:100%;border:0;display:block}
@@ -1410,7 +1425,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div class="soc-day-txt">
         <span class="mono soc-date">11 de abril de 2026 · Día Mundial del Parkinson</span>
         <h3 class="rv">Tucumán se iluminó de rojo</h3>
-        <p class="lead rv">Por iniciativa del IMMCA, la Casa Histórica de la Independencia, el Monumento al Bicentenario, el Rectorado de la UNT y otros edificios de la provincia se encendieron de rojo a las 19 horas, como en muchas ciudades del mundo.</p>
+        <p class="lead rv">Por iniciativa del IMMCA, la Casa Histórica de la Independencia, el Monumento al Bicentenario, el Rectorado de la UNT, el MUNT, el Centro Cultural Virla y otros edificios de la provincia se encendieron de rojo a las 19 horas, como en muchas ciudades del mundo.</p>
         <p class="rv">El rojo es el color del tulipán, símbolo internacional de la enfermedad. Frente a la Casa Histórica nos reunimos investigadores, becarios, pacientes, familias y cuidadores, con lecturas, música y baile. Pedimos a la comunidad que fuera con una prenda roja y que compartiera el mensaje: una enfermedad que muchas veces es silenciosa necesita ser vista.</p>
         <blockquote class="rv">«La concientización es un paso fundamental para mejorar la calidad de vida de las personas con Parkinson.»<cite>Rosana Chehín, directora del IMMCA</cite></blockquote>
         <a class="social rv" href="https://noasur.conicet.gov.ar/tucuman-se-suma-a-una-iniciativa-de-concientizacion-por-el-dia-mundial-del-parkinson/" target="_blank" rel="noopener"><i class="ph ph-newspaper"></i>Leer la nota en CONICET NOA Sur</a>
@@ -1425,11 +1440,23 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <figure class="rv"><img src="img/parkinson-casa-historica-2.jpg" alt="Foto grupal frente a la puerta de la Casa Histórica" loading="lazy"></figure>
     </div>
 
+    <div class="soc-reels">
+      <div class="soc-reels-txt rv">
+        <h3>Así lo contamos</h3>
+        <p>La convocatoria salió en las redes de Hacé Click y de Medios UNT. Fue una iniciativa del IMMCA junto con la UNT, el CONICET, el Ministerio de Salud Pública, la Municipalidad de San Miguel de Tucumán y el Hospital Padilla.</p>
+        <p>Frente a la Casa Histórica, pacientes, familias, profesionales de la salud e investigadores nos dimos un abrazo simbólico, con el tango de Bondi Milonguero Tucumán. El lunes siguiente, el Hospital Padilla abrió una jornada con especialistas y propuestas para mejorar la calidad de vida de quienes conviven con Parkinson.</p>
+        <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>Seguinos en @immca.lab</a>
+      </div>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/p/DXE_h5kjfXa/embed/" title="Publicación de IMMCA: un abrazo que trasciende la ciencia" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">@immca.lab y Bondi Milonguero</figcaption></figure>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DW9Hd2PDmwu/embed/" title="Reel de Hacé Click e IMMCA: Tucumán se viste de rojo" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">Hacé Click e @immca.lab</figcaption></figure>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/p/DW-ScpdDB1x/embed/" title="Publicación de Medios UNT: la UNT se ilumina de rojo" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">Medios UNT</figcaption></figure>
+    </div>
+
     <div class="soc-cards">
       <article class="soc-card rv">
         <i class="ph-thin ph-users-three"></i>
         <h3>Red Argentina de Parkinson</h3>
-        <p>Integramos la red que une a investigadores, profesionales y asociaciones de pacientes de todo el país.</p>
+        <p>Somos parte de la Red Argentina de Parkinson, con la que compartimos actividades como el Día Mundial en Tucumán.</p>
       </article>
       <article class="soc-card rv">
         <i class="ph-thin ph-chats-circle"></i>
