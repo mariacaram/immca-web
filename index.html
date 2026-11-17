@@ -136,6 +136,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .mmenu .msub a{font-size:17px;font-weight:500;color:var(--muted);border:0;padding:2px 0}
 @media (max-width:1366px){.nav-links{gap:0}.nav-links>a,.dd>a{padding:8px 9px;font-size:14px}.brand-sub{display:none}}
 @media (max-width:1280px){.nav .wrap{gap:12px}.nav-links>a,.dd>a{padding:7px 6px;font-size:13px}.dd>a i{display:none}.nav-cta{padding:0 14px;font-size:14px;height:38px}.brand-word{font-size:21px}.brand{gap:10px}.brand-iso{width:28px}}
+@media (max-width:1180px){.nav-links>a,.dd>a{padding:7px 4px;font-size:12.5px}.nav .wrap{gap:8px}.nav-cta{padding:0 12px;font-size:13.5px}}
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
 .nav-cta{height:42px;padding:0 20px;font-size:15px}
 .burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);place-items:center;font-size:20px}
@@ -878,6 +879,44 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 }
 @media (max-width:768px){.hero{padding-bottom:170px}.hero-meta{bottom:96px}.hm-label{font-size:11px}.hc figcaption{font-size:9.5px;left:6px;bottom:6px;padding:4px 7px}}
 
+/* ---------- formato de las unidades ejecutoras del CONICET ----------
+   Barra institucional arriba, menú blanco y banner con sigla, nombre completo,
+   dependencias y "Unidad Ejecutora", como en los sitios de las UE. */
+.ubar{position:absolute;top:0;left:0;right:0;height:40px;z-index:41;background:#fff;border-bottom:1px solid var(--line)}
+.ubar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ubar-conicet{display:flex;align-items:center;gap:12px;color:var(--muted)}
+.ubar-conicet img{height:26px;width:auto}
+.ubar-conicet span{font-size:11px;letter-spacing:.04em}
+.ubar-links{display:flex;gap:6px}
+.ubar-links a{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px;transition:background .3s,color .3s}
+.ubar-links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media (max-width:640px){.ubar-conicet span{display:none}.ubar-links a:nth-child(3){display:none}}
+
+.nav{top:40px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-bottom:1px solid var(--line);transition:transform .5s var(--ease),top .4s var(--ease)}
+.nav.scrolled{top:0}
+.nav .brand,.nav:not(.brand-on) .brand:not(:focus-visible){opacity:1;transform:none;pointer-events:auto}
+.nav:not(.scrolled) .nav-links>a,.nav:not(.scrolled) .dd>a{color:var(--muted)}
+.nav:not(.scrolled) .nav-links>a:hover,.nav:not(.scrolled) .nav-links>a.on,.nav:not(.scrolled) .dd>a:hover,.nav:not(.scrolled) .dd>a.on{color:var(--text);background:rgba(17,17,17,.05)}
+.nav:not(.scrolled) .burger{border-color:var(--line-2);color:var(--text)}
+
+.hero.hero-ue{min-height:0;height:clamp(560px,82vh,820px);margin-top:112px;padding:0 0 108px;align-items:center;background:#05080c}
+.hero-ue .hero-shade{background:
+  radial-gradient(70% 80% at 50% 45%,rgba(5,8,12,.45) 0%,rgba(5,8,12,.72) 70%,rgba(5,8,12,.86) 100%),
+  linear-gradient(180deg,rgba(5,8,12,.2) 0%,transparent 30%,rgba(5,8,12,.75) 100%)}
+.hero-ue .hm.on{opacity:1}
+.hero-center{text-align:center;display:flex;flex-direction:column;align-items:center;max-width:1100px}
+.hero-ue .hero-logo{justify-content:center;margin-bottom:22px;gap:18px}
+.hero-ue .hero-logo img{width:clamp(54px,5.4vw,78px)}
+.hero-ue .hero-logo span{font-size:clamp(48px,6vw,86px);font-weight:500;letter-spacing:.05em;color:#fff;font-family:"Fira Sans",sans-serif}
+.hero-ue h1{font-size:clamp(22px,2.6vw,38px);font-weight:500;letter-spacing:-.015em;line-height:1.2;color:#fff}
+.hero-ue h1 .ln{display:block}
+.hero-ue .hero-deps{margin:22px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.22);max-width:780px;font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:rgba(255,255,255,.82)}
+.hero-ue-label{margin-top:18px;display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-ue .hero-meta{bottom:124px}
+.hm-cap{color:rgba(255,255,255,.75)}
+@media (max-width:980px){.hero.hero-ue{height:auto;min-height:540px;padding:96px 0 200px}.hero-ue .hero-meta{bottom:100px}}
+@media (max-width:640px){.hero-ue h1 .ln{display:inline}.hero-ue .hero-deps{font-size:13.5px}.hm-cap{display:none}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -906,6 +945,12 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 </div>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
+<div class="ubar" aria-label="Accesos institucionales">
+  <div class="wrap">
+    <a class="ubar-conicet" href="https://www.conicet.gov.ar" target="_blank" rel="noopener"><img src="logos/conicet.svg" alt="CONICET"><span class="mono">Unidad Ejecutora · CONICET · UNT · SIPROSA</span></a>
+    <nav class="ubar-links mono" aria-label="Enlaces institucionales"><a href="https://intranet.conicet.gov.ar/" target="_blank" rel="noopener">Intranet</a><a href="https://noasur.conicet.gov.ar/" target="_blank" rel="noopener">CCT NOA Sur</a><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ficha CONICET</a></nav>
+  </div>
+</div>
 <header class="nav" id="nav">
   <div class="wrap">
     <a href="#inicio" class="brand" aria-label="IMMCA, inicio">
@@ -947,9 +992,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <div class="dd-menu">
           <a href="#sociedad">Compromiso con la sociedad</a>
           <a href="#divulgacion">Divulgación</a>
-          <a href="#noticias">Noticias</a>
         </div>
       </div>
+      <a href="#noticias">Noticias</a>
     </nav>
     <a href="#contacto" class="btn btn-primary nav-cta mag">Contacto</a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i class="ph ph-list"></i></button>
@@ -968,63 +1013,45 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="msub"><a href="#produccion">Patentes</a><a href="#pegasus">El camino de Pegasus</a><a href="#startups">Startups</a></div>
   <a href="#servicios">Servicios tecnológicos</a>
   <a href="#sociedad">Sociedad</a>
-  <div class="msub"><a href="#divulgacion">Divulgación</a><a href="#noticias">Noticias</a></div>
+  <div class="msub"><a href="#divulgacion">Divulgación</a></div>
+  <a href="#noticias">Noticias</a>
   <a href="#contacto">Contacto</a>
 </div>
 
 <main>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <!-- fondo: microscopía confocal del instituto, con fundido y zoom lento -->
+<!-- HERO: banner con el formato de las unidades ejecutoras del CONICET
+     (sigla, nombre completo con dependencias y "Unidad Ejecutora" sobre una foto),
+     con las imágenes del instituto que se suceden con fundido y zoom lento -->
+<section class="hero hero-ue" id="inicio">
   <div class="hero-media" aria-hidden="true">
-    <img class="hm on" src="img/hero-confocal-1.jpg" alt="" fetchpriority="high">
-    <img class="hm" src="img/hero-confocal-2.jpg" alt="" loading="lazy">
-    <img class="hm" src="img/hero-confocal-3.jpg" alt="" loading="lazy">
-    <img class="hm" src="img/hero-confocal-4.jpg" alt="" loading="lazy">
+    <img class="hm on" src="img/fachada-equipo.jpg" alt="" data-cap="Nuestra sede · Dorrego 1080" fetchpriority="high">
+    <img class="hm" src="img/hero-confocal-1.jpg" alt="" data-cap="Microscopía confocal en el IMMCA" loading="lazy">
+    <img class="hm" src="img/laboratorio-equipo.jpg" alt="" data-cap="Laboratorio de producción y purificación de proteínas" loading="lazy">
+    <img class="hm" src="img/equipo-montana.jpg" alt="" data-cap="Nuestro equipo" loading="lazy" style="object-position:center 38%">
+    <img class="hm" src="img/hero-confocal-2.jpg" alt="" data-cap="Microscopía confocal en el IMMCA" loading="lazy">
+    <img class="hm" src="img/campo-llamas.jpg" alt="" data-cap="Trabajo de campo" loading="lazy" style="object-position:center 70%">
     <div class="hero-shade"></div>
   </div>
 
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="hero-kicker mono hero-el"><span class="pulse"></span>CONICET · UNT · SIPROSA<span class="sep">/</span>Tucumán, Argentina</p>
-      <div class="hero-logo hero-el" aria-hidden="true">
-        <img src="logos/immca-isotipo.svg" alt="">
-        <span>IMMCA</span>
-      </div>
-      <h1>
-        <span class="ln"><span>Medicina traslacional</span></span>
-        <span class="ln"><span><span class="accent">en Tucumán.</span></span></span>
-      </h1>
-      <p class="hero-lead hero-el"><strong>Un instituto joven, creado en 2018</strong> para reunir dentro del sistema de salud a científicos básicos, investigadores clínicos y profesionales de la salud alrededor de preguntas comunes. Nuestro foco: las enfermedades neurodegenerativas.</p>
-      <p class="hero-name mono hero-el">Instituto de Investigaciones en Medicina Molecular y Celular Aplicada del Bicentenario</p>
-      <div class="hero-ctas hero-el">
-        <a href="#investigacion" class="btn btn-primary mag">Líneas de investigación <i class="ph ph-arrow-right"></i></a>
-        <a href="#instituto" class="btn btn-glass mag">Conocé el instituto</a>
-      </div>
+  <div class="wrap hero-center">
+    <div class="hero-logo hero-el" aria-hidden="true">
+      <img src="logos/immca-isotipo.svg" alt="">
+      <span>IMMCA</span>
     </div>
-
-    <div class="hero-collage">
-      <figure class="hc hc-1" data-depth="0.7">
-        <video src="video/fachada.mp4" poster="video/fachada.jpg" autoplay muted loop playsinline aria-label="Fachada del IMMCA con su cartel institucional"></video>
-        <figcaption class="mono">Sede · Dorrego 1080</figcaption>
-      </figure>
-      <figure class="hc hc-2" data-depth="1.1">
-        <img src="img/equipo-montana.jpg" alt="Integrantes del IMMCA con guardapolvo junto a la bandera argentina, en los cerros">
-        <figcaption class="mono">Nuestro equipo</figcaption>
-      </figure>
-      <figure class="hc hc-3" data-depth="1.6">
-        <img src="img/campo-llamas.jpg" alt="Llamas en un corral de piedra, con los cerros y las nubes de fondo">
-        <figcaption class="mono">Trabajo de campo</figcaption>
-      </figure>
-    </div>
+    <h1>
+      <span class="ln"><span>Instituto de Investigaciones en Medicina Molecular</span></span>
+      <span class="ln"><span>y Celular Aplicada del Bicentenario</span></span>
+    </h1>
+    <p class="hero-deps hero-el">Consejo Nacional de Investigaciones Científicas y Técnicas · Universidad Nacional de Tucumán · Sistema Provincial de Salud de Tucumán</p>
+    <p class="hero-ue-label mono hero-el">Unidad Ejecutora</p>
   </div>
 
   <div class="hero-meta hero-el" aria-hidden="true">
     <div class="wrap">
-      <div class="hm-label mono"><span class="hm-count">01</span><span class="hm-of">/ 04</span>Microscopía confocal en el IMMCA</div>
-      <div class="hm-bars"><i></i><i></i><i></i><i></i></div>
-      <a class="hero-scroll mono" href="#instituto" tabindex="-1">Explorá<span class="line"></span></a>
+      <div class="hm-label mono"><span class="hm-count">01</span><span class="hm-of">/ 06</span><span class="hm-cap">Nuestra sede · Dorrego 1080</span></div>
+      <div class="hm-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <a class="hero-scroll mono" href="#noticias" tabindex="-1">Noticias<span class="line"></span></a>
     </div>
   </div>
 
@@ -1037,12 +1064,35 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
+<!-- NOTICIAS -->
+<section class="sec" id="noticias">
+  <div class="wrap news-head">
+    <h2 class="rv">Noticias</h2>
+    <div class="news-arrows"><button id="nprev" aria-label="Anterior"><i class="ph ph-arrow-left"></i></button><button id="nnext" aria-label="Siguiente"><i class="ph ph-arrow-right"></i></button></div>
+  </div>
+  <div class="news-scroller" id="news">
+    <article class="news feat has-img"><div class="news-img"><img src="img/microscopia-confocal.jpg" alt="Imagen de microscopía confocal" loading="lazy"></div><time class="mono" datetime="2026-10-20">20 oct 2026</time><h3>Nuestros servicios, en PLASENOA</h3><p>El CONICET NOA Sur lanzó su plataforma de servicios del noroeste argentino. El IMMCA ofrece allí cinco servicios tecnológicos.</p><a class="more" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">Ver en PLASENOA <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news feat has-img"><div class="news-img"><img src="img/parkinson-casa-historica.jpg" alt="Integrantes del IMMCA, pacientes y familias frente a la Casa Histórica iluminada de rojo" loading="lazy"></div><time class="mono" datetime="2026-04-11">11 abr 2026</time><h3>Tucumán se iluminó de rojo por el Día Mundial del Parkinson</h3><p>Una iniciativa del IMMCA junto con la UNT, el CONICET, el Ministerio de Salud Pública, la Municipalidad y el Hospital Padilla.</p><a class="more" href="https://noasur.conicet.gov.ar/tucuman-se-suma-a-una-iniciativa-de-concientizacion-por-el-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en CONICET NOA Sur <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-11-08">8 nov 2024</time><h3>BrinDx gana el primer premio del IB50K</h3><p>La startup nacida en el IMMCA ganó el concurso de planes de negocio del Instituto Balseiro, entre 34 proyectos de todo el país.</p><a class="more" href="https://intucuman.info/nota-principal/el-avance-tucumano-que-revoluciona-la-salud-brindx-gano-el-ib50k-2024-y-brinda-esperanza-en-el-diagnostico-de-enfermedades-como-el-parkinson" target="_blank" rel="noopener">Leer en IN Tucumán <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2025">2025</time><h3>El Ministerio de Salud aprueba la licencia de Pegasus</h3><p>La Resolución 1204/SPS/25 aprueba el convenio con SkyBio LLC y reconoce al IMMCA como lugar del desarrollo.</p><a class="more" href="https://msptucuman.gov.ar/wordpress/wp-content/uploads/2026/01/1204-SPS-25.pdf" target="_blank" rel="noopener">Leer en el Ministerio <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-05-09">9 may 2024</time><h3>Patentan una nueva molécula para combatir el Parkinson</h3><p>Pegasus, diseñada en el IMMCA junto a la UBA y SkyBio, mostró en estudios preclínicos mejorar los síntomas y proteger a las neuronas.</p><a class="more" href="https://www.conicet.gov.ar/patentan-una-nueva-molecula-para-combatir-el-parkinson/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-04-13">13 abr 2024</time><h3>Día Mundial del Parkinson</h3><p>Qué sabemos hoy de la enfermedad y en qué trabaja el instituto para diagnosticarla antes.</p><a class="more" href="https://immca.conicet.gov.ar/11-de-abril-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news feat has-img"><div class="news-img"><img src="img/mencion-diputados-diploma.jpg" alt="Diploma de la Mención de Honor de la Cámara de Diputados al IMMCA" loading="lazy"></div><time class="mono" datetime="2022-11-15">15 nov 2022</time><h3>Mención de Honor de la Cámara de Diputados</h3><p>Reconocimiento al IMMCA por su aporte a la ciencia y a la innovación, y por su compromiso con la salud pública durante la pandemia de COVID-19.</p></article>
+    <article class="news"><time class="mono" datetime="2022-05-12">12 may 2022</time><h3>Defensa de tesis de María Belén Machín</h3><p>Nuevos métodos diagnósticos para enfermedades neurodegenerativas.</p><a class="more" href="https://immca.conicet.gov.ar/defensa-de-tesis-de-maria-belen-machin/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2022-03-02">2 mar 2022</time><h3>La historia de InmunoCoviTuc</h3><p>Un test serológico desarrollado en Tucumán que tuvo grandes resultados durante la pandemia.</p><a class="more" href="https://www.conicet.gov.ar/la-historia-de-inmunocovituc-un-test-que-tuvo-grandes-resultados/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2021-09-02">2 sep 2021</time><h3>Anticuerpos de la Sputnik V, al menos seis meses</h3><p>Un trabajo con participación del IMMCA confirmó la duración de la respuesta tras la vacunación.</p><a class="more" href="https://www.conicet.gov.ar/un-nuevo-trabajo-confirma-la-duracion-de-los-anticuerpos-producidos-por-la-vacuna-sputnik-v-hasta-al-menos-seis-meses-despues-de-la-inoculacion/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2020-06-10">10 jun 2020</time><h3>Un modelo exitoso de vinculación tecnológica</h3><p>La directora presentó el caso del IMMCA: triple dependencia y articulación con el sector privado.</p><a class="more" href="https://immca.conicet.gov.ar/la-unt-expone-un-modelo-exitoso-de-vinculacion-tecnologica/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2020-05-10">10 may 2020</time><h3>Biocatalizadores para mejorar el vino</h3><p>Fibras amiloides para eliminar uretanos en vinos de exportación.</p><a class="more" href="https://immca.conicet.gov.ar/biocatalizadores-para-mejorar-el-vino/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2019-03-14">14 mar 2019</time><h3>Visita del Embajador de Francia</h3><p>La cooperación con equipos franceses en Parkinson y Alzheimer.</p><a class="more" href="https://immca.conicet.gov.ar/visita-al-immca-del-embajador-de-francia/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+  </div>
+</section>
+
 <!-- INSTITUTO / CIFRAS -->
 <section class="sec" id="instituto">
   <div class="wrap">
     <div class="stats-intro rv">
-      <h2>Un instituto joven, con un modelo poco común en la ciencia argentina.</h2>
-      <p class="lead">Investigación básica, hospital público y empresa trabajando en el mismo edificio.</p>
+      <h2>Un instituto joven, creado en 2018.</h2>
+      <p class="lead">Ciencia básica, clínica y vinculación con empresas, con el respaldo de CONICET, la UNT y el SIPROSA.</p>
     </div>
     <div class="stats">
       <div class="stat rv"><b data-count="29">29</b><span>Artículos científicos publicados desde 2018</span></div>
@@ -1152,8 +1202,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="pi-text">
         <p class="lead rv">En las últimas dos décadas, los centros que juntaron laboratorio y hospital mostraron algo concreto: cuando la investigación experimental y la práctica médica trabajan sobre las mismas preguntas, aparecen nuevos tratamientos y diagnósticos, y mejora la atención en los hospitales públicos.</p>
-        <p class="rv">La UNT, el CONICET y el Ministerio de Salud Pública de Tucumán decidieron llevar ese modelo a la provincia. Primero relevaron los proyectos biomédicos en marcha para ver si había masa crítica para un instituto de medicina traslacional. La respuesta fue que sí. El SIPROSA cedió un espacio frente a Plaza Belgrano, junto al Hospital Ángel C. Padilla, y allí, en Dorrego 1080, se construyó la primera etapa del edificio, con salas de cultivo celular, microscopía confocal y producción de proteínas. Desde entonces el instituto se amplió y sumó nuevos espacios y equipamiento.</p>
-        <p class="rv">Así un grupo de investigadores básicos entró al sistema de salud sin dejar de ser parte de la UNT y del CONICET.</p>
+        <p class="rv">La UNT, el CONICET y el Ministerio de Salud Pública de Tucumán decidieron llevar ese modelo a la provincia. Primero relevaron los proyectos biomédicos en marcha para ver si había masa crítica para un instituto de medicina traslacional. La respuesta fue que sí. El SIPROSA cedió un espacio en Dorrego 1080, en las inmediaciones de Plaza Belgrano, y allí se construyó la primera etapa del edificio, con salas de cultivo celular, microscopía confocal y producción de proteínas. Desde entonces el instituto se amplió y sumó nuevos espacios y equipamiento.</p>
+        <p class="rv">Así, investigadores de la UNT y del CONICET empezaron a trabajar en un espacio propio aportado por el sistema provincial de salud.</p>
       </div>
     </div>
 
@@ -1238,7 +1288,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Infraestructura y equipamiento</h2>
-      <p class="lead rv">Laboratorios dentro del sistema público de salud, en Dorrego 1080, con equipamiento único en el norte del país para biología molecular y celular.</p>
+      <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular.</p>
     </div>
     <div class="infra">
       <article class="infra-room rv">
@@ -1500,8 +1550,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="unite-why">
       <h3 class="rv">Por qué formarte acá</h3>
       <ul>
-        <li class="rv"><i class="ph ph-first-aid-kit"></i><span><b>Dentro del sistema de salud.</b> El instituto está junto al Hospital Padilla y trabaja con sus médicos sobre problemas reales de los pacientes.</span></li>
-        <li class="rv"><i class="ph ph-microscope"></i><span><b>Equipamiento único en la región.</b> Microscopía confocal, FPLC, dispersión de luz y cultivo celular para tu propio proyecto.</span></li>
+        <li class="rv"><i class="ph ph-first-aid-kit"></i><span><b>Cerca de la clínica.</b> Trabajamos con médicos y profesionales de la salud sobre preguntas que surgen de la práctica clínica.</span></li>
+        <li class="rv"><i class="ph ph-microscope"></i><span><b>Equipamiento de alta complejidad.</b> Microscopía confocal, FPLC, dispersión de luz y cultivo celular para tu propio proyecto.</span></li>
         <li class="rv"><i class="ph ph-globe-hemisphere-west"></i><span><b>Redes internacionales.</b> Publicamos con grupos de 13 países, entre ellos el Instituto del Cerebro de París.</span></li>
         <li class="rv"><i class="ph ph-rocket-launch"></i><span><b>De la ciencia a la empresa.</b> Acá nacieron dos patentes internacionales y la startup BrinDx.</span></li>
       </ul>
@@ -1829,26 +1879,6 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
-<!-- NOTICIAS -->
-<section class="sec" id="noticias" style="padding-top:0">
-  <div class="wrap news-head">
-    <h2 class="rv">Novedades</h2>
-    <div class="news-arrows"><button id="nprev" aria-label="Anterior"><i class="ph ph-arrow-left"></i></button><button id="nnext" aria-label="Siguiente"><i class="ph ph-arrow-right"></i></button></div>
-  </div>
-  <div class="news-scroller" id="news">
-    <article class="news"><time class="mono" datetime="2025">2025</time><h3>El Ministerio de Salud aprueba la licencia de Pegasus</h3><p>La Resolución 1204/SPS/25 aprueba el convenio con SkyBio LLC y reconoce al IMMCA como lugar del desarrollo.</p><a class="more" href="https://msptucuman.gov.ar/wordpress/wp-content/uploads/2026/01/1204-SPS-25.pdf" target="_blank" rel="noopener">Leer en el Ministerio <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2024-05-09">9 may 2024</time><h3>Patentan una nueva molécula para combatir el Parkinson</h3><p>Pegasus, diseñada en el IMMCA junto a la UBA y SkyBio, mostró en estudios preclínicos mejorar los síntomas y proteger a las neuronas.</p><a class="more" href="https://www.conicet.gov.ar/patentan-una-nueva-molecula-para-combatir-el-parkinson/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2024-04-13">13 abr 2024</time><h3>Día Mundial del Parkinson</h3><p>Qué sabemos hoy de la enfermedad y en qué trabaja el instituto para diagnosticarla antes.</p><a class="more" href="https://immca.conicet.gov.ar/11-de-abril-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news feat has-img"><div class="news-img"><img src="img/mencion-diputados-diploma.jpg" alt="Diploma de la Mención de Honor de la Cámara de Diputados al IMMCA" loading="lazy"></div><time class="mono" datetime="2022-11-15">15 nov 2022</time><h3>Mención de Honor de la Cámara de Diputados</h3><p>Reconocimiento al IMMCA por su aporte a la ciencia y a la innovación, y por su compromiso con la salud pública durante la pandemia de COVID-19.</p></article>
-    <article class="news"><time class="mono" datetime="2022-05-12">12 may 2022</time><h3>Defensa de tesis de María Belén Machín</h3><p>Nuevos métodos diagnósticos para enfermedades neurodegenerativas.</p><a class="more" href="https://immca.conicet.gov.ar/defensa-de-tesis-de-maria-belen-machin/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2022-03-02">2 mar 2022</time><h3>La historia de InmunoCoviTuc</h3><p>Un test serológico desarrollado en Tucumán que tuvo grandes resultados durante la pandemia.</p><a class="more" href="https://www.conicet.gov.ar/la-historia-de-inmunocovituc-un-test-que-tuvo-grandes-resultados/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2021-09-02">2 sep 2021</time><h3>Anticuerpos de la Sputnik V, al menos seis meses</h3><p>Un trabajo con participación del IMMCA confirmó la duración de la respuesta tras la vacunación.</p><a class="more" href="https://www.conicet.gov.ar/un-nuevo-trabajo-confirma-la-duracion-de-los-anticuerpos-producidos-por-la-vacuna-sputnik-v-hasta-al-menos-seis-meses-despues-de-la-inoculacion/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2020-06-10">10 jun 2020</time><h3>Un modelo exitoso de vinculación tecnológica</h3><p>La directora presentó el caso del IMMCA: triple dependencia y articulación con el sector privado.</p><a class="more" href="https://immca.conicet.gov.ar/la-unt-expone-un-modelo-exitoso-de-vinculacion-tecnologica/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2020-05-10">10 may 2020</time><h3>Biocatalizadores para mejorar el vino</h3><p>Fibras amiloides para eliminar uretanos en vinos de exportación.</p><a class="more" href="https://immca.conicet.gov.ar/biocatalizadores-para-mejorar-el-vino/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2019-03-14">14 mar 2019</time><h3>Visita del Embajador de Francia</h3><p>La cooperación con equipos franceses en Parkinson y Alzheimer.</p><a class="more" href="https://immca.conicet.gov.ar/visita-al-immca-del-embajador-de-francia/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
-  </div>
-</section>
-
 <!-- CONTACTO -->
 <section class="sec" id="contacto" style="background:var(--bg-2);border-top:1px solid var(--line)">
   <div class="wrap contact">
@@ -1928,6 +1958,7 @@ function showSlide(i) {
   heroSlides.forEach((s, k) => s.classList.toggle('on', k === i));
   heroBars.forEach((b, k) => { b.classList.toggle('done', k < i); b.classList.remove('run'); if (k === i) { void b.offsetWidth; b.classList.add('run'); } });
   if (heroCount) heroCount.textContent = String(i + 1).padStart(2, '0');
+  const cap = $('.hm-cap'); if (cap) cap.textContent = heroSlides[i].dataset.cap || '';
 }
 function startSlides() { if (reduce || slideTimer) return; slideTimer = setInterval(() => { si = (si + 1) % heroSlides.length; showSlide(si); }, SLIDE_MS); }
 function stopSlides() { clearInterval(slideTimer); slideTimer = null; }
@@ -1935,8 +1966,9 @@ showSlide(0); startSlides();
 // fuera de pantalla no hace falta animar nada
 new IntersectionObserver(([en]) => { hero.classList.toggle('paused', !en.isIntersecting); en.isIntersecting ? startSlides() : stopSlides(); }).observe(hero);
 
+const heroCap = $('.hm-cap', hero);
 const heroCards = $$('.hc', hero);
-if (!reduce && matchMedia('(hover: hover)').matches) {
+if (heroCards.length && !reduce && matchMedia('(hover: hover)').matches) {
   hero.addEventListener('pointermove', e => {
     const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
     heroCards.forEach(c => { const d = +c.dataset.depth || 1; c.style.setProperty('--mx', (x * d * -28).toFixed(1) + 'px'); c.style.setProperty('--my', (y * d * -20).toFixed(1) + 'px'); });
@@ -2067,14 +2099,12 @@ else {
   intro.from('.hero-media', {opacity: 0, scale: 1.08, duration: 2.2, ease: 'power2.out'}, '-=.7')
        .from('.hero h1 .ln>span', {yPercent: 110, duration: 1.2, stagger: .1}, '<.2')
        .from('.hero-el', {opacity: 0, y: 20, duration: 1, stagger: .1}, '-=.9')
-       // las tarjetas del collage suben y se acomodan en profundidad
-       .from('.hc', {opacity: 0, y: 90, scale: .92, duration: 1.5, stagger: .14, clearProps: 'transform'}, '-=1.2'); // clearProps: después manda el transform de CSS (cursor y scroll)
+       ;
 }
 
 /* hero: al bajar, el texto se va y el collage se separa en capas */
 if (!reduce) {
-  gsap.to('.hero-copy', {y: -90, opacity: .15, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
-  $$('.hc').forEach(c => gsap.to(c, {'--sy': `${-(+c.dataset.depth || 1) * 110}px`, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}}));
+  gsap.to('.hero-center', {y: -70, opacity: .2, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
   gsap.to('.hero-media', {yPercent: 12, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
 }
 
