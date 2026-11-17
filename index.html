@@ -275,6 +275,49 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .chip{border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--muted)}
 .chip.ok{border-color:rgba(6,149,214,.5);color:var(--accent)}
+
+/* proyecto institucional */
+.pi-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.pi-kicker{display:block;color:var(--accent);margin-bottom:22px}
+.pi-text p+p{margin-top:20px;color:var(--muted);max-width:60ch}
+.pi-model{margin-top:clamp(72px,9vw,128px)}
+.pi-ref{color:var(--muted);text-align:center;margin-bottom:28px}
+.pi-actors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pi-actor{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.pi-actor i{font-size:34px;color:var(--accent)}
+.pi-actor h3{margin:22px 0 10px;font-size:22px}
+.pi-actor p{color:var(--muted);font-size:16px}
+.pi-center{position:relative;text-align:center;margin-top:44px;color:var(--muted);font-size:16px}
+.pi-center::before{content:"";position:absolute;left:16.6%;right:16.6%;top:-44px;height:28px;border:1px solid var(--line-2);border-top:0;border-radius:0 0 var(--r) var(--r)}
+.pi-center span{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:9px 22px;margin-right:12px;font-weight:600;font-size:17px}
+.pi-block{margin-top:clamp(72px,9vw,128px)}
+.pi-sub{font-size:clamp(28px,3vw,40px);letter-spacing:-.025em;margin-bottom:36px}
+.pi-goals{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.pi-goals li{padding:26px 28px 30px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.5}
+.pi-goals .mono{display:block;color:var(--accent);margin-bottom:12px}
+.pi-plan-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:36px}
+.pi-plan-head .pi-sub{margin-bottom:0}
+.pi-plan-head p{color:var(--muted)}
+.pi-ejes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pi-eje{border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.pi-eje .mono{color:var(--accent)}
+.pi-eje h4{font-size:22px;font-weight:600;letter-spacing:-.015em;margin:10px 0 18px}
+.pi-eje ul{list-style:none}
+.pi-eje li{position:relative;padding-left:18px;color:var(--muted);font-size:15.5px;line-height:1.5}
+.pi-eje li+li{margin-top:12px}
+.pi-eje li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--celeste)}
+@media (max-width:900px){
+  .pi-intro,.pi-plan-head{grid-template-columns:1fr}
+  .pi-actors,.pi-ejes{grid-template-columns:1fr}
+  .pi-goals{grid-template-columns:1fr 1fr}
+  .pi-center::before{display:none}
+  .pi-center{margin-top:24px}
+}
+@media (max-width:560px){
+  .pi-goals{grid-template-columns:1fr}
+  .pi-goals li{padding-right:0}
+  .pi-center span{display:block;margin:0 auto 10px;width:max-content}
+}
 @media (max-width:900px){.pipe{grid-template-columns:1fr}.pipe-sticky{position:relative;top:0}.pipe-fig{display:none}}
 
 /* ---------- directora ---------- */
@@ -665,14 +708,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
     <div class="tl-track" id="tltrack">
       <article class="tl-item">
-        <div class="tl-year">Origen</div>
-        <h3>Biofísica en el INSIBIO</h3>
-        <p>Un grupo de bioquímica de proteínas estudia la agregación amiloide desde la física, sin acceso todavía a cultivos celulares ni modelos in vivo.</p>
+        <div class="tl-year">2003</div>
+        <h3>Biofísica de proteínas</h3>
+        <p>Se forma en el INSIBIO un grupo que estudia la agregación amiloide desde la física, todavía sin cultivos celulares ni modelos in vivo.</p>
       </article>
       <article class="tl-item">
-        <div class="tl-year">Alianza</div>
-        <h3>Llegada a la clínica</h3>
-        <p>Los resultados empiezan a tener impacto en pacientes. Se suma un equipo de neurólogos del Hospital Padilla, el más grande del noroeste argentino.</p>
+        <div class="tl-year">2010</div>
+        <h3>De la física a la neurobiología</h3>
+        <p>El grupo aplica la biofísica al Parkinson. Los resultados empiezan a tocar pacientes y se suman los neurólogos del Hospital Padilla.</p>
+      </article>
+      <article class="tl-item">
+        <div class="tl-year">2016</div>
+        <h3>Se pide crear el instituto</h3>
+        <p>En noviembre se presenta la solicitud de creación, con el modelo del Instituto del Cerebro de París como referencia y un proyecto edilicio de 480&nbsp;m².</p>
       </article>
       <article class="tl-item">
         <div class="tl-year">2017</div>
@@ -682,7 +730,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <article class="tl-item key">
         <div class="tl-year">2018</div>
         <h3>Nace el IMMCA</h3>
-        <p>El 23 de mayo, CONICET, UNT y el Ministerio de Salud Pública de Tucumán inauguran el instituto, con equipamiento único en la región.</p>
+        <p>El 23 de mayo, CONICET, UNT y el Ministerio de Salud Pública de Tucumán firman el convenio marco. Ese mismo día se firma un memorándum con SkyBio.</p>
       </article>
       <article class="tl-item">
         <div class="tl-year">2019</div>
@@ -714,6 +762,97 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <h3>Ante la FDA</h3>
         <p>Presentación del dossier para pedir el primer ensayo clínico en personas. Será el primer desarrollo con SIPROSA como cotitular ante la FDA.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTO INSTITUCIONAL -->
+<section class="sec pi" id="proyecto">
+  <div class="wrap">
+    <div class="pi-intro">
+      <div>
+        <span class="mono pi-kicker">Por qué nació el IMMCA</span>
+        <h2 class="rv">Ciencia básica y clínica, bajo el mismo techo.</h2>
+      </div>
+      <div class="pi-text">
+        <p class="lead rv">En las últimas dos décadas, los centros que juntaron laboratorio y hospital mostraron algo concreto: cuando la investigación experimental y la práctica médica trabajan sobre las mismas preguntas, aparecen nuevos tratamientos y diagnósticos, y mejora la atención en los hospitales públicos.</p>
+        <p class="rv">La UNT, el CONICET y el Ministerio de Salud Pública de Tucumán decidieron llevar ese modelo a la provincia. Primero relevaron los proyectos biomédicos en marcha para ver si había masa crítica para un instituto de medicina traslacional. La respuesta fue que sí. El SIPROSA cedió un espacio frente a Plaza Belgrano, junto al Hospital Ángel C. Padilla, y allí, en Dorrego 1080, se construyó la primera etapa del edificio: 210&nbsp;m² con salas de cultivo celular, microscopía confocal y producción de proteínas.</p>
+        <p class="rv">Así un grupo de investigadores básicos entró al sistema de salud sin dejar de ser parte de la UNT y del CONICET.</p>
+      </div>
+    </div>
+
+    <div class="pi-model">
+      <p class="mono pi-ref rv">El modelo: el Instituto del Cerebro (ICM) del Hospital Pitié-Salpêtrière, París</p>
+      <div class="pi-actors">
+        <article class="pi-actor rv">
+          <i class="ph-thin ph-microscope"></i>
+          <h3>Investigación científica</h3>
+          <p>UNT y CONICET aportan los investigadores, la formación de becarios y la pregunta de fondo.</p>
+        </article>
+        <article class="pi-actor rv">
+          <i class="ph-thin ph-first-aid-kit"></i>
+          <h3>Sistema de salud</h3>
+          <p>El SIPROSA aporta el edificio, los servicios y algo más valioso: los problemas reales de los pacientes y los estudios clínicos.</p>
+        </article>
+        <article class="pi-actor rv">
+          <i class="ph-thin ph-handshake"></i>
+          <h3>Empresas de base tecnológica</h3>
+          <p>Socios privados como SkyBio financian el desarrollo y llevan los resultados al mercado: nuevos fármacos y métodos diagnósticos.</p>
+        </article>
+      </div>
+      <p class="pi-center rv"><span>Medicina traslacional</span> de la molécula al paciente</p>
+    </div>
+
+    <div class="pi-block">
+      <h3 class="pi-sub rv">Qué nos proponemos</h3>
+      <ol class="pi-goals">
+        <li class="rv"><span class="mono">01</span>Priorizar los proyectos que integran distintas especialidades biológicas y biomédicas.</li>
+        <li class="rv"><span class="mono">02</span>Formar recursos humanos multidisciplinarios y abrir lugar a tesis de grado y posgrado.</li>
+        <li class="rv"><span class="mono">03</span>Ayudar al sistema de salud a adoptar nuevas tecnologías.</li>
+        <li class="rv"><span class="mono">04</span>Reorientar la investigación básica cuando el sistema de salud lo necesita, como pasó en la pandemia.</li>
+        <li class="rv"><span class="mono">05</span>Sostener colaboraciones internacionales y publicar con nivel de excelencia.</li>
+        <li class="rv"><span class="mono">06</span>Sumar nuestro equipamiento y experiencia a la investigación clínica, y fortalecer las alianzas público-privadas.</li>
+      </ol>
+    </div>
+
+    <div class="pi-block">
+      <div class="pi-plan-head">
+        <h3 class="pi-sub rv">Proyecto de desarrollo institucional</h3>
+        <p class="rv">El plan con el que la directora, Rosana Chehín, asumió la primera gestión del instituto (2020–2024), organizado en tres ejes.</p>
+      </div>
+      <div class="pi-ejes">
+        <article class="pi-eje rv">
+          <span class="mono">Eje 1</span>
+          <h4>Gestión institucional</h4>
+          <ul>
+            <li>Consejo directivo, reglamento y comisiones para finanzas, bioseguridad, infraestructura, vinculación y comunicación.</li>
+            <li>Acreditación ISO 17025 y gestión ambiental según ISO 14001.</li>
+            <li>Ampliar el edificio hasta los 480&nbsp;m² del proyecto original para reunir a todos los grupos.</li>
+            <li>Sumar el microscopio confocal al Sistema Nacional de Microscopía.</li>
+          </ul>
+        </article>
+        <article class="pi-eje rv">
+          <span class="mono">Eje 2</span>
+          <h4>Ciencia y formación</h4>
+          <ul>
+            <li>Un plan estratégico que se revisa todos los años.</li>
+            <li>Ingresar a la Red de Investigación Traslacional en Salud.</li>
+            <li>Reuniones periódicas con los equipos de salud para encontrar proyectos en común.</li>
+            <li>Seminarios semanales con expositores invitados del país y del exterior.</li>
+            <li>Apoyo a proyectos dirigidos por investigadores jóvenes.</li>
+          </ul>
+        </article>
+        <article class="pi-eje rv">
+          <span class="mono">Eje 3</span>
+          <h4>Vinculación y transferencia</h4>
+          <ul>
+            <li>Ampliar los servicios de la plataforma de cultivos celulares y de ensayos de neuroprotección.</li>
+            <li>Profundizar los convenios con empresas para desarrollar productos patentables.</li>
+            <li>Enseñar a becarios a identificar resultados que conviene proteger.</li>
+            <li>Impulsar startups de jóvenes científicos en el área de la salud.</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -1113,7 +1252,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <p style="color:var(--muted);font-size:15px;max-width:34ch">Unidad ejecutora de CONICET, Universidad Nacional de Tucumán y Sistema Provincial de Salud de Tucumán.</p>
         <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>@immca.lab</a>
       </div>
-      <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
+      <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#proyecto">Proyecto institucional</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
       <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#investigacion">Proyectos</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
       <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li><li><a href="https://immca.conicet.gov.ar/wp-admin/" target="_blank" rel="noopener">Intranet</a></li></ul></div>
     </div>
