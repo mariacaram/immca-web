@@ -315,6 +315,9 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .cyt>a{color:var(--accent)}
 @media (max-width:900px){.cyt ul{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:480px){.cyt ul{grid-template-columns:repeat(2,1fr)}}
+.svc-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;color:var(--dim);font-size:12px}
+.svc-tags b{font-weight:500;color:var(--accent);border:1px solid rgba(6,149,214,.4);border-radius:999px;padding:2px 9px}
+.lead a.inline{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .svc-more{margin-top:28px;color:var(--muted)}
 .svc-more a{color:var(--accent);white-space:nowrap}
 
@@ -351,6 +354,24 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
   .soc-gal figure:last-child{aspect-ratio:3/4}
   .soc-cards{grid-template-columns:1fr}
 }
+
+/* nuestros proyectos */
+.proj{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pj{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--bg);overflow:hidden}
+.pj::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--c)}
+.pj-top{display:flex;justify-content:space-between;align-items:center}
+.pj-n{font-size:44px;font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--c)}
+.vt,.vt-inline{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--accent);border:1px solid rgba(6,149,214,.45);border-radius:999px;padding:3px 9px}
+.vt-inline{padding:1px 7px;vertical-align:2px}
+.pj>i{font-size:32px;color:var(--c);margin:22px 0 14px}
+.pj h3{font-size:21px;margin-bottom:10px}
+.pj p{color:var(--muted);font-size:15.5px;line-height:1.5}
+.pj .pj-with{margin-top:14px;color:var(--dim);font-size:12px}
+.pj-out{margin-top:auto;padding-top:18px;font-size:13px;font-weight:600;color:var(--text)}
+.pj-link{margin-top:auto;padding-top:18px;font-size:14px;color:var(--accent)}
+.pj-wide{grid-column:span 2}
+@media (max-width:1080px){.proj{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.proj{grid-template-columns:1fr}.pj-wide{grid-column:auto}}
 
 /* consulta de servicios */
 .sq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);margin-top:clamp(56px,7vw,96px);padding:clamp(28px,4vw,48px);border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line);scroll-margin-top:96px}
@@ -1038,6 +1059,65 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
+<!-- PROYECTOS -->
+<section class="sec" id="proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Nuestros proyectos</h2>
+      <p class="lead rv">Siete frentes de trabajo, de la ciencia básica a una empresa de base tecnológica. Los marcados con <span class="vt-inline">VT</span> tienen vinculación tecnológica con empresas o instituciones.</p>
+    </div>
+    <div class="proj">
+      <article class="pj rv" style="--c:#C03BC9">
+        <div class="pj-top"><span class="pj-n">1</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-pill"></i>
+        <h3>Desarrollo de fármacos</h3>
+        <p>Derivados de tetraciclinas para el Parkinson. Su resultado principal es Pegasus (WO2022167954A1).</p>
+        <p class="pj-with mono">FCEN-UBA · SkyBio · ICM/CNRS</p>
+        <span class="pj-out">Patente y licencia</span>
+      </article>
+      <article class="pj rv" style="--c:#8E1A0E">
+        <div class="pj-top"><span class="pj-n">2</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-microscope"></i>
+        <h3>Nuevas tecnologías diagnósticas</h3>
+        <p>Aristaeus (WO2023214381A1), un biosensor para detectar la enfermedad antes de los síntomas.</p>
+        <p class="pj-with mono">FCEN-UBA · INSIBIO · SkyBio</p>
+        <span class="pj-out">Patente y licencia</span>
+      </article>
+      <article class="pj rv" style="--c:#4A7FDB">
+        <div class="pj-top"><span class="pj-n">3</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-dna"></i>
+        <h3>Producción y purificación de proteínas</h3>
+        <p>Alfa-sinucleína en monómeros, fibras y fibras fluorescentes, y tau, para investigación.</p>
+      </article>
+      <article class="pj rv" style="--c:#7C8A0A">
+        <div class="pj-top"><span class="pj-n">4</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-virus"></i>
+        <h3>Kits diagnósticos propios</h3>
+        <p>ELISA de anticuerpos contra SARS-CoV-2 (InmunoCoviTuc). En desarrollo: dengue.</p>
+      </article>
+      <article class="pj rv" style="--c:#B5A300">
+        <div class="pj-top"><span class="pj-n">5</span></div>
+        <i class="ph-thin ph-atom"></i>
+        <h3>Ciencia básica</h3>
+        <p>Bases moleculares de las enfermedades neurodegenerativas, nuevos modelos, fármacos y métodos diagnósticos, y genética del Parkinson. También, usos industriales de los amiloides proteicos.</p>
+      </article>
+      <article class="pj rv" style="--c:#E8650A">
+        <div class="pj-top"><span class="pj-n">6</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-flask"></i>
+        <h3>Servicios</h3>
+        <p>Microscopía, tamaño de nanopartículas por DLS, purificación de células, ADN y ARN, y toxicidad en modelos celulares y en C.&nbsp;elegans. En desarrollo: diagnóstico de Parkinson por RT-QuIC.</p>
+        <a class="pj-link" href="#servicios">Ver la oferta <i class="ph ph-arrow-right"></i></a>
+      </article>
+      <article class="pj pj-wide rv" style="--c:#2A7F95">
+        <div class="pj-top"><span class="pj-n">7</span><span class="vt">VT</span></div>
+        <i class="ph-thin ph-rocket-launch"></i>
+        <h3>BrinDx, empresa de base tecnológica</h3>
+        <p>Startup vinculada al instituto, dedicada al diagnóstico de enfermedades neurodegenerativas: proteínas para investigación y diagnóstico, servicios, y desarrollo de un nuevo trazador PET. Cuenta con un inversor ángel, financiamiento pre-semilla y premios, entre ellos el IB50K 2024.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- DIRECTORA -->
 <section class="sec" id="directora">
   <div class="wrap dir">
@@ -1270,18 +1350,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Oferta tecnológica</h2>
-      <p class="lead rv">Siete Servicios Tecnológicos de Alto Nivel (STAN) del CONICET, para grupos de investigación, organismos públicos y empresas.</p>
+      <p class="lead rv">Servicios Tecnológicos de Alto Nivel (STAN) del CONICET para empresas, organismos públicos e instituciones de I+D. Cinco de ellos están en <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plataforma de servicios del CONICET NOA Sur.</p>
     </div>
     <div class="svc" id="svc">
-      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Agregación proteica y neurodegeneración</h3><p>Evaluamos si extractos, formulaciones o compuestos modulan la agregación de alfa-sinucleína o tau.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Actividad biológica en cultivos celulares</h3><p>Ensayos in vitro en líneas SH-SY5Y, HEK, BV2 y otras, para fármacos, productos biotecnológicos o extractos naturales.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Microscopía confocal</h3><p>Imágenes de fluorescencia de alta resolución de cultivos, embriones, larvas de pez cebra, C.&nbsp;elegans o nanomateriales.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Dispersión dinámica de luz (DLS)</h3><p>Tamaño de partículas entre 0,3&nbsp;nm y 8&nbsp;µm, y potencial Z, en suspensión o solución.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Espectroscopía automatizada</h3><p>Absorbancia, fluorescencia y luminiscencia en lector de microplacas.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="3"><h3>Análisis estadístico de datos</h3><p>Procesamiento, análisis e interpretación de datos para proyectos de I+D, publicaciones y presentaciones.</p><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Anticuerpos anti-SARS-CoV-2</h3><p>ELISA con antígeno S-RBD, desarrollado para reforzar el diagnóstico del Ministerio de Salud de Tucumán.</p><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Moduladores de la agregación proteica</h3><div><p>Probamos si compuestos, extractos o formulaciones modifican la agregación de tau y alfa-sinucleína, y estudiamos proteínas agregadas con capacidad de siembra en muestras biológicas.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Efectos biológicos en cultivos celulares</h3><div><p>Citotoxicidad, actividad metabólica, daño de membrana, estrés oxidativo y respuesta inflamatoria, para elegir candidatos antes de pasar a modelos más complejos.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Animales · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Microscopía confocal</h3><div><p>Imágenes con un Zeiss LSM&nbsp;800: localización de marcadores, colocalización, morfología celular y reconstrucción en tres dimensiones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Tamaño y estabilidad de partículas</h3><div><p>Dispersión dinámica de luz (DLS): tamaño, distribución, agregación y potencial Z de nanopartículas, vesículas, complejos proteicos y formulaciones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud · Alimentos · Calidad · Energía · Minería · Ambiente</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Absorbancia, fluorescencia y luminiscencia</h3><div><p>Ensayos en lector multimodo TECAN Spark: cinéticas, actividad enzimática y curvas de concentración y respuesta.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Calidad · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="3"><h3>Análisis estadístico de datos</h3><div><p>Procesamiento, análisis e interpretación de datos para proyectos de I+D, publicaciones y presentaciones.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Anticuerpos anti-SARS-CoV-2</h3><div><p>ELISA con antígeno S-RBD, desarrollado para reforzar el diagnóstico del Ministerio de Salud de Tucumán.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
     </div>
-    <p class="svc-more rv">También firmamos convenios de I+D con empresas, como los de SkyBio y BACON SAIC. <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver la oferta en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+    <p class="svc-more rv">También firmamos convenios de I+D con empresas, como los de SkyBio y BACON SAIC. <a href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">Ver en PLASENOA <i class="ph ph-arrow-up-right"></i></a> · <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
 
     <div class="sq" id="consulta-servicios">
       <div class="sq-intro rv">
@@ -1295,11 +1375,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <div class="field"><label for="sf-mail">Correo electrónico</label><input id="sf-mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
         <div class="field"><label for="sf-tel">Teléfono (opcional)</label><input id="sf-tel" type="tel" autocomplete="tel"></div>
         <div class="field full"><label for="sf-svc">Servicio</label><select id="sf-svc">
-          <option>Agregación proteica y neurodegeneración</option>
-          <option>Actividad biológica en cultivos celulares</option>
+          <option>Moduladores de la agregación proteica</option>
+          <option>Efectos biológicos en cultivos celulares</option>
           <option>Microscopía confocal</option>
-          <option>Dispersión dinámica de luz (DLS)</option>
-          <option>Espectroscopía automatizada</option>
+          <option>Tamaño y estabilidad de partículas</option>
+          <option>Absorbancia, fluorescencia y luminiscencia</option>
           <option>Análisis estadístico de datos</option>
           <option>Anticuerpos anti-SARS-CoV-2</option>
           <option>Convenio de I+D</option>
@@ -1473,7 +1553,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>@immca.lab</a>
       </div>
       <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#proyecto">Proyecto institucional</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
-      <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#investigacion">Proyectos</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
+      <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
       <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li><li><a href="https://immca.conicet.gov.ar/wp-admin/" target="_blank" rel="noopener">Intranet</a></li></ul></div>
     </div>
     <div class="foot-lock" aria-hidden="true">
@@ -1662,7 +1742,7 @@ ScrollTrigger.create({start: 0, end: 'max', onUpdate: s => {
   nav.classList.toggle('scrolled', s.scroll() > 40);
   nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 600 && !mm.classList.contains('open'));
 }});
-$$('.nav-links a').forEach(a => { const sec = $(a.getAttribute('href')); if (sec) ScrollTrigger.create({trigger: sec, start: 'top 50%', end: 'bottom 50%', onToggle: s => a.classList.toggle('on', s.isActive)}); });
+$$('.nav-links a').forEach(a => { const sec = $(a.getAttribute('href')); if (sec) ScrollTrigger.create({trigger: sec, start: 'top 50%', end: 'bottom 50%', refreshPriority: -1, onToggle: s => a.classList.toggle('on', s.isActive)}); }); // -1: se calcula después de la línea de tiempo fijada
 
 /* logo de la barra: aparece cuando el logo grande del hero sale de pantalla */
 new IntersectionObserver(([en]) => nav.classList.toggle('brand-on', !en.isIntersecting), {rootMargin: '-72px 0px 0px 0px'}).observe($('.hero-logo'));
