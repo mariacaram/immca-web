@@ -394,27 +394,32 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .lin-claim{font-size:clamp(24px,2.6vw,36px);font-weight:500;letter-spacing:-.02em;line-height:1.2;margin-bottom:18px}
 .lin-claim em{font-style:normal;color:var(--accent)}
 .lin{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.ln{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2);padding:30px;padding-top:84px;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px}
+.lin-film{position:relative;margin:0 0 16px;border-radius:var(--r);overflow:hidden;background:#e6e7e9;aspect-ratio:21/8;border:1px solid var(--line)}
+.lin-film video{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.lin-film figcaption{position:absolute;left:24px;bottom:24px;max-width:46ch;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:15.5px;line-height:1.45;color:var(--text);border:1px solid var(--line)}
+.lin-film figcaption .mono{display:block;color:var(--accent);margin-bottom:6px}
+@media (max-width:760px){.lin-film{aspect-ratio:4/3}.lin-film figcaption{left:12px;right:12px;bottom:12px;font-size:14px;padding:12px 14px}}
+.lnc{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2);padding:30px;padding-top:84px;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px}
 .ln-a{grid-column:span 4;min-height:520px}
 .ln-b{grid-column:span 2;min-height:520px}
 .ln-c,.ln-d,.ln-e{grid-column:span 2}
-.ln .bg{position:absolute;inset:0;z-index:-1}
-.ln .bg img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
-.ln .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,20,32,.15) 0%,rgba(8,20,32,.55) 45%,rgba(8,20,32,.92) 100%)}
-.ln.img:hover .bg img{transform:scale(1.05)}
+.lnc .bg{position:absolute;inset:0;z-index:-1}
+.lnc .bg img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.lnc .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,20,32,.15) 0%,rgba(8,20,32,.55) 45%,rgba(8,20,32,.92) 100%)}
+.lnc.img:hover .bg img{transform:scale(1.05)}
 .ln-top{position:absolute;top:24px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:center}
 .ln-n{font-size:40px;font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--accent)}
 .ln-ic{display:block;margin-bottom:auto;padding-bottom:18px;font-size:40px;color:var(--accent)}
-.ln h3{font-size:clamp(24px,2.2vw,32px);letter-spacing:-.02em;margin-bottom:12px;max-width:18ch}
-.ln p{color:var(--muted);font-size:16px;max-width:58ch}
+.lnc h3{font-size:clamp(24px,2.2vw,32px);letter-spacing:-.02em;margin-bottom:12px;max-width:18ch}
+.lnc p{color:var(--muted);font-size:16px;max-width:58ch}
 .ln-out{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .ln-out li{font-size:12.5px;font-family:"JetBrains Mono",monospace;border:1px solid var(--line-2);border-radius:999px;padding:4px 11px;color:var(--muted)}
 .ln-link{margin-top:18px;font-size:15px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
-.ln.img .ln-n,.ln.img h3{color:#fff}
-.ln.img p{color:rgba(255,255,255,.84)}
-.ln.img .ln-out li{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08)}
-.ln.img .vt{color:#fff;border-color:rgba(255,255,255,.55)}
-.ln.img .ln-link{color:#fff}
+.lnc.img .ln-n,.lnc.img h3{color:#fff}
+.lnc.img p{color:rgba(255,255,255,.84)}
+.lnc.img .ln-out li{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08)}
+.lnc.img .vt{color:#fff;border-color:rgba(255,255,255,.55)}
+.lnc.img .ln-link{color:#fff}
 .ln-d .ln-ic,.ln-d .ln-n{color:#7C8A0A}
 .ln-e .ln-ic,.ln-e .ln-n{color:#4A7FDB}
 .lin-more{margin-top:28px;color:var(--muted)}
@@ -790,6 +795,89 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .foot-legal a{text-decoration:underline;text-decoration-color:var(--line-2)}
 @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
 
+/* ---------- hero (versión oscura: escenario de microscopio) ----------
+   Fondo negro como el de las imágenes confocales; el azul y celeste CONICET quedan como acento. */
+.hero{background:#03060a;color:#fff;align-items:center;padding:clamp(96px,13vh,132px) 0 clamp(176px,22vh,210px)}
+.hero::before{display:none}
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;will-change:transform}
+.hm{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity 2s ease}
+.hm.on{opacity:.9;animation:kb 9s linear forwards}
+.hm:nth-of-type(2n).on{animation-name:kb2}
+.hero.paused .hm{animation-play-state:paused}
+@keyframes kb{from{transform:scale(1.05) translate3d(0,0,0)}to{transform:scale(1.2) translate3d(-2.5%,-1.5%,0)}}
+@keyframes kb2{from{transform:scale(1.2) translate3d(2%,1%,0)}to{transform:scale(1.05) translate3d(0,0,0)}}
+.hero-shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(3,6,10,.96) 0%,rgba(3,6,10,.82) 34%,rgba(3,6,10,.35) 62%,rgba(3,6,10,.55) 100%),
+  linear-gradient(180deg,rgba(3,6,10,.55) 0%,transparent 22%,transparent 62%,rgba(3,6,10,.95) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,5vw,80px);align-items:center}
+.hero-copy{max-width:none}
+.hero-kicker{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.72);margin-bottom:clamp(18px,3vh,34px);letter-spacing:.06em}
+.hero-kicker .sep{opacity:.35}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--celeste);box-shadow:0 0 0 0 rgba(39,173,227,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(39,173,227,0)}100%{box-shadow:0 0 0 0 rgba(39,173,227,0)}}
+.hero .hero-logo{margin-bottom:clamp(14px,2.4vh,28px);gap:14px}
+.hero .hero-logo img{width:46px}
+.hero .hero-logo span{font-size:30px;color:#fff;letter-spacing:.04em}
+.hero h1{font-size:clamp(40px,min(5.3vw,8.8vh),92px);font-weight:600;letter-spacing:-.05em;line-height:.94;color:#fff}
+.hero h1 .accent{background:linear-gradient(92deg,#27ADE3 0%,#8fdcff 55%,#27ADE3 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s ease-in-out infinite}
+@keyframes shine{50%{background-position:100% 0}}
+.hero-lead{margin-top:clamp(18px,3vh,32px);max-width:54ch;font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:rgba(255,255,255,.74)}
+.hero-lead strong{color:#fff;font-weight:600}
+.hero-name{margin-top:14px;color:rgba(255,255,255,.5);font-size:11.5px;letter-spacing:.04em;max-width:60ch}
+.hero .hero-ctas{margin-top:clamp(22px,3.6vh,38px)}
+.btn-glass{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn-glass:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5)}
+
+/* collage de tres tarjetas en capas */
+.hero-collage{position:relative;height:clamp(400px,60vh,640px)}
+.hc{--mx:0px;--my:0px;--sy:0px;position:absolute;margin:0;border-radius:18px;overflow:hidden;background:#0b1118;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px -30px rgba(0,0,0,.85);transform:translate3d(var(--mx),calc(var(--my) + var(--sy)),0);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.hc img,.hc video{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.hc:hover img,.hc:hover video{transform:scale(1.05)}
+.hc figcaption{position:absolute;left:12px;bottom:12px;white-space:nowrap;max-width:calc(100% - 24px);overflow:hidden;text-overflow:ellipsis;padding:6px 11px;border-radius:999px;font-size:11px;letter-spacing:.04em;color:#fff;background:rgba(3,6,10,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14)}
+.hc-1{width:44%;aspect-ratio:9/16;left:0;top:6%;z-index:1}
+.hc-2{width:46%;aspect-ratio:3/4;right:0;top:0;z-index:2}
+.hc-3{width:40%;aspect-ratio:4/5;right:16%;bottom:0;z-index:3}
+
+/* pie del hero: qué imagen se ve y avance del carrusel */
+.hero-meta{position:absolute;left:0;right:0;bottom:132px;z-index:3}
+.hero-meta .wrap{display:flex;align-items:center;gap:28px}
+.hm-label{color:rgba(255,255,255,.62);display:flex;align-items:baseline;gap:8px}
+.hm-count{color:#fff;font-size:14px}
+.hm-of{margin-right:10px;opacity:.6}
+.hm-bars{display:flex;gap:6px}
+.hm-bars i{position:relative;width:34px;height:2px;background:rgba(255,255,255,.18);overflow:hidden;border-radius:2px}
+.hm-bars i::after{content:"";position:absolute;inset:0;background:var(--celeste);transform:scaleX(0);transform-origin:left}
+.hm-bars i.done::after{transform:scaleX(1)}
+.hm-bars i.run::after{animation:bar 7s linear forwards}
+.hero.paused .hm-bars i.run::after{animation-play-state:paused}
+@keyframes bar{to{transform:scaleX(1)}}
+.hero-scroll{margin-left:auto;display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.62)}
+.hero-scroll .line{position:relative;width:1px;height:38px;background:rgba(255,255,255,.18);overflow:hidden}
+.hero-scroll .line::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:#fff;animation:drop 2.2s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes drop{to{top:100%}}
+
+/* franja institucional sobre fondo oscuro: logos en blanco */
+.hero .hero-inst{background:rgba(3,6,10,.55);border-top:1px solid rgba(255,255,255,.1)}
+.hero .hero-inst a+a{border-left-color:rgba(255,255,255,.1)}
+.hero .hero-inst .lg{filter:grayscale(1) brightness(0) invert(1);opacity:.7}
+.hero .hero-inst a:hover .lg{opacity:1}
+
+/* barra de navegación mientras está sobre el hero oscuro */
+.nav:not(.scrolled) .nav-links>a,.nav:not(.scrolled) .dd>a{color:rgba(255,255,255,.78)}
+.nav:not(.scrolled) .nav-links>a:hover,.nav:not(.scrolled) .nav-links>a.on,.nav:not(.scrolled) .dd>a:hover,.nav:not(.scrolled) .dd>a.on{color:#fff;background:rgba(255,255,255,.1)}
+.nav:not(.scrolled) .burger{border-color:rgba(255,255,255,.35);color:#fff}
+
+@media (max-width:980px){
+  .hero{padding:118px 0 190px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-collage{height:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .hc{position:relative;inset:auto;width:auto!important;aspect-ratio:3/4!important;transform:none}
+  .hero-shade{background:linear-gradient(180deg,rgba(3,6,10,.7) 0%,rgba(3,6,10,.82) 50%,rgba(3,6,10,.96) 100%)}
+  .hero-meta{bottom:104px}
+  .hero-scroll{display:none}
+}
+@media (max-width:768px){.hero{padding-bottom:170px}.hero-meta{bottom:96px}.hm-label{font-size:11px}.hc figcaption{font-size:9.5px;left:6px;bottom:6px;padding:4px 7px}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -849,7 +937,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <a href="#produccion" aria-haspopup="true">Innovación<i class="ph ph-caret-down"></i></a>
         <div class="dd-menu">
           <a href="#produccion">Patentes</a>
-          <a href="#pegasus">Del laboratorio al paciente</a>
+          <a href="#pegasus">El camino de Pegasus</a>
           <a href="#startups">Startups</a>
         </div>
       </div>
@@ -877,7 +965,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="msub"><a href="#unite">Unite al IMMCA</a></div>
   <a href="#biblioteca">Producción científica</a>
   <a href="#produccion">Innovación</a>
-  <div class="msub"><a href="#produccion">Patentes</a><a href="#pegasus">Del laboratorio al paciente</a><a href="#startups">Startups</a></div>
+  <div class="msub"><a href="#produccion">Patentes</a><a href="#pegasus">El camino de Pegasus</a><a href="#startups">Startups</a></div>
   <a href="#servicios">Servicios tecnológicos</a>
   <a href="#sociedad">Sociedad</a>
   <div class="msub"><a href="#divulgacion">Divulgación</a><a href="#noticias">Noticias</a></div>
@@ -888,25 +976,58 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-  <canvas id="helix" aria-hidden="true"></canvas>
-  <div class="wrap">
+  <!-- fondo: microscopía confocal del instituto, con fundido y zoom lento -->
+  <div class="hero-media" aria-hidden="true">
+    <img class="hm on" src="img/hero-confocal-1.jpg" alt="" fetchpriority="high">
+    <img class="hm" src="img/hero-confocal-2.jpg" alt="" loading="lazy">
+    <img class="hm" src="img/hero-confocal-3.jpg" alt="" loading="lazy">
+    <img class="hm" src="img/hero-confocal-4.jpg" alt="" loading="lazy">
+    <div class="hero-shade"></div>
+  </div>
+
+  <div class="wrap hero-grid">
     <div class="hero-copy">
+      <p class="hero-kicker mono hero-el"><span class="pulse"></span>CONICET · UNT · SIPROSA<span class="sep">/</span>Tucumán, Argentina</p>
       <div class="hero-logo hero-el" aria-hidden="true">
         <img src="logos/immca-isotipo.svg" alt="">
         <span>IMMCA</span>
       </div>
       <h1>
-        <span class="ln"><span>Instituto de Medicina Molecular</span></span>
-        <span class="ln"><span>y <span class="accent">Celular Aplicada</span></span></span>
+        <span class="ln"><span>Medicina traslacional</span></span>
+        <span class="ln"><span><span class="accent">en Tucumán.</span></span></span>
       </h1>
-      <p class="hero-deps hero-el">CONICET, Universidad Nacional de Tucumán <span class="br">y Sistema Provincial de Salud de Tucumán</span></p>
+      <p class="hero-lead hero-el"><strong>Un instituto joven, creado en 2018</strong> para reunir dentro del sistema de salud a científicos básicos, investigadores clínicos y profesionales de la salud alrededor de preguntas comunes. Nuestro foco: las enfermedades neurodegenerativas.</p>
+      <p class="hero-name mono hero-el">Instituto de Investigaciones en Medicina Molecular y Celular Aplicada del Bicentenario</p>
       <div class="hero-ctas hero-el">
         <a href="#investigacion" class="btn btn-primary mag">Líneas de investigación <i class="ph ph-arrow-right"></i></a>
-        <a href="#biblioteca" class="btn btn-ghost mag">Nuestros papers</a>
+        <a href="#instituto" class="btn btn-glass mag">Conocé el instituto</a>
       </div>
     </div>
+
+    <div class="hero-collage">
+      <figure class="hc hc-1" data-depth="0.7">
+        <video src="video/fachada.mp4" poster="video/fachada.jpg" autoplay muted loop playsinline aria-label="Fachada del IMMCA con su cartel institucional"></video>
+        <figcaption class="mono">Sede · Dorrego 1080</figcaption>
+      </figure>
+      <figure class="hc hc-2" data-depth="1.1">
+        <img src="img/equipo-montana.jpg" alt="Integrantes del IMMCA con guardapolvo junto a la bandera argentina, en los cerros">
+        <figcaption class="mono">Nuestro equipo</figcaption>
+      </figure>
+      <figure class="hc hc-3" data-depth="1.6">
+        <img src="img/campo-llamas.jpg" alt="Llamas en un corral de piedra, con los cerros y las nubes de fondo">
+        <figcaption class="mono">Trabajo de campo</figcaption>
+      </figure>
+    </div>
   </div>
+
+  <div class="hero-meta hero-el" aria-hidden="true">
+    <div class="wrap">
+      <div class="hm-label mono"><span class="hm-count">01</span><span class="hm-of">/ 04</span>Microscopía confocal en el IMMCA</div>
+      <div class="hm-bars"><i></i><i></i><i></i><i></i></div>
+      <a class="hero-scroll mono" href="#instituto" tabindex="-1">Explorá<span class="line"></span></a>
+    </div>
+  </div>
+
   <div class="hero-inst hero-el" aria-label="Instituciones de las que depende el IMMCA">
     <div class="wrap">
       <a href="https://www.conicet.gov.ar" target="_blank" rel="noopener"><img class="lg lg-conicet" src="logos/conicet.svg" alt="CONICET"></a>
@@ -924,10 +1045,10 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <p class="lead">Investigación básica, hospital público y empresa trabajando en el mismo edificio.</p>
     </div>
     <div class="stats">
-      <div class="stat rv"><b data-count="2018">2018</b><span>Inauguración del edificio propio, el 23 de mayo</span></div>
-      <div class="stat rv"><b data-count="7">7</b><span>Investigadores de la carrera del CONICET</span></div>
+      <div class="stat rv"><b data-count="29">29</b><span>Artículos científicos publicados desde 2018</span></div>
+      <div class="stat rv"><b data-count="2">2</b><span>Patentes internacionales licenciadas</span></div>
+      <div class="stat rv"><b data-count="15">15</b><span>Investigadores, becarios y personal de apoyo</span></div>
       <div class="stat rv"><b data-count="13">13</b><span>Países de los coautores internacionales</span></div>
-      <div class="stat rv"><b data-count="175">175</b><span>Apariciones en medios desde 2020</span></div>
     </div>
     <dl class="ficha rv">
       <div class="ficha-name"><dt class="mono">Nombre oficial</dt><dd>Instituto de Investigaciones en Medicina Molecular y Celular Aplicada del Bicentenario</dd></div>
@@ -948,7 +1069,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <!-- MANIFIESTO -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <p class="manifesto" id="manifesto">Empezamos como un pequeño grupo de biofísica de proteínas. Cuando nuestro trabajo empezó a tocar a pacientes con enfermedad de Parkinson, nos unimos a los neurólogos del Hospital Padilla. De esa alianza nació un instituto dedicado a la medicina traslacional: de la molécula al paciente.</p>
+    <p class="manifesto" id="manifesto">Empezamos como un pequeño grupo de biofísica de proteínas. Cuando nuestras preguntas se acercaron a la enfermedad de Parkinson, nos unimos a los neurólogos del Hospital Padilla. De esa alianza nació un instituto dedicado a la medicina traslacional.</p>
   </div>
 </section>
 
@@ -970,7 +1091,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <article class="tl-item">
         <div class="tl-year">2010</div>
         <h3>De la física a la neurobiología</h3>
-        <p>El grupo aplica la biofísica al Parkinson. Los resultados empiezan a tocar pacientes y se suman los neurólogos del Hospital Padilla.</p>
+        <p>El grupo aplica la biofísica al estudio del Parkinson y se suman los neurólogos del Hospital Padilla.</p>
       </article>
       <article class="tl-item">
         <div class="tl-year">2016</div>
@@ -1010,12 +1131,12 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <article class="tl-item">
         <div class="tl-year">2026</div>
         <h3>Estudios GLP en EE.&nbsp;UU.</h3>
-        <p>Laboratorios regulatorios de Estados Unidos confirman los resultados obtenidos en el IMMCA.</p>
+        <p>Pegasus entra en estudios preclínicos regulatorios en laboratorios de Estados Unidos.</p>
       </article>
       <article class="tl-item key">
         <div class="tl-year">2027</div>
-        <h3>Ante la FDA</h3>
-        <p>Presentación del dossier para pedir el primer ensayo clínico en personas. Será el primer desarrollo con SIPROSA como cotitular ante la FDA.</p>
+        <h3>Próximo objetivo</h3>
+        <p>Si los estudios preclínicos lo respaldan, preparar la presentación ante la FDA para pedir los primeros estudios en personas.</p>
       </article>
     </div>
   </div>
@@ -1055,7 +1176,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
           <p>Socios privados como SkyBio financian el desarrollo y llevan los resultados al mercado: nuevos fármacos y métodos diagnósticos.</p>
         </article>
       </div>
-      <p class="pi-center rv"><span>Medicina traslacional</span> de la molécula al paciente</p>
+      <p class="pi-center rv"><span>Medicina traslacional</span> ciencia, salud y empresa trabajando juntas</p>
     </div>
 
     <div class="pi-block">
@@ -1248,17 +1369,22 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
     </div>
 
+    <figure class="lin-film rv">
+      <video src="video/agregacion.mp4" poster="video/agregacion.jpg" muted loop playsinline preload="none" aria-label="Simulación de cadenas de alfa-sinucleína que se apilan hasta formar una fibra"></video>
+      <figcaption><span class="mono">Simulación</span>Así se agrega la alfa-sinucleína, la proteína clave del Parkinson: una cadena se pliega, se le suman otras y juntas forman una fibra.</figcaption>
+    </figure>
+
     <div class="lin">
-      <article class="ln ln-a img rv" id="farmacos">
+      <article class="lnc ln-a img rv" id="farmacos">
         <div class="bg"><img src="img/cuerpo-lewy.jpg" alt="Cuerpo de Lewy teñido para alfa-sinucleína en una neurona" loading="lazy"></div>
         <div class="ln-top"><span class="ln-n">01</span><span class="vt">VT</span></div>
         <h3>Nuevos fármacos para el Parkinson</h3>
-        <p>Rediseñamos las tetraciclinas, antibióticos conocidos, para que protejan a las neuronas sin actuar como antibióticos. Así nació Pegasus, un candidato a fármaco que va camino a la FDA.</p>
+        <p>Rediseñamos las tetraciclinas, antibióticos conocidos, para que protejan a las neuronas sin actuar como antibióticos. Así nació Pegasus, un candidato a fármaco que hoy está en etapa preclínica.</p>
         <ul class="ln-out"><li>Patente WO2022167954</li><li>Licencia a SkyBio</li><li>FCEN-UBA · ICM/CNRS</li></ul>
         <a class="ln-link" href="#pegasus">Ver el caso Pegasus <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <article class="ln ln-b img rv" id="diagnostico">
+      <article class="lnc ln-b img rv" id="diagnostico">
         <div class="bg"><img src="img/neurona-pc12.jpg" alt="Neurona PC-12 vista con microscopía de fluorescencia multicolor" loading="lazy"></div>
         <div class="ln-top"><span class="ln-n">02</span><span class="vt">VT</span></div>
         <h3>Diagnóstico temprano</h3>
@@ -1267,7 +1393,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <a class="ln-link" href="#startups">Conocé BrinDx <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <article class="ln ln-c img rv" id="ciencia-basica">
+      <article class="lnc ln-c img rv" id="ciencia-basica">
         <div class="bg"><img src="img/celulas-hela.jpg" alt="Células en cultivo con mitocondrias y citoesqueleto marcados" loading="lazy"></div>
         <div class="ln-top"><span class="ln-n">03</span></div>
         <h3>Cómo se enferman las neuronas</h3>
@@ -1275,15 +1401,15 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <ul class="ln-out"><li>Consorcio LARGE-PD</li><li>Modelos celulares y C.&nbsp;elegans</li></ul>
       </article>
 
-      <article class="ln ln-d rv" id="infecciones">
+      <article class="lnc ln-d rv" id="infecciones">
         <i class="ph-thin ph-virus ln-ic"></i>
         <div class="ln-top"><span class="ln-n">04</span><span class="vt">VT</span></div>
         <h3>Infecciones e inmunidad</h3>
-        <p>En la pandemia pusimos el instituto al servicio de la salud pública con un test propio de anticuerpos contra el SARS-CoV-2. Hoy estudiamos el efecto del virus en el cerebro y desarrollamos un kit para dengue.</p>
+        <p>En la pandemia pusimos el instituto al servicio de la salud pública con un test propio de anticuerpos contra el SARS-CoV-2. Hoy estudiamos el efecto del virus en el cerebro.</p>
         <ul class="ln-out"><li>Kit ELISA InmunoCoviTuc</li><li>Ministerio de Salud de Tucumán</li></ul>
       </article>
 
-      <article class="ln ln-e rv" id="proteinas">
+      <article class="lnc ln-e rv" id="proteinas">
         <i class="ph-thin ph-dna ln-ic"></i>
         <div class="ln-top"><span class="ln-n">05</span><span class="vt">VT</span></div>
         <h3>Proteínas y biomateriales</h3>
@@ -1442,7 +1568,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <span class="num mono">Pegasus (DAD9) · prioridad 03/02/2021</span>
         <h3>Un candidato a fármaco para la enfermedad de Parkinson</h3>
         <p>Diseñado y evaluado en el IMMCA tras más de una década de estudio de las bases moleculares de la enfermedad, y sintetizado en la UBA.</p>
-        <span class="status"><i class="ph-fill ph-seal-check"></i>Licenciada a SkyBio LLC, camino a la FDA</span>
+        <span class="status"><i class="ph-fill ph-seal-check"></i>Licenciada a SkyBio LLC · etapa preclínica</span>
         <div class="world">
           <div class="ok"><b>Europa</b><span>Concedida</span></div>
           <div class="ok"><b>EE. UU.</b><span>Concedida</span></div>
@@ -1470,7 +1596,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
           <li><b>2024</b><span>Concedida en Europa, EE. UU. y Japón</span></li>
           <li><b>2025</b><span>Licencia a SkyBio LLC</span></li>
           <li><b>2026</b><span>Estudios preclínicos GLP en EE. UU.</span></li>
-          <li class="next"><b>2027</b><span>Presentación ante la FDA</span></li>
+          <li class="next"><b>Próximo</b><span>Objetivo: presentación ante la FDA</span></li>
         </ol>
       </article>
     </div>
@@ -1482,8 +1608,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <section class="sec" id="pegasus" style="background:var(--bg-2)">
   <div class="wrap pipe">
     <div class="pipe-sticky">
-      <h2 class="rv">Del laboratorio al paciente</h2>
-      <p class="lead rv">Así recorre una idea el camino completo, con un caso real del instituto: el neurofármaco Pegasus.</p>
+      <h2 class="rv">El camino de Pegasus</h2>
+      <p class="lead rv">Así avanza una idea desde el laboratorio hacia la clínica, con nuestro proyecto más avanzado: el candidato a fármaco Pegasus.</p>
       <div class="pipe-fig" aria-hidden="true">
         <img src="img/cuerpo-lewy.jpg" alt="" class="on" data-step="0">
         <img src="img/neurona-pc12.jpg" alt="" data-step="1">
@@ -1505,7 +1631,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="step" data-i="2"><span class="node"></span>
         <h3>Validación preclínica</h3>
-        <p>Ensayos en cultivos celulares y modelos animales en el IMMCA, confirmados en 2026 por estudios GLP en laboratorios de Estados Unidos.</p>
+        <p>Ensayos en cultivos celulares y modelos animales en el IMMCA y, desde 2026, estudios preclínicos regulatorios (GLP) en laboratorios de Estados Unidos.</p>
         <div class="chips"><span class="chip">Modelos celulares</span><span class="chip">Farmacocinética</span></div>
       </div>
       <div class="step" data-i="3"><span class="node"></span>
@@ -1515,8 +1641,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="step" data-i="4"><span class="node"></span>
         <h3>Transferencia y clínica</h3>
-        <p>Licencia a SkyBio LLC, aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública. En 2027, presentación ante la FDA para el primer ensayo en personas.</p>
-        <div class="chips"><span class="chip">SkyBio LLC</span><span class="chip">SIPROSA</span><span class="chip ok">FDA 2027</span></div>
+        <p>Licencia a SkyBio LLC, aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública. El próximo objetivo es presentar ante la FDA el pedido para iniciar estudios en personas.</p>
+        <div class="chips"><span class="chip">SkyBio LLC</span><span class="chip">SIPROSA</span><span class="chip">Próximo objetivo: FDA</span></div>
       </div>
     </div>
   </div>
@@ -1790,71 +1916,33 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const hasGsap = typeof gsap !== 'undefined';
 if (!hasGsap) document.documentElement.classList.add('no-js');
 
-/* ============ Red hexagonal (hero) ============
-   Una trama de hexágonos de tapa plana, la misma forma del isotipo del IMMCA y de los
-   anillos moleculares. Al cargar se arma desde la derecha; una onda de luz la recorre
-   en diagonal y el cursor ilumina las celdas cercanas. */
-const cv = $('#helix'), ctx = cv.getContext('2d');
-let W, H, DPR, cells = [], S = 34, mouse = {x: -9999, y: -9999, active: false}, t0 = performance.now();
-const smooth = (a, b, x) => { const k = Math.min(1, Math.max(0, (x - a) / (b - a))); return k * k * (3 - 2 * k); };
-function layout() {
-  DPR = Math.min(devicePixelRatio || 1, 2);
-  W = cv.clientWidth; H = cv.clientHeight;
-  cv.width = W * DPR; cv.height = H * DPR; ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-  const mobile = W < 768;
-  S = mobile ? 26 : 36;
-  const hs = 1.5 * S, vs = Math.sqrt(3) * S;
-  const ox = W * (mobile ? .5 : .78), oy = H * .45; // origen del armado
-  cells = [];
-  for (let c = -1; c * hs < W + S; c++) for (let r = -1; r * vs < H + vs; r++) {
-    const x = c * hs, y = r * vs + (c % 2 ? vs / 2 : 0);
-    // peso: la trama se desvanece hacia el texto (izquierda) y abajo
-    const w = mobile ? .55 * smooth(-.1, .9, y / H) : smooth(W * .32, W * .66, x) * (1 - .45 * smooth(H * .7, H, y));
-    if (w < .02) continue;
-    cells.push({x, y, w, d: Math.hypot(x - ox, y - oy), node: Math.random() < .09, ph: Math.random() * 6.28, glow: 0});
-  }
-}
-function hexPath(x, y, r) {
-  ctx.beginPath();
-  for (let k = 0; k < 6; k++) { const an = Math.PI / 3 * k; const px = x + r * Math.cos(an), py = y + r * Math.sin(an); k ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
-  ctx.closePath();
-}
-function frame(now) {
-  const t = reduce ? 30 : Math.max(0, (now - t0) / 1000);
-  ctx.clearRect(0, 0, W, H);
-  const reach = t * 620; // frente del armado, en px
-  for (const c of cells) {
-    const born = smooth(c.d - 140, c.d, reach);
-    if (born <= 0) continue;
-    // onda diagonal que recorre la red
-    const wave = Math.pow(.5 + .5 * Math.sin((c.x * .55 + c.y) / 240 - t * 1.05), 6);
-    // cursor
-    let m = 0;
-    if (mouse.active && !reduce) { const d = Math.hypot(c.x - mouse.x, c.y - mouse.y); m = Math.pow(Math.max(0, 1 - d / 230), 2); }
-    c.glow += (m - c.glow) * .12;
-    const g = c.glow, w = c.w * born;
-    const r = S * (.86 + .1 * g) * (.6 + .4 * born);
-    hexPath(c.x, c.y, r);
-    if (wave > .02 || g > .02) { ctx.fillStyle = `rgba(39,173,227,${(.1 * wave + .2 * g) * w})`; ctx.fill(); }
-    ctx.lineWidth = 1 + g * .8;
-    ctx.strokeStyle = `rgba(0,114,187,${(.13 + .38 * wave + .6 * g) * w})`;
-    ctx.stroke();
-    if (c.node) {
-      const pulse = .5 + .5 * Math.sin(t * 1.6 + c.ph);
-      ctx.fillStyle = g > .15 ? `rgba(240,170,0,${(.55 + .4 * g) * w})` : `rgba(0,114,187,${(.25 + .35 * pulse + .3 * wave) * w})`;
-      ctx.beginPath(); ctx.arc(c.x, c.y, 2 + 1.2 * pulse + 2 * g, 0, 7); ctx.fill();
-    }
-  }
-  if (!reduce && heroVisible) requestAnimationFrame(frame);
-}
-let heroVisible = true;
-layout();
-addEventListener('resize', () => { layout(); if (reduce) requestAnimationFrame(frame); });
+/* ============ Hero: microscopía en movimiento y collage con profundidad ============
+   Las imágenes confocales del instituto se suceden con fundido y un zoom lento; la barra
+   inferior marca cuál se ve. Las tarjetas del collage se desplazan con el cursor según
+   su profundidad (data-depth) y, más abajo, con el scroll. */
 const hero = $('.hero');
-hero.addEventListener('pointermove', e => { const b = cv.getBoundingClientRect(); mouse.x = e.clientX - b.left; mouse.y = e.clientY - b.top; mouse.active = true; });
-hero.addEventListener('pointerleave', () => { mouse.active = false; });
-new IntersectionObserver(([en]) => { const was = heroVisible; heroVisible = en.isIntersecting; if (heroVisible && !was && !reduce) requestAnimationFrame(frame); }).observe(hero);
-requestAnimationFrame(frame);
+const heroSlides = $$('.hm', hero), heroBars = $$('.hm-bars i', hero), heroCount = $('.hm-count', hero);
+const SLIDE_MS = 7000;
+let si = 0, slideTimer = null;
+function showSlide(i) {
+  heroSlides.forEach((s, k) => s.classList.toggle('on', k === i));
+  heroBars.forEach((b, k) => { b.classList.toggle('done', k < i); b.classList.remove('run'); if (k === i) { void b.offsetWidth; b.classList.add('run'); } });
+  if (heroCount) heroCount.textContent = String(i + 1).padStart(2, '0');
+}
+function startSlides() { if (reduce || slideTimer) return; slideTimer = setInterval(() => { si = (si + 1) % heroSlides.length; showSlide(si); }, SLIDE_MS); }
+function stopSlides() { clearInterval(slideTimer); slideTimer = null; }
+showSlide(0); startSlides();
+// fuera de pantalla no hace falta animar nada
+new IntersectionObserver(([en]) => { hero.classList.toggle('paused', !en.isIntersecting); en.isIntersecting ? startSlides() : stopSlides(); }).observe(hero);
+
+const heroCards = $$('.hc', hero);
+if (!reduce && matchMedia('(hover: hover)').matches) {
+  hero.addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    heroCards.forEach(c => { const d = +c.dataset.depth || 1; c.style.setProperty('--mx', (x * d * -28).toFixed(1) + 'px'); c.style.setProperty('--my', (y * d * -20).toFixed(1) + 'px'); });
+  });
+  hero.addEventListener('pointerleave', () => heroCards.forEach(c => { c.style.setProperty('--mx', '0px'); c.style.setProperty('--my', '0px'); }));
+}
 
 /* ============ Menú móvil ============ */
 const mm = $('#mmenu'), burger = $('#burger');
@@ -1976,9 +2064,18 @@ else {
        .to('.pre-bar i', {scaleX: 1, duration: .9, ease: 'power2.inOut'}, '<.1')
        .to('.pre', {yPercent: -100, duration: 1, ease: 'expo.inOut'}, '+=.1')
        .set('.pre', {display: 'none'});
-  intro.from('.hero h1 .ln>span', {yPercent: 110, duration: 1.2, stagger: .1}, '-=.55')
-       .from('.hero-el', {opacity: 0, y: 20, duration: 1, stagger: .1}, '-=.9');
-  t0 = performance.now() + 900; // la red se arma cuando cae el telón
+  intro.from('.hero-media', {opacity: 0, scale: 1.08, duration: 2.2, ease: 'power2.out'}, '-=.7')
+       .from('.hero h1 .ln>span', {yPercent: 110, duration: 1.2, stagger: .1}, '<.2')
+       .from('.hero-el', {opacity: 0, y: 20, duration: 1, stagger: .1}, '-=.9')
+       // las tarjetas del collage suben y se acomodan en profundidad
+       .from('.hc', {opacity: 0, y: 90, scale: .92, duration: 1.5, stagger: .14, clearProps: 'transform'}, '-=1.2'); // clearProps: después manda el transform de CSS (cursor y scroll)
+}
+
+/* hero: al bajar, el texto se va y el collage se separa en capas */
+if (!reduce) {
+  gsap.to('.hero-copy', {y: -90, opacity: .15, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
+  $$('.hc').forEach(c => gsap.to(c, {'--sy': `${-(+c.dataset.depth || 1) * 110}px`, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}}));
+  gsap.to('.hero-media', {yPercent: 12, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
 }
 
 /* ============ Títulos: palabras que suben desde una máscara ============ */
@@ -2019,7 +2116,7 @@ $$('[data-count]').forEach(el => {
 
 /* ============ Manifiesto: palabras que se encienden ============ */
 const man = $('#manifesto');
-const key = ['Parkinson,', 'medicina', 'traslacional:', 'paciente.'];
+const key = ['Parkinson,', 'medicina', 'traslacional.'];
 man.innerHTML = man.textContent.trim().split(/\s+/).map(w => `<span class="w${key.includes(w) ? ' hl' : ''}">${w}</span>`).join(' ');
 if (!reduce) gsap.to('#manifesto .w', {opacity: 1, stagger: .1, ease: 'none', scrollTrigger: {trigger: man, start: 'top 80%', end: 'bottom 45%', scrub: true}});
 
@@ -2099,7 +2196,7 @@ sform.addEventListener('submit', e => {
 });
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */
-const vids = $$('.reel video, .soc-vid video');
+const vids = $$('.reel video, .soc-vid video, .lin-film video');
 const vio = new IntersectionObserver(ens => ens.forEach(en => {
   const v = en.target;
   if (en.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; if (!reduce) v.play().catch(() => {}); }
