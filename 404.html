@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada | IMMCA</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/logos/immca-isotipo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400&family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--text:#121417;--muted:#575C63;--accent:#0072BB;--line:rgba(17,17,17,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;display:grid;place-items:center;background:var(--bg);color:var(--text);font-family:"Instrument Sans",system-ui,sans-serif;padding:24px 16px;
+  background-image:radial-gradient(40vw 40vw at 85% 10%,rgba(39,173,227,.16),transparent 70%),radial-gradient(30vw 30vw at 10% 90%,rgba(0,114,187,.10),transparent 70%)}
+main{max-width:560px;text-align:center}
+.iso{width:96px;height:auto;margin:0 auto 28px;display:block;overflow:visible}
+.iso path{transform-box:fill-box;transform-origin:center;animation:drift 4s ease-in-out infinite alternate}
+.iso path:nth-child(1){--dx:-6px;--dy:-4px}
+.iso path:nth-child(2){--dx:6px;--dy:-4px;animation-delay:.3s}
+.iso path:nth-child(3){--dx:0;--dy:7px;animation-delay:.6s}
+@keyframes drift{to{transform:translate(var(--dx),var(--dy))}}
+.code{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent);letter-spacing:.04em}
+h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.03em;line-height:1.08;margin:12px 0 14px}
+p{color:var(--muted);font-size:17px;line-height:1.55}
+a.btn{display:inline-flex;align-items:center;gap:8px;margin-top:30px;height:50px;padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition:background .3s}
+a.btn:hover{background:#121417}
+a.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.iso path{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <svg class="iso" viewBox="-100 -86.6 200 173.2" aria-hidden="true"><path fill="#ED1C24" d="M-50 -86.6H-3.5L-76.75 40.3L-100 0Z"/><path fill="#730A0E" d="M3.5 -86.6H50L100 0L76.75 40.3Z"/><path fill="#400404" d="M-73 46.7H73L50 86.6H-50Z"/></svg>
+  <p class="code">Error 404</p>
+  <h1>Esta página no existe</h1>
+  <p>Puede que el enlace esté mal escrito o que la página se haya movido. Todo el contenido del instituto está en la página principal.</p>
+  <a class="btn" href="/">Ir al inicio del IMMCA</a>
+</main>
+</body>
+</html>

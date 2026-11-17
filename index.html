@@ -114,7 +114,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:14px}
 .nav .brand{transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.nav:not(.brand-on) .brand{opacity:0;transform:translateY(-6px);pointer-events:none}
+.nav:not(.brand-on) .brand:not(:focus-visible){opacity:0;transform:translateY(-6px);pointer-events:none}
 .brand-iso{width:34px;height:auto;flex-shrink:0;transition:transform .8s var(--ease)}
 .brand:hover .brand-iso{transform:rotate(-120deg)}
 .brand-word{font-family:"Fira Sans",sans-serif;font-weight:400;font-size:25px;letter-spacing:.01em;line-height:1;color:#3E0A0D}
@@ -323,7 +323,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .member .role{color:var(--text)}
 .member .deg{color:var(--muted)}
 .member .go{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:all .4s var(--ease)}
-.member:hover .go{background:var(--accent-btn);color:var(--accent-ink);border-color:var(--accent-btn);transform:rotate(-45deg)}
+.member:hover .go,.member:focus-visible .go{background:var(--accent-btn);color:var(--accent-ink);border-color:var(--accent-btn)}
 .team-more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .team-more div{padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2)}
 .team-more b{display:block;font-size:20px;font-weight:600;margin-bottom:6px}
@@ -498,6 +498,20 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .cinfo small{display:block;color:var(--muted);font-size:13px;margin-bottom:2px}
 .cinfo a:hover{color:var(--accent)}
 @media (max-width:900px){.contact{grid-template-columns:1fr}}
+
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.cform .full{grid-column:1/-1}
+.field{display:grid;gap:8px}
+.field label{font-size:14px;font-weight:600}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line-2);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+.field textarea{resize:vertical;min-height:120px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.field .err{display:none;color:#B42318;font-size:13.5px}
+.field.bad input,.field.bad textarea{border-color:#B42318}
+.field.bad .err{display:block}
+.cform-foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cform-foot .hint{color:var(--muted);font-size:14px}
+@media (max-width:640px){.cform{grid-template-columns:1fr}}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
@@ -807,7 +821,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="dir-figs">
         <div class="rv"><b data-count="52">52</b><span>artículos en revistas internacionales</span></div>
-        <div class="rv"><b data-count="3">3</b><span>patentes, dos licenciadas</span></div>
+        <div class="rv"><b data-count="3">3</b><span>patentes como inventora en toda su carrera</span></div>
         <div class="rv"><b data-count="9">9</b><span>tesis doctorales dirigidas</span></div>
         <div class="rv"><b>+<span data-count="30">30</span></b><span>becarios e investigadores formados</span></div>
       </div>
@@ -865,18 +879,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Las personas detrás de cada resultado</h2>
+      <p class="lead rv">Cada nombre lleva a su ficha oficial en CONICET, con sus temas, proyectos y producción.</p>
     </div>
     <figure class="photo-wide clip" id="teamphoto">
       <img src="img/equipo-laboratorio.jpg" alt="Integrantes del IMMCA con guardapolvo en el laboratorio de cultivo del instituto" loading="lazy">
     </figure>
     <div class="team">
-      <a class="member rv" href="https://orcid.org/0000-0003-3504-7952" target="_blank" rel="noopener"><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go"><i class="ph ph-arrow-right"></i></span></a>
-      <div class="member rv"><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
-      <div class="member rv"><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
-      <div class="member rv"><h3>Silvina Analía Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
-      <div class="member rv"><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
-      <div class="member rv"><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
-      <div class="member rv"><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go"><i class="ph ph-arrow-right"></i></span></div>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener" aria-label="Rosana Chehín, ficha en CONICET"><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener" aria-label="César Luis Ávila, ficha en CONICET"><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/16251" target="_blank" rel="noopener" aria-label="Esteban Vera Pingitore, ficha en CONICET"><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/analia-silvina-chaves" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/sergio-benjamin-socias" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/p/diego-ploper" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/325889" target="_blank" rel="noopener" aria-label="Rodrigo Tomás Grau, ficha en CONICET"><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
     </div>
     <div class="team-more">
       <div class="rv"><b>Becarios</b><span>Doctorales y posdoctorales del CONICET, la Agencia I+D+i y la UNT.</span></div>
@@ -1052,13 +1067,16 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="news-arrows"><button id="nprev" aria-label="Anterior"><i class="ph ph-arrow-left"></i></button><button id="nnext" aria-label="Siguiente"><i class="ph ph-arrow-right"></i></button></div>
   </div>
   <div class="news-scroller" id="news">
-    <article class="news"><time class="mono">11 abr 2024</time><h3>Día Mundial del Parkinson</h3><p>Qué sabemos hoy de la enfermedad y en qué está trabajando el instituto para diagnosticarla antes.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news feat has-img"><div class="news-img"><img src="img/mencion-diputados-diploma.jpg" alt="Diploma de la Mención de Honor de la Cámara de Diputados al IMMCA" loading="lazy"></div><time class="mono">15 nov 2022</time><h3>Mención de Honor de la Cámara de Diputados</h3><p>Reconocimiento al IMMCA por su aporte a la ciencia y a la innovación, y por su compromiso con la salud pública durante la pandemia de COVID-19.</p></article>
-    <article class="news"><time class="mono">12 may 2022</time><h3>Defensa de tesis de María Belén Machín</h3><p>Nuevos métodos diagnósticos para enfermedades neurodegenerativas.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono">18 mar 2021</time><h3>InmunoCoviTuc</h3><p>El instituto en el estudio de la respuesta inmune al SARS-CoV-2 en Tucumán.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono">10 jun 2020</time><h3>Un modelo exitoso de vinculación tecnológica</h3><p>La directora presentó el caso del IMMCA: triple dependencia y articulación con el sector privado.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono">10 may 2020</time><h3>Biocatalizadores para mejorar el vino</h3><p>Fibras amiloides para eliminar uretanos en vinos de exportación.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono">14 mar 2019</time><h3>Visita del Embajador de Francia</h3><p>La cooperación con equipos franceses en Parkinson y Alzheimer, en primera persona.</p><a class="more" href="https://immca.conicet.gov.ar/categoria/noticias/" target="_blank" rel="noopener">Leer nota <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2025">2025</time><h3>El Ministerio de Salud aprueba la licencia de Pegasus</h3><p>La Resolución 1204/SPS/25 aprueba el convenio con SkyBio LLC y reconoce al IMMCA como lugar del desarrollo.</p><a class="more" href="https://msptucuman.gov.ar/wordpress/wp-content/uploads/2026/01/1204-SPS-25.pdf" target="_blank" rel="noopener">Leer en el Ministerio <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-05-09">9 may 2024</time><h3>Patentan una nueva molécula para combatir el Parkinson</h3><p>Pegasus, diseñada en el IMMCA junto a la UBA y SkyBio, mostró en estudios preclínicos mejorar los síntomas y proteger a las neuronas.</p><a class="more" href="https://www.conicet.gov.ar/patentan-una-nueva-molecula-para-combatir-el-parkinson/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-04-13">13 abr 2024</time><h3>Día Mundial del Parkinson</h3><p>Qué sabemos hoy de la enfermedad y en qué trabaja el instituto para diagnosticarla antes.</p><a class="more" href="https://immca.conicet.gov.ar/11-de-abril-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news feat has-img"><div class="news-img"><img src="img/mencion-diputados-diploma.jpg" alt="Diploma de la Mención de Honor de la Cámara de Diputados al IMMCA" loading="lazy"></div><time class="mono" datetime="2022-11-15">15 nov 2022</time><h3>Mención de Honor de la Cámara de Diputados</h3><p>Reconocimiento al IMMCA por su aporte a la ciencia y a la innovación, y por su compromiso con la salud pública durante la pandemia de COVID-19.</p></article>
+    <article class="news"><time class="mono" datetime="2022-05-12">12 may 2022</time><h3>Defensa de tesis de María Belén Machín</h3><p>Nuevos métodos diagnósticos para enfermedades neurodegenerativas.</p><a class="more" href="https://immca.conicet.gov.ar/defensa-de-tesis-de-maria-belen-machin/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2022-03-02">2 mar 2022</time><h3>La historia de InmunoCoviTuc</h3><p>Un test serológico desarrollado en Tucumán que tuvo grandes resultados durante la pandemia.</p><a class="more" href="https://www.conicet.gov.ar/la-historia-de-inmunocovituc-un-test-que-tuvo-grandes-resultados/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2021-09-02">2 sep 2021</time><h3>Anticuerpos de la Sputnik V, al menos seis meses</h3><p>Un trabajo con participación del IMMCA confirmó la duración de la respuesta tras la vacunación.</p><a class="more" href="https://www.conicet.gov.ar/un-nuevo-trabajo-confirma-la-duracion-de-los-anticuerpos-producidos-por-la-vacuna-sputnik-v-hasta-al-menos-seis-meses-despues-de-la-inoculacion/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2020-06-10">10 jun 2020</time><h3>Un modelo exitoso de vinculación tecnológica</h3><p>La directora presentó el caso del IMMCA: triple dependencia y articulación con el sector privado.</p><a class="more" href="https://immca.conicet.gov.ar/la-unt-expone-un-modelo-exitoso-de-vinculacion-tecnologica/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2020-05-10">10 may 2020</time><h3>Biocatalizadores para mejorar el vino</h3><p>Fibras amiloides para eliminar uretanos en vinos de exportación.</p><a class="more" href="https://immca.conicet.gov.ar/biocatalizadores-para-mejorar-el-vino/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2019-03-14">14 mar 2019</time><h3>Visita del Embajador de Francia</h3><p>La cooperación con equipos franceses en Parkinson y Alzheimer.</p><a class="more" href="https://immca.conicet.gov.ar/visita-al-immca-del-embajador-de-francia/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
   </div>
 </section>
 
@@ -1068,6 +1086,13 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div>
       <h2 class="rv">Investiguemos <span class="accent">juntos</span>.</h2>
       <p class="lead rv" style="margin-top:28px">Colaboraciones científicas, servicios, becas o prensa: escribinos o acercate al instituto.</p>
+      <form class="cform rv" id="cform" data-email="" novalidate hidden>
+        <div class="field"><label for="cf-nombre">Nombre y apellido</label><input id="cf-nombre" name="nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
+        <div class="field"><label for="cf-mail">Correo electrónico</label><input id="cf-mail" name="mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
+        <div class="field"><label for="cf-motivo">Motivo</label><select id="cf-motivo" name="motivo"><option>Colaboración científica</option><option>Servicios</option><option>Becas y doctorado</option><option>Prensa</option><option>Otro</option></select></div>
+        <div class="field full"><label for="cf-msg">Mensaje</label><textarea id="cf-msg" name="mensaje" rows="5" required></textarea><small class="err">Contanos en qué podemos ayudarte.</small></div>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar mensaje <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con el mensaje listo para enviar.</p></div>
+      </form>
     </div>
     <div class="contact-card rv">
       <div class="cinfo"><i class="ph ph-map-pin"></i><div><small>Dirección</small><a href="https://www.google.com/maps/search/?api=1&query=Pasaje+Dorrego+1080+San+Miguel+de+Tucuman" target="_blank" rel="noopener">Pasaje Cnel. Manuel Dorrego 1080<br>San Miguel de Tucumán (4000), Argentina</a></div></div>
@@ -1380,6 +1405,24 @@ bars.forEach(b => { const v = +b.dataset.v; b.dataset.tip = `${v} apariciones, $
 if (!reduce) gsap.from('#hbars .bar i', {scaleX: 0, duration: 1.3, stagger: .08, ease: 'expo.out', scrollTrigger: {trigger: '#hbars', start: 'top 85%', once: true}});
 if (!reduce) gsap.from('.press span', {opacity: 0, y: 14, duration: .7, stagger: .04, ease: 'power3.out', scrollTrigger: {trigger: '.press', start: 'top 90%', once: true}});
 if (!reduce) gsap.from('.countries li', {opacity: 0, scale: .85, duration: .6, stagger: .045, ease: 'back.out(2)', scrollTrigger: {trigger: '.countries', start: 'top 90%', once: true}});
+
+/* ============ Formulario de contacto ============ */
+const cf = $('#cform');
+if (cf.dataset.email) {
+  cf.hidden = false;
+  cf.addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+    [['cf-nombre', v => v.trim().length > 1], ['cf-mail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)], ['cf-msg', v => v.trim().length > 4]].forEach(([id, test]) => {
+      const f = $('#' + id), good = test(f.value); f.closest('.field').classList.toggle('bad', !good); f.setAttribute('aria-invalid', !good); if (!good && ok) { f.focus(); ok = false; }
+    });
+    if (!ok) return;
+    const body = `${$('#cf-msg').value}\n\n${$('#cf-nombre').value}\n${$('#cf-mail').value}`;
+    location.href = `mailto:${cf.dataset.email}?subject=${encodeURIComponent('[Web IMMCA] ' + $('#cf-motivo').value)}&body=${encodeURIComponent(body)}`;
+  });
+}
+// los servicios llevan al formulario con el motivo ya elegido
+$$('.svc-row').forEach(r => r.addEventListener('click', () => { if (!cf.hidden) { $('#cf-motivo').value = 'Servicios'; if (!$('#cf-msg').value) $('#cf-msg').value = `Consulta por el servicio de ${r.querySelector('h3').textContent.toLowerCase()}.`; } }));
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */
 const vids = $$('.reel video');
