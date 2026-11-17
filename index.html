@@ -356,6 +356,68 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .world div.ok span{color:var(--accent)}
 @media (max-width:900px){.patents{grid-template-columns:1fr}.pat.big{grid-row:auto}.world{grid-template-columns:repeat(2,1fr)}}
 
+.pat-fda{background:var(--bg-2)}
+.fda{list-style:none;display:grid;gap:0;margin-top:4px;position:relative}
+.fda li{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line);align-items:baseline}
+.fda li b{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:14px;color:var(--accent)}
+.fda li span{font-size:16px}
+.fda li.next b{color:var(--text)}
+.fda li.next span{font-weight:600}
+.pat-note{display:flex;gap:10px;align-items:flex-start;margin-top:22px;color:var(--muted);font-size:15px;max-width:80ch}
+.pat-note i{color:var(--accent);font-size:19px;margin-top:2px}
+.patents .pat:nth-child(3){grid-column:2}
+@media (max-width:900px){.patents .pat:nth-child(3){grid-column:auto}}
+.world{grid-template-columns:repeat(4,1fr)}
+@media (max-width:520px){.world{grid-template-columns:repeat(2,1fr)}}
+
+/* cifras de producción */
+.prod{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:16px;margin-bottom:56px}
+.prod-fig,.prod-world{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--bg)}
+.prod-fig b{display:block;font-size:clamp(56px,6vw,88px);font-weight:500;letter-spacing:-.05em;line-height:.95;color:var(--accent)}
+.prod-fig p{color:var(--muted);margin-top:14px;font-size:16px;max-width:34ch}
+.prod-world{background:linear-gradient(160deg,#E3F3FC,var(--bg) 70%)}
+.prod-world .mono{color:var(--accent);margin-bottom:16px}
+.countries{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.countries li{border:1px solid var(--line-2);border-radius:999px;padding:6px 13px;font-size:14px;background:var(--bg)}
+@media (max-width:900px){.prod{grid-template-columns:1fr}}
+
+/* ---------- divulgación ---------- */
+.div-grid{display:grid;grid-template-columns:5fr 7fr;gap:16px}
+.div-hero,.div-chart{border:1px solid var(--line);border-radius:var(--r);background:var(--bg);padding:32px}
+.mega{display:block;font-size:clamp(96px,12vw,180px);font-weight:500;letter-spacing:-.06em;line-height:.85;color:var(--accent)}
+.div-hero>p{color:var(--muted);margin-top:18px;max-width:36ch}
+.zero{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.zero b{font-size:64px;font-weight:500;letter-spacing:-.05em;line-height:1}
+.zero span{color:var(--muted);font-size:15px;line-height:1.45}
+.div-chart figcaption{font-weight:600;font-size:18px;margin-bottom:22px}
+.hbars{list-style:none;display:grid;gap:2px}
+.hbars li{display:grid;grid-template-columns:170px 1fr 44px;gap:14px;align-items:center;height:40px;position:relative;cursor:default}
+.hbars .lbl{font-size:15px;color:var(--text)}
+.hbars .bar{height:16px;display:block}
+.hbars .bar i{display:block;height:100%;width:var(--w,0%);background:var(--accent-bright);border-radius:0 4px 4px 0;transform-origin:left;transition:filter .2s}
+.hbars .val{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--text);text-align:right;font-variant-numeric:tabular-nums}
+.hbars li:hover .bar i{filter:brightness(.82)}
+.hbars li::after{content:attr(data-tip);position:absolute;left:184px;top:-30px;background:var(--text);color:#fff;font-size:13px;padding:5px 10px;border-radius:8px;white-space:nowrap;opacity:0;transform:translateY(4px);transition:all .2s;pointer-events:none;z-index:2}
+.hbars li:hover::after{opacity:1;transform:none}
+.src{color:var(--dim);margin-top:18px}
+@media (max-width:900px){.div-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.hbars li{grid-template-columns:120px 1fr 32px;gap:10px}.hbars .lbl{font-size:13px}.hbars li::after{left:0}}
+.press{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;padding:44px 0 8px;font-size:clamp(18px,2vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--dim)}
+.press span{transition:color .3s}
+.press span:hover{color:var(--accent)}
+.ig{display:grid;grid-template-columns:5fr 7fr;gap:16px;margin-top:48px;align-items:stretch}
+.ig-head{border-radius:var(--r);padding:32px;color:#fff;background:linear-gradient(140deg,#0072BB,#0695D6 55%,#27ADE3)}
+.ig-head h3{display:flex;gap:10px;align-items:center;font-size:24px}
+.ig-head p{margin-top:14px;color:rgba(255,255,255,.88);max-width:42ch}
+.ig-head .social{color:#fff;border-color:rgba(255,255,255,.45);margin-top:24px}
+.ig-head .social:hover{background:#fff;color:var(--accent);border-color:#fff}
+.ig-figs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ig-figs div{border:1px solid var(--line);border-radius:var(--r);background:var(--bg);padding:26px;display:flex;flex-direction:column;justify-content:flex-end}
+.ig-figs b{font-size:clamp(34px,3.4vw,50px);font-weight:500;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.ig-figs span{margin-top:8px;font-weight:600}
+.ig-figs small{color:var(--muted);font-size:13.5px;margin-top:6px}
+@media (max-width:900px){.ig{grid-template-columns:1fr}.ig-figs{grid-template-columns:1fr}}
+
 /* ---------- biblioteca ---------- */
 .lib-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
 .search{flex:1 1 320px;position:relative}
@@ -447,8 +509,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .social{display:inline-flex;align-items:center;gap:10px;margin-top:22px;height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-2);font-size:15px;transition:all .3s}
 .social i{font-size:20px}
 .social:hover{border-color:var(--accent);color:var(--accent)}
-.foot-big{font-size:clamp(80px,21vw,330px);font-weight:700;letter-spacing:.06em;line-height:.8;margin-top:72px;color:transparent;-webkit-text-stroke:1px var(--line-2);user-select:none;white-space:nowrap;display:flex;justify-content:space-between}
-.foot-big span{display:inline-block}
+.foot-lock{display:flex;align-items:center;justify-content:center;gap:clamp(20px,3vw,44px);margin-top:88px;padding:56px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.foot-iso{width:clamp(96px,14vw,190px);height:auto;overflow:visible}
+.foot-word{display:block;font-family:"Fira Sans",sans-serif;font-weight:400;font-size:clamp(64px,11vw,168px);line-height:.9;letter-spacing:.01em;color:#3E0A0D}
+.foot-long{display:block;font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:300;text-transform:uppercase;font-size:clamp(14px,1.6vw,24px);line-height:1.2;color:#3E0A0D;margin-top:14px;letter-spacing:.01em}
+@media (max-width:520px){.foot-lock{flex-direction:column;text-align:center}}
 .foot-legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:32px;color:var(--dim);font-size:13px}
 .foot-legal a{text-decoration:underline;text-decoration-color:var(--line-2)}
 @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
@@ -495,6 +560,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <a href="#equipo">Equipo</a>
       <a href="#produccion">Producción</a>
       <a href="#servicios">Servicios</a>
+      <a href="#divulgacion">Divulgación</a>
       <a href="#noticias">Noticias</a>
     </nav>
     <a href="#contacto" class="btn btn-primary nav-cta mag">Contacto</a>
@@ -510,6 +576,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <a href="#equipo">Equipo</a>
   <a href="#produccion">Producción</a>
   <a href="#servicios">Servicios</a>
+  <a href="#divulgacion">Divulgación</a>
   <a href="#noticias">Noticias</a>
   <a href="#contacto">Contacto</a>
 </div>
@@ -556,8 +623,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="stats">
       <div class="stat rv"><b data-count="2018">2018</b><span>Inauguración del edificio propio, el 23 de mayo</span></div>
       <div class="stat rv"><b data-count="7">7</b><span>Investigadores de la carrera del CONICET</span></div>
-      <div class="stat rv"><b data-count="3">3</b><span>Familias de patentes internacionales</span></div>
-      <div class="stat rv"><b data-count="8">8</b><span>Jurisdicciones con fase nacional de patente</span></div>
+      <div class="stat rv"><b data-count="13">13</b><span>Países de los coautores internacionales</span></div>
+      <div class="stat rv"><b data-count="175">175</b><span>Apariciones en medios desde 2020</span></div>
     </div>
     <figure class="band" id="band">
       <div class="band-img"><img src="img/laboratorio-equipo.jpg" alt="Investigadores, becarios y personal del IMMCA en el laboratorio de producción de proteínas" loading="lazy"></div>
@@ -619,14 +686,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <p>Convenio Aristaeus: un dispositivo de diagnóstico basado en derivados de tetraciclinas que se unen a un biomarcador de la enfermedad.</p>
       </article>
       <article class="tl-item key">
-        <div class="tl-year">Hoy</div>
-        <h3>Patentes aprobadas</h3>
-        <p>La patente del transportador está aprobada en Estados Unidos y la Unión Europea, con licencia exclusiva a SkyBio LLC.</p>
+        <div class="tl-year">2024</div>
+        <h3>Pegasus, concedida</h3>
+        <p>La patente del candidato a fármaco para Parkinson se concede en Europa, Estados Unidos y Japón. En 2025 se aprueba su licencia a SkyBio LLC.</p>
       </article>
       <article class="tl-item">
         <div class="tl-year">2026</div>
-        <h3>Hacia la clínica</h3>
-        <p>Nanoencapsulación dirigida y biomarcadores exosomales para llevar el neurofármaco Pegasus a su aplicación clínica.</p>
+        <h3>Estudios GLP en EE.&nbsp;UU.</h3>
+        <p>Laboratorios regulatorios de Estados Unidos confirman los resultados obtenidos en el IMMCA.</p>
+      </article>
+      <article class="tl-item key">
+        <div class="tl-year">2027</div>
+        <h3>Ante la FDA</h3>
+        <p>Presentación del dossier para pedir el primer ensayo clínico en personas. Será el primer desarrollo con SIPROSA como cotitular ante la FDA.</p>
       </article>
     </div>
   </div>
@@ -697,18 +769,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="step" data-i="2"><span class="node"></span>
         <h3>Validación preclínica</h3>
-        <p>Ensayos en cultivos celulares y modelos animales, en colaboración con grupos de Francia y Brasil.</p>
+        <p>Ensayos en cultivos celulares y modelos animales en el IMMCA, confirmados en 2026 por estudios GLP en laboratorios de Estados Unidos.</p>
         <div class="chips"><span class="chip">Modelos celulares</span><span class="chip">Farmacocinética</span></div>
       </div>
       <div class="step" data-i="3"><span class="node"></span>
         <h3>Protección intelectual</h3>
-        <p>Patente PCT con fases nacionales en ocho jurisdicciones.</p>
-        <div class="chips"><span class="chip ok">EE.UU. aprobada</span><span class="chip ok">Unión Europea aprobada</span><span class="chip">Japón</span><span class="chip">Corea</span><span class="chip">Australia</span><span class="chip">Brasil</span><span class="chip">Canadá</span><span class="chip">Israel</span></div>
+        <p>Patente internacional concedida en Europa, Estados Unidos y Japón, y en trámite en otras ocho oficinas.</p>
+        <div class="chips"><span class="chip ok">Europa</span><span class="chip ok">EE. UU.</span><span class="chip ok">Japón</span><span class="chip">Argentina</span><span class="chip">Australia</span><span class="chip">Brasil</span><span class="chip">Canadá</span><span class="chip">China</span><span class="chip">Corea</span><span class="chip">Israel</span><span class="chip">México</span></div>
       </div>
       <div class="step" data-i="4"><span class="node"></span>
-        <h3>Transferencia</h3>
-        <p>Licencia exclusiva a SkyBio LLC y nuevas tecnologías diagnósticas transferidas al sistema público de salud.</p>
-        <div class="chips"><span class="chip">SkyBio LLC</span><span class="chip">SIPROSA</span></div>
+        <h3>Transferencia y clínica</h3>
+        <p>Licencia a SkyBio LLC, aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública. En 2027, presentación ante la FDA para el primer ensayo en personas.</p>
+        <div class="chips"><span class="chip">SkyBio LLC</span><span class="chip">SIPROSA</span><span class="chip ok">FDA 2027</span></div>
       </div>
     </div>
   </div>
@@ -831,38 +903,46 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Conocimiento que se patenta</h2>
-      <p class="lead rv">Tres familias de patentes nacidas en el instituto. Dos de ellas ya están licenciadas a la industria.</p>
+      <p class="lead rv">Dos familias de patentes internacionales, con SIPROSA como cotitular junto a CONICET, UNT, UBA y SkyBio LLC.</p>
     </div>
     <div class="patents">
       <article class="pat big rv">
-        <span class="num mono">WO2023214381A1 · PCT</span>
-        <h3>Transportador químicamente acoplado de drogas bioactivas al sistema nervioso central</h3>
-        <p>La base del neurofármaco Pegasus. Lleva moléculas poco hidrofóbicas, como la dopamina, a través de la barrera hematoencefálica.</p>
-        <span class="status"><i class="ph-fill ph-seal-check"></i>Licencia exclusiva a SkyBio LLC</span>
+        <span class="num mono">Pegasus (DAD9) · prioridad 03/02/2021</span>
+        <h3>Un candidato a fármaco para la enfermedad de Parkinson</h3>
+        <p>Diseñado y evaluado en el IMMCA tras más de una década de estudio de las bases moleculares de la enfermedad, y sintetizado en la UBA.</p>
+        <span class="status"><i class="ph-fill ph-seal-check"></i>Licenciada a SkyBio LLC, camino a la FDA</span>
         <div class="world">
-          <div class="ok"><b>EE.UU.</b><span>Aprobada</span></div>
-          <div class="ok"><b>U. Europea</b><span>Aprobada</span></div>
-          <div><b>Japón</b><span>En trámite</span></div>
-          <div><b>Corea</b><span>En trámite</span></div>
+          <div class="ok"><b>Europa</b><span>Concedida</span></div>
+          <div class="ok"><b>EE. UU.</b><span>Concedida</span></div>
+          <div class="ok"><b>Japón</b><span>Concedida</span></div>
+          <div><b>Argentina</b><span>En trámite</span></div>
           <div><b>Australia</b><span>En trámite</span></div>
           <div><b>Brasil</b><span>En trámite</span></div>
           <div><b>Canadá</b><span>En trámite</span></div>
+          <div><b>China</b><span>En trámite</span></div>
+          <div><b>Corea</b><span>En trámite</span></div>
           <div><b>Israel</b><span>En trámite</span></div>
+          <div><b>México</b><span>En trámite</span></div>
         </div>
       </article>
       <article class="pat rv">
-        <span class="num mono">PCT/IB2023/054715</span>
-        <h3>Dispositivo para detectar biomarcadores de enfermedades neurodegenerativas</h3>
-        <p>Biosensor basado en derivados de tetraciclinas que se unen a la alfa-sinucleína agregada.</p>
-        <span class="status"><i class="ph-fill ph-seal-check"></i>Licencia exclusiva a SkyBio LLC</span>
+        <span class="num mono">Aristaeus · WO 2023/214381</span>
+        <h3>Diagnóstico temprano de enfermedades neurodegenerativas</h3>
+        <p>Biosensor basado en derivados de tetraciclinas que se unen a la alfa-sinucleína agregada. Fases nacionales en 10 jurisdicciones.</p>
+        <span class="status"><i class="ph-fill ph-seal-check"></i>Acción oficial favorable en EE. UU., noviembre de 2026</span>
       </article>
-      <article class="pat rv">
-        <span class="num mono">AR087037A1 · WO2014006560A2</span>
-        <h3>Fibras amiloides de lisozima como soporte de biocatalizadores</h3>
-        <p>Base de proyectos de desarrollo tecnológico para biodiesel y para eliminar uretanos en vinos de exportación.</p>
-        <span class="status" style="color:var(--muted)"><i class="ph ph-handshake"></i>Disponible para licenciar</span>
+      <article class="pat pat-fda rv">
+        <span class="num mono">Pegasus, paso a paso</span>
+        <ol class="fda">
+          <li><b>2021</b><span>Solicitud de patente</span></li>
+          <li><b>2024</b><span>Concedida en Europa, EE. UU. y Japón</span></li>
+          <li><b>2025</b><span>Licencia a SkyBio LLC</span></li>
+          <li><b>2026</b><span>Estudios preclínicos GLP en EE. UU.</span></li>
+          <li class="next"><b>2027</b><span>Presentación ante la FDA</span></li>
+        </ol>
       </article>
     </div>
+    <p class="pat-note rv"><i class="ph ph-info"></i>Según Google Patents, SIPROSA es el único organismo público de salud del país con patentes concedidas en el exterior, y las dos son del IMMCA.</p>
   </div>
 </section>
 
@@ -872,6 +952,22 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="sec-head">
       <h2 class="rv">Biblioteca de publicaciones</h2>
       <p class="lead rv">Tres décadas de trabajos del grupo. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
+    </div>
+    <div class="prod">
+      <div class="prod-fig rv">
+        <b><span data-count="67">67</span>%</b>
+        <p>de todos los artículos de SIPROSA en PubMed son del IMMCA: 30 de 45, en solo siete años de existencia.</p>
+      </div>
+      <div class="prod-fig rv">
+        <b><span data-count="83">83</span>%</b>
+        <p>de los artículos de SIPROSA con coautoría internacional son del IMMCA: 20 de 24.</p>
+      </div>
+      <div class="prod-world rv">
+        <p class="mono">Coautores en 13 países</p>
+        <ul class="countries">
+          <li>Francia</li><li>Brasil</li><li>España</li><li>Alemania</li><li>Reino Unido</li><li>Italia</li><li>Estados Unidos</li><li>Chile</li><li>Perú</li><li>Colombia</li><li>México</li><li>Puerto Rico</li><li>Guadalupe</li>
+        </ul>
+      </div>
     </div>
     <div class="lib-tools rv">
       <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
@@ -898,6 +994,54 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
   <div class="svc-float" id="svcfloat" aria-hidden="true">
     <img src="img/mesada.jpg" alt=""><img src="img/campana.jpg" alt=""><img src="img/microscopia-confocal.jpg" alt=""><img src="img/fachada-equipo.jpg" alt="">
+  </div>
+</section>
+
+<!-- DIVULGACIÓN -->
+<section class="sec" id="divulgacion" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">La ciencia pública, contada a la gente</h2>
+      <p class="lead rv">Lo que se investiga en un laboratorio público se financia con el esfuerzo de toda la sociedad. Contarlo es parte del trabajo.</p>
+    </div>
+    <div class="div-grid">
+      <div class="div-hero rv">
+        <b class="mega"><span data-count="175">175</span></b>
+        <p>apariciones en medios desde 2020, en prensa local y nacional, TV, radio, redes y canales oficiales.</p>
+        <div class="zero">
+          <b>0</b>
+          <span>personas dedicadas a comunicación. Cada nota la cuentan los propios investigadores y becarios.</span>
+        </div>
+      </div>
+      <figure class="div-chart rv" aria-labelledby="mediaTitle">
+        <figcaption id="mediaTitle">Dónde apareció el IMMCA, 2020 a 2026</figcaption>
+        <ul class="hbars" id="hbars">
+          <li data-v="51"><span class="lbl">Medios nacionales</span><span class="bar"><i></i></span><span class="val">51</span></li>
+          <li data-v="37"><span class="lbl">Medios de Tucumán</span><span class="bar"><i></i></span><span class="val">37</span></li>
+          <li data-v="27"><span class="lbl">TV, radio y video</span><span class="bar"><i></i></span><span class="val">27</span></li>
+          <li data-v="27"><span class="lbl">CONICET y UNT</span><span class="bar"><i></i></span><span class="val">27</span></li>
+          <li data-v="19"><span class="lbl">Redes sociales</span><span class="bar"><i></i></span><span class="val">19</span></li>
+          <li data-v="12"><span class="lbl">Gobierno y Ministerio</span><span class="bar"><i></i></span><span class="val">12</span></li>
+          <li data-v="2"><span class="lbl">Internacional</span><span class="bar"><i></i></span><span class="val">2</span></li>
+        </ul>
+        <p class="src mono">Fuente: archivo de prensa del IMMCA y búsqueda web, noviembre de 2026.</p>
+      </figure>
+    </div>
+    <div class="press rv" aria-label="Algunos de los medios que publicaron al IMMCA">
+      <span>La Nación</span><span>Clarín</span><span>Infobae</span><span>Página/12</span><span>Télam</span><span>TN</span><span>Radio Nacional</span><span>La Gaceta</span><span>Tiempo Argentino</span><span>El Destape</span><span>Río Negro</span><span>Diario de Cuyo</span><span>La Capital</span><span>IntraMed</span><span>Canal 10</span><span>CONICET</span>
+    </div>
+    <div class="ig">
+      <div class="ig-head rv">
+        <h3><i class="ph ph-instagram-logo"></i>@immca.lab en los últimos 90 días</h3>
+        <p>La cuenta más seguida entre los institutos CONICET del NOA, hecha por los propios becarios con dos publicaciones por semana.</p>
+        <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>Seguir en Instagram</a>
+      </div>
+      <div class="ig-figs">
+        <div class="rv"><b data-count="160068">160.068</b><span>reproducciones</span><small>+50,6% frente al trimestre anterior</small></div>
+        <div class="rv"><b data-count="32094">32.094</b><span>personas alcanzadas</span><small>9 veces la cantidad de seguidores</small></div>
+        <div class="rv"><b data-count="3506">3.506</b><span>seguidores</span><small>+11,8% en 90 días</small></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -940,15 +1084,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="brand"><img class="brand-iso" src="logos/immca-isotipo.svg" alt="" style="width:44px"><span class="brand-word" style="font-size:32px">IMMCA</span></div>
-        <p class="brand-long">Instituto de Investigación en Medicina<br>Molecular y Celular Aplicada</p>
+        <h4>IMMCA</h4>
+        <p style="color:var(--muted);font-size:15px;max-width:34ch">Unidad ejecutora de CONICET, Universidad Nacional de Tucumán y Sistema Provincial de Salud de Tucumán.</p>
         <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>@immca.lab</a>
       </div>
       <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
       <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#investigacion">Proyectos</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
       <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li><li><a href="https://immca.conicet.gov.ar/wp-admin/" target="_blank" rel="noopener">Intranet</a></li></ul></div>
     </div>
-    <div class="foot-big" aria-hidden="true"><span>I</span><span>M</span><span>M</span><span>C</span><span>A</span></div>
+    <div class="foot-lock" aria-hidden="true">
+      <svg class="foot-iso" viewBox="-100 -86.6 200 173.2"><path class="b1" fill="#ED1C24" d="M-50 -86.6H-3.5L-76.75 40.3L-100 0Z"/><path class="b2" fill="#730A0E" d="M3.5 -86.6H50L100 0L76.75 40.3Z"/><path class="b3" fill="#400404" d="M-73 46.7H73L50 86.6H-50Z"/></svg>
+      <div><span class="foot-word">IMMCA</span><span class="foot-long">Instituto de Investigación en Medicina<br>Molecular y Celular Aplicada</span></div>
+    </div>
     <div class="foot-legal">
       <span>Contenidos bajo licencia Creative Commons Reconocimiento 2.5 Argentina.</span>
       <span>Imágenes de microscopía: <a href="https://commons.wikimedia.org/wiki/File:Multicolor_fluorescence_image_of_a_living_PC-12_cell.jpeg" target="_blank" rel="noopener">PC-12</a>, <a href="https://commons.wikimedia.org/wiki/File:Multicolor_fluorescence_image_of_living_HeLa_cells.jpg" target="_blank" rel="noopener">HeLa</a>, <a href="https://commons.wikimedia.org/wiki/File:Confocal_micrograph_of_stained_HeLa.jpg" target="_blank" rel="noopener">HeLa confocal</a> (CC BY-SA 4.0) y <a href="https://commons.wikimedia.org/wiki/File:Lewy_Body_alphaSynuclein.jpg" target="_blank" rel="noopener">cuerpo de Lewy</a> (CC BY-SA 3.0), Wikimedia Commons.</span>
@@ -1172,7 +1319,11 @@ if (!reduce) {
   gsap.fromTo('#portrait img', {scale: 1.2}, {scale: 1, ease: 'none', scrollTrigger: {trigger: '#portrait', start: 'top bottom', end: 'bottom top', scrub: true}});
   $$('.cell .bg img').forEach(img => gsap.to(img, {yPercent: 8, ease: 'none', scrollTrigger: {trigger: img.closest('.cell'), start: 'top bottom', end: 'bottom top', scrub: true}}));
   gsap.to('.hero .wrap', {yPercent: -18, opacity: .2, ease: 'none', scrollTrigger: {trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true}});
-  gsap.from('.foot-big span', {yPercent: 60, opacity: 0, stagger: .07, duration: 1.2, ease: 'expo.out', scrollTrigger: {trigger: '.foot-big', start: 'top 95%'}});
+  const fl = gsap.timeline({scrollTrigger: {trigger: '.foot-lock', start: 'top 85%', once: true}, defaults: {ease: 'expo.out', duration: 1.2}});
+  fl.from('.foot-iso .b1', {x: -60, y: -30, rotate: -20, opacity: 0, transformOrigin: '50% 50%'})
+    .from('.foot-iso .b2', {x: 60, y: -30, rotate: 20, opacity: 0, transformOrigin: '50% 50%'}, .08)
+    .from('.foot-iso .b3', {y: 60, opacity: 0}, .16)
+    .from('.foot-word, .foot-long', {x: -24, opacity: 0, stagger: .1}, .3);
 }
 
 /* ============ Contadores ============ */
@@ -1181,7 +1332,8 @@ $$('[data-count]').forEach(el => {
   if (reduce) return;
   const o = {v: startVal};
   el.textContent = startVal;
-  ScrollTrigger.create({trigger: el, start: 'top 90%', once: true, onEnter: () => gsap.to(o, {v: end, duration: 2, ease: 'power3.out', onUpdate: () => el.textContent = Math.round(o.v)})});
+  const fmt = v => end >= 3000 ? Math.round(v).toLocaleString('es-AR') : Math.round(v);
+  ScrollTrigger.create({trigger: el, start: 'top 90%', once: true, onEnter: () => gsap.to(o, {v: end, duration: 2, ease: 'power3.out', onUpdate: () => el.textContent = fmt(o.v)})});
 });
 
 /* ============ Manifiesto: palabras que se encienden ============ */
@@ -1221,6 +1373,13 @@ if (fine && !reduce) $$('.mag').forEach(b => {
   b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); qx((e.clientX - r.left - r.width / 2) * .25); qy((e.clientY - r.top - r.height / 2) * .35); });
   b.addEventListener('pointerleave', () => { qx(0); qy(0); });
 });
+
+/* ============ Barras de medios ============ */
+const bars = $$('#hbars li'), maxV = Math.max(...bars.map(b => +b.dataset.v)), totV = bars.reduce((a, b) => a + +b.dataset.v, 0);
+bars.forEach(b => { const v = +b.dataset.v; b.dataset.tip = `${v} apariciones, ${Math.round(v / totV * 100)}% del total`; b.querySelector('i').style.setProperty('--w', `${v / maxV * 100}%`); });
+if (!reduce) gsap.from('#hbars .bar i', {scaleX: 0, duration: 1.3, stagger: .08, ease: 'expo.out', scrollTrigger: {trigger: '#hbars', start: 'top 85%', once: true}});
+if (!reduce) gsap.from('.press span', {opacity: 0, y: 14, duration: .7, stagger: .04, ease: 'power3.out', scrollTrigger: {trigger: '.press', start: 'top 90%', once: true}});
+if (!reduce) gsap.from('.countries li', {opacity: 0, scale: .85, duration: .6, stagger: .045, ease: 'back.out(2)', scrollTrigger: {trigger: '.countries', start: 'top 90%', once: true}});
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */
 const vids = $$('.reel video');
