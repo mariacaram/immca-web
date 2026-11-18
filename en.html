@@ -547,6 +547,51 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
   .pg-here{position:static;margin-bottom:8px}
 }
 
+/* impacto desde 2018 */
+.impact{display:grid;grid-template-columns:.8fr 2.2fr;gap:clamp(24px,4vw,64px);padding:clamp(26px,4vw,48px);border-radius:var(--r);background:linear-gradient(135deg,#0b2a45,#0072BB);color:#fff;margin-bottom:20px}
+.impact-lead .kicker{color:#8fdcff}
+.impact-big{display:flex;align-items:baseline;gap:12px;margin:6px 0 14px}
+.impact-big b{font-size:clamp(84px,10vw,140px);font-weight:300;letter-spacing:-.05em;line-height:.9}
+.impact-big span{font-size:clamp(22px,2.2vw,30px);font-weight:500}
+.impact-lead p:not(.impact-big){color:rgba(255,255,255,.8);font-size:17px;max-width:26ch}
+.impact-grid{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;align-content:center}
+.impact-grid b{display:block;font-size:clamp(40px,4.4vw,62px);font-weight:300;letter-spacing:-.04em;line-height:1}
+.impact-grid span{display:block;margin-top:8px;font-size:14.5px;line-height:1.35;color:rgba(255,255,255,.86)}
+.impact-grid small{display:block;margin-top:3px;font-size:12px;color:rgba(255,255,255,.6)}
+.impact-note{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);font-size:16px;color:rgba(255,255,255,.9)}
+.impact-note i{font-size:22px;color:#8fdcff;flex-shrink:0}
+.impact-src{grid-column:1/-1;font-size:11.5px;color:rgba(255,255,255,.6);margin-top:-8px}
+.impact-src a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.prod-world{margin-bottom:48px}
+@media (max-width:980px){.impact{grid-template-columns:1fr}.impact-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* unite al IMMCA: tarjetas de color con números grandes */
+.unite-paths article.up{position:relative;overflow:hidden;isolation:isolate;border:0;color:#fff;padding:30px 28px 30px;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.unite-paths .up-1{background:linear-gradient(155deg,#3cc0ee 0%,#0695D6 100%)}
+.unite-paths .up-2{background:linear-gradient(155deg,#0a86d0 0%,#0060a0 100%)}
+.unite-paths .up-3{background:linear-gradient(155deg,#0d4f84 0%,#0a2540 100%)}
+.unite-paths article.up::after{content:"";position:absolute;right:-30%;bottom:-40%;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);z-index:-1;transition:transform .8s var(--ease)}
+.unite-paths article.up:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(0,60,110,.6)}
+.unite-paths article.up:hover::after{transform:scale(1.25)}
+.up-n{position:absolute;top:-6px;left:18px;font-family:"Instrument Sans",sans-serif;font-size:clamp(120px,12vw,170px);font-weight:200;line-height:1;letter-spacing:-.06em;color:rgba(255,255,255,.3);transition:transform .6s var(--ease)}
+.unite-paths article.up:hover .up-n{transform:translateY(-4px)}
+.up-ic{position:absolute;top:26px;right:26px;font-size:38px;color:rgba(255,255,255,.92)}
+.unite-paths article.up h3{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 10px}
+.unite-paths article.up p{color:rgba(255,255,255,.9);font-size:16px;line-height:1.5}
+.unite-why ul{grid-template-columns:repeat(4,1fr);gap:16px}
+.unite-why li{flex-direction:column;gap:16px;padding:24px;border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line);font-size:15px}
+.unite-why li i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:26px;margin:0;color:#fff;background:var(--accent)}
+.unite-why li:nth-child(2) i{background:var(--celeste)}
+.unite-why li:nth-child(3) i{background:#0a2540}
+.unite-why li:nth-child(4) i{background:var(--sol);color:#3a2a00}
+.unite-why li b{display:block;font-size:17px;margin-bottom:4px}
+.unite-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:8px;padding:22px 26px;border-radius:var(--r);background:var(--accent-soft);border:1px solid rgba(6,149,214,.25)}
+.unite-cta p{font-size:18px;color:var(--text)}
+.unite-cta b{color:var(--accent)}
+@media (max-width:1080px){.unite-why ul{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){.unite-paths article.up{min-height:260px}}
+@media (max-width:560px){.unite-why ul{grid-template-columns:1fr}}
+
 /* consulta de servicios */
 .sq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);margin-top:clamp(56px,7vw,96px);padding:clamp(28px,4vw,48px);border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line);scroll-margin-top:96px}
 .sq-intro h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.025em;margin-bottom:14px}
@@ -1201,7 +1246,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <p class="lead">Basic science, clinical research and partnerships with industry, backed by CONICET, UNT and SIPROSA.</p>
     </div>
     <div class="stats">
-      <div class="stat rv"><b data-count="29">29</b><span>Scientific articles published since 2018</span></div>
+      <div class="stat rv"><b data-count="30">30</b><span>Scientific articles published since 2018</span></div>
       <div class="stat rv"><b data-count="2">2</b><span>Licensed international patents</span></div>
       <div class="stat rv"><b data-count="15">15</b><span>Researchers, fellows and research support staff</span></div>
       <div class="stat rv"><b data-count="13">13</b><span>Countries of our international co-authors</span></div>
@@ -1682,9 +1727,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <p class="lead rv">If you are interested in doing your undergraduate thesis, PhD or postdoc in neuroscience, protein biophysics or health biotechnology, we would like to hear from you.</p>
     </div>
     <div class="unite-paths">
-      <article class="rv"><span class="mono">01</span><h3>Undergraduate thesis</h3><p>For advanced students of Biochemistry, Biotechnology and related degrees. You can apply for CIN or CIUNT undergraduate research scholarships.</p></article>
-      <article class="rv"><span class="mono">02</span><h3>PhD</h3><p>With CONICET doctoral fellowships, including those for strategic topics, through the UNT doctoral program.</p></article>
-      <article class="rv"><span class="mono">03</span><h3>Postdoc</h3><p>With CONICET postdoctoral fellowships, to join an ongoing research line or propose your own.</p></article>
+      <article class="rv up up-1"><span class="up-n">01</span><i class="ph-thin ph-student up-ic"></i><h3>Undergraduate thesis</h3><p>For advanced students of Biochemistry, Biotechnology and related degrees. You can apply for CIN or CIUNT undergraduate research scholarships.</p></article>
+      <article class="rv up up-2"><span class="up-n">02</span><i class="ph-thin ph-graduation-cap up-ic"></i><h3>PhD</h3><p>With CONICET doctoral fellowships, including those for strategic topics, through the UNT doctoral program.</p></article>
+      <article class="rv up up-3"><span class="up-n">03</span><i class="ph-thin ph-flask up-ic"></i><h3>Postdoc</h3><p>With CONICET postdoctoral fellowships, to join an ongoing research line or propose your own.</p></article>
     </div>
     <div class="unite-why">
       <h3 class="rv">Why train here</h3>
@@ -1694,7 +1739,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <li class="rv"><i class="ph ph-globe-hemisphere-west"></i><span><b>International networks.</b> We publish with groups in 13 countries, including the Paris Brain Institute.</span></li>
         <li class="rv"><i class="ph ph-rocket-launch"></i><span><b>From science to industry.</b> Two international patents and the startup BrinDx were born here.</span></li>
       </ul>
-      <a class="btn btn-primary mag rv" href="#contacto" data-motivo="Fellowships and PhD">Contact us <i class="ph ph-arrow-right"></i></a>
+      <div class="unite-cta rv"><p><b>Want to join us?</b> Tell us what you're interested in and we'll guide you.</p><a class="btn btn-primary mag" href="#contacto" data-motivo="Fellowships and PhD">Contact us <i class="ph ph-arrow-right"></i></a></div>
     </div>
   </div>
 </section>
@@ -1706,36 +1751,31 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <h2 class="rv">Scientific output</h2>
       <p class="lead rv">Three decades of work by the group. Open-access papers can be read right here; the rest, on the journal's website.</p>
     </div>
-    <div class="prod">
-      <div class="prod-fig rv">
-        <b><span data-count="67">67</span>%</b>
-        <p>of all SIPROSA articles in PubMed come from IMMCA: 30 of 45, in only seven years of existence.</p>
+    <div class="impact rv">
+      <div class="impact-lead">
+        <span class="mono kicker">Since 2018</span>
+        <p class="impact-big"><b data-count="7">7</b><span>researchers</span></p>
+        <p>We are a small team. This is what we have produced since 2018.</p>
       </div>
-      <div class="prod-fig rv">
-        <b><span data-count="83">83</span>%</b>
-        <p>of SIPROSA articles with international co-authors come from IMMCA: 20 of 24.</p>
-      </div>
-      <div class="prod-world rv">
+      <ul class="impact-grid">
+        <li><b data-count="30">30</b><span>Articles in international journals</span></li>
+        <li><b data-count="4.3" data-dec="1">4.3</b><span>Articles per researcher</span></li>
+        <li><b data-count="3.3" data-dec="1">3.3</b><span>Articles per year</span></li>
+        <li><b data-count="7">7</b><span>Doctoral theses defended</span></li>
+        <li><b data-count="2">2</b><span>Licensed international patents</span><small>Pegasus and Aristaeus</small></li>
+        <li><b data-count="3">3</b><span>R&amp;D agreements</span></li>
+        <li><b data-count="7">7</b><span>STAN technology services</span></li>
+        <li><b data-count="2">2</b><span>Book chapters</span></li>
+      </ul>
+      <p class="impact-note"><i class="ph ph-presentation-chart"></i><span>We also have a regular presence at national and international conferences, with presentations and invited talks.</span></p>
+      <p class="impact-src mono">Averages over 7 researchers and 9 years (2018–2026). <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Institute profile at CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+    </div>
+    <div class="prod-world rv">
         <p class="mono">Co-authors in 13 countries</p>
         <ul class="countries">
           <li>France</li><li>Brazil</li><li>Spain</li><li>Germany</li><li>United Kingdom</li><li>Italy</li><li>United States</li><li>Chile</li><li>Peru</li><li>Colombia</li><li>Mexico</li><li>Puerto Rico</li><li>Guadeloupe</li>
         </ul>
       </div>
-    </div>
-    <div class="cyt rv">
-      <p class="mono">Scientific and technological output since 2018</p>
-      <ul>
-        <li><b>29</b><span>Articles in international journals</span></li>
-        <li><b>2</b><span>Book chapters</span><small>Springer and Tirant lo Blanch</small></li>
-        <li><b>4</b><span>Doctoral theses defended</span></li>
-        <li><b>2</b><span>Licensed international patents</span><small>Pegasus and Aristaeus</small></li>
-        <li><b>10</b><span>R&amp;D projects led</span><small>3 international</small></li>
-        <li><b>31</b><span>Conference presentations</span><small>18 international and 13 national</small></li>
-        <li><b>6</b><span>Invited lectures and symposia</span></li>
-        <li><b>7</b><span>Technology services</span><small>CONICET High-Level Technology Services (STAN)</small></li>
-      </ul>
-      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Institute profile on CONICET (BICyT) <i class="ph ph-arrow-up-right"></i></a>
-    </div>
     <div class="lib-tools rv">
       <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search publications</span><input id="q" type="search" placeholder="Search by title, author or journal" autocomplete="off"></label>
       <div class="filters" id="filters"></div>
@@ -2318,7 +2358,8 @@ $$('[data-count]').forEach(el => {
   if (reduce) return;
   const o = {v: startVal};
   el.textContent = startVal;
-  const fmt = v => end >= 3000 ? Math.round(v).toLocaleString('en-US') : Math.round(v);
+  const dec = +(el.dataset.dec || 0), loc = {en: 'en-US', fr: 'fr-FR'}[document.documentElement.lang] || 'es-AR';
+  const fmt = v => dec ? v.toLocaleString(loc, {minimumFractionDigits: dec, maximumFractionDigits: dec}) : end >= 3000 ? Math.round(v).toLocaleString(loc) : Math.round(v);
   ScrollTrigger.create({trigger: el, start: 'top 90%', once: true, onEnter: () => gsap.to(o, {v: end, duration: 2, ease: 'power3.out', onUpdate: () => el.textContent = fmt(o.v)})});
 });
 
