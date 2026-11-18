@@ -1052,12 +1052,13 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   linear-gradient(180deg,rgba(5,8,12,.5) 0%,rgba(5,8,12,.2) 17%,rgba(5,8,12,.16) 30%,rgba(5,8,12,.64) 43%,rgba(5,8,12,.8) 74%,rgba(5,8,12,.9) 100%)}
 .hero-ue .hm.on{opacity:1}
 .hero-ue .hero-logo{display:none}
-.hero-ue .hero-center{margin-top:clamp(84px,15vh,180px)}
-.hero-ue .hm:first-of-type{object-position:50% 48%}
+.hero-ue .hero-center{margin-top:max(196px,19vh)}
+.hero-ue .hm:first-of-type{object-position:50% -12vw}
 .hero-ue h1,.hero-mission,.hero-ue .hero-deps{text-shadow:0 2px 28px rgba(3,6,10,.72),0 1px 4px rgba(3,6,10,.5)}
 .hero-ue .hm:first-of-type.on{animation-name:kb-suave}
-@keyframes kb-suave{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.06) translate3d(0,0,0)}}
-@media (max-height:860px){.hero-ue .hero-center{margin-top:clamp(40px,7vh,80px)}}
+@keyframes kb-suave{from{transform:scale(1.01) translate3d(0,0,0)}to{transform:scale(1.045) translate3d(0,0,0)}}
+@media (max-width:760px){.hero-ue .hm:first-of-type{object-position:50% 50%}}
+@media (max-height:900px){.hero-ue .hero-meta{display:none}.hero-ue h1{font-size:clamp(28px,3.1vw,44px)}.hero-mission{margin-top:14px;font-size:15.5px;line-height:1.45}.hero-cta{margin-top:18px}.hero-cta .btn{height:46px;font-size:15px}.hero-ue .hero-deps{margin-top:18px;padding-top:14px;font-size:13.5px}.hero-ue-label{margin-top:10px}}
 .hero-center{text-align:center;display:flex;flex-direction:column;align-items:center;max-width:1100px}
 .hero-ue .hero-logo{justify-content:center;margin-bottom:22px;gap:18px}
 .hero-ue .hero-logo img{width:clamp(34px,3vw,42px)}
