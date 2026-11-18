@@ -520,7 +520,9 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .rtq-steps li.now::before{background:var(--sol)}
 .rtq-steps .mono{color:var(--accent);font-size:11.5px}
 .rtq-steps li.now .mono{color:#9a6b00}
-.rtq-steps h4{font-size:17px;font-weight:600;margin:4px 0 4px}
+.rtq-steps h4{font-size:17px;font-weight:600;margin:4px 0 6px}
+.rtq-tag{display:inline-block;margin-bottom:8px;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:11px;letter-spacing:.02em}
+.rtq-steps li.now .rtq-tag{background:rgba(254,194,33,.2);color:#8a6400}
 .rtq-steps p{color:var(--muted);font-size:15px;line-height:1.45}
 @media (max-width:900px){.rtq{grid-template-columns:1fr}}
 
@@ -538,7 +540,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .rtq-vs p{font-size:14px;color:var(--muted);line-height:1.4}
 .rtq-vs .on{background:var(--accent);border-color:var(--accent)}
 .rtq-vs .on .mono{color:#bfe6ff}.rtq-vs .on b{color:#fff}.rtq-vs .on p{color:rgba(255,255,255,.88)}
-.rtq-world h4,.rtq-ours h4{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.rtq-world>h4,.rtq-ours>h4{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .rtq-tl{list-style:none;position:relative;padding-left:22px}
 .rtq-tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--celeste),var(--accent))}
 .rtq-tl li{position:relative;padding-bottom:18px}
@@ -1959,8 +1961,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <ol class="rtq-tl"><li><b>1997</b><p>Se descubre que los cuerpos de Lewy, la lesión típica del Parkinson, están formados por alfa-sinucleína.</p></li><li><b>2016</b><p>Primera detección de alfa-sinucleína agregada en líquido cefalorraquídeo con RT-QuIC.</p></li><li><b>2023</b><p>Se logra detectarla en sangre, un paso clave para un análisis más simple.</p></li><li><b>2024</b><p>La FDA emite una carta de apoyo al ensayo de alfa-sinucleína como biomarcador para investigación.</p></li></ol>
       </div>
       <div class="rtq-ours">
-        <h4 class="mono">Qué hacemos en el IMMCA</h4>
-        <ol class="rtq-steps"><li class="done"><span class="mono">01 · Logrado</span><h4>Proyecto OEA</h4><p>Nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas.</p></li><li class="done"><span class="mono">02 · Logrado</span><h4>Insumo propio</h4><p>La técnica necesita alfa-sinucleína humana recombinante, que cuesta unos USD 1.020 por miligramo. La producimos en el IMMCA: 100 mg por mes.</p></li><li class="now"><span class="mono">03 · En curso</span><h4>Validación en líquido cefalorraquídeo</h4><p>Realizamos la puesta a punto con insumos de producción local y, junto al ANLIS-Malbrán, validamos el ensayo en líquido cefalorraquídeo, la muestra en la que la técnica está más establecida. En paralelo implementamos sistemas de gestión de calidad.</p></li><li class="now"><span class="mono">04 · En curso</span><h4>Exploración en sangre</h4><p>Con un proyecto PIETR del CONICET exploramos aplicar la RT-QuIC a vesículas extracelulares de origen neuronal aisladas de plasma. Es una línea en desarrollo: todavía no es un análisis disponible.</p></li></ol>
+        <h4 class="mono">Implementación y validación de RT-QuIC en el IMMCA</h4>
+        <ol class="rtq-steps"><li class="done"><span class="mono">01</span><h4>Implementación de RT-QuIC</h4><span class="rtq-tag mono">Proyecto OEA · Finalizado</span><p>En el marco de un proyecto de la Organización de los Estados Americanos (OEA), avanzamos en la implementación de RT-QuIC para detectar agregados de alfa-sinucleína con capacidad de siembra, asociados a enfermedades neurodegenerativas.</p></li><li class="done"><span class="mono">02</span><h4>Producción de alfa-sinucleína recombinante</h4><span class="rtq-tag mono">Capacidad instalada</span><p>El IMMCA produce alfa-sinucleína humana recombinante, que se utiliza como sustrato en el ensayo RT-QuIC. La capacidad de producción local es de 100&nbsp;mg mensuales.</p></li><li class="now"><span class="mono">03</span><h4>Validación en líquido cefalorraquídeo</h4><span class="rtq-tag mono">En curso · Con el ANLIS-Malbrán</span><p>Pusimos a punto el ensayo con insumos de producción local. Actualmente avanzamos en su validación en muestras de líquido cefalorraquídeo (LCR) y en la implementación de procedimientos de gestión de calidad.</p></li><li class="now"><span class="mono">04</span><h4>Evaluación exploratoria en plasma</h4><span class="rtq-tag mono">En curso · Proyecto PIETR del CONICET</span><p>Estudiamos la aplicación de RT-QuIC a fracciones de vesículas extracelulares aisladas de plasma y seleccionadas por su posible origen neuronal. El objetivo es determinar si estas fracciones permiten detectar agregados de alfa-sinucleína con capacidad de siembra en muestras de sangre.</p></li></ol>
       </div>
     </div>
 
