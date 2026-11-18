@@ -68,6 +68,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1.04;font-stretch:96%
 .wd>span{display:inline-block;will-change:transform}
 
 /* barra de progreso de lectura */
+img,svg,a,figure{-webkit-user-drag:none;user-drag:none}
 .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:45;background:linear-gradient(90deg,var(--accent),var(--celeste));transform-origin:left;transform:scaleX(0);pointer-events:none}
 
 /* aurora del hero: manchas de color de la paleta CONICET que derivan lento */
@@ -107,7 +108,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .pre-iso{width:clamp(84px,10vw,120px);height:auto;overflow:visible}
 .pre-word{display:flex;color:#3E0A0D;font-family:"Fira Sans",sans-serif;font-size:clamp(40px,6vw,72px);font-weight:400;letter-spacing:.02em;overflow:hidden;line-height:1.1}
 .pre-word span{display:inline-block;transform:translateY(110%)}
-.pre-inst{display:flex;gap:18px;color:var(--dim);font-size:11.5px;letter-spacing:.18em}
+.pre-inst{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;color:var(--muted);font-size:clamp(13px,1.3vw,17px);letter-spacing:.2em;margin-top:4px}
 .pre-inst span{opacity:0}
 .pre-bar{width:min(260px,60vw);height:1px;background:var(--line);overflow:hidden}
 .pre-bar i{display:block;height:100%;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
@@ -2663,10 +2664,26 @@ $$('.cell').forEach(c => c.addEventListener('pointermove', e => {
 
 /* ============ Noticias: arrastre y flechas ============ */
 const ns = $('#news');
-let down = false, sx = 0, sl = 0, moved = false;
-ns.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = ns.scrollLeft; });
-addEventListener('pointerup', () => { down = false; ns.classList.remove('drag'); });
-ns.addEventListener('pointermove', e => { if (!down) return; const d = e.clientX - sx; if (Math.abs(d) > 4) { moved = true; ns.classList.add('drag'); } ns.scrollLeft = sl - d; });
+let down = false, sx = 0, sl = 0, moved = false, dragId = null;
+const soltar = () => { down = false; dragId = null; ns.classList.remove('drag'); };
+ns.addEventListener('dragstart', e => e.preventDefault());
+ns.addEventListener('pointerdown', e => {
+  if (e.pointerType !== 'mouse' || e.button !== 0) return;
+  down = true; moved = false; sx = e.clientX; sl = ns.scrollLeft; dragId = e.pointerId;
+  try { ns.setPointerCapture(e.pointerId); } catch (err) {}
+});
+// se suelta pase lo que pase: al soltar el botón, si el navegador cancela el gesto o si la ventana pierde el foco
+addEventListener('pointerup', soltar);
+addEventListener('pointercancel', soltar);
+addEventListener('blur', soltar);
+ns.addEventListener('lostpointercapture', soltar);
+ns.addEventListener('pointermove', e => {
+  if (!down || (dragId !== null && e.pointerId !== dragId)) return;
+  if (!(e.buttons & 1)) { soltar(); return; }   // si el botón ya no está apretado, no se arrastra
+  const d = e.clientX - sx;
+  if (Math.abs(d) > 4) { moved = true; ns.classList.add('drag'); }
+  ns.scrollLeft = sl - d;
+});
 ns.addEventListener('click', e => { if (moved) { e.preventDefault(); moved = false; } }, true);
 const step = () => (ns.querySelector('.news:nth-child(2)')?.offsetWidth || 340) + 16;
 $('#nprev').addEventListener('click', () => ns.scrollBy({left: -step(), behavior: 'smooth'}));
