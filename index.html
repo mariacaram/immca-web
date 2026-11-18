@@ -1262,6 +1262,20 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 @media (max-width:1000px){.svc-how ol{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.svc-how ol{grid-template-columns:1fr}}
 
+/* enlaces institucionales del CONICET */
+.il-sec{background:var(--bg-2)}
+.il-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.il{display:flex;flex-direction:column;align-items:flex-start;padding:34px 30px 30px;border-radius:var(--r);background:var(--bg);
+  border:1px solid var(--line);box-shadow:0 20px 40px -32px rgba(10,37,64,.4);transition:transform .5s var(--ease),border-color .3s,box-shadow .5s var(--ease)}
+.il:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 28px 52px -30px rgba(10,37,64,.5)}
+.il>i{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:27px;color:var(--accent);background:var(--accent-soft);margin-bottom:20px}
+.il h3{font-size:20px;margin-bottom:10px}
+.il p{color:var(--muted);font-size:15px;line-height:1.55;margin-bottom:20px}
+.il-go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--accent)}
+.il-go i{transition:transform .4s var(--ease)}
+.il:hover .il-go i{transform:translate(3px,-3px)}
+@media (max-width:900px){.il-grid{grid-template-columns:1fr}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -2523,6 +2537,36 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 </section>
 
 </main>
+
+<!-- ENLACES INSTITUCIONALES -->
+<section class="sec il-sec" id="enlaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono kicker rv">Enlaces institucionales</span>
+      <h2 class="rv">Dónde encontrarnos en el CONICET</h2>
+    </div>
+    <div class="il-grid">
+      <a class="il rv" href="https://ri.conicet.gov.ar/" target="_blank" rel="noopener">
+        <i class="ph-thin ph-books"></i>
+        <h3>CONICET Digital</h3>
+        <p>El repositorio institucional del CONICET reúne la producción científica del organismo para su consulta libre y gratuita.</p>
+        <span class="il-go">Ir al repositorio <i class="ph ph-arrow-up-right"></i></span>
+      </a>
+      <a class="il rv" href="https://cifras.conicet.gov.ar/publica/" target="_blank" rel="noopener">
+        <i class="ph-thin ph-chart-bar"></i>
+        <h3>CONICET en cifras</h3>
+        <p>Datos públicos del organismo: personal, becas, proyectos, producción científica y financiamiento, por instituto y por provincia.</p>
+        <span class="il-go">Conocer las cifras <i class="ph ph-arrow-up-right"></i></span>
+      </a>
+      <a class="il rv" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">
+        <i class="ph-thin ph-identification-card"></i>
+        <h3>Ficha del IMMCA</h3>
+        <p>Nuestra ficha oficial en el sistema BICyT: integrantes, líneas de trabajo, producción y proyectos acreditados.</p>
+        <span class="il-go">Ver la ficha <i class="ph ph-arrow-up-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
