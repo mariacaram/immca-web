@@ -1118,6 +1118,17 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .pi-intro .lead{margin-top:28px;font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:var(--text)}
 .pi-intro .pi-text{align-self:end}
 
+/* publicaciones de Instagram con portada propia (no dependen del embed) */
+.ig-card{position:relative;display:block;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:#0a2540;isolation:isolate}
+.ig-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ig-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,20,40,.75));z-index:1}
+.ig-card:hover img{transform:scale(1.05)}
+.ig-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;display:grid;place-items:center;font-size:28px;color:#fff;background:rgba(255,255,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.5);z-index:2;transition:transform .4s var(--ease),background .3s}
+.ig-card:hover .ig-play{transform:scale(1.1);background:var(--accent)}
+.ig-tag{position:absolute;left:16px;right:16px;bottom:14px;display:flex;align-items:center;gap:8px;color:#fff;font-size:14px;font-weight:500;z-index:2}
+.ig-tag i:first-child{font-size:20px}
+.ig-embed .ig-card{border-radius:0}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1779,10 +1790,10 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <p class="lead rv">Además de hacer ciencia, nos divertimos. Somos competitivos, un poco locos y no le tenemos miedo al ridículo: festejos de fin de año, desafíos, bailes y mucho humor. Así somos dentro y fuera del laboratorio.</p>
     </div>
     <div class="vida-grid">
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DSdodqJjZIq/embed/" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DX0A6v6Bw3W/embed/" title="Reel del IMMCA: a veces también nos divertimos entre todos" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DSvlUPfEV84/embed/" title="Reel del IMMCA: festejos de fin de año" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DS3RbUIkeDj/embed/" title="Reel del IMMCA: cerramos el año riéndonos" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DSdodqJjZIq/" target="_blank" rel="noopener" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio"><img src="img/ig/DSdodqJjZIq.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DX0A6v6Bw3W/" target="_blank" rel="noopener" title="Reel del IMMCA: a veces también nos divertimos entre todos"><img src="img/ig/DX0A6v6Bw3W.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DSvlUPfEV84/" target="_blank" rel="noopener" title="Reel del IMMCA: festejos de fin de año"><img src="img/ig/DSvlUPfEV84.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DS3RbUIkeDj/" target="_blank" rel="noopener" title="Reel del IMMCA: cerramos el año riéndonos"><img src="img/ig/DS3RbUIkeDj.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
     </div>
     <a class="social rv" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>Más en @immca.lab</a>
   </div>
@@ -1923,13 +1934,13 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <li class="done">
         <span class="pg-n mono">02</span>
         <h3>Evaluación preclínica</h3>
-        <p>Toxicidad, farmacología de seguridad, farmacocinética y estudios conductuales en <i>C.&nbsp;elegans</i>, ratones, ratas y perros. Formulación lista.</p>
+        <p>Toxicidad, farmacología de seguridad, farmacocinética, interacciones y estudios conductuales en <i>C.&nbsp;elegans</i>, ratones (incluido el modelo A53T), ratas y perros beagle. Formulación probada en todas las especies evaluadas.</p>
       </li>
       <li class="now">
         <span class="pg-here mono"><i class="ph-fill ph-map-pin"></i>Estamos acá</span>
         <span class="pg-n mono">03</span>
         <h3>Preparación clínica</h3>
-        <p>Paquete pre-IND para la FDA completo. Reunión prevista para febrero de 2027.</p>
+        <p>El paquete pre-IND para la FDA está completo, con la reunión prevista para febrero de 2027. Es el paso previo a pedir autorización para los primeros estudios en personas.</p>
       </li>
       <li class="next">
         <span class="pg-n mono">04</span>
@@ -1970,8 +1981,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="step" data-i="3"><span class="node"></span>
         <h3>Evaluación preclínica</h3>
-        <p>Toxicidad aguda y subcrónica, farmacología de seguridad, farmacocinética, interacciones, vía de administración y estudios conductuales, en <i>C.&nbsp;elegans</i>, ratones (incluido un modelo de Parkinson), ratas y perros beagle.</p>
-        <div class="chips"><span class="chip">Laboratorios de EE.&nbsp;UU.</span><span class="chip">Formulación lista</span></div>
+        <p>Toxicidad aguda y subcrónica, farmacología de seguridad, farmacocinética y ADME, interacciones entre fármacos, vía de administración y estudios conductuales, en <i>C.&nbsp;elegans</i>, ratones (incluido el modelo A53T de Parkinson), ratas y perros beagle. Los ensayos se hicieron junto a KeifeRX, la Universidad de Georgetown y Eurofins.</p>
+        <div class="chips"><span class="chip">KeifeRX</span><span class="chip">Georgetown</span><span class="chip">Eurofins</span><span class="chip ok">Formulación lista</span></div>
       </div>
       <div class="step" data-i="4"><span class="node"></span>
         <h3>Protección y transferencia</h3>
@@ -2095,9 +2106,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <p>Frente a la Casa Histórica, pacientes, familias, profesionales de la salud e investigadores nos dimos un abrazo simbólico, con el tango de Bondi Milonguero Tucumán. El lunes siguiente, el Hospital Padilla abrió una jornada con especialistas y propuestas para mejorar la calidad de vida de quienes conviven con Parkinson.</p>
         <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>Seguinos en @immca.lab</a>
       </div>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/p/DXE_h5kjfXa/embed/" title="Publicación de IMMCA: un abrazo que trasciende la ciencia" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">@immca.lab y Bondi Milonguero</figcaption></figure>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DW9Hd2PDmwu/embed/" title="Reel de Hacé Click e IMMCA: Tucumán se viste de rojo" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">Hacé Click e @immca.lab</figcaption></figure>
-      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/p/DW-ScpdDB1x/embed/" title="Publicación de Medios UNT: la UNT se ilumina de rojo" loading="lazy" allowtransparency="true" scrolling="no"></iframe><figcaption class="mono">Medios UNT</figcaption></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/p/DXE_h5kjfXa/" target="_blank" rel="noopener" title="Publicación de IMMCA: un abrazo que trasciende la ciencia"><img src="img/ig/DXE_h5kjfXa.jpg" alt="" loading="lazy"><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a><figcaption class="mono">@immca.lab y Bondi Milonguero</figcaption></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DW9Hd2PDmwu/" target="_blank" rel="noopener" title="Reel de Hacé Click e IMMCA: Tucumán se viste de rojo"><img src="img/ig/DW9Hd2PDmwu.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a><figcaption class="mono">Hacé Click e @immca.lab</figcaption></figure>
+      <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/p/DW-ScpdDB1x/" target="_blank" rel="noopener" title="Publicación de Medios UNT: la UNT se ilumina de rojo"><img src="img/ig/DW-ScpdDB1x.jpg" alt="" loading="lazy"><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a><figcaption class="mono">Medios UNT</figcaption></figure>
     </div>
 
     <div class="soc-cards">
