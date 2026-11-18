@@ -869,11 +869,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .svc-row i.arr{font-size:26px;color:var(--muted);transition:all .4s var(--ease)}
 .svc-row:hover h3{transform:translateX(12px);color:var(--accent)}
 .svc-row:hover i.arr{color:var(--accent);transform:rotate(-45deg)}
-.svc-float{position:fixed;left:0;top:0;width:300px;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;pointer-events:none;z-index:20;opacity:0;transform:translate(-50%,-50%) scale(.8);border:1px solid var(--line-2)}
-.svc-float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
-.svc-float img.on{opacity:1}
-@media (max-width:820px){.svc-row{grid-template-columns:1fr;gap:10px}.svc-row i.arr{display:none}.svc-float{display:none}}
-@media (hover:none){.svc-float{display:none}}
+@media (max-width:820px){.svc-row{grid-template-columns:1fr;gap:10px}.svc-row i.arr{display:none}}
 
 /* ---------- noticias ---------- */
 .news-scroller{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 24px;scrollbar-width:none;cursor:grab}
@@ -1143,6 +1139,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .sq-btn{border:0;cursor:pointer;font:inherit;font-size:13px;padding:7px 15px;border-radius:999px;background:var(--accent);color:#fff;transition:background .25s}
 .sq-btn:hover{background:#005a93}
 .sq-btn.ok{background:#1a9e62}
+.gr-dark{background:var(--bg)}
+.gr-dark img{filter:none!important;opacity:1!important;max-height:none;max-width:none;width:76%;padding:16px 20px;border-radius:14px;background:#33297E;box-sizing:border-box}
+a.gr-dark:hover{background:var(--accent-soft)}
 .field.picked select{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 @media (max-width:1000px){.pg-state{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.pg-state{grid-template-columns:1fr}}
@@ -2180,13 +2179,13 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <p class="lead rv">Servicios Tecnológicos de Alto Nivel (STAN) del CONICET para empresas, organismos públicos e instituciones de I+D. Cinco de ellos están en <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plataforma de servicios del CONICET NOA Sur.</p>
     </div>
     <div class="svc" id="svc">
-      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Moduladores de la agregación proteica</h3><div><p>Probamos si compuestos, extractos o formulaciones modifican la agregación de tau y alfa-sinucleína, y estudiamos proteínas agregadas con capacidad de siembra en muestras biológicas.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Efectos biológicos en cultivos celulares</h3><div><p>Citotoxicidad, actividad metabólica, daño de membrana, estrés oxidativo y respuesta inflamatoria, para elegir candidatos antes de pasar a modelos más complejos.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Animales · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Microscopía confocal</h3><div><p>Imágenes con un Zeiss LSM&nbsp;800: localización de marcadores, colocalización, morfología celular y reconstrucción en tres dimensiones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="0"><h3>Tamaño y estabilidad de partículas</h3><div><p>Dispersión dinámica de luz (DLS): tamaño, distribución, agregación y potencial Z de nanopartículas, vesículas, complejos proteicos y formulaciones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud · Alimentos · Calidad · Energía · Minería · Ambiente</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="1"><h3>Absorbancia, fluorescencia y luminiscencia</h3><div><p>Ensayos en lector multimodo TECAN Spark: cinéticas, actividad enzimática y curvas de concentración y respuesta.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Calidad · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="3"><h3>Análisis estadístico de datos</h3><div><p>Procesamiento, análisis e interpretación de datos para proyectos de I+D, publicaciones y presentaciones.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
-      <a class="svc-row rv" href="#consulta-servicios" data-img="2"><h3>Anticuerpos anti-SARS-CoV-2</h3><div><p>ELISA con antígeno S-RBD, desarrollado para reforzar el diagnóstico del Ministerio de Salud de Tucumán.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Moduladores de la agregación proteica</h3><div><p>Probamos si compuestos, extractos o formulaciones modifican la agregación de tau y alfa-sinucleína, y estudiamos proteínas agregadas con capacidad de siembra en muestras biológicas.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Efectos biológicos en cultivos celulares</h3><div><p>Citotoxicidad, actividad metabólica, daño de membrana, estrés oxidativo y respuesta inflamatoria, para elegir candidatos antes de pasar a modelos más complejos.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Animales · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Microscopía confocal</h3><div><p>Imágenes con un Zeiss LSM&nbsp;800: localización de marcadores, colocalización, morfología celular y reconstrucción en tres dimensiones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Tamaño y estabilidad de partículas</h3><div><p>Dispersión dinámica de luz (DLS): tamaño, distribución, agregación y potencial Z de nanopartículas, vesículas, complejos proteicos y formulaciones.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud · Alimentos · Calidad · Energía · Minería · Ambiente</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Absorbancia, fluorescencia y luminiscencia</h3><div><p>Ensayos en lector multimodo TECAN Spark: cinéticas, actividad enzimática y curvas de concentración y respuesta.</p><span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Calidad · Ambiente · Agroindustria</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Análisis estadístico de datos</h3><div><p>Procesamiento, análisis e interpretación de datos para proyectos de I+D, publicaciones y presentaciones.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
+      <a class="svc-row rv" href="#consulta-servicios"><h3>Anticuerpos anti-SARS-CoV-2</h3><div><p>ELISA con antígeno S-RBD, desarrollado para reforzar el diagnóstico del Ministerio de Salud de Tucumán.</p><span class="svc-tags mono">STAN CONICET</span></div><i class="ph ph-arrow-right arr"></i></a>
     </div>
     <p class="svc-more rv">También firmamos convenios de I+D con empresas, como los de SkyBio y BACON SAIC. <a href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">Ver en PLASENOA <i class="ph ph-arrow-up-right"></i></a> · <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
 
@@ -2216,9 +2215,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="full cform-foot"><button class="btn btn-primary" type="submit">Abrir consulta en mi correo <i class="ph ph-envelope-simple"></i></button><p class="hint">Se abre tu programa de correo con la consulta ya escrita. Revisala y enviala desde ahí.</p></div>
       </form>
     </div>
-  </div>
-  <div class="svc-float" id="svcfloat" aria-hidden="true">
-    <img src="img/mesada.jpg" alt=""><img src="img/campana.jpg" alt=""><img src="img/microscopia-confocal.jpg" alt=""><img src="img/fachada-equipo.jpg" alt="">
   </div>
 </section>
 
@@ -2347,7 +2343,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <a class="gr-logo rv" href="https://innoprot.com" target="_blank" rel="noopener" title="INNOPROT"><img src="img/socios/innoprot.png" alt="INNOPROT" loading="lazy"></a>
         <span class="gr-logo rv sin-logo" title="Alfa Digital"><span class="gr-nom">Alfa Digital</span></span>
         <a class="gr-logo rv" href="https://fgftrapani.com" target="_blank" rel="noopener" title="FGF Trápani"><img src="img/socios/fgf-trapani.png" alt="FGF Trápani" loading="lazy"></a>
-        <span class="gr-logo rv sin-logo" title="TIUM SA"><span class="gr-nom">TIUM SA</span></span>
+        <a class="gr-logo gr-dark rv" href="https://grupoelazul.com" target="_blank" rel="noopener" title="Grupo El Azul"><img src="img/socios/grupo-el-azul.svg" alt="Grupo El Azul" loading="lazy"></a>
         <a class="gr-logo rv" href="https://sanatorio9dejuliosa.com.ar" target="_blank" rel="noopener" title="Sanatorio 9 de Julio"><img src="img/socios/sanatorio-9-de-julio.svg" alt="Sanatorio 9 de Julio" loading="lazy"></a>
         <a class="gr-logo rv" href="https://patlab.com.ar" target="_blank" rel="noopener" title="Patlab"><img src="img/socios/pat-lab.png" alt="Patlab" loading="lazy"></a>
         <a class="gr-logo rv" href="https://redargentinadeparkinson.org" target="_blank" rel="noopener" title="Red Argentina de Parkinson"><img src="img/socios/red-argentina-parkinson.png" alt="Red Argentina de Parkinson" loading="lazy"></a>
@@ -2522,18 +2518,6 @@ ns.addEventListener('click', e => { if (moved) { e.preventDefault(); moved = fal
 const step = () => (ns.querySelector('.news:nth-child(2)')?.offsetWidth || 340) + 16;
 $('#nprev').addEventListener('click', () => ns.scrollBy({left: -step(), behavior: 'smooth'}));
 $('#nnext').addEventListener('click', () => ns.scrollBy({left: step(), behavior: 'smooth'}));
-
-/* ============ Servicios: preview flotante ============ */
-const sf = $('#svcfloat'), sfi = $$('img', sf);
-if (fine && hasGsap && !reduce) {
-  const qx = gsap.quickTo(sf, 'x', {duration: .6, ease: 'power3'}), qy = gsap.quickTo(sf, 'y', {duration: .6, ease: 'power3'});
-  $$('.svc-row').forEach(r => {
-    r.addEventListener('pointerenter', () => { sfi.forEach((im, i) => im.classList.toggle('on', i == r.dataset.img)); gsap.to(sf, {opacity: 1, scale: 1, duration: .45, ease: 'power3.out'}); });
-    r.addEventListener('pointerleave', () => gsap.to(sf, {opacity: 0, scale: .8, duration: .35}));
-  });
-  addEventListener('pointermove', e => { qx(e.clientX + 170); qy(e.clientY); });
-  gsap.set(sf, {xPercent: -50, yPercent: -50});
-}
 
 /* ============ Biblioteca ============ */
 let papers = [];
