@@ -1314,6 +1314,17 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .tl-item:hover .tl-img img{transform:scale(1.04)}
 .tl-item:has(.tl-img){padding-top:22px}
 
+/* las estancias en el ICM */
+.icm-sec{background:var(--bg-2)}
+.icm-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:end;margin-bottom:clamp(32px,4vw,48px)}
+.icm-fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.icm-fotos figure{margin:0}
+.icm-fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);background:var(--bg);
+  box-shadow:0 22px 44px -32px rgba(10,37,64,.45);transition:transform .7s var(--ease)}
+.icm-fotos figure:hover img{transform:translateY(-5px)}
+.icm-fotos figcaption{margin-top:12px;color:var(--dim)}
+@media (max-width:900px){.icm-head{grid-template-columns:1fr}.icm-fotos{grid-template-columns:1fr}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1656,6 +1667,24 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <h3>Reunión con la FDA</h3>
         <p>Prevista para febrero: el paso previo a pedir autorización para los primeros estudios en personas.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- LAS ESTANCIAS EN EL ICM -->
+<section class="sec icm-sec">
+  <div class="wrap">
+    <div class="icm-head">
+      <div>
+        <span class="mono kicker rv">París, Instituto del Cerebro</span>
+        <h2 class="rv">Aprender del otro</h2>
+      </div>
+      <p class="lead rv">Durante años, los becarios e investigadores del grupo hicieron estancias en el laboratorio de Rita Raisman-Vozari. Volvieron con las técnicas que después montaron en Tucumán: purificación de proteínas, microscopía de fluorescencia y modelos celulares de neurodegeneración.</p>
+    </div>
+    <div class="icm-fotos">
+      <figure class="rv"><img src="img/icm/icm-purificacion.jpg" alt="Investigadoras del IMMCA junto al equipo de purificación de proteínas en el ICM" loading="lazy"><figcaption class="mono">Purificación de proteínas en el ICM</figcaption></figure>
+      <figure class="rv"><img src="img/icm/icm-microscopia.jpg" alt="Trabajo en el microscopio de fluorescencia durante una estancia en el ICM" loading="lazy"><figcaption class="mono">Microscopía de fluorescencia</figcaption></figure>
+      <figure class="rv"><img src="img/icm/icm-edificio.jpg" alt="El edificio del Instituto del Cerebro en París" loading="lazy" style="object-position:center 60%"><figcaption class="mono">El ICM, en el Hospital Pitié-Salpêtrière</figcaption></figure>
     </div>
   </div>
 </section>
