@@ -1048,9 +1048,16 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 
 .hero.hero-ue{min-height:clamp(560px,82vh,820px);height:auto;margin-top:112px;padding:48px 0 200px;align-items:center;background:#05080c}
 .hero-ue .hero-shade{background:
-  radial-gradient(70% 80% at 50% 45%,rgba(5,8,12,.45) 0%,rgba(5,8,12,.72) 70%,rgba(5,8,12,.86) 100%),
-  linear-gradient(180deg,rgba(5,8,12,.2) 0%,transparent 30%,rgba(5,8,12,.75) 100%)}
+  linear-gradient(90deg,rgba(5,8,12,.5) 0%,transparent 22%,transparent 78%,rgba(5,8,12,.5) 100%),
+  linear-gradient(180deg,rgba(5,8,12,.5) 0%,rgba(5,8,12,.2) 17%,rgba(5,8,12,.16) 30%,rgba(5,8,12,.64) 43%,rgba(5,8,12,.8) 74%,rgba(5,8,12,.9) 100%)}
 .hero-ue .hm.on{opacity:1}
+.hero-ue .hero-logo{display:none}
+.hero-ue .hero-center{margin-top:clamp(84px,15vh,180px)}
+.hero-ue .hm:first-of-type{object-position:50% 48%}
+.hero-ue h1,.hero-mission,.hero-ue .hero-deps{text-shadow:0 2px 28px rgba(3,6,10,.72),0 1px 4px rgba(3,6,10,.5)}
+.hero-ue .hm:first-of-type.on{animation-name:kb-suave}
+@keyframes kb-suave{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.06) translate3d(0,0,0)}}
+@media (max-height:860px){.hero-ue .hero-center{margin-top:clamp(40px,7vh,80px)}}
 .hero-center{text-align:center;display:flex;flex-direction:column;align-items:center;max-width:1100px}
 .hero-ue .hero-logo{justify-content:center;margin-bottom:22px;gap:18px}
 .hero-ue .hero-logo img{width:clamp(34px,3vw,42px)}
