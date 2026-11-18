@@ -1207,6 +1207,28 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .soc-day-txt .ill-head{margin-bottom:20px}
 @media (max-width:640px){.ill-head{--ill:84px}}
 
+/* agradecimientos */
+.gr{background:var(--bg-2)}
+.gr-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gr-logo{outline:.5px solid var(--line)}
+.gr-logo{background:var(--bg);display:grid;place-items:center;padding:34px 28px;min-height:140px;transition:background .3s}
+.gr-logo img{max-width:100%;max-height:68px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.62;transition:filter .45s var(--ease),opacity .45s var(--ease),transform .45s var(--ease)}
+.gr-logo:hover img{filter:none;opacity:1;transform:scale(1.04)}
+a.gr-logo:hover{background:var(--accent-soft)}
+.gr-logo.sin-logo{font-family:"Instrument Sans",sans-serif;font-size:15px;font-weight:500;letter-spacing:.01em;color:var(--muted);text-align:center;line-height:1.3}
+.gr-logo.sin-logo img{display:none}
+a.gr-logo.sin-logo:hover{color:var(--accent)}
+.gr-gente{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,72px);align-items:start;
+  padding:clamp(32px,4vw,52px);border-radius:var(--r);background:linear-gradient(135deg,#0a2540,#0e3f6b 60%,var(--accent));color:#fff}
+.gr-gente h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.02em;margin-bottom:14px;color:#fff}
+.gr-gente p{color:rgba(255,255,255,.88);font-size:16.5px;line-height:1.6}
+.gr-nombres{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.gr-nombres li{padding:9px 16px;border-radius:999px;font-size:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,transform .3s var(--ease)}
+.gr-nombres li:hover{background:rgba(255,255,255,.24);transform:translateY(-2px)}
+@media (max-width:980px){.gr-logos{grid-template-columns:repeat(3,1fr)}.gr-gente{grid-template-columns:1fr}}
+@media (max-width:620px){.gr-logos{grid-template-columns:repeat(2,1fr)}.gr-logo{min-height:112px;padding:24px 18px}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1258,6 +1280,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
           <a href="#proyecto">Proyecto institucional</a>
           <a href="#infraestructura">Infraestructura</a>
           <a href="#directora">Autoridades</a>
+          <a href="#agradecimientos">Agradecimientos</a>
         </div>
       </div>
       <a href="#investigacion">Líneas de investigación</a>
@@ -1299,7 +1322,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
   </div>
   <nav class="mm-body" aria-label="Menú">
-    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a></div></details>
+    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
@@ -2309,6 +2332,54 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
+<!-- AGRADECIMIENTOS -->
+<section class="sec gr" id="agradecimientos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono kicker rv">Agradecimientos</span>
+      <h2 class="rv">Quienes confiaron en nosotros</h2>
+      <p class="lead rv">Un instituto joven se construye con gente que apuesta antes de que haya resultados. Estas empresas e instituciones acompañaron el trabajo del IMMCA.</p>
+    </div>
+
+    <div class="gr-logos">
+        <a class="gr-logo rv" href="https://www.skybiollc.com" target="_blank" rel="noopener" title="SkyBio LLC"><img src="img/socios/skybio.png" alt="SkyBio LLC" loading="lazy"></a>
+        <a class="gr-logo rv" href="https://www.innoprot.com" target="_blank" rel="noopener" title="INNOPROT"><img src="img/socios/innoprot.png" alt="INNOPROT" loading="lazy"></a>
+        <span class="gr-logo rv" title="Alfa Digital"><img src="img/socios/alfa-digital.png" alt="Alfa Digital" loading="lazy"></span>
+        <span class="gr-logo rv" title="FGF Trápani"><img src="img/socios/fgf-trapani.png" alt="FGF Trápani" loading="lazy"></span>
+        <span class="gr-logo rv" title="TIUM SA"><img src="img/socios/tium.png" alt="TIUM SA" loading="lazy"></span>
+        <span class="gr-logo rv" title="Sanatorio 9 de Julio"><img src="img/socios/sanatorio-9-de-julio.png" alt="Sanatorio 9 de Julio" loading="lazy"></span>
+        <span class="gr-logo rv" title="Pat Lab"><img src="img/socios/pat-lab.png" alt="Pat Lab" loading="lazy"></span>
+    </div>
+
+    <div class="gr-gente rv">
+      <div class="gr-gente-txt">
+        <h3>Y las personas</h3>
+        <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p>
+      </div>
+      <ul class="gr-nombres">
+          <li>Rita Raisman</li>
+          <li>Clarisa Salado</li>
+          <li>Claude Burgio</li>
+          <li>María del Carmen Ahumada</li>
+          <li>Daniela Orlandi</li>
+          <li>Daniel Varela</li>
+          <li>Ing. Rocha</li>
+          <li>Cristian Jarosewski</li>
+          <li>Joaquín Igón</li>
+          <li>Maxi Grosso</li>
+          <li>Leticia Pulido</li>
+          <li>Juan Toscano</li>
+          <li>Anahí Martínez</li>
+          <li>Juan José Paz</li>
+          <li>Gustavo José</li>
+          <li>Griselda Alvarado</li>
+          <li>Fernando Dupuy</li>
+          <li>María Eugenia Mónaco</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section class="sec" id="contacto" style="background:var(--bg-2);border-top:1px solid var(--line)">
   <div class="wrap contact">
@@ -2664,6 +2735,13 @@ sform.addEventListener('submit', e => {
   const v = id => $('#' + id).value.trim();
   const body = `Servicio: ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
   location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+});
+
+/* ============ Agradecimientos: si falta el logo, se muestra el nombre ============ */
+$$('.gr-logo img').forEach(im => {
+  const falla = () => { const c = im.closest('.gr-logo'); c.classList.add('sin-logo'); if (!c.querySelector('.gr-nom')) { const t = document.createElement('span'); t.className = 'gr-nom'; t.textContent = im.alt; c.appendChild(t); } };
+  im.addEventListener('error', falla);
+  if (im.complete && im.naturalWidth === 0) falla();
 });
 
 /* ============ Ilustraciones: el movimiento arranca al pasar el mouse ============ */
