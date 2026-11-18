@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="bga" cx="50%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#2e2410"/>
+      <stop offset="100%" stop-color="#15120a"/>
+    </radialGradient>
+    <linearGradient id="lna" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE08A"/>
+      <stop offset="100%" stop-color="#FEC221"/>
+    </linearGradient>
+    <pattern id="dota" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="1.6" cy="1.6" r="1.1" fill="#FEC221" opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="320" height="320" fill="url(#bga)"/>
+  <rect x="18" y="18" width="284" height="284" fill="url(#dota)"/>
+  <g fill="none" stroke="#FEC221" opacity=".22">
+    <circle cx="160" cy="160" r="62"/><circle cx="160" cy="160" r="94"/><circle cx="160" cy="160" r="126"/>
+  </g>
+  <g fill="none" stroke="#FEC221" stroke-width="2.4" opacity=".75" stroke-linecap="round">
+    <path d="M18 40V18h22"/><path d="M280 18h22v22"/><path d="M302 280v22h-22"/><path d="M40 302H18v-22"/>
+  </g>
+  <g stroke="url(#lna)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M86 150v46a16 16 0 0 0 16 16h14a16 16 0 0 0 16-16v-46"/>
+    <path d="M80 150h58"/>
+    <path d="M150 124v72a16 16 0 0 0 16 16h18a16 16 0 0 0 16-16v-72"/>
+    <path d="M144 124h66"/>
+    <path d="M222 96v100a16 16 0 0 0 16 16h14a16 16 0 0 0 16-16V96"/>
+    <path d="M216 96h62"/>
+  </g>
+  <g fill="#FEC221" opacity=".3">
+    <path d="M89 180h40v16a12 12 0 0 1-12 12h-16a12 12 0 0 1-12-12z"/>
+    <path d="M153 164h44v32a12 12 0 0 1-12 12h-20a12 12 0 0 1-12-12z"/>
+    <path d="M225 140h40v56a12 12 0 0 1-12 12h-16a12 12 0 0 1-12-12z"/>
+  </g>
+  <path d="M74 86c46-30 128-34 176-10" fill="none" stroke="#FFE08A" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="7 9" opacity=".8"/>
+  <path d="M238 62l16 14-16 14" fill="none" stroke="#FFE08A" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <g transform="translate(250 252)">
+    <circle r="26" fill="#15120a"/>
+    <circle r="26" fill="none" stroke="url(#lna)" stroke-width="4"/>
+    <circle r="16" fill="none" stroke="#FEC221" stroke-width="2.4" opacity=".6"/>
+    <path d="M-7 1l5 6 10-12" fill="none" stroke="#FFE08A" stroke-width="4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
