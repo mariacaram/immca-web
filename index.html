@@ -12,6 +12,8 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFFFFF">
+<link rel="alternate" hreflang="es" href="https://immca-web.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://immca-web.vercel.app/en">
 <link rel="icon" href="logos/immca-isotipo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,7 +123,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .brand-long{font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:300;text-transform:uppercase;font-size:17px;letter-spacing:.02em;line-height:1.2;color:var(--muted);margin-top:14px}
 .brand-sub{border-left:1px solid var(--line-2);padding-left:14px;color:var(--muted);line-height:1.25;font-size:11px}
 .nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{padding:8px 14px;border-radius:999px;font-size:15px;color:var(--muted);white-space:nowrap;transition:color .3s,background .3s}
+.nav-links a{padding:8px 11px;border-radius:999px;font-size:14.5px;color:var(--muted);white-space:nowrap;transition:color .3s,background .3s}
 .nav-links>a,.dd>a{display:inline-flex;align-items:center;gap:4px}
 .dd>a i{font-size:12px;opacity:.6;transition:transform .3s}
 .dd{position:relative}
@@ -136,9 +138,11 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .mmenu .msub a{font-size:17px;font-weight:500;color:var(--muted);border:0;padding:2px 0}
 @media (max-width:1366px){.nav-links{gap:0}.nav-links>a,.dd>a{padding:8px 9px;font-size:14px}.brand-sub{display:none}}
 @media (max-width:1280px){.nav .wrap{gap:12px}.nav-links>a,.dd>a{padding:7px 6px;font-size:13px}.dd>a i{display:none}.nav-cta{padding:0 14px;font-size:14px;height:38px}.brand-word{font-size:21px}.brand{gap:10px}.brand-iso{width:28px}}
+@media (min-width:1181px){.nav-links>a,.dd>a{font-size:clamp(13px,.98vw,15px);padding:7px clamp(5px,.55vw,11px)}.brand-sub{display:none}}
+@media (min-width:1700px){.brand-sub{display:block}}
 @media (max-width:1180px){.nav-links>a,.dd>a{padding:7px 4px;font-size:12.5px}.nav .wrap{gap:8px}.nav-cta{padding:0 12px;font-size:13.5px}}
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
-.nav-cta{height:42px;padding:0 20px;font-size:15px}
+.nav-cta{height:42px;padding:0 20px;font-size:15px;flex-shrink:0}
 .burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);place-items:center;font-size:20px}
 .mmenu{position:fixed;inset:0;z-index:60;background:var(--bg);padding:96px var(--gutter) 32px;display:flex;flex-direction:column;gap:6px;clip-path:circle(0 at calc(100% - 40px) 36px);transition:clip-path .8s var(--ease);visibility:hidden}
 .mmenu.open{clip-path:circle(150% at calc(100% - 40px) 36px);visibility:visible}
@@ -468,6 +472,29 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .unite-why li b{color:var(--text);font-weight:600}
 .unite-why li i{font-size:22px;color:var(--accent);margin-top:2px;flex-shrink:0}
 @media (max-width:820px){.unite-head,.unite-paths,.unite-why ul{grid-template-columns:1fr}}
+
+/* más allá del laboratorio */
+.vida{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.vida-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
+.vida-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.vida-grid .ig-embed iframe{height:560px}
+.vida .social{display:inline-flex}
+@media (max-width:1100px){.vida-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.vida-head{grid-template-columns:1fr}.vida-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.vida-grid .ig-embed{scroll-snap-align:start}}
+
+/* RT-QuIC con insumos locales */
+.rtq{margin-top:16px;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,64px);padding:clamp(26px,4vw,44px);border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(135deg,var(--bg-2),#fff)}
+.rtq-head h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.02em;margin-bottom:14px}
+.rtq-head p{color:var(--muted);font-size:16px}
+.rtq-steps{list-style:none;display:grid;gap:12px;align-content:start}
+.rtq-steps li{position:relative;padding:16px 18px 16px 20px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.rtq-steps li::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--accent)}
+.rtq-steps li.now::before{background:var(--sol)}
+.rtq-steps .mono{color:var(--accent);font-size:11.5px}
+.rtq-steps li.now .mono{color:#9a6b00}
+.rtq-steps h4{font-size:17px;font-weight:600;margin:4px 0 4px}
+.rtq-steps p{color:var(--muted);font-size:15px;line-height:1.45}
+@media (max-width:900px){.rtq{grid-template-columns:1fr}}
 
 /* el camino de Pegasus: etapas con "Estamos acá" */
 .pg-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:48px}
@@ -916,7 +943,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .ubar-links{display:flex;gap:6px}
 .ubar-links a{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px;transition:background .3s,color .3s}
 .ubar-links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-@media (max-width:640px){.ubar-conicet span{display:none}.ubar-links a:nth-child(3){display:none}}
+@media (max-width:640px){.ubar-conicet span{display:none}.ubar-links{display:none}}
 
 .nav{top:40px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-bottom:1px solid var(--line);transition:transform .5s var(--ease),top .4s var(--ease)}
 .nav.scrolled{top:0}
@@ -942,6 +969,16 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .hm-cap{color:rgba(255,255,255,.75)}
 @media (max-width:980px){.hero.hero-ue{height:auto;min-height:540px;padding:96px 0 200px}.hero-ue .hero-meta{bottom:100px}}
 @media (max-width:640px){.hero-ue h1 .ln{display:inline}.hero-ue .hero-deps{font-size:13.5px}.hm-cap{display:none}}
+
+/* selector de idioma con banderas */
+.lang{display:inline-flex;align-items:center;gap:2px;padding:2px;border-radius:999px;border:1px solid var(--line-2);background:var(--bg)}
+.lang a{display:inline-flex;align-items:center;gap:6px;padding:3px 9px 3px 5px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);transition:background .3s,color .3s}
+.lang a:hover{color:var(--text);background:rgba(17,17,17,.05)}
+.lang a.on{background:var(--accent);color:#fff}
+.lang .flag{width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px rgba(17,17,17,.12);flex-shrink:0;display:block}
+.ubar .wrap{gap:12px;justify-content:flex-start}
+.lang{margin-left:auto}
+.ubar-right{display:flex;align-items:center;gap:10px}
 
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
@@ -974,7 +1011,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <div class="ubar" aria-label="Accesos institucionales">
   <div class="wrap">
     <a class="ubar-conicet" href="https://www.conicet.gov.ar" target="_blank" rel="noopener"><img src="logos/conicet.svg" alt="CONICET"><span class="mono">Unidad Ejecutora · CONICET · UNT · SIPROSA</span></a>
-    <nav class="ubar-links mono" aria-label="Enlaces institucionales"><a href="https://intranet.conicet.gov.ar/" target="_blank" rel="noopener">Intranet</a><a href="https://noasur.conicet.gov.ar/" target="_blank" rel="noopener">CCT NOA Sur</a><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ficha CONICET</a></nav>
+    <div class="lang" role="group" aria-label="Idioma"><a href="./" hreflang="es" lang="es" title="Español" class="on" aria-current="page"><svg class="flag" viewBox="0 0 18 12" aria-hidden="true"><rect width="18" height="12" fill="#74ACDF"/><rect y="4" width="18" height="4" fill="#fff"/><circle cx="9" cy="6" r="1.25" fill="#F6B40E"/></svg><span>ES</span></a><a href="en.html" hreflang="en" lang="en" title="English"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukc-es"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukc-es)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></a></div>
+    <nav class="ubar-links mono" aria-label="Enlaces institucionales"><a href="https://noasur.conicet.gov.ar/" target="_blank" rel="noopener">CCT NOA Sur</a><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ficha CONICET</a></nav>
   </div>
 </div>
 <header class="nav" id="nav">
@@ -1000,6 +1038,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <a href="#equipo" aria-haspopup="true">Nuestro equipo<i class="ph ph-caret-down"></i></a>
         <div class="dd-menu">
           <a href="#equipo">Integrantes</a>
+          <a href="#vida">Más allá del laboratorio</a>
           <a href="#unite">Unite al IMMCA</a>
         </div>
       </div>
@@ -1033,7 +1072,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="msub"><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a></div>
   <a href="#investigacion">Líneas de investigación</a>
   <a href="#equipo">Nuestro equipo</a>
-  <div class="msub"><a href="#unite">Unite al IMMCA</a></div>
+  <div class="msub"><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div>
   <a href="#biblioteca">Producción científica</a>
   <a href="#produccion">Innovación</a>
   <div class="msub"><a href="#produccion">Patentes</a><a href="#pegasus">El camino de Pegasus</a><a href="#startups">Startups</a></div>
@@ -1474,7 +1513,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <div class="bg"><img src="img/neurona-pc12.jpg" alt="Neurona PC-12 vista con microscopía de fluorescencia multicolor" loading="lazy"></div>
         <div class="ln-top"><span class="ln-n">02</span><span class="vt">VT</span></div>
         <h3>Diagnóstico temprano</h3>
-        <p>Queremos detectar la enfermedad antes de los síntomas motores: un biosensor, nuevos radiotrazadores para PET y la técnica RT-QuIC adaptada a sangre.</p>
+        <p>Queremos detectar la enfermedad antes de los síntomas motores: un biosensor, nuevos radiotrazadores para PET y la técnica RT-QuIC con insumos de producción local, con el objetivo de llevarla a muestras de sangre.</p>
         <ul class="ln-out"><li>Patente WO2023214381</li><li>Startup BrinDx</li><li>INSIBIO · FCEN-UBA · SkyBio</li></ul>
         <a class="ln-link" href="#startups">Conocé BrinDx <i class="ph ph-arrow-right"></i></a>
       </article>
@@ -1502,6 +1541,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <p>Producimos alfa-sinucleína y tau en monómeros, fibras y fibras fluorescentes para otros laboratorios, y usamos fibras amiloides como soporte de enzimas para biodiésel, vinos y aceite de oliva.</p>
         <ul class="ln-out"><li>Proteínas para investigación</li><li>Usos industriales</li></ul>
       </article>
+    </div>
+
+    <div class="rtq rv" id="rt-quic">
+      <div class="rtq-head">
+        <span class="mono kicker">En marcha · Diagnóstico temprano</span>
+        <h3>RT-QuIC con insumos de producción local</h3>
+        <p>La RT-QuIC es una técnica que amplifica en el laboratorio cantidades mínimas de alfa-sinucleína mal plegada, una señal de la enfermedad de Parkinson. Hoy se usa sobre todo en líquido cefalorraquídeo, una muestra difícil de obtener. Estamos trabajando para que pueda hacerse en el país y, en el futuro, con una muestra de sangre.</p>
+      </div>
+      <ol class="rtq-steps">
+        <li class="done"><span class="mono">01</span><h4>Proyecto OEA</h4><p>Un proyecto financiado por la Organización de los Estados Americanos (OEA) nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas y en la producción local de sus insumos.</p></li>
+        <li class="now"><span class="mono">02 · En curso</span><h4>Puesta a punto en el IMMCA</h4><p>Estamos realizando el setup de la RT-QuIC para validar la tecnología con insumos de producción local.</p></li>
+        <li class="now"><span class="mono">03 · En curso</span><h4>Hacia muestras de sangre</h4><p>Gracias a un proyecto PIETR del CONICET estamos implementando nueva tecnología para trasladar el ensayo a muestras de sangre: la RT-QuIC sobre vesículas extracelulares de origen neuronal aisladas de plasma.</p></li>
+      </ol>
     </div>
 
     <p class="lin-more rv">Además, ofrecemos <a href="#servicios">servicios tecnológicos</a> con nuestro equipamiento y acompañamos startups como <a href="#startups">BrinDx</a>.</p>
@@ -1565,6 +1617,26 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <figure class="reel" data-speed="-10"><video src="video/equipo.mp4" poster="video/equipo.jpg" muted loop playsinline preload="none" aria-label="Investigadoras conversando en el laboratorio"></video></figure>
       <figure class="reel" data-speed="6"><video src="video/ventana.mp4" poster="video/ventana.jpg" muted loop playsinline preload="none" aria-label="Trabajo en el área de cultivo, visto a través del vidrio"></video></figure>
     </div>
+  </div>
+</section>
+
+<!-- MÁS ALLÁ DEL LABORATORIO -->
+<section class="sec vida" id="vida">
+  <div class="wrap">
+    <div class="vida-head">
+      <div>
+        <span class="mono kicker rv">Nuestro equipo</span>
+        <h2 class="rv">Más allá del laboratorio</h2>
+      </div>
+      <p class="lead rv">Además de hacer ciencia, nos divertimos. Somos competitivos, un poco locos y no le tenemos miedo al ridículo: festejos de fin de año, desafíos, bailes y mucho humor. Así somos dentro y fuera del laboratorio.</p>
+    </div>
+    <div class="vida-grid">
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DSdodqJjZIq/embed/" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DX0A6v6Bw3W/embed/" title="Reel del IMMCA: a veces también nos divertimos entre todos" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DSvlUPfEV84/embed/" title="Reel del IMMCA: festejos de fin de año" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
+      <figure class="ig-embed rv"><iframe src="https://www.instagram.com/reel/DS3RbUIkeDj/embed/" title="Reel del IMMCA: cerramos el año riéndonos" loading="lazy" allowtransparency="true" scrolling="no"></iframe></figure>
+    </div>
+    <a class="social rv" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>Más en @immca.lab</a>
   </div>
 </section>
 
@@ -1994,7 +2066,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#proyecto">Proyecto institucional</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
       <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#investigacion">Líneas de investigación</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
-      <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li><li><a href="https://immca.conicet.gov.ar/wp-admin/" target="_blank" rel="noopener">Intranet</a></li></ul></div>
+      <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li></ul></div>
     </div>
     <div class="foot-lock" aria-hidden="true">
       <svg class="foot-iso" viewBox="-100 -86.6 200 173.2"><path class="b1" fill="#ED1C24" d="M-50 -86.6H-3.5L-76.75 40.3L-100 0Z"/><path class="b2" fill="#730A0E" d="M3.5 -86.6H50L100 0L76.75 40.3Z"/><path class="b3" fill="#400404" d="M-73 46.7H73L50 86.6H-50Z"/></svg>
