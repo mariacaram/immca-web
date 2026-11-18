@@ -145,10 +145,35 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
 .nav-cta{height:42px;padding:0 20px;font-size:15px;flex-shrink:0}
 .burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);place-items:center;font-size:20px}
-.mmenu{position:fixed;inset:0;z-index:60;background:var(--bg);padding:96px var(--gutter) 32px;display:flex;flex-direction:column;gap:6px;clip-path:circle(0 at calc(100% - 40px) 36px);transition:clip-path .8s var(--ease);visibility:hidden}
+.mmenu{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;clip-path:circle(0 at calc(100% - 40px) 36px);transition:clip-path .7s var(--ease);visibility:hidden}
+/* menú del celular: encabezado fijo, ítems numerados con submenús desplegables y pie con idioma y contacto */
+.mm-head{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 var(--gutter);border-bottom:1px solid var(--line);flex-shrink:0}
+.mm-brand{display:flex;align-items:center;gap:10px}
+.mm-brand img{width:28px;height:auto}
+.mm-brand span{font-family:"Fira Sans",sans-serif;font-size:21px;color:#3E0A0D;letter-spacing:.01em}
+.mm-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:6px var(--gutter) 18px}
+.mm-l,.mm-g summary{display:flex;align-items:center;gap:14px;padding:17px 2px;border-bottom:1px solid var(--line);font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--text);cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
+.mm-g summary::-webkit-details-marker{display:none}
+.mm-l .mono,.mm-g summary .mono{width:22px;font-size:11px;font-weight:500;color:var(--accent);flex-shrink:0}
+.mm-l i,.mm-g summary i{margin-left:auto;font-size:17px;color:var(--dim);transition:transform .35s var(--ease),color .3s}
+.mm-l:active,.mm-g summary:active{color:var(--accent)}
+.mm-g[open] summary{border-bottom-color:transparent;color:var(--accent)}
+.mm-g[open] summary i{transform:rotate(180deg);color:var(--accent)}
+.mm-sub{display:grid;padding:0 0 12px 36px;border-bottom:1px solid var(--line)}
+.mm-sub a{font-size:16px;font-weight:500;color:var(--muted);padding:9px 0;border-left:2px solid var(--line);padding-left:14px;margin-left:-16px}
+.mm-sub a:active{color:var(--accent);border-left-color:var(--accent)}
+.mm-foot{flex-shrink:0;display:grid;gap:12px;padding:16px var(--gutter) calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg-2)}
+.mm-foot .lang{justify-self:start;margin:0}
+.mm-cta{justify-content:center;height:50px}
+.mm-foot p{font-size:11px;color:var(--dim);letter-spacing:.04em}
+.mmenu.open .mm-body>*{animation:mmIn .55s var(--ease) both}
+.mmenu.open .mm-body>*:nth-child(2){animation-delay:.04s}.mmenu.open .mm-body>*:nth-child(3){animation-delay:.08s}.mmenu.open .mm-body>*:nth-child(4){animation-delay:.12s}
+.mmenu.open .mm-body>*:nth-child(5){animation-delay:.16s}.mmenu.open .mm-body>*:nth-child(6){animation-delay:.2s}.mmenu.open .mm-body>*:nth-child(7){animation-delay:.24s}.mmenu.open .mm-body>*:nth-child(8){animation-delay:.28s}
+@keyframes mmIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+html.mm-lock,html.mm-lock body{overflow:hidden}
 .mmenu.open{clip-path:circle(150% at calc(100% - 40px) 36px);visibility:visible}
-.mmenu a{font-size:34px;font-weight:600;letter-spacing:-.02em;padding:6px 0;border-bottom:1px solid var(--line)}
-.mclose{position:absolute;top:14px;right:var(--gutter)}
+
+
 @media (max-width:1080px){.nav-links{display:none}.burger{display:grid}.nav-cta{display:none}}
 @media (max-width:520px){.brand-sub{display:none}}
 
@@ -1068,20 +1093,25 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 </header>
 
 <div class="mmenu" id="mmenu" aria-hidden="true">
-  <button class="burger mclose" id="mclose" aria-label="Close menu" style="display:grid"><i class="ph ph-x"></i></button>
-  <a href="#instituto">Who we are</a>
-  <div class="msub"><a href="#historia">History</a><a href="#proyecto">Institutional project</a><a href="#infraestructura">Infrastructure</a><a href="#directora">Authorities</a></div>
-  <a href="#investigacion">Research lines</a>
-  <a href="#equipo">Our team</a>
-  <div class="msub"><a href="#vida">Beyond the lab</a><a href="#unite">Join IMMCA</a></div>
-  <a href="#biblioteca">Scientific output</a>
-  <a href="#produccion">Innovation</a>
-  <div class="msub"><a href="#produccion">Patents</a><a href="#pegasus">The Pegasus pathway</a><a href="#startups">Startups</a></div>
-  <a href="#servicios">Technology services</a>
-  <a href="#sociedad">Society</a>
-  <div class="msub"><a href="#divulgacion">Outreach</a></div>
-  <a href="#noticias">News</a>
-  <a href="#contacto">Contact</a>
+  <div class="mm-head">
+    <a href="#inicio" class="mm-brand" aria-label="IMMCA, home"><img src="logos/immca-isotipo.svg" alt=""><span>IMMCA</span></a>
+    <button class="burger mclose" id="mclose" aria-label="Close menu" style="display:grid"><i class="ph ph-x"></i></button>
+  </div>
+  <nav class="mm-body" aria-label="Menu">
+    <details class="mm-g"><summary><span class="mono">01</span>Who we are<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">The institute</a><a href="#historia">History</a><a href="#proyecto">Institutional project</a><a href="#infraestructura">Infrastructure</a><a href="#directora">Authorities</a></div></details>
+    <a class="mm-l" href="#investigacion"><span class="mono">02</span>Research lines<i class="ph ph-arrow-right"></i></a>
+    <details class="mm-g"><summary><span class="mono">03</span>Our team<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Members</a><a href="#vida">Beyond the lab</a><a href="#unite">Join IMMCA</a></div></details>
+    <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Scientific output<i class="ph ph-arrow-right"></i></a>
+    <details class="mm-g"><summary><span class="mono">05</span>Innovation<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#produccion">Patents</a><a href="#pegasus">The Pegasus pathway</a><a href="#startups">Startups</a></div></details>
+    <a class="mm-l" href="#servicios"><span class="mono">06</span>Technology services<i class="ph ph-arrow-right"></i></a>
+    <details class="mm-g"><summary><span class="mono">07</span>Society<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#sociedad">Community engagement</a><a href="#divulgacion">Outreach</a></div></details>
+    <a class="mm-l" href="#noticias"><span class="mono">08</span>News<i class="ph ph-arrow-right"></i></a>
+  </nav>
+  <div class="mm-foot">
+    <div class="lang" role="group" aria-label="Language"><a href="./" hreflang="es" lang="es" title="Español"><svg class="flag" viewBox="0 0 18 12" aria-hidden="true"><rect width="18" height="12" fill="#74ACDF"/><rect y="4" width="18" height="4" fill="#fff"/><circle cx="9" cy="6" r="1.25" fill="#F6B40E"/></svg><span>ES</span></a><a href="en.html" hreflang="en" lang="en" title="English" class="on" aria-current="page"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukm-es"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukm-es)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></a><a href="fr.html" hreflang="fr" lang="fr" title="Français"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg><span>FR</span></a></div>
+    <a class="btn btn-primary mm-cta" href="#contacto">Contact <i class="ph ph-arrow-right"></i></a>
+    <p class="mono">Executive Unit · CONICET · UNT · SIPROSA</p>
+  </div>
 </div>
 
 <main>
@@ -1107,7 +1137,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
     <h1>
       <span class="ln"><span>Institute for Research in Applied Molecular</span></span>
-      <span class="ln"><span>and Cellular Medicine of the Bicentennial</span></span>
+      <span class="ln"><span>and Cellular Medicine</span></span>
     </h1>
     <p class="hero-deps hero-el">National Scientific and Technical Research Council (CONICET) · National University of Tucumán · Tucumán Provincial Health System</p>
     <p class="hero-ue-label mono hero-el">Executive Unit</p>
@@ -1177,7 +1207,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div class="stat rv"><b data-count="13">13</b><span>Countries of our international co-authors</span></div>
     </div>
     <dl class="ficha rv">
-      <div class="ficha-name"><dt class="mono">Official name</dt><dd><span lang="es">Instituto de Investigaciones en Medicina Molecular y Celular Aplicada del Bicentenario</span> (Institute for Research in Applied Molecular and Cellular Medicine of the Bicentennial)</dd></div>
+      <div class="ficha-name"><dt class="mono">Official name</dt><dd><span lang="es">Instituto de Investigaciones en Medicina Molecular y Celular Aplicada</span> (Institute for Research in Applied Molecular and Cellular Medicine)</dd></div>
       <div><dt class="mono">Type</dt><dd>CONICET Executive Unit</dd></div>
       <div><dt class="mono">Parent institutions</dt><dd>CONICET · UNT · SIPROSA</dd></div>
       <div><dt class="mono">Director</dt><dd><a href="#directora">Dr. Rosana N. Chehín</a></dd></div>
@@ -2071,7 +2101,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
     <div class="foot-lock" aria-hidden="true">
       <svg class="foot-iso" viewBox="-100 -86.6 200 173.2"><path class="b1" fill="#ED1C24" d="M-50 -86.6H-3.5L-76.75 40.3L-100 0Z"/><path class="b2" fill="#730A0E" d="M3.5 -86.6H50L100 0L76.75 40.3Z"/><path class="b3" fill="#400404" d="M-73 46.7H73L50 86.6H-50Z"/></svg>
-      <div><span class="foot-word">IMMCA</span><span class="foot-long">Institute for Research in Applied Molecular<br>and Cellular Medicine of the Bicentennial</span></div>
+      <div><span class="foot-word">IMMCA</span><span class="foot-long">Institute for Research in Applied Molecular<br>and Cellular Medicine</span></div>
     </div>
     <div class="foot-legal">
       <span>Content licensed under Creative Commons Attribution 2.5 Argentina.</span>
@@ -2125,7 +2155,7 @@ if (heroCards.length && !reduce && matchMedia('(hover: hover)').matches) {
 
 /* ============ Menú móvil ============ */
 const mm = $('#mmenu'), burger = $('#burger');
-const setMenu = open => { mm.classList.toggle('open', open); mm.setAttribute('aria-hidden', !open); burger.setAttribute('aria-expanded', open); };
+const setMenu = open => { mm.classList.toggle('open', open); mm.setAttribute('aria-hidden', !open); burger.setAttribute('aria-expanded', open); document.documentElement.classList.toggle('mm-lock', open); };
 burger.addEventListener('click', () => setMenu(true));
 $('#mclose').addEventListener('click', () => setMenu(false));
 $$('#mmenu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
