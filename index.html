@@ -1129,6 +1129,48 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .ig-tag i:first-child{font-size:20px}
 .ig-embed .ig-card{border-radius:0}
 
+/* estado de Pegasus: patente, licencia, evidencia y próximo paso */
+.pg-state{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:clamp(40px,5vw,64px)}
+.pg-state>div{background:var(--bg);padding:22px 24px 24px}
+.pg-state dt{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-family:"Instrument Sans",sans-serif;margin-bottom:10px}
+.pg-state dd{font-size:15px;line-height:1.5;color:var(--muted)}
+.pg-asof{grid-column:1/-1;background:var(--bg-2);padding:12px 24px;color:var(--dim)}
+/* direccion copiable en la consulta de servicios */
+.sq-mail{margin-top:18px}
+.sq-mail>.mono{display:block;color:var(--dim);margin-bottom:8px}
+.sq-copy{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 8px 8px 16px;border-radius:999px;background:var(--accent-soft);border:1px solid rgba(6,149,214,.25)}
+.sq-copy b{font-size:16px;color:var(--accent)}
+.sq-btn{border:0;cursor:pointer;font:inherit;font-size:13px;padding:7px 15px;border-radius:999px;background:var(--accent);color:#fff;transition:background .25s}
+.sq-btn:hover{background:#005a93}
+.sq-btn.ok{background:#1a9e62}
+.field.picked select{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+@media (max-width:1000px){.pg-state{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.pg-state{grid-template-columns:1fr}}
+
+/* primera pantalla: misión y botones */
+.hero-mission{margin:26px auto 0;max-width:720px;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:rgba(255,255,255,.92)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.hero-ue .hero-cta .btn-ghost{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.42);color:#fff}
+.hero-ue .hero-cta .btn-ghost:hover{background:#fff;color:var(--accent);border-color:#fff}
+.hero-ue .hero-deps{margin-top:34px}
+/* del laboratorio a la salud pública: tres tarjetas */
+.mis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mis-card{--c:var(--accent);display:flex;flex-direction:column;align-items:flex-start;padding:32px 30px 30px;border-radius:var(--r);background:var(--bg);border:1px solid var(--line);box-shadow:0 22px 44px -32px rgba(10,37,64,.45);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .3s}
+.mis-card:nth-child(2){--c:var(--celeste)}
+.mis-card:nth-child(3){--c:#D2393E}
+.mis-card:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 30px 56px -30px rgba(10,37,64,.5)}
+.mis-ic{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:29px;color:#fff;background:var(--c);margin-bottom:20px}
+.mis-k{display:block;color:var(--c);margin-bottom:12px}
+.mis-card p{color:var(--muted);font-size:15.5px;line-height:1.55;margin-bottom:22px}
+.mis-go{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;color:var(--text)}
+.mis-card:hover .mis-go{color:var(--c)}
+.mis-go i{transition:transform .4s var(--ease)}
+.mis-card:hover .mis-go i{transform:translateX(5px)}
+@media (max-width:980px){.mis-grid{grid-template-columns:1fr}}
+@media (max-width:640px){.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{justify-content:center}}
+
+.stats-asof{grid-column:1/-1;margin-top:8px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);max-width:90ch;line-height:1.6}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1259,10 +1301,15 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <span>IMMCA</span>
     </div>
     <h1>
-      <span class="ln"><span>Instituto de Investigaciones en Medicina Molecular</span></span>
-      <span class="ln"><span>y Celular Aplicada</span></span>
+      <span class="ln"><span>Investigación biomédica</span></span>
+      <span class="ln"><span>desde Tucumán</span></span>
     </h1>
-    <p class="hero-deps hero-el">Consejo Nacional de Investigaciones Científicas y Técnicas · Universidad Nacional de Tucumán · Sistema Provincial de Salud de Tucumán</p>
+    <p class="hero-mission hero-el">Estudiamos cómo se originan enfermedades como el Parkinson y desarrollamos nuevas herramientas para detectarlas y tratarlas. Lo hacemos junto a equipos de salud, grupos de investigación y empresas de base tecnológica.</p>
+    <div class="hero-cta hero-el">
+      <a class="btn btn-primary mag" href="#investigacion">Conocé nuestras líneas de investigación <i class="ph ph-arrow-right"></i></a>
+      <a class="btn btn-ghost mag" href="#consulta-servicios">Consultá por un servicio</a>
+    </div>
+    <p class="hero-deps hero-el">Instituto de Investigaciones en Medicina Molecular y Celular Aplicada · CONICET, UNT y SIPROSA</p>
     <p class="hero-ue-label mono hero-el">Unidad Ejecutora</p>
   </div>
 
@@ -1270,7 +1317,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="wrap">
       <div class="hm-label mono"><span class="hm-count">01</span><span class="hm-of">/ 06</span><span class="hm-cap">Nuestra sede · Dorrego 1080</span></div>
       <div class="hm-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <a class="hero-scroll mono" href="#noticias" tabindex="-1">Noticias<span class="line"></span></a>
+      <a class="hero-scroll mono" href="#mision" tabindex="-1">Qué hacemos<span class="line"></span></a>
     </div>
   </div>
 
@@ -1279,6 +1326,36 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <a href="https://www.conicet.gov.ar" target="_blank" rel="noopener"><img class="lg lg-conicet" src="logos/conicet.svg" alt="CONICET"></a>
       <a href="https://www.unt.edu.ar" target="_blank" rel="noopener"><img class="lg lg-unt" src="logos/unt.png" alt="Universidad Nacional de Tucumán"></a>
       <a href="https://msptucuman.gov.ar" target="_blank" rel="noopener"><img class="lg lg-msp" src="logos/siprosa-msp.png" alt="Sistema Provincial de Salud, Ministerio de Salud Pública de Tucumán"></a>
+    </div>
+  </div>
+</section>
+
+<!-- DEL LABORATORIO A LA SALUD PÚBLICA -->
+<section class="sec mis" id="mision">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono kicker rv">Qué hacemos</span>
+      <h2 class="rv">Del laboratorio a la salud pública</h2>
+    </div>
+    <div class="mis-grid">
+      <a class="mis-card rv" href="#pegasus">
+        <span class="mis-ic"><i class="ph-thin ph-flask"></i></span>
+        <span class="mis-k mono">Pegasus · Desarrollo terapéutico</span>
+        <p>A partir del estudio de la alfa-sinucleína y su papel en el Parkinson, desarrollamos un candidato a fármaco que combina actividad dopaminérgica y neuroprotectora en modelos experimentales.</p>
+        <span class="mis-go">Conocé el desarrollo de Pegasus <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a class="mis-card rv" href="#rt-quic">
+        <span class="mis-ic"><i class="ph-thin ph-waveform"></i></span>
+        <span class="mis-k mono">RT-QuIC · Investigación diagnóstica</span>
+        <p>Junto al ANLIS-Malbrán, trabajamos en la validación de un ensayo que detecta alfa-sinucleína mal plegada en líquido cefalorraquídeo. En paralelo, exploramos su aplicación a muestras de sangre.</p>
+        <span class="mis-go">Conocé el proyecto RT-QuIC <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a class="mis-card rv" href="#sociedad">
+        <span class="mis-ic"><i class="ph-thin ph-users-three"></i></span>
+        <span class="mis-k mono">Parkinson y comunidad</span>
+        <p>Impulsamos actividades con pacientes, familias y equipos de salud. En el Día Mundial del Parkinson, nos reunimos frente a la Casa Histórica para dar visibilidad a la enfermedad.</p>
+        <span class="mis-go">Conocé nuestro trabajo con la comunidad <i class="ph ph-arrow-right"></i></span>
+      </a>
     </div>
   </div>
 </section>
@@ -1328,6 +1405,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div class="stat rv"><b data-count="2">2</b><span>Patentes internacionales licenciadas</span></div>
       <div class="stat rv"><b data-count="15">15</b><span>Investigadores, becarios y personal de apoyo</span></div>
       <div class="stat rv"><b data-count="13">13</b><span>Países de los coautores internacionales</span></div>
+      <p class="stats-asof mono">Datos al 17 de noviembre de 2026. Los artículos son los publicados desde la creación del instituto; la biblioteca incluye además trabajos anteriores del equipo.</p>
     </div>
     <dl class="ficha rv">
       <div class="ficha-name"><dt class="mono">Nombre oficial</dt><dd>Instituto de Investigaciones en Medicina Molecular y Celular Aplicada</dd></div>
@@ -1404,7 +1482,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
       <article class="tl-item key">
         <div class="tl-year">2024</div>
-        <h3>Pegasus, aprobada</h3>
+        <h3>Pegasus: patente aprobada</h3>
         <p>La patente del candidato a fármaco para Parkinson se aprueba en Estados Unidos y en la Unión Europea, y sigue en trámite en otros seis países. En 2025 se aprueba su licencia a SkyBio LLC.</p>
       </article>
       <article class="tl-item">
@@ -1700,7 +1778,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     <div class="rtq rv" id="rt-quic">
       <div class="rtq-intro">
         <span class="mono kicker">En marcha · Diagnóstico temprano</span>
-        <h3>RT-QuIC: un biomarcador que detecta la proteína del Parkinson</h3>
+        <h3>RT-QuIC: un ensayo para detectar alfa-sinucleína mal plegada</h3>
         <p>Un <b>biomarcador</b> es una señal medible en el cuerpo que indica que una enfermedad está presente o avanzando. La mayoría de los biomarcadores neurológicos que se usan hoy, como NfL, GFAP o pTau, miden <em>cuánta</em> proteína hay, y pueden subir también por otras causas.</p>
         <p>La RT-QuIC, un ensayo de amplificación de semillas (SAA), mide otra cosa: si en la muestra hay alfa-sinucleína mal plegada capaz de transmitir su forma a otras proteínas, la marca bioquímica de la enfermedad de Parkinson. Puede detectar un agregado entre mil millones de moléculas normales.</p>
         <div class="rtq-vs"><div class="rtq-vs-c"><span class="mono">Biomarcadores de concentración</span><b>NfL · GFAP · pTau</b><p>Miden cantidad o daño. Son indirectos.</p></div><div class="rtq-vs-c on"><span class="mono">Biomarcador funcional</span><b>RT-QuIC (SAA)</b><p>Detecta la forma de la proteína que propaga la enfermedad.</p></div></div>
@@ -1711,7 +1789,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="rtq-ours">
         <h4 class="mono">Qué hacemos en el IMMCA</h4>
-        <ol class="rtq-steps"><li class="done"><span class="mono">01 · Logrado</span><h4>Proyecto OEA</h4><p>Nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas.</p></li><li class="done"><span class="mono">02 · Logrado</span><h4>Insumo propio</h4><p>La técnica necesita alfa-sinucleína humana recombinante, que cuesta unos USD 1.020 por miligramo. La producimos en el IMMCA: 100 mg por mes.</p></li><li class="now"><span class="mono">03 · En curso</span><h4>Validación</h4><p>Realizamos la puesta a punto con insumos de producción local, iniciamos la validación junto al ANLIS-Malbrán e implementamos sistemas de gestión de calidad.</p></li><li class="now"><span class="mono">04 · En curso</span><h4>Hacia la sangre</h4><p>Con un proyecto PIETR del CONICET aplicamos la RT-QuIC a vesículas extracelulares de origen neuronal aisladas de plasma.</p></li></ol>
+        <ol class="rtq-steps"><li class="done"><span class="mono">01 · Logrado</span><h4>Proyecto OEA</h4><p>Nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas.</p></li><li class="done"><span class="mono">02 · Logrado</span><h4>Insumo propio</h4><p>La técnica necesita alfa-sinucleína humana recombinante, que cuesta unos USD 1.020 por miligramo. La producimos en el IMMCA: 100 mg por mes.</p></li><li class="now"><span class="mono">03 · En curso</span><h4>Validación en líquido cefalorraquídeo</h4><p>Realizamos la puesta a punto con insumos de producción local y, junto al ANLIS-Malbrán, validamos el ensayo en líquido cefalorraquídeo, la muestra en la que la técnica está más establecida. En paralelo implementamos sistemas de gestión de calidad.</p></li><li class="now"><span class="mono">04 · En curso</span><h4>Exploración en sangre</h4><p>Con un proyecto PIETR del CONICET exploramos aplicar la RT-QuIC a vesículas extracelulares de origen neuronal aisladas de plasma. Es una línea en desarrollo: todavía no es un análisis disponible.</p></li></ol>
       </div>
     </div>
 
@@ -1832,7 +1910,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Producción científica</h2>
-      <p class="lead rv">Tres décadas de trabajos del grupo. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
+      <p class="lead rv">Tres décadas de trabajos del grupo, incluidos los anteriores a la creación del instituto en 2018. Por eso son más que los 30 artículos que contamos en las cifras del IMMCA. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
     </div>
     <div class="impact rv">
       <div class="impact-lead">
@@ -1924,6 +2002,14 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <p class="lead rv">Pegasus (DAD9) es un candidato a fármaco para la enfermedad de Parkinson diseñado en el IMMCA. Todavía no llegó a pacientes: completó la etapa preclínica y hoy se prepara para pedir autorización a la FDA para los primeros estudios en personas.</p>
     </div>
+
+    <dl class="pg-state rv">
+      <div><dt>Patente</dt><dd>Aprobada en Estados Unidos y la Unión Europea. En trámite en otros seis países.</dd></div>
+      <div><dt>Licencia</dt><dd>Exclusiva a SkyBio LLC desde 2025, con SIPROSA, CONICET, UNT y UBA como cotitulares.</dd></div>
+      <div><dt>Evidencia</dt><dd>Preclínica completa, en modelos celulares y animales. Todavía no se probó en personas.</dd></div>
+      <div><dt>Próximo paso</dt><dd>Reunión pre-IND con la FDA, prevista para febrero de 2027.</dd></div>
+      <p class="pg-asof mono">Estado al 17 de noviembre de 2026</p>
+    </dl>
 
     <ol class="pg-track rv" aria-label="Etapas del desarrollo de Pegasus">
       <li class="done">
@@ -2041,7 +2127,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div class="sq-intro rv">
         <h3>Consultá por un servicio</h3>
         <p>Contanos qué necesitás y te respondemos con disponibilidad, condiciones y presupuesto.</p>
-        <p class="sq-who"><i class="ph ph-user-circle"></i><span>Responsable de servicios<br><b>Sabrina Sequeira</b></span></p>
+        <p class="sq-who"><i class="ph ph-user-circle"></i><span>Responsable de servicios<br><b>Sabrina Sequeira</b></span></p><p class="sq-mail"><span class="mono">O escribile directamente</span><span class="sq-copy"><b id="sq-addr">…</b><button type="button" class="sq-btn" id="sq-cp">Copiar</button></span></p>
       </div>
       <form class="cform sq-form rv" id="sform" novalidate>
         <div class="field"><label for="sf-nombre">Nombre y apellido</label><input id="sf-nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
@@ -2060,7 +2146,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
           <option>Otro</option>
         </select></div>
         <div class="field full"><label for="sf-msg">Descripción de la muestra o del pedido</label><textarea id="sf-msg" rows="5" required placeholder="Tipo y cantidad de muestras, plazos, objetivo del estudio…"></textarea><small class="err">Contanos qué necesitás.</small></div>
-        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar consulta <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con la consulta lista para enviar.</p></div>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Abrir consulta en mi correo <i class="ph ph-envelope-simple"></i></button><p class="hint">Se abre tu programa de correo con la consulta ya escrita. Revisala y enviala desde ahí.</p></div>
       </form>
     </div>
   </div>
@@ -2513,7 +2599,17 @@ $$('[data-motivo]').forEach(b => b.addEventListener('click', () => { const sel =
 const sqTo = ['sabriseq', 'gmail.com'].join('@');
 const sform = $('#sform');
 // cada servicio de la lista abre el formulario con ese servicio elegido
-$$('.svc-row').forEach(r => r.addEventListener('click', () => { const t = r.querySelector('h3').textContent; const o = [...$('#sf-svc').options].find(o => o.text === t); if (o) $('#sf-svc').value = o.value; }));
+$$('.svc-row').forEach(r => r.addEventListener('click', () => {
+  const t = r.querySelector('h3').textContent, sel = $('#sf-svc');
+  const o = [...sel.options].find(o => o.text === t);
+  if (o) { sel.value = o.value; const f = sel.closest('.field'); f.classList.add('picked'); setTimeout(() => f.classList.remove('picked'), 2200); }
+}));
+// la direccion de servicios se muestra y se copia sin quedar escrita en el HTML
+const sqAddr = $('#sq-addr'); if (sqAddr) sqAddr.textContent = sqTo;
+const sqCp = $('#sq-cp');
+if (sqCp) sqCp.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(sqTo); sqCp.textContent = 'Copiada'; sqCp.classList.add('ok'); setTimeout(() => { sqCp.textContent = 'Copiar'; sqCp.classList.remove('ok'); }, 1800); } catch (e) {}
+});
 sform.addEventListener('submit', e => {
   e.preventDefault();
   let ok = true;
