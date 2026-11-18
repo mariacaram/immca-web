@@ -1283,6 +1283,26 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .svc-row h3{font-size:clamp(22px,2.3vw,32px);line-height:1.18;letter-spacing:-.02em;max-width:20ch}
 @media (max-width:820px){.svc-row{grid-template-columns:1fr}}
 
+/* habilitaciones y certificaciones */
+.hab{background:var(--bg-2)}
+.hab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hab-card{--c:var(--accent);position:relative;padding:34px 32px 32px;border-radius:var(--r);background:var(--bg);border:1px solid var(--line);
+  box-shadow:0 22px 44px -34px rgba(10,37,64,.4)}
+.hab-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--r) 0 0 var(--r);background:var(--c)}
+.hab-ok{--c:#1a9e62}
+.hab-curso{--c:var(--sol)}
+.hab-estado{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;color:var(--c);
+  background:color-mix(in srgb,var(--c) 12%,transparent);border:1px solid color-mix(in srgb,var(--c) 32%,transparent);margin-bottom:18px}
+.hab-estado i{font-size:15px}
+.hab-card h3{font-size:clamp(21px,2.1vw,27px);letter-spacing:-.02em;margin-bottom:14px}
+.hab-card p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.hab-card p+p{margin-top:12px}
+.hab-card b{color:var(--text)}
+.hab-nota{display:flex;gap:12px;align-items:flex-start;margin-top:26px;padding:18px 22px;border-radius:var(--r);
+  background:var(--bg);border:1px dashed var(--line-2);color:var(--muted);font-size:15px;line-height:1.55;max-width:92ch}
+.hab-nota i{color:var(--accent);font-size:20px;flex-shrink:0;margin-top:1px}
+@media (max-width:900px){.hab-grid{grid-template-columns:1fr}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1335,6 +1355,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <a href="#proyecto">Proyecto institucional</a>
           <a href="#infraestructura">Infraestructura</a>
           <a href="#directora">Autoridades</a>
+          <a href="#habilitaciones">Habilitaciones</a>
           <a href="#agradecimientos">Agradecimientos</a>
         </div>
       </div>
@@ -1377,7 +1398,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
   </div>
   <nav class="mm-body" aria-label="Menú">
-    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a><a href="#agradecimientos">Agradecimientos</a></div></details>
+    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
@@ -2342,6 +2363,35 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="full cform-foot"><button class="btn btn-primary" type="submit">Abrir consulta en mi correo <i class="ph ph-envelope-simple"></i></button><p class="hint">Se abre tu programa de correo con la consulta ya escrita. Revisala y enviala desde ahí.</p></div>
       </form>
     </div>
+  </div>
+</section>
+
+<!-- HABILITACIONES Y CERTIFICACIONES -->
+<section class="sec hab" id="habilitaciones">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono kicker rv">Habilitaciones y certificaciones</span>
+      <h2 class="rv">En condiciones de trabajar con muestras reales</h2>
+      <p class="lead rv">Investigar con muestras de pacientes exige permisos y sistemas de gestión que no todo instituto tiene. Estos son los nuestros, con el estado en que está cada uno.</p>
+    </div>
+
+    <div class="hab-grid">
+      <article class="hab-card hab-ok rv">
+        <span class="hab-estado mono"><i class="ph-fill ph-seal-check"></i>Vigente</span>
+        <h3>Habilitación del SIPROSA</h3>
+        <p>Contamos con habilitación vigente del Sistema Provincial de Salud de Tucumán para trabajar con muestras humanas y de origen animal.</p>
+        <p>Eso nos permite hacer el procesamiento inicial de muestras para ensayos clínicos y para el desarrollo y la puesta a punto de tecnología biomédica. Es una posición poco frecuente para un instituto de investigación y es la que hace posible, por ejemplo, el trabajo con líquido cefalorraquídeo y sangre en el proyecto de RT-QuIC.</p>
+      </article>
+
+      <article class="hab-card hab-curso rv">
+        <span class="hab-estado mono"><i class="ph-fill ph-clock-countdown"></i>En proceso</span>
+        <h3>ISO 9001 e ISO/IEC 17025</h3>
+        <p>Estamos certificando la gestión de calidad del instituto bajo dos normas: <b>ISO 9001</b>, de sistemas de gestión de calidad, e <b>ISO/IEC 17025</b>, específica de laboratorios de ensayo y calibración.</p>
+        <p>Completamos la primera etapa del proceso bajo la supervisión de Lorena Sola. Los sistemas de gestión ya están implementados y el instituto se encuentra a la espera de la auditoría de certificación.</p>
+      </article>
+    </div>
+
+    <p class="hab-nota rv"><i class="ph ph-info"></i><span>Las certificaciones ISO todavía no están otorgadas: el instituto completó la implementación y espera la auditoría. Publicamos el estado real de cada trámite.</span></p>
   </div>
 </section>
 
