@@ -744,6 +744,26 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .member .deg{color:var(--muted)}
 .member .go{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:all .4s var(--ease)}
 .member:hover .go,.member:focus-visible .go{background:var(--accent-btn);color:var(--accent-ink);border-color:var(--accent-btn)}
+.mwrap{border-bottom:1px solid var(--line)}
+.mwrap .member{border-bottom:0;cursor:pointer;user-select:none}
+.mwrap .go i{transition:transform .5s var(--ease)}
+.mwrap.open .go{background:var(--accent-btn);color:var(--accent-ink);border-color:var(--accent-btn)}
+.mwrap.open .go i{transform:rotate(180deg)}
+.cv{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.mwrap.open .cv{grid-template-rows:1fr}
+.cv>.cv-in{overflow:hidden;min-height:0}
+.cv-in>*{opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease) .12s,transform .5s var(--ease) .12s}
+.mwrap.open .cv-in>*{opacity:1;transform:none}
+.cv-lead{font-size:clamp(18px,1.7vw,22px);line-height:1.45;max-width:62ch;padding:4px 8px 22px;color:var(--text)}
+.cv-dl{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cv-dl>div{display:grid;grid-template-columns:230px 1fr;gap:24px;background:var(--bg);padding:18px 8px}
+.cv-dl dt{color:var(--accent);font-size:12.5px;letter-spacing:.01em;padding-top:4px}
+.cv-dl dd{color:var(--muted);max-width:70ch}
+.cv-links{display:flex;flex-wrap:wrap;gap:22px;padding:20px 8px 30px}
+.cv-links a{color:var(--accent);font-size:15px;display:inline-flex;align-items:center;gap:7px}
+.cv-links a:hover{text-decoration:underline}
+@media (max-width:820px){.cv-dl>div{grid-template-columns:1fr;gap:6px}}
+
 .team-more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .team-more div{padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2)}
 .team-more b{display:block;font-size:20px;font-weight:600;margin-bottom:6px}
@@ -1949,18 +1969,79 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Nuestro equipo</h2>
-      <p class="lead rv">Cada nombre lleva a su ficha oficial en CONICET, con sus temas, proyectos y producción.</p>
+      <p class="lead rv">Hacé clic en un nombre para ver su trayectoria. Desde cada ficha se llega a la oficial del CONICET, con los proyectos y la producción completa.</p>
     </div>
     <figure class="photo-wide clip" id="teamphoto">
       <img src="img/equipo-laboratorio.jpg" alt="Integrantes del IMMCA con guardapolvo en el laboratorio de cultivo del instituto" loading="lazy">
     </figure>
     <div class="team">
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener" aria-label="Rosana Chehín, ficha en CONICET"><span class="av"><img src="img/equipo/rosana-chehin.webp" alt="Retrato ilustrado de Rosana Chehín" loading="lazy" width="440" height="440"></span><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener" aria-label="César Luis Ávila, ficha en CONICET"><span class="av"><img src="img/equipo/cesar-luis-avila.webp" alt="Retrato ilustrado de César Luis Ávila" loading="lazy" width="440" height="440"></span><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <div class="mwrap rv">
+        <div class="member" role="button" tabindex="0" aria-expanded="false" aria-controls="cv-rosana-chehin"><span class="av"><img src="img/equipo/rosana-chehin.webp" alt="Retrato ilustrado de Rosana Chehín" loading="lazy" width="440" height="440"></span><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span></div>
+        <div class="cv" id="cv-rosana-chehin" inert>
+          <div class="cv-in">
+            <p class="cv-lead">Dirige el IMMCA y el grupo de neurobiofísica donde nacieron Pegasus y Aristaeus. Su trabajo gira alrededor de cómo las proteínas se pliegan, se agregan y dañan a la neurona.</p>
+            <dl class="cv-dl">
+          <div><dt class="mono">Formación</dt><dd>Bioquímica (UNT, 1991), primer promedio de su promoción. Doctora en Bioquímica (UNT, 1995), con una tesis sobre la interacción de las hormonas tiroideas con sistemas modelo de membrana.</dd></div>
+          <div><dt class="mono">Cargos</dt><dd>Investigadora Principal del CONICET. Profesora Titular con dedicación exclusiva de Química Biológica, en el Instituto de Química Biológica «Dr. Bernabé Bloj» de la FBQF-UNT. Directora del IMMCA por concurso. Integra el Consejo Directivo del CONICET NOA Sur y el comité editorial de <i>Frontiers in Aging Neuroscience</i>.</dd></div>
+          <div><dt class="mono">Formación de recursos humanos</dt><dd>Dirigió 18 becarios del CONICET, 8 investigadores asistentes y 6 tesis doctorales, todas aprobadas con la máxima calificación.</dd></div>
+          <div><dt class="mono">Producción y proyectos</dt><dd>51 publicaciones, 30 de ellas con rol protagónico. Dirigió 24 proyectos de investigación, 7 internacionales.</dd></div>
+          <div><dt class="mono">Patentes</dt><dd>Coautora de las dos patentes del instituto, licenciadas a SkyBio LLC: el transportador de fármacos al sistema nervioso central (2021) y el dispositivo de detección de biomarcadores de enfermedades neurodegenerativas (2022).</dd></div>
+          <div><dt class="mono">Distinciones</dt><dd>Mención de Honor Domingo Faustino Sarmiento, del Senado de la Nación (2018). Mención de Honor Juan Bautista Alberdi, de la Cámara de Diputados (2022).</dd></div>
+            </dl>
+            <p class="cv-links"><a href="https://scholar.google.com/citations?hl=en&amp;user=Q5wwJfEAAAAJ" target="_blank" rel="noopener">Google Scholar <i class="ph ph-arrow-up-right"></i></a><a href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener">Ficha oficial en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="mwrap rv">
+        <div class="member" role="button" tabindex="0" aria-expanded="false" aria-controls="cv-cesar-luis-avila"><span class="av"><img src="img/equipo/cesar-luis-avila.webp" alt="Retrato ilustrado de César Luis Ávila" loading="lazy" width="440" height="440"></span><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span></div>
+        <div class="cv" id="cv-cesar-luis-avila" inert>
+          <div class="cv-in">
+            <p class="cv-lead">Biofísico y bioinformático. Combina la simulación computacional con la espectroscopía para entender qué forma toman las proteínas y por qué esa forma se pierde.</p>
+            <dl class="cv-dl">
+          <div><dt class="mono">Formación</dt><dd>Bioquímico (UNT, 2004) y Doctor en Ciencias Biológicas (UNT, 2009), con una tesis sobre estudios estructurales de macromoléculas por métodos bioinformáticos, calificada con 10. Título homologado en España por la Universitat Pompeu Fabra. Maestría en Bioinformática por la Universidad Internacional de Andalucía.</dd></div>
+          <div><dt class="mono">Cargos</dt><dd>Investigador Adjunto del CONICET y Profesor Asociado de Química Biológica II en la FBQyF-UNT. Vicedirector del IMMCA desde 2024 y prosecretario de la Sociedad Argentina de Biofísica.</dd></div>
+          <div><dt class="mono">Estancias</dt><dd>Universidad de Talca (Chile), Universidad de Tokushima (Japón), Universitat Pompeu Fabra (España), Université Paris-Est Créteil, Johns Hopkins University y el Instituto del Cerebro y la Médula Espinal de París. Beca CONICET-Fulbright en 2015.</dd></div>
+          <div><dt class="mono">Proyectos</dt><dd>Dirige la caracterización genética de la población con enfermedad de Parkinson del noroeste argentino, dentro del consorcio internacional LARGE-PD, y dirigió el proyecto sobre el rol del estrés oxidativo en la patogénesis de estas enfermedades.</dd></div>
+          <div><dt class="mono">Distinciones</dt><dd>Premio Ponce Hornos de la Sociedad Argentina de Biofísica, en 2009 y en 2018. Menciones de Honor Domingo Faustino Sarmiento (2018) y Juan Bautista Alberdi (2022).</dd></div>
+            </dl>
+            <p class="cv-links"><a href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener">Ficha oficial en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+          </div>
+        </div>
+      </div>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/16251" target="_blank" rel="noopener" aria-label="Esteban Vera Pingitore, ficha en CONICET"><span class="av"><img src="img/equipo/esteban-vera-pingitore.webp" alt="Retrato ilustrado de Esteban Vera Pingitore" loading="lazy" width="440" height="440"></span><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/22601" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><span class="av"><img src="img/equipo/analia-silvina-chaves.webp" alt="Retrato ilustrado de Analía Silvina Chaves" loading="lazy" width="440" height="440"></span><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15880" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><span class="av"><img src="img/equipo/sergio-benjamin-socias.webp" alt="Retrato ilustrado de Sergio Benjamín Socías" loading="lazy" width="440" height="440"></span><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/329877" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><span class="av"><img src="img/equipo/diego-ploper.webp" alt="Retrato ilustrado de Diego Ploper" loading="lazy" width="440" height="440"></span><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <div class="mwrap rv">
+        <div class="member" role="button" tabindex="0" aria-expanded="false" aria-controls="cv-sergio-benjamin-socias"><span class="av"><img src="img/equipo/sergio-benjamin-socias.webp" alt="Retrato ilustrado de Sergio Benjamín Socías" loading="lazy" width="440" height="440"></span><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span></div>
+        <div class="cv" id="cv-sergio-benjamin-socias" inert>
+          <div class="cv-in">
+            <p class="cv-lead">Trabaja en reposicionamiento de fármacos: buscar, entre medicamentos que ya se usan y son seguros, cuáles frenan la agregación de proteínas en el cerebro.</p>
+            <dl class="cv-dl">
+          <div><dt class="mono">Formación</dt><dd>Licenciado en Biotecnología (UNT, 2004) y Doctor en Bioquímica (UNT, 2010), con una tesis sobre relación estructura-función en la microcina J25, calificada con 10.</dd></div>
+          <div><dt class="mono">Cargos</dt><dd>Investigador Adjunto del CONICET desde 2022, tras siete años como Investigador Asistente. Jefe de Trabajos Prácticos de Biología en la Carrera de Médico de la Facultad de Medicina de la UNT.</dd></div>
+          <div><dt class="mono">Posdoctorados</dt><dd>University of British Columbia (Canadá, 2010), Institut du Cerveau de la Sorbona (París, 2013-2014) y Université Paris-Est Créteil (2015).</dd></div>
+          <div><dt class="mono">Proyectos</dt><dd>Dirigió el PICT de reposicionamiento de fármacos para enfermedades neurodegenerativas (2019-2023) y codirige el estudio genético del Parkinson en el noroeste argentino.</dd></div>
+          <div><dt class="mono">Distinciones</dt><dd>Declaración de Interés Legislativo de la Legislatura de Tucumán al equipo que desarrolló Pegasus-DAD9 (2024). Mención de Honor Juan Bautista Alberdi (2022). Premio Dr. Bernardo Houssay de CEDIQUIFA (2005).</dd></div>
+            </dl>
+            <p class="cv-links"><a href="https://bicyt.conicet.gov.ar/fichas/persona/15880" target="_blank" rel="noopener">Ficha oficial en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="mwrap rv">
+        <div class="member" role="button" tabindex="0" aria-expanded="false" aria-controls="cv-diego-ploper"><span class="av"><img src="img/equipo/diego-ploper.webp" alt="Retrato ilustrado de Diego Ploper" loading="lazy" width="440" height="440"></span><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD en Química Biológica</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span></div>
+        <div class="cv" id="cv-diego-ploper" inert>
+          <div class="cv-in">
+            <p class="cv-lead">Estudia los lisosomas y los autofagosomas: el sistema con el que la célula degrada lo que ya no sirve, y que deja de funcionar en las enfermedades neurodegenerativas.</p>
+            <dl class="cv-dl">
+          <div><dt class="mono">Formación</dt><dd>Licenciado en Química (FBQyF-UNT, 2006). PhD in Biological Chemistry por la Universidad de California en Los Ángeles (UCLA, 2008-2015), con una tesis dirigida por Edward De Robertis sobre el cruce entre las vías Wnt, BMP y endolisosomal. Posdoctorado en UCLA (2015-2017).</dd></div>
+          <div><dt class="mono">Cargos</dt><dd>Investigador Adjunto del CONICET en el IMMCA, dentro del grupo de neurobiofísica.</dd></div>
+          <div><dt class="mono">Temas</dt><dd>Lisosomas y autofagosomas, vías de señalización celular, biología del desarrollo y biología del cáncer, y el punto donde todo eso se cruza con la neurodegeneración. Publicó en <i>PNAS</i>, <i>Cell Reports</i> y <i>Developmental Cell</i>.</dd></div>
+          <div><dt class="mono">Transferencia</dt><dd>Responsable técnico de dos servicios de alto nivel del CONICET: la detección de anticuerpos anti-SARS-CoV-2 por ELISA y la microscopía confocal. Coautor de las dos patentes del instituto.</dd></div>
+          <div><dt class="mono">Distinciones</dt><dd>Beca Fulbright (2006). Premio Florencio Fiorini para la Investigación en Ciencias Biomédicas (2019). Beca del Gobierno de Francia para una estancia en el Instituto del Cerebro de París (2019). Menciones de Honor Domingo Faustino Sarmiento (2018) y Juan Bautista Alberdi (2022).</dd></div>
+            </dl>
+            <p class="cv-links"><a href="https://bicyt.conicet.gov.ar/fichas/persona/329877" target="_blank" rel="noopener">Ficha oficial en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
+          </div>
+        </div>
+      </div>
       <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/325889" target="_blank" rel="noopener" aria-label="Rodrigo Tomás Grau, ficha en CONICET"><span class="av"><img src="img/equipo/rodrigo-tomas-grau.webp" alt="Retrato ilustrado de Rodrigo Tomás Grau" loading="lazy" width="440" height="440"></span><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
     </div>
     <div class="rrhh">
@@ -2755,6 +2836,21 @@ $$('.tabs-nav button').forEach(b => b.addEventListener('click', () => {
 $$('.cell').forEach(c => c.addEventListener('pointermove', e => {
   const b = c.getBoundingClientRect(); c.style.setProperty('--mx', `${e.clientX - b.left}px`); c.style.setProperty('--my', `${e.clientY - b.top}px`);
 }));
+
+/* ============ Equipo: la ficha se abre en la misma pagina ============ */
+$$('.mwrap .member').forEach(m => {
+  const w = m.closest('.mwrap'), panel = w.querySelector('.cv');
+  const toggle = () => {
+    const abierto = w.classList.toggle('open');
+    m.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    panel.inert = !abierto;
+    if (window.ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 650);
+  };
+  m.addEventListener('click', toggle);
+  m.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+});
 
 /* ============ Noticias: arrastre y flechas ============ */
 const ns = $('#news');
