@@ -1057,9 +1057,9 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .hero-ue .hm.on{opacity:1}
 .hero-center{text-align:center;display:flex;flex-direction:column;align-items:center;max-width:1100px}
 .hero-ue .hero-logo{justify-content:center;margin-bottom:22px;gap:18px}
-.hero-ue .hero-logo img{width:clamp(54px,5.4vw,78px)}
-.hero-ue .hero-logo span{font-size:clamp(48px,6vw,86px);font-weight:500;letter-spacing:.05em;color:#fff;font-family:"Fira Sans",sans-serif}
-.hero-ue h1{font-size:clamp(22px,2.6vw,38px);font-weight:500;letter-spacing:-.015em;line-height:1.2;color:#fff}
+.hero-ue .hero-logo img{width:clamp(34px,3vw,42px)}
+.hero-ue .hero-logo span{font-size:clamp(24px,2.4vw,34px);font-weight:500;letter-spacing:.08em;color:rgba(255,255,255,.92);font-family:"Fira Sans",sans-serif}
+.hero-ue h1{font-size:clamp(36px,5vw,72px);font-weight:600;letter-spacing:-.03em;line-height:1.04;color:#fff}
 .hero-ue h1 .ln{display:block}
 .hero-ue .hero-deps{margin:22px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.22);max-width:780px;font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:rgba(255,255,255,.82)}
 .hero-ue-label{margin-top:18px;display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
@@ -1170,6 +1170,30 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 @media (max-width:640px){.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{justify-content:center}}
 
 .stats-asof{grid-column:1/-1;margin-top:8px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);max-width:90ch;line-height:1.6}
+
+/* iconos propios del IMMCA: reemplazan los de la libreria sin tocar el marcado */
+.ph-thin,.ph,.ph-fill{display:inline-flex;align-items:center;justify-content:center}
+.ph-thin.ph-microscope::before,.ph.ph-microscope::before,.ph-fill.ph-microscope::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15.6 2.6a1.5 1.5 0 0 1 2.1 2.1l-1.1 1.1-2.1-2.1z'/%3E%3Cpath d='m14.5 3.7 2.1 2.1-5 5-2.1-2.1z'/%3E%3Cpath d='m9.5 8.7 2.1 2.1'/%3E%3Cpath d='M6 21h13'/%3E%3Cpath d='M9 21a6.5 6.5 0 0 1 2-9.7'/%3E%3Cpath d='M13 17.3h6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15.6 2.6a1.5 1.5 0 0 1 2.1 2.1l-1.1 1.1-2.1-2.1z'/%3E%3Cpath d='m14.5 3.7 2.1 2.1-5 5-2.1-2.1z'/%3E%3Cpath d='m9.5 8.7 2.1 2.1'/%3E%3Cpath d='M6 21h13'/%3E%3Cpath d='M9 21a6.5 6.5 0 0 1 2-9.7'/%3E%3Cpath d='M13 17.3h6'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-first-aid-kit::before,.ph.ph-first-aid-kit::before,.ph-fill.ph-first-aid-kit::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s7-3.6 7-9V5.6L12 3 5 5.6V12c0 5.4 7 9 7 9Z'/%3E%3Cpath d='M12 8.5v5'/%3E%3Cpath d='M9.5 11h5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s7-3.6 7-9V5.6L12 3 5 5.6V12c0 5.4 7 9 7 9Z'/%3E%3Cpath d='M12 8.5v5'/%3E%3Cpath d='M9.5 11h5'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-handshake::before,.ph.ph-handshake::before,.ph-fill.ph-handshake::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-flask::before,.ph.ph-flask::before,.ph-fill.ph-flask::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 3h5'/%3E%3Cpath d='M10.5 3v6.2L5.6 17.9A2 2 0 0 0 7.3 21h9.4a2 2 0 0 0 1.7-3.1L13.5 9.2V3'/%3E%3Cpath d='M7.6 15h8.8'/%3E%3Ccircle cx='11' cy='17.6' r='.9'/%3E%3Ccircle cx='14.2' cy='18.4' r='.6'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 3h5'/%3E%3Cpath d='M10.5 3v6.2L5.6 17.9A2 2 0 0 0 7.3 21h9.4a2 2 0 0 0 1.7-3.1L13.5 9.2V3'/%3E%3Cpath d='M7.6 15h8.8'/%3E%3Ccircle cx='11' cy='17.6' r='.9'/%3E%3Ccircle cx='14.2' cy='18.4' r='.6'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-waveform::before,.ph.ph-waveform::before,.ph-fill.ph-waveform::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V4'/%3E%3Cpath d='M4 20h16'/%3E%3Cpath d='M5.5 17.5c3.4 0 3.6-.3 5-5.2 1.4-4.8 2.6-5 8-5'/%3E%3Ccircle cx='8.6' cy='16.6' r='.9'/%3E%3Ccircle cx='11.4' cy='11' r='.9'/%3E%3Ccircle cx='15' cy='7.6' r='.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V4'/%3E%3Cpath d='M4 20h16'/%3E%3Cpath d='M5.5 17.5c3.4 0 3.6-.3 5-5.2 1.4-4.8 2.6-5 8-5'/%3E%3Ccircle cx='8.6' cy='16.6' r='.9'/%3E%3Ccircle cx='11.4' cy='11' r='.9'/%3E%3Ccircle cx='15' cy='7.6' r='.9'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-users-three::before,.ph.ph-users-three::before,.ph-fill.ph-users-three::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='7' r='2.6'/%3E%3Cpath d='M7.4 19a4.6 4.6 0 0 1 9.2 0'/%3E%3Ccircle cx='4.8' cy='10' r='2'/%3E%3Cpath d='M1.8 17.6A3.4 3.4 0 0 1 5 14.4'/%3E%3Ccircle cx='19.2' cy='10' r='2'/%3E%3Cpath d='M22.2 17.6A3.4 3.4 0 0 0 19 14.4'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='7' r='2.6'/%3E%3Cpath d='M7.4 19a4.6 4.6 0 0 1 9.2 0'/%3E%3Ccircle cx='4.8' cy='10' r='2'/%3E%3Cpath d='M1.8 17.6A3.4 3.4 0 0 1 5 14.4'/%3E%3Ccircle cx='19.2' cy='10' r='2'/%3E%3Cpath d='M22.2 17.6A3.4 3.4 0 0 0 19 14.4'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-dna::before,.ph.ph-dna::before,.ph-fill.ph-dna::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.5 2.5c0 4.7 9 4.8 9 9.5s-9 4.8-9 9.5'/%3E%3Cpath d='M16.5 2.5c0 4.7-9 4.8-9 9.5s9 4.8 9 9.5'/%3E%3Cpath d='M8.3 6.1h7.4'/%3E%3Cpath d='M10.5 8.9h3'/%3E%3Cpath d='M10.5 15.1h3'/%3E%3Cpath d='M8.3 17.9h7.4'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.5 2.5c0 4.7 9 4.8 9 9.5s-9 4.8-9 9.5'/%3E%3Cpath d='M16.5 2.5c0 4.7-9 4.8-9 9.5s9 4.8 9 9.5'/%3E%3Cpath d='M8.3 6.1h7.4'/%3E%3Cpath d='M10.5 8.9h3'/%3E%3Cpath d='M10.5 15.1h3'/%3E%3Cpath d='M8.3 17.9h7.4'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-graduation-cap::before,.ph.ph-graduation-cap::before,.ph-fill.ph-graduation-cap::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8.4 12 4.3l9.5 4.1L12 12.5Z'/%3E%3Cpath d='M6.4 10.6V16c0 1.6 2.5 3 5.6 3s5.6-1.4 5.6-3v-5.4'/%3E%3Cpath d='M21.5 8.4v5.3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 8.4 12 4.3l9.5 4.1L12 12.5Z'/%3E%3Cpath d='M6.4 10.6V16c0 1.6 2.5 3 5.6 3s5.6-1.4 5.6-3v-5.4'/%3E%3Cpath d='M21.5 8.4v5.3'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-student::before,.ph.ph-student::before,.ph-fill.ph-student::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z'/%3E%3Cpath d='M14 3v5h5'/%3E%3Cpath d='M8.5 13h7'/%3E%3Cpath d='M8.5 16.5h4.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z'/%3E%3Cpath d='M14 3v5h5'/%3E%3Cpath d='M8.5 13h7'/%3E%3Cpath d='M8.5 16.5h4.5'/%3E%3C/svg%3E") center/contain no-repeat}
+.ph-thin.ph-rocket-launch::before,.ph.ph-rocket-launch::before,.ph-fill.ph-rocket-launch::before{content:"";display:block;width:1em;height:1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2.5c3 2.3 4.6 5.7 4.6 9.4L15 15.8H9L7.4 11.9c0-3.7 1.6-7.1 4.6-9.4Z'/%3E%3Ccircle cx='12' cy='10' r='1.9'/%3E%3Cpath d='M9 15.8 6.6 18l.5-4.3'/%3E%3Cpath d='M15 15.8 17.4 18l-.5-4.3'/%3E%3Cpath d='M10.6 19.2 12 21.5l1.4-2.3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2.5c3 2.3 4.6 5.7 4.6 9.4L15 15.8H9L7.4 11.9c0-3.7 1.6-7.1 4.6-9.4Z'/%3E%3Ccircle cx='12' cy='10' r='1.9'/%3E%3Cpath d='M9 15.8 6.6 18l.5-4.3'/%3E%3Cpath d='M15 15.8 17.4 18l-.5-4.3'/%3E%3Cpath d='M10.6 19.2 12 21.5l1.4-2.3'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* tarjetas de portada con foto */
+.mis-card{padding:0;overflow:hidden}
+.mis-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2)}
+.mis-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.mis-card:hover .mis-img img{transform:scale(1.06)}
+.mis-card .mis-k{margin:24px 28px 10px}
+.mis-card h3{margin:0 28px 12px;font-size:21px;line-height:1.25;letter-spacing:-.015em}
+.mis-card p{margin:0 28px 22px}
+.mis-card .mis-go{margin:0 28px 28px}
+.mis-card:nth-child(3) .mis-img img{object-position:center 42%}
 
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
@@ -1310,7 +1334,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <a class="btn btn-ghost mag" href="#consulta-servicios">Demander un service</a>
     </div>
     <p class="hero-deps hero-el">Institut de recherche en médecine moléculaire et cellulaire appliquée · CONICET, UNT et SIPROSA</p>
-    <p class="hero-ue-label mono hero-el">Unité exécutrice</p>
+    <p class="hero-ue-label mono hero-el">Recherche · Enseignement · Transfert</p>
   </div>
 
   <div class="hero-meta hero-el" aria-hidden="true">
@@ -1330,30 +1354,33 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   </div>
 </section>
 
-<!-- DEL LABORATORIO A LA SALUD PÚBLICA -->
+<!-- EN QUÉ ESTAMOS TRABAJANDO -->
 <section class="sec mis" id="mision">
   <div class="wrap">
     <div class="sec-head">
       <span class="mono kicker rv">Ce que nous faisons</span>
-      <h2 class="rv">Du laboratoire à la santé publique</h2>
+      <h2 class="rv">Ce sur quoi nous travaillons</h2>
     </div>
     <div class="mis-grid">
       <a class="mis-card rv" href="#pegasus">
-        <span class="mis-ic"><i class="ph-thin ph-flask"></i></span>
-        <span class="mis-k mono">Pegasus · Développement thérapeutique</span>
-        <p>À partir de nos travaux sur l’alpha-synucléine et son rôle dans la maladie de Parkinson, nous avons conçu un candidat médicament qui associe une activité dopaminergique et neuroprotectrice dans des modèles expérimentaux.</p>
+        <span class="mis-img"><img src="img/mesada.jpg" alt="" loading="lazy"></span>
+        <span class="mis-k mono">Développement thérapeutique</span>
+        <h3>Pegasus, un candidat médicament contre la maladie de Parkinson</h3>
+        <p>Nous avons conçu une molécule qui, dans des modèles expérimentaux, associe une activité dopaminergique et neuroprotectrice. Elle a achevé l’étape préclinique et n’a pas encore été testée chez l’humain.</p>
         <span class="mis-go">Découvrir le développement de Pegasus <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="mis-card rv" href="#rt-quic">
-        <span class="mis-ic"><i class="ph-thin ph-waveform"></i></span>
-        <span class="mis-k mono">RT-QuIC · Recherche diagnostique</span>
-        <p>Avec l’ANLIS-Malbrán, nous validons un test qui détecte l’alpha-synucléine mal repliée dans le liquide céphalorachidien. En parallèle, nous explorons son application à des échantillons sanguins.</p>
+        <span class="mis-img"><img src="img/microscopia-confocal.jpg" alt="" loading="lazy"></span>
+        <span class="mis-k mono">Recherche diagnostique</span>
+        <h3>RT-QuIC, une nouvelle voie pour étudier la maladie de Parkinson</h3>
+        <p>Avec l’ANLIS-Malbrán, nous validons un test qui détecte l’alpha-synucléine mal repliée dans le liquide céphalorachidien. En parallèle, nous explorons son application au sang.</p>
         <span class="mis-go">Découvrir le projet RT-QuIC <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="mis-card rv" href="#sociedad">
-        <span class="mis-ic"><i class="ph-thin ph-users-three"></i></span>
-        <span class="mis-k mono">Parkinson et la communauté</span>
-        <p>Nous menons des activités avec les patients, les familles et les équipes de santé. Lors de la Journée mondiale de la maladie de Parkinson, nous nous sommes réunis devant la Casa Histórica pour donner de la visibilité à la maladie.</p>
+        <span class="mis-img"><img src="img/parkinson-casa-historica.jpg" alt="" loading="lazy"></span>
+        <span class="mis-k mono">Communauté</span>
+        <h3>Tucumán s’illumine en rouge pour la maladie de Parkinson</h3>
+        <p>Lors de la Journée mondiale de la maladie de Parkinson, nous nous sommes réunis devant la Casa Histórica avec des patients, des familles et des équipes de santé.</p>
         <span class="mis-go">Découvrir notre travail avec la communauté <i class="ph ph-arrow-right"></i></span>
       </a>
     </div>
@@ -1487,8 +1514,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
       <article class="tl-item">
         <div class="tl-year">2026</div>
-        <h3>Phase préclinique achevée</h3>
-        <p>Pegasus achève son évaluation préclinique dans des laboratoires aux États-Unis, et le dossier pré-IND destiné à la FDA est prêt.</p>
+        <h3>Pegasus : étape préclinique achevée</h3>
+        <p>Pegasus achève son évaluation préclinique, sur modèles cellulaires et animaux, et le dossier pre-IND destiné à la FDA est prêt. Le composé n’a pas encore été testé chez l’humain.</p>
       </article>
       <article class="tl-item key">
         <div class="tl-year">2027</div>
@@ -1912,6 +1939,14 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <h2 class="rv">Production scientifique</h2>
       <p class="lead rv">Trois décennies de travaux du groupe, y compris ceux antérieurs à la création de l’institut en 2018. C’est pourquoi ils sont plus nombreux que les 30 articles comptés dans les chiffres de l’IMMCA. Les articles en libre accès se lisent ici même ; les autres, dans la revue.</p>
     </div>
+    <div class="lib-tools rv">
+      <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Rechercher des publications</span><input id="q" type="search" placeholder="Rechercher par titre, auteur ou revue" autocomplete="off"></label>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="lib-meta mono"><span id="libcount">Chargement des publications</span><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="oaonly" style="accent-color:var(--accent)"> Avec PDF uniquement</label></div>
+    <div class="lib-list" id="liblist" aria-live="polite"></div>
+    <div class="lib-more"><button class="btn btn-ghost" id="libmore" hidden>Voir plus de publications <i class="ph ph-arrow-down"></i></button></div>
+
     <div class="impact rv">
       <div class="impact-lead">
         <span class="mono kicker">Depuis 2018</span>
@@ -1937,13 +1972,6 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
           <li>France</li><li>Brésil</li><li>Espagne</li><li>Allemagne</li><li>Royaume-Uni</li><li>Italie</li><li>États-Unis</li><li>Chili</li><li>Pérou</li><li>Colombie</li><li>Mexique</li><li>Porto Rico</li><li>Guadeloupe</li>
         </ul>
       </div>
-    <div class="lib-tools rv">
-      <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Rechercher des publications</span><input id="q" type="search" placeholder="Rechercher par titre, auteur ou revue" autocomplete="off"></label>
-      <div class="filters" id="filters"></div>
-    </div>
-    <div class="lib-meta mono"><span id="libcount">Chargement des publications</span><label style="display:inline-flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" id="oaonly" style="accent-color:var(--accent)"> Avec PDF uniquement</label></div>
-    <div class="lib-list" id="liblist" aria-live="polite"></div>
-    <div class="lib-more"><button class="btn btn-ghost" id="libmore" hidden>Voir plus de publications <i class="ph ph-arrow-down"></i></button></div>
   </div>
 </section>
 
