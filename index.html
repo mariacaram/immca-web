@@ -1195,6 +1195,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .mis-card .mis-go{margin:0 28px 28px}
 .mis-card:nth-child(3) .mis-img img{object-position:center 42%}
 
+/* ilustraciones animadas: estaticas por defecto, se mueven al pasar el mouse */
+.ill{display:block;width:var(--ill,112px);aspect-ratio:1;border-radius:18px;overflow:hidden;background:#0d1522;
+  box-shadow:0 18px 40px -22px rgba(6,20,40,.65);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.ill img{width:100%;height:100%;display:block;object-fit:cover}
+.ill-head{--ill:clamp(92px,9vw,124px);margin-bottom:22px}
+.ill-ln{--ill:clamp(96px,9vw,120px);margin-bottom:auto}
+.lnc .ill-ln{box-shadow:0 20px 40px -20px rgba(6,20,40,.5)}
+.sec-head-ill{display:flex;flex-direction:column;align-items:flex-start}
+.pg-head .ill-head{margin-top:24px;margin-bottom:0}
+.soc-day-txt .ill-head{margin-bottom:20px}
+@media (max-width:640px){.ill-head{--ill:84px}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1786,7 +1798,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
 
       <article class="lnc ln-d rv" id="infecciones">
-        <i class="ph-thin ph-virus ln-ic"></i>
+        <span class="ill ill-ln" data-anim="img/ill/cultivo.webp"><img src="img/ill/cultivo-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <div class="ln-top"><span class="ln-n">04</span><span class="vt">VT</span></div>
         <h3>Infecciones e inmunidad</h3>
         <p>En la pandemia pusimos el instituto al servicio de la salud pública con un test propio de anticuerpos contra el SARS-CoV-2. Hoy estudiamos el efecto del virus en el cerebro.</p>
@@ -1794,7 +1806,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
 
       <article class="lnc ln-e rv" id="proteinas">
-        <i class="ph-thin ph-dna ln-ic"></i>
+        <span class="ill ill-ln" data-anim="img/ill/agregacion.webp"><img src="img/ill/agregacion-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <div class="ln-top"><span class="ln-n">05</span><span class="vt">VT</span></div>
         <h3>Proteínas y biomateriales</h3>
         <p>Producimos alfa-sinucleína y tau en monómeros, fibras y fibras fluorescentes para otros laboratorios, y usamos fibras amiloides como soporte de enzimas para biodiésel, vinos y aceite de oliva.</p>
@@ -1804,6 +1816,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 
     <div class="rtq rv" id="rt-quic">
       <div class="rtq-intro">
+        <span class="ill ill-head" data-anim="img/ill/rt-quic.webp"><img src="img/ill/rt-quic-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <span class="mono kicker">En marcha · Diagnóstico temprano</span>
         <h3>RT-QuIC: un ensayo para detectar alfa-sinucleína mal plegada</h3>
         <p>Un <b>biomarcador</b> es una señal medible en el cuerpo que indica que una enfermedad está presente o avanzando. La mayoría de los biomarcadores neurológicos que se usan hoy, como NfL, GFAP o pTau, miden <em>cuánta</em> proteína hay, y pueden subir también por otras causas.</p>
@@ -2027,6 +2040,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div>
         <span class="mono kicker rv">Nuestro proyecto más avanzado</span>
         <h2 class="rv">El camino de Pegasus</h2>
+        <span class="ill ill-head rv" data-anim="img/ill/pegasus.webp"><img src="img/ill/pegasus-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
       </div>
       <p class="lead rv">Pegasus (DAD9) es un candidato a fármaco para la enfermedad de Parkinson diseñado en el IMMCA. Todavía no llegó a pacientes: completó la etapa preclínica y hoy se prepara para pedir autorización a la FDA para los primeros estudios en personas.</p>
     </div>
@@ -2136,7 +2150,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <!-- SERVICIOS -->
 <section class="sec" id="servicios" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head sec-head-ill">
+      <span class="ill ill-head rv" data-anim="img/ill/microscopia.webp"><img src="img/ill/microscopia-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
       <h2 class="rv">Servicios tecnológicos</h2>
       <p class="lead rv">Servicios Tecnológicos de Alto Nivel (STAN) del CONICET para empresas, organismos públicos e instituciones de I+D. Cinco de ellos están en <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plataforma de servicios del CONICET NOA Sur.</p>
     </div>
@@ -2196,6 +2211,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="soc-day">
       <div class="soc-day-txt">
+        <span class="ill ill-head rv" data-anim="img/ill/comunidad.webp"><img src="img/ill/comunidad-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <span class="mono soc-date">11 de abril de 2026 · Día Mundial del Parkinson</span>
         <h3 class="rv">Tucumán se iluminó de rojo</h3>
         <p class="lead rv">Por iniciativa del IMMCA, la Casa Histórica de la Independencia, el Monumento al Bicentenario, el Rectorado de la UNT, el MUNT, el Centro Cultural Virla y otros edificios de la provincia se encendieron de rojo a las 19 horas, como en muchas ciudades del mundo.</p>
@@ -2648,6 +2664,18 @@ sform.addEventListener('submit', e => {
   const v = id => $('#' + id).value.trim();
   const body = `Servicio: ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
   location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+});
+
+/* ============ Ilustraciones: el movimiento arranca al pasar el mouse ============ */
+$$('.ill').forEach(el => {
+  const im = el.querySelector('img'), quieto = im.getAttribute('src'), anim = el.dataset.anim;
+  let cargada = false;
+  const mover = () => { if (reduce) return; if (!cargada) { const p = new Image(); p.src = anim; cargada = true; } im.src = anim; };
+  const parar = () => { im.src = quieto; };
+  el.addEventListener('mouseenter', mover);
+  el.addEventListener('mouseleave', parar);
+  const tarjeta = el.closest('.lnc, .pg-head, .sec-head, .soc-day-txt');
+  if (tarjeta) { tarjeta.addEventListener('mouseenter', mover); tarjeta.addEventListener('mouseleave', parar); }
 });
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */

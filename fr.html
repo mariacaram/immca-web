@@ -1195,6 +1195,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .mis-card .mis-go{margin:0 28px 28px}
 .mis-card:nth-child(3) .mis-img img{object-position:center 42%}
 
+/* ilustraciones animadas: estaticas por defecto, se mueven al pasar el mouse */
+.ill{display:block;width:var(--ill,112px);aspect-ratio:1;border-radius:18px;overflow:hidden;background:#0d1522;
+  box-shadow:0 18px 40px -22px rgba(6,20,40,.65);border:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.ill img{width:100%;height:100%;display:block;object-fit:cover}
+.ill-head{--ill:clamp(92px,9vw,124px);margin-bottom:22px}
+.ill-ln{--ill:clamp(96px,9vw,120px);margin-bottom:auto}
+.lnc .ill-ln{box-shadow:0 20px 40px -20px rgba(6,20,40,.5)}
+.sec-head-ill{display:flex;flex-direction:column;align-items:flex-start}
+.pg-head .ill-head{margin-top:24px;margin-bottom:0}
+.soc-day-txt .ill-head{margin-bottom:20px}
+@media (max-width:640px){.ill-head{--ill:84px}}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1786,7 +1798,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
 
       <article class="lnc ln-d rv" id="infecciones">
-        <i class="ph-thin ph-virus ln-ic"></i>
+        <span class="ill ill-ln" data-anim="img/ill/cultivo.webp"><img src="img/ill/cultivo-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <div class="ln-top"><span class="ln-n">04</span><span class="vt">VT</span></div>
         <h3>Infections et immunité</h3>
         <p>Pendant la pandémie, nous avons mis l’institut au service de la santé publique avec notre propre test d’anticorps contre le SARS-CoV-2. Nous étudions aujourd’hui les effets du virus sur le cerveau.</p>
@@ -1794,7 +1806,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
 
       <article class="lnc ln-e rv" id="proteinas">
-        <i class="ph-thin ph-dna ln-ic"></i>
+        <span class="ill ill-ln" data-anim="img/ill/agregacion.webp"><img src="img/ill/agregacion-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <div class="ln-top"><span class="ln-n">05</span><span class="vt">VT</span></div>
         <h3>Protéines et biomatériaux</h3>
         <p>Nous produisons de l’alpha-synucléine et de la protéine tau sous forme de monomères, de fibres et de fibres fluorescentes pour d’autres laboratoires, et nous utilisons des fibres amyloïdes comme support d’enzymes pour le biodiesel, le vin et l’huile d’olive.</p>
@@ -1804,6 +1816,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 
     <div class="rtq rv" id="rt-quic">
       <div class="rtq-intro">
+        <span class="ill ill-head" data-anim="img/ill/rt-quic.webp"><img src="img/ill/rt-quic-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <span class="mono kicker">En cours · Diagnostic précoce</span>
         <h3>RT-QuIC : un test pour détecter l’alpha-synucléine mal repliée</h3>
         <p>Un <b>biomarqueur</b> est un signal mesurable dans l’organisme qui indique qu’une maladie est présente ou progresse. La plupart des biomarqueurs neurologiques utilisés aujourd’hui, comme NfL, GFAP ou pTau, mesurent <em>la quantité</em> d’une protéine, qui peut aussi augmenter pour d’autres raisons.</p>
@@ -2027,6 +2040,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       <div>
         <span class="mono kicker rv">Notre projet le plus avancé</span>
         <h2 class="rv">Le parcours de Pegasus</h2>
+        <span class="ill ill-head rv" data-anim="img/ill/pegasus.webp"><img src="img/ill/pegasus-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
       </div>
       <p class="lead rv">Pegasus (DAD9) est un candidat-médicament contre la maladie de Parkinson conçu à l’IMMCA. Il n’a pas encore été administré à des patients&nbsp;: il a achevé la phase préclinique et se prépare aujourd’hui à demander à la FDA l’autorisation des premières études chez l’humain.</p>
     </div>
@@ -2136,7 +2150,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 <!-- SERVICIOS -->
 <section class="sec" id="servicios" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head sec-head-ill">
+      <span class="ill ill-head rv" data-anim="img/ill/microscopia.webp"><img src="img/ill/microscopia-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
       <h2 class="rv">Services technologiques</h2>
       <p class="lead rv">Services technologiques de haut niveau (STAN) du CONICET pour les entreprises, les organismes publics et les institutions de R&amp;D. Cinq d’entre eux figurent sur <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plateforme de services du CONICET NOA Sur.</p>
     </div>
@@ -2196,6 +2211,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
   <div class="wrap">
     <div class="soc-day">
       <div class="soc-day-txt">
+        <span class="ill ill-head rv" data-anim="img/ill/comunidad.webp"><img src="img/ill/comunidad-estatico.webp" alt="" width="320" height="320" loading="lazy"></span>
         <span class="mono soc-date">11 avril 2026 · Journée mondiale de la maladie de Parkinson</span>
         <h3 class="rv">Tucumán s’est illuminée en rouge</h3>
         <p class="lead rv">À l’initiative de l’IMMCA, la Casa Histórica de la Independencia, le Monument du Bicentenaire, le rectorat de l’UNT, le MUNT, le Centre culturel Virla et d’autres bâtiments de la province se sont illuminés en rouge à 19&nbsp;heures, comme dans de nombreuses villes du monde.</p>
@@ -2649,6 +2665,18 @@ sform.addEventListener('submit', e => {
   const v = id => $('#' + id).value.trim();
   const body = `Service : ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
   location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Services IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+});
+
+/* ============ Ilustraciones: el movimiento arranca al pasar el mouse ============ */
+$$('.ill').forEach(el => {
+  const im = el.querySelector('img'), quieto = im.getAttribute('src'), anim = el.dataset.anim;
+  let cargada = false;
+  const mover = () => { if (reduce) return; if (!cargada) { const p = new Image(); p.src = anim; cargada = true; } im.src = anim; };
+  const parar = () => { im.src = quieto; };
+  el.addEventListener('mouseenter', mover);
+  el.addEventListener('mouseleave', parar);
+  const tarjeta = el.closest('.lnc, .pg-head, .sec-head, .soc-day-txt');
+  if (tarjeta) { tarjeta.addEventListener('mouseenter', mover); tarjeta.addEventListener('mouseleave', parar); }
 });
 
 /* ============ Videos: solo se reproducen cuando están a la vista ============ */
