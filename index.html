@@ -324,11 +324,12 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 /* producción CyT (BICyT) */
 .cyt{margin:48px 0 56px;padding:28px;border:1px solid var(--line);border-radius:var(--r)}
 .cyt>p{color:var(--muted)}
-.cyt ul{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin:18px 0}
+.cyt ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;margin:22px 0 26px}
+.cyt small{display:block;margin-top:4px;font-size:12.5px;color:var(--dim);line-height:1.35}
 .cyt b{display:block;font-size:clamp(34px,3.6vw,52px);font-weight:300;letter-spacing:-.04em;line-height:1.05;color:var(--accent)}
 .cyt span{color:var(--muted);font-size:14px;line-height:1.35;display:block;margin-top:6px}
 .cyt>a{color:var(--accent)}
-@media (max-width:900px){.cyt ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.cyt ul{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.cyt ul{grid-template-columns:repeat(2,1fr)}}
 .svc-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;color:var(--dim);font-size:12px}
 .svc-tags b{font-weight:500;color:var(--accent);border:1px solid rgba(6,149,214,.4);border-radius:999px;padding:2px 9px}
@@ -1175,8 +1176,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </article>
       <article class="tl-item key">
         <div class="tl-year">2024</div>
-        <h3>Pegasus, concedida</h3>
-        <p>La patente del candidato a fármaco para Parkinson se concede en Europa, Estados Unidos y Japón. En 2025 se aprueba su licencia a SkyBio LLC.</p>
+        <h3>Pegasus, aprobada</h3>
+        <p>La patente del candidato a fármaco para Parkinson se aprueba en Estados Unidos y en la Unión Europea, y sigue en trámite en otros seis países. En 2025 se aprueba su licencia a SkyBio LLC.</p>
       </article>
       <article class="tl-item">
         <div class="tl-year">2026</div>
@@ -1584,16 +1585,18 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
     </div>
     <div class="cyt rv">
-      <p class="mono">Producción científica y tecnológica registrada en CONICET</p>
+      <p class="mono">Producción científica y tecnológica desde 2018</p>
       <ul>
-        <li><b>29</b><span>Artículos</span></li>
-        <li><b>6</b><span>Libros</span></li>
-        <li><b>2</b><span>Capítulos de libro</span></li>
-        <li><b>56</b><span>Trabajos en eventos científicos</span></li>
-        <li><b>1</b><span>Tesis</span></li>
-        <li><b>7</b><span>Servicios tecnológicos</span></li>
+        <li><b>29</b><span>Artículos en revistas internacionales</span></li>
+        <li><b>2</b><span>Capítulos de libro</span><small>Springer y Tirant lo Blanch</small></li>
+        <li><b>4</b><span>Tesis doctorales defendidas</span></li>
+        <li><b>2</b><span>Patentes internacionales licenciadas</span><small>Pegasus y Aristaeus</small></li>
+        <li><b>10</b><span>Proyectos de I+D dirigidos</span><small>3 internacionales</small></li>
+        <li><b>31</b><span>Comunicaciones a congresos</span><small>18 internacionales y 13 nacionales</small></li>
+        <li><b>6</b><span>Conferencias y simposios invitados</span></li>
+        <li><b>7</b><span>Servicios tecnológicos</span><small>STAN del CONICET</small></li>
       </ul>
-      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ver el detalle en BICyT <i class="ph ph-arrow-up-right"></i></a>
+      <a class="mono" href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ficha del instituto en CONICET (BICyT) <i class="ph ph-arrow-up-right"></i></a>
     </div>
     <div class="lib-tools rv">
       <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
@@ -1620,37 +1623,33 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
         <p>Diseñado y evaluado en el IMMCA tras más de una década de estudio de las bases moleculares de la enfermedad, y sintetizado en la UBA.</p>
         <span class="status"><i class="ph-fill ph-seal-check"></i>Licenciada a SkyBio LLC · etapa preclínica</span>
         <div class="world">
-          <div class="ok"><b>Europa</b><span>Concedida</span></div>
-          <div class="ok"><b>EE. UU.</b><span>Concedida</span></div>
-          <div class="ok"><b>Japón</b><span>Concedida</span></div>
-          <div><b>Argentina</b><span>En trámite</span></div>
+          <div class="ok"><b>EE. UU.</b><span>Aprobada</span></div>
+          <div class="ok"><b>Unión Europea</b><span>Aprobada</span></div>
+          <div><b>Japón</b><span>En trámite</span></div>
+          <div><b>Corea</b><span>En trámite</span></div>
           <div><b>Australia</b><span>En trámite</span></div>
           <div><b>Brasil</b><span>En trámite</span></div>
           <div><b>Canadá</b><span>En trámite</span></div>
-          <div><b>China</b><span>En trámite</span></div>
-          <div><b>Corea</b><span>En trámite</span></div>
           <div><b>Israel</b><span>En trámite</span></div>
-          <div><b>México</b><span>En trámite</span></div>
         </div>
       </article>
       <article class="pat rv">
         <span class="num mono">Aristaeus · WO 2023/214381</span>
         <h3>Diagnóstico temprano de enfermedades neurodegenerativas</h3>
-        <p>Biosensor basado en derivados de tetraciclinas que se unen a la alfa-sinucleína agregada. Fases nacionales en 10 jurisdicciones.</p>
+        <p>Biosensor basado en derivados de tetraciclinas que se unen a la alfa-sinucleína agregada. Fases nacionales presentadas en ocho países. Licenciada a SkyBio LLC.</p>
         <span class="status"><i class="ph-fill ph-seal-check"></i>Acción oficial favorable en EE. UU., noviembre de 2026</span>
       </article>
       <article class="pat pat-fda rv">
         <span class="num mono">Pegasus, paso a paso</span>
         <ol class="fda">
           <li><b>2021</b><span>Solicitud de patente</span></li>
-          <li><b>2024</b><span>Concedida en Europa, EE. UU. y Japón</span></li>
+          <li><b>2024</b><span>Aprobada en EE. UU. y la Unión Europea</span></li>
           <li><b>2025</b><span>Licencia a SkyBio LLC</span></li>
           <li><b>2026</b><span>Estudios preclínicos GLP en EE. UU.</span></li>
           <li class="next"><b>Próximo</b><span>Objetivo: presentación ante la FDA</span></li>
         </ol>
       </article>
     </div>
-    <p class="pat-note rv"><i class="ph ph-info"></i>Según Google Patents, SIPROSA es el único organismo público de salud del país con patentes concedidas en el exterior, y las dos son del IMMCA.</p>
   </div>
 </section>
 
@@ -1686,8 +1685,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
       </div>
       <div class="step" data-i="3"><span class="node"></span>
         <h3>Protección intelectual</h3>
-        <p>Patente internacional concedida en Europa, Estados Unidos y Japón, y en trámite en otras ocho oficinas.</p>
-        <div class="chips"><span class="chip ok">Europa</span><span class="chip ok">EE. UU.</span><span class="chip ok">Japón</span><span class="chip">Argentina</span><span class="chip">Australia</span><span class="chip">Brasil</span><span class="chip">Canadá</span><span class="chip">China</span><span class="chip">Corea</span><span class="chip">Israel</span><span class="chip">México</span></div>
+        <p>Patente internacional aprobada en Estados Unidos y la Unión Europea, y en trámite en otros seis países.</p>
+        <div class="chips"><span class="chip ok">EE. UU.</span><span class="chip ok">Unión Europea</span><span class="chip">Japón</span><span class="chip">Corea</span><span class="chip">Australia</span><span class="chip">Brasil</span><span class="chip">Canadá</span><span class="chip">Israel</span></div>
       </div>
       <div class="step" data-i="4"><span class="node"></span>
         <h3>Transferencia y clínica</h3>
