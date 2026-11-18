@@ -1309,6 +1309,11 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .hab-nota i{color:var(--accent);font-size:20px;flex-shrink:0;margin-top:1px}
 @media (max-width:900px){.hab-grid{grid-template-columns:1fr}}
 
+.tl-img{margin:-10px 0 20px;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+.tl-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tl-item:hover .tl-img img{transform:scale(1.04)}
+.tl-item:has(.tl-img){padding-top:22px}
+
 /* ---------- reveals ---------- */
 .rv{opacity:0;transform:translateY(28px)}
 .clip{clip-path:inset(12% 12% 12% 12% round var(--r))}
@@ -1524,7 +1529,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <article class="news feat has-img"><div class="news-img"><img src="img/noticias/ig-DcMyf22N4bR.jpg" alt="Investigadora del IMMCA explicando el nuevo artículo sobre Pegasus" loading="lazy"></div><time class="mono" datetime="2026-08-18">18 ago 2026</time><h3>Nuevo artículo: optimizar Pegasus</h3><p>Rediseñamos el puente que une las dos partes de Pegasus y obtuvimos tres moléculas nuevas que conservan su capacidad de interferir con la agregación de alfa-sinucleína.</p><a class="more" href="https://www.instagram.com/p/DcMyf22N4bR/" target="_blank" rel="noopener">Ver en Instagram <i class="ph ph-arrow-up-right"></i></a></article>
     <article class="news feat has-img"><div class="news-img"><img src="img/parkinson-casa-historica.jpg" alt="Integrantes del IMMCA, pacientes y familias frente a la Casa Histórica iluminada de rojo" loading="lazy"></div><time class="mono" datetime="2026-04-11">11 abr 2026</time><h3>Tucumán se iluminó de rojo por el Día Mundial del Parkinson</h3><p>Una iniciativa del IMMCA junto con la UNT, el CONICET, el Ministerio de Salud Pública, la Municipalidad y el Hospital Padilla.</p><a class="more" href="https://noasur.conicet.gov.ar/tucuman-se-suma-a-una-iniciativa-de-concientizacion-por-el-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en CONICET NOA Sur <i class="ph ph-arrow-up-right"></i></a></article>
     <article class="news"><time class="mono" datetime="2025">2025</time><h3>El Ministerio de Salud aprueba la licencia de Pegasus</h3><p>La Resolución 1204/SPS/25 aprueba el convenio con SkyBio LLC y reconoce al IMMCA como lugar del desarrollo.</p><a class="more" href="https://msptucuman.gov.ar/wordpress/wp-content/uploads/2026/01/1204-SPS-25.pdf" target="_blank" rel="noopener">Leer en el Ministerio <i class="ph ph-arrow-up-right"></i></a></article>
-    <article class="news"><time class="mono" datetime="2024-11-08">8 nov 2024</time><h3>BrinDx gana el primer premio del IB50K</h3><p>La startup nacida en el IMMCA ganó el concurso de planes de negocio del Instituto Balseiro, entre 34 proyectos de todo el país.</p><a class="more" href="https://intucuman.info/nota-principal/el-avance-tucumano-que-revoluciona-la-salud-brindx-gano-el-ib50k-2024-y-brinda-esperanza-en-el-diagnostico-de-enfermedades-como-el-parkinson" target="_blank" rel="noopener">Leer en IN Tucumán <i class="ph ph-arrow-up-right"></i></a></article>
+    <article class="news"><time class="mono" datetime="2024-11-08">8 nov 2024</time><h3>BrinDx gana el primer premio del IB50K</h3><p>La startup nacida en el IMMCA ganó el concurso de planes de negocio del Instituto Balseiro, entre 34 proyectos de todo el país.</p></article>
     <article class="news"><time class="mono" datetime="2024-05-09">9 may 2024</time><h3>Patentan una nueva molécula para combatir el Parkinson</h3><p>Pegasus, diseñada en el IMMCA junto a la UBA y SkyBio, mostró en estudios preclínicos mejorar los síntomas y proteger a las neuronas.</p><a class="more" href="https://www.conicet.gov.ar/patentan-una-nueva-molecula-para-combatir-el-parkinson/" target="_blank" rel="noopener">Leer en CONICET <i class="ph ph-arrow-up-right"></i></a></article>
     <article class="news"><time class="mono" datetime="2024-04-13">13 abr 2024</time><h3>Día Mundial del Parkinson</h3><p>Qué sabemos hoy de la enfermedad y en qué trabaja el instituto para diagnosticarla antes.</p><a class="more" href="https://immca.conicet.gov.ar/11-de-abril-dia-mundial-del-parkinson/" target="_blank" rel="noopener">Leer en immca.conicet.gov.ar <i class="ph ph-arrow-up-right"></i></a></article>
     <article class="news feat has-img"><div class="news-img"><img src="img/mencion-diputados-diploma.jpg" alt="Diploma de la Mención de Honor de la Cámara de Diputados al IMMCA" loading="lazy"></div><time class="mono" datetime="2022-11-15">15 nov 2022</time><h3>Mención de Honor de la Cámara de Diputados</h3><p>Reconocimiento al IMMCA por su aporte a la ciencia y a la innovación, y por su compromiso con la salud pública durante la pandemia de COVID-19.</p></article>
@@ -1595,11 +1600,13 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p>De vuelta en Tucumán, ingresa a la carrera de investigación del CONICET en el <a class="inline" href="https://www.insibio.org.ar/" target="_blank" rel="noopener">INSIBIO</a>, el Instituto Superior de Investigaciones Biológicas (CONICET-UNT), y organiza allí un grupo de biofísica de proteínas. Se estudia la agregación amiloide desde la física, todavía sin cultivos celulares ni modelos in vivo.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/icm/icm-edificio.jpg" alt="El Instituto del Cerebro (ICM) en París, con tulipanes en flor" loading="lazy" style="object-position:center 60%"></div>
         <div class="tl-year">2011</div>
         <h3>De la física a la neurobiología</h3>
         <p>Empieza la colaboración con el grupo de neurobiología de Rita Raisman-Vozari, en el Instituto del Cerebro (ICM) de París. Se forma un consorcio en el que cada grupo aprende del otro: el conocimiento biofísico pasa a aplicarse a las bases moleculares de la neurodegeneración, y la neurobiología entra al laboratorio de Tucumán.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/icm/icm-poster.jpg" alt="Póster del trabajo conjunto entre el grupo de Tucumán y el ICM de París" loading="lazy"></div>
         <div class="tl-year">2013</div>
         <h3>Formarse en París</h3>
         <p>Con becas Houssay, programas BEC.AR, ECOS-Sud, Egide y el convenio UNT-París, los becarios del grupo hacen estancias en el ICM y se reciben investigadores como profesores invitados. Los subsidios nacionales e internacionales permiten equipar el laboratorio y alcanzar la masa crítica necesaria para pedir un instituto propio.</p>
@@ -2244,10 +2251,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p>Surgió cuando integrantes del instituto decidieron crear una empresa para llevar sus desarrollos al mercado. Su equipo reúne a estudiantes y graduados de la UNT con investigadores del CONICET y del SIPROSA. Trabaja en nanorradiotrazadores para diagnóstico por imágenes, ofrece proteínas recombinantes y kits de ensayo para investigación. Junto con el instituto, busca adaptar la técnica RT-QuIC con insumos locales para que funcione en sangre.</p>
         <ul class="startup-facts">
           <li><b>1.º premio IB50K 2024</b><span>Concurso de planes de negocio del Instituto Balseiro, entre 34 proyectos de todo el país</span></li>
-          <li><b>Inversión ángel</b><span>Su primer inversor fue un empresario francés que vive con Parkinson</span></li>
+          <li><b>Inversor ángel</b></li>
           <li><b>Próximo paso</b><span>Patentar sus nanoanticuerpos</span></li>
         </ul>
-        <a class="social" href="https://intucuman.info/nota-principal/el-avance-tucumano-que-revoluciona-la-salud-brindx-gano-el-ib50k-2024-y-brinda-esperanza-en-el-diagnostico-de-enfermedades-como-el-parkinson" target="_blank" rel="noopener"><i class="ph ph-newspaper"></i>Leer la nota en IN Tucumán</a>
       </div>
       <div class="startup-mark" aria-hidden="true"><i class="ph-thin ph-rocket-launch"></i></div>
     </div>
