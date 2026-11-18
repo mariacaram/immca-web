@@ -317,7 +317,11 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .step .node::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--line-2);transition:background .4s,transform .4s var(--ease)}
 .step.on .node{border-color:var(--accent)}
 .step.on .node::after{background:var(--accent);transform:scale(1.2)}
+.step-year{display:block;color:var(--accent);font-size:12.5px;letter-spacing:.06em;margin-bottom:6px}
 .step h3{font-size:clamp(24px,2.4vw,34px);margin-bottom:12px}
+.step-src{margin-top:14px;font-size:11.5px}
+.step-src a{color:var(--dim);display:inline-flex;align-items:center;gap:6px;line-height:1.4}
+.step-src a:hover{color:var(--accent)}
 .step p{color:var(--muted);max-width:52ch}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .chip{border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--muted)}
@@ -2280,46 +2284,85 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 
   <div class="wrap pipe">
     <div class="pipe-sticky">
-      <h3 class="pg-sub rv">Paso a paso</h3>
-      <p class="lead rv">Más de una década de investigación, de la biofísica de proteínas a un candidato a fármaco.</p>
+      <h3 class="pg-sub rv">Cómo se diseñó</h3>
+      <p class="lead rv">Más de una década de investigación en el IMMCA, de una observación sobre un antibiótico viejo a un candidato a fármaco licenciado. Cada hito tiene su publicación.</p>
       <div class="pipe-fig" aria-hidden="true">
         <img src="img/cuerpo-lewy.jpg" alt="" class="on" data-step="0">
         <img src="img/neurona-pc12.jpg" alt="" data-step="1">
-        <img src="img/pegasus-mecanismo.jpg" alt="" data-step="2" style="object-fit:contain;background:#fff;padding:10px">
-        <img src="img/microscopia-confocal.jpg" alt="" data-step="3">
-        <img src="img/laboratorio-equipo.jpg" alt="" data-step="4">
-        <img src="img/fachada-equipo.jpg" alt="" data-step="5">
+        <img src="img/celulas-hela.jpg" alt="" data-step="2">
+        <img src="img/pegasus-mecanismo.jpg" alt="" data-step="3" style="object-fit:contain;background:#fff;padding:10px">
+        <img src="img/citoesqueleto.jpg" alt="" data-step="4">
+        <img src="img/pegasus-mecanismo.jpg" alt="" data-step="5" style="object-fit:contain;background:#fff;padding:10px">
+        <img src="img/microscopia-confocal.jpg" alt="" data-step="6">
+        <img src="img/hero-confocal-2.jpg" alt="" data-step="7">
+        <img src="img/laboratorio-equipo.jpg" alt="" data-step="8">
+        <img src="img/fachada-equipo.jpg" alt="" data-step="9">
       </div>
     </div>
     <div class="steps" id="steps">
       <svg preserveAspectRatio="none" aria-hidden="true"><line class="rail" x1="12" y1="0" x2="12" y2="100%"/><line class="draw" id="drawline" x1="12" y1="0" x2="12" y2="100%"/></svg>
       <div class="step" data-i="0"><span class="node"></span>
-        <h3>Dos problemas en una enfermedad</h3>
-        <p>En el Parkinson, la alfa-sinucleína forma agregados tóxicos y se pierden las neuronas que producen dopamina. La dopamina, a su vez, no llega bien al cerebro cuando se administra como fármaco.</p>
+        <span class="step-year mono">El problema</span>
+        <h3>Dos problemas en una sola enfermedad</h3>
+        <p>En el Parkinson, la alfa-sinucleína forma agregados tóxicos y se pierden las neuronas que producen dopamina. La dopamina, a su vez, no llega bien al cerebro cuando se administra como fármaco, y al oxidarse genera derivados que dañan a la neurona.</p>
       </div>
       <div class="step" data-i="1"><span class="node"></span>
-        <h3>De las tetraciclinas a una molécula nueva</h3>
-        <p>Desde 2017 estudiamos cómo la doxiciclina transforma los agregados de alfa-sinucleína. Con ese conocimiento diseñamos una tetraciclina sin actividad antibiótica unida a la dopamina: DAD9, Pegasus.</p>
-        <div class="chips"><span class="chip">Biofísica</span><span class="chip">Química medicinal</span><span class="chip">FCEN-UBA</span></div>
+        <span class="step-year mono">2017</span>
+        <h3>El punto de partida</h3>
+        <p>Encontramos que la doxiciclina, un antibiótico de uso corriente, remodela los agregados de alfa-sinucleína y los transforma en especies que no dañan a la neurona. Era la primera pista: una molécula vieja, conocida y segura, hacía algo que nadie le había pedido.</p>
+        <div class="chips"><span class="chip">Biofísica de proteínas</span></div>
+        <p class="step-src mono"><a href="https://doi.org/10.1038/srep41755" target="_blank" rel="noopener">González-Lizárraga et al., Scientific Reports 7:41755 <i class="ph ph-arrow-up-right"></i></a></p>
       </div>
       <div class="step" data-i="2"><span class="node"></span>
-        <h3>Una doble acción</h3>
-        <p>En modelos experimentales, Pegasus interfiere con la agregación de alfa-sinucleína y su propagación entre células, con el estrés oxidativo y con la neuroinflamación, y al mismo tiempo activa receptores de dopamina sin formar los derivados tóxicos de la dopamina libre.</p>
-        <div class="chips"><span class="chip">Modificadora de la enfermedad</span><span class="chip">Sintomática</span></div>
+        <span class="step-year mono">2020</span>
+        <h3>El efecto no viene del antibiótico</h3>
+        <p>Comparamos tetraciclinas entre sí: la minociclina no frena la agregación, pero la doxiciclina y la inciclinida sí. La neuroprotección no dependía de la actividad antibiótica, sino de una parte precisa de la molécula. Eso abría la puerta a separar una cosa de la otra.</p>
+        <div class="chips"><span class="chip">CMT-3</span><span class="chip">Agregados y neuroinflamación</span></div>
+        <p class="step-src mono"><a href="https://doi.org/10.1038/s41598-020-76927-0" target="_blank" rel="noopener">González-Lizárraga et al., Scientific Reports 10:20258 <i class="ph ph-arrow-up-right"></i></a></p>
       </div>
       <div class="step" data-i="3"><span class="node"></span>
-        <h3>Evaluación preclínica</h3>
-        <p>Toxicidad aguda y subcrónica, farmacología de seguridad, farmacocinética y ADME, interacciones entre fármacos, vía de administración y estudios conductuales, en <i>C.&nbsp;elegans</i>, ratones (incluido el modelo A53T de Parkinson), ratas y perros beagle. Los ensayos se hicieron junto a KeifeRX, la Universidad de Georgetown y Eurofins.</p>
-        <div class="chips"><span class="chip">KeifeRX</span><span class="chip">Georgetown</span><span class="chip">Eurofins</span><span class="chip ok">Formulación lista</span></div>
+        <span class="step-year mono">El diseño</span>
+        <h3>Encontrar el motivo mínimo</h3>
+        <p>Con química computacional y análisis de relación estructura-actividad identificamos qué parte de la tetraciclina reconoce la estructura de los agregados: el grupo ceto-enólico. Y vimos que al quitar la dimetilamina se pierde la actividad antibiótica pero se conserva la anti-agregante. Con eso ya podíamos diseñar tetraciclinas que no fueran antibióticos.</p>
+        <div class="chips"><span class="chip">Química computacional</span><span class="chip">SAR</span></div>
       </div>
       <div class="step" data-i="4"><span class="node"></span>
-        <h3>Protección y transferencia</h3>
-        <p>Patente internacional aprobada en Estados Unidos y la Unión Europea, y en trámite en otros países. Licencia a SkyBio LLC, aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública.</p>
-        <div class="chips"><span class="chip ok">EE.&nbsp;UU.</span><span class="chip ok">Unión Europea</span><span class="chip">SkyBio LLC</span><span class="chip">SIPROSA</span></div>
+        <span class="step-year mono">2022</span>
+        <h3>Del hallazgo a un candidato</h3>
+        <p>Un derivado de la demeclociclina, sin actividad antibiótica, resultó neuroprotector en modelos experimentales. Dejaba de ser una observación y pasaba a ser un compuesto líder, el primero de la serie.</p>
+        <div class="chips"><span class="chip">Hit → lead</span><span class="chip">ICM/CNRS</span></div>
+        <p class="step-src mono"><a href="https://doi.org/10.3390/cells11172759" target="_blank" rel="noopener">Tomas-Grau et al., Cells 11:2759 <i class="ph ph-arrow-up-right"></i></a></p>
       </div>
       <div class="step" data-i="5"><span class="node"></span>
-        <h3>Hacia la clínica</h3>
-        <p>El paquete pre-IND está completo y la reunión con la FDA está prevista para febrero de 2027. El próximo desafío es comprobar si este perfil se traduce en un beneficio para los pacientes.</p>
+        <span class="step-year mono">La idea</span>
+        <h3>Y si además llevara dopamina</h3>
+        <p>Si la tetraciclina entra al cerebro y se pega a los agregados, podía servir de vehículo. Unimos una molécula de dopamina a la tetraciclina y bloqueamos su amina primaria convirtiéndola en amida, para que no pueda ciclarse en aminocromo ni en melanina, los derivados que vuelven tóxica a la dopamina libre. La síntesis se hizo junto al grupo del Dr. Oscar Varela, en la UBA.</p>
+        <div class="chips"><span class="chip">Química medicinal</span><span class="chip">FCEN-UBA</span><span class="chip">Conjugado dopamina-tetraciclina</span></div>
+      </div>
+      <div class="step" data-i="6"><span class="node"></span>
+        <span class="step-year mono">2024</span>
+        <h3>Nace DAD9-Pegasus</h3>
+        <p>El conjugado funciona en las dos puntas: interfiere con la agregación de la alfa-sinucleína y con su propagación entre células, y al mismo tiempo activa los receptores de dopamina. Es lo que hace a Pegasus distinto de un tratamiento solo sintomático.</p>
+        <div class="chips"><span class="chip">Modificadora de la enfermedad</span><span class="chip">Sintomática</span></div>
+        <p class="step-src mono"><a href="https://doi.org/10.1021/acschemneuro.4c00169" target="_blank" rel="noopener">Ploper et al., ACS Chemical Neuroscience 15:2795-2810 <i class="ph ph-arrow-up-right"></i></a></p>
+      </div>
+      <div class="step" data-i="7"><span class="node"></span>
+        <span class="step-year mono">2025 · 2026</span>
+        <h3>La familia crece</h3>
+        <p>A partir del mismo andamiaje llegaron otras moléculas: DDOX, que impide que las fibras preformadas de alfa-sinucleína entren a la célula, y una serie de conjugados con azufre que amplía el repertorio. La línea dejó de ser una molécula para volverse una plataforma.</p>
+        <div class="chips"><span class="chip">DDOX</span><span class="chip">Conjugados con azufre</span></div>
+        <p class="step-src mono"><a href="https://doi.org/10.1038/s41598-025-15991-w" target="_blank" rel="noopener">Terán et al., Scientific Reports 15 · Pernicone et al., ChemMedChem 2026 <i class="ph ph-arrow-up-right"></i></a></p>
+      </div>
+      <div class="step" data-i="8"><span class="node"></span>
+        <span class="step-year mono">Transferencia</span>
+        <h3>Protección y licencia</h3>
+        <p>Patente internacional aprobada en Estados Unidos y en la Unión Europea, y en trámite en otros países. Son titulares el CONICET, la UNT, la UBA y el SIPROSA. La licencia exclusiva a SkyBio LLC fue aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública.</p>
+        <div class="chips"><span class="chip ok">EE.&nbsp;UU.</span><span class="chip ok">Unión Europea</span><span class="chip">SkyBio LLC</span></div>
+      </div>
+      <div class="step" data-i="9"><span class="node"></span>
+        <span class="step-year mono">Hoy</span>
+        <h3>En manos de una empresa, camino a la FDA</h3>
+        <p>SkyBio LLC completó el escalado con certificación GMP y el programa preclínico a través de la CRO KeifeRX, y tiene lista la documentación pre-IND. La reunión con la FDA está prevista para febrero de 2027. El próximo desafío es comprobar si todo esto se traduce en un beneficio para los pacientes.</p>
         <div class="chips"><span class="chip">FDA · pre-IND</span><span class="chip">Febrero 2027</span></div>
       </div>
     </div>
