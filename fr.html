@@ -522,6 +522,33 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .rtq-steps p{color:var(--muted);font-size:15px;line-height:1.45}
 @media (max-width:900px){.rtq{grid-template-columns:1fr}}
 
+/* RT-QuIC v2: biomarcadores, historia y lo que hace el IMMCA */
+.rtq{grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px) clamp(28px,5vw,72px)}
+.rtq-intro .kicker{margin-bottom:12px}
+.rtq-intro h3{font-size:clamp(24px,2.5vw,34px);letter-spacing:-.02em;line-height:1.15;margin-bottom:16px}
+.rtq-intro p{color:var(--muted);font-size:16px;line-height:1.6}
+.rtq-intro p+p{margin-top:12px}
+.rtq-intro p b,.rtq-intro p em{color:var(--text);font-style:normal;font-weight:600}
+.rtq-vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.rtq-vs>div{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.rtq-vs .mono{display:block;font-size:10.5px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.rtq-vs b{display:block;font-size:17px;margin-bottom:4px}
+.rtq-vs p{font-size:14px;color:var(--muted);line-height:1.4}
+.rtq-vs .on{background:var(--accent);border-color:var(--accent)}
+.rtq-vs .on .mono{color:#bfe6ff}.rtq-vs .on b{color:#fff}.rtq-vs .on p{color:rgba(255,255,255,.88)}
+.rtq-world h4,.rtq-ours h4{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.rtq-tl{list-style:none;position:relative;padding-left:22px}
+.rtq-tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--celeste),var(--accent))}
+.rtq-tl li{position:relative;padding-bottom:18px}
+.rtq-tl li:last-child{padding-bottom:0}
+.rtq-tl li::before{content:"";position:absolute;left:-22px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.rtq-tl b{display:block;font-size:22px;font-weight:300;letter-spacing:-.02em;color:var(--accent);line-height:1.1}
+.rtq-tl p{font-size:14.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+.rtq-ours{grid-column:1/-1;padding-top:26px;border-top:1px solid var(--line)}
+.rtq .rtq-steps{grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:980px){.rtq{grid-template-columns:1fr}.rtq .rtq-steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rtq-vs,.rtq .rtq-steps{grid-template-columns:1fr}}
+
 /* el camino de Pegasus: etapas con "Estamos acá" */
 .pg-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:48px}
 .pg-track{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:clamp(72px,9vw,120px)}
@@ -1571,8 +1598,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
 
     <figure class="lin-film rv">
-      <video src="video/agregacion.mp4" poster="video/agregacion.jpg" muted loop playsinline preload="none" aria-label="Simulation de chaînes d’alpha-synucléine qui s’empilent jusqu’à former une fibre"></video>
-      <figcaption><span class="mono">Simulation</span>Voici comment s’agrège l’alpha-synucléine, la protéine clé de la maladie de Parkinson&nbsp;: une chaîne se replie, d’autres la rejoignent et, ensemble, elles forment une fibre.</figcaption>
+      <video src="video/agregacion.mp4" poster="video/agregacion.jpg" muted loop playsinline preload="none" aria-label="Modèle de l’agrégation de l’alpha-synucléine en fibres amyloïdes"></video>
+      <figcaption><span class="mono">Modèle d’agrégation</span>Dans des conditions normales, l’alpha-synucléine est une protéine soluble sans structure définie. Dans la maladie de Parkinson, elle adopte une conformation riche en feuillets bêta, s’assemble en oligomères et forme des fibres amyloïdes qui agissent comme des germes et propagent le mauvais repliement. Ces fibres sont le principal composant des corps de Lewy.</figcaption>
     </figure>
 
     <div class="lin">
@@ -1620,16 +1647,21 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
 
     <div class="rtq rv" id="rt-quic">
-      <div class="rtq-head">
+      <div class="rtq-intro">
         <span class="mono kicker">En cours · Diagnostic précoce</span>
-        <h3>RT-QuIC avec des réactifs produits localement</h3>
-        <p>La RT-QuIC est une technique qui amplifie au laboratoire des quantités infimes d’alpha-synucléine mal repliée, un signe de la maladie de Parkinson. Elle est aujourd’hui surtout utilisée sur le liquide céphalorachidien, un échantillon difficile à obtenir. Nous travaillons pour qu’elle puisse être réalisée en Argentine et, à l’avenir, à partir d’un échantillon de sang.</p>
+        <h3>RT-QuIC : un biomarqueur qui détecte la protéine de Parkinson</h3>
+        <p>Un <b>biomarqueur</b> est un signal mesurable dans l’organisme qui indique qu’une maladie est présente ou progresse. La plupart des biomarqueurs neurologiques utilisés aujourd’hui, comme NfL, GFAP ou pTau, mesurent <em>la quantité</em> d’une protéine, qui peut aussi augmenter pour d’autres raisons.</p>
+        <p>La RT-QuIC, un test d’amplification de germes (SAA), mesure autre chose : la présence d’alpha-synucléine mal repliée capable de transmettre sa forme à d’autres protéines, la signature biochimique de la maladie de Parkinson. Elle peut détecter un agrégat parmi un milliard de molécules normales.</p>
+        <div class="rtq-vs"><div class="rtq-vs-c"><span class="mono">Biomarqueurs de concentration</span><b>NfL · GFAP · pTau</b><p>Ils mesurent une quantité ou un dommage. Indirects.</p></div><div class="rtq-vs-c on"><span class="mono">Biomarqueur fonctionnel</span><b>RT-QuIC (SAA)</b><p>Détecte la forme de la protéine qui propage la maladie.</p></div></div>
       </div>
-      <ol class="rtq-steps">
-        <li class="done"><span class="mono">01</span><h4>Projet OEA</h4><p>Un projet financé par l’OEA (Organisation des États américains) nous a permis d’avancer dans la mise en place d’un test diagnostique des maladies neurodégénératives et dans la production locale de ses réactifs.</p></li>
-        <li class="now"><span class="mono">02 · En cours</span><h4>Mise au point à l’IMMCA</h4><p>Nous mettons au point la RT-QuIC afin de valider la technologie avec des réactifs produits localement.</p></li>
-        <li class="now"><span class="mono">03 · En cours</span><h4>Vers des échantillons de sang</h4><p>Grâce à un projet PIETR du CONICET, nous mettons en place une nouvelle technologie pour transposer l’essai à des échantillons de sang&nbsp;: la RT-QuIC sur des vésicules extracellulaires d’origine neuronale isolées du plasma.</p></li>
-      </ol>
+      <div class="rtq-world">
+        <h4 class="mono">Son développement dans le monde</h4>
+        <ol class="rtq-tl"><li><b>1997</b><p>On découvre que les corps de Lewy, la lésion typique de la maladie de Parkinson, sont formés d’alpha-synucléine.</p></li><li><b>2016</b><p>Première détection d’alpha-synucléine agrégée dans le liquide céphalorachidien par RT-QuIC.</p></li><li><b>2023</b><p>Elle est détectée dans le sang, une étape clé vers un test plus simple.</p></li><li><b>2024</b><p>La FDA émet une lettre de soutien au test de l’alpha-synucléine comme biomarqueur pour la recherche.</p></li></ol>
+      </div>
+      <div class="rtq-ours">
+        <h4 class="mono">Ce que nous faisons à l’IMMCA</h4>
+        <ol class="rtq-steps"><li class="done"><span class="mono">01 · Réalisé</span><h4>Projet OEA</h4><p>Il nous a permis d’avancer dans la mise en place d’un test diagnostique pour les maladies neurodégénératives.</p></li><li class="done"><span class="mono">02 · Réalisé</span><h4>Réactif produit sur place</h4><p>Le test nécessite de l’alpha-synucléine humaine recombinante, qui coûte environ 1 020 USD le milligramme. Nous la produisons à l’IMMCA : 100 mg par mois.</p></li><li class="now"><span class="mono">03 · En cours</span><h4>Validation</h4><p>Nous avons mis au point le test avec des réactifs produits localement, lancé sa validation avec l’ANLIS-Malbrán et mettons en place des systèmes de gestion de la qualité.</p></li><li class="now"><span class="mono">04 · En cours</span><h4>Vers le sang</h4><p>Grâce à un projet PIETR du CONICET, nous appliquons la RT-QuIC aux vésicules extracellulaires d’origine neuronale isolées du plasma.</p></li></ol>
+      </div>
     </div>
 
     <p class="lin-more rv">Nous proposons également des <a href="#servicios">services technologiques</a> avec nos équipements et accompagnons des start-up comme <a href="#startups">BrinDx</a>.</p>

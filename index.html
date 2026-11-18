@@ -522,6 +522,33 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .rtq-steps p{color:var(--muted);font-size:15px;line-height:1.45}
 @media (max-width:900px){.rtq{grid-template-columns:1fr}}
 
+/* RT-QuIC v2: biomarcadores, historia y lo que hace el IMMCA */
+.rtq{grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px) clamp(28px,5vw,72px)}
+.rtq-intro .kicker{margin-bottom:12px}
+.rtq-intro h3{font-size:clamp(24px,2.5vw,34px);letter-spacing:-.02em;line-height:1.15;margin-bottom:16px}
+.rtq-intro p{color:var(--muted);font-size:16px;line-height:1.6}
+.rtq-intro p+p{margin-top:12px}
+.rtq-intro p b,.rtq-intro p em{color:var(--text);font-style:normal;font-weight:600}
+.rtq-vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.rtq-vs>div{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.rtq-vs .mono{display:block;font-size:10.5px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.rtq-vs b{display:block;font-size:17px;margin-bottom:4px}
+.rtq-vs p{font-size:14px;color:var(--muted);line-height:1.4}
+.rtq-vs .on{background:var(--accent);border-color:var(--accent)}
+.rtq-vs .on .mono{color:#bfe6ff}.rtq-vs .on b{color:#fff}.rtq-vs .on p{color:rgba(255,255,255,.88)}
+.rtq-world h4,.rtq-ours h4{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.rtq-tl{list-style:none;position:relative;padding-left:22px}
+.rtq-tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--celeste),var(--accent))}
+.rtq-tl li{position:relative;padding-bottom:18px}
+.rtq-tl li:last-child{padding-bottom:0}
+.rtq-tl li::before{content:"";position:absolute;left:-22px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.rtq-tl b{display:block;font-size:22px;font-weight:300;letter-spacing:-.02em;color:var(--accent);line-height:1.1}
+.rtq-tl p{font-size:14.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+.rtq-ours{grid-column:1/-1;padding-top:26px;border-top:1px solid var(--line)}
+.rtq .rtq-steps{grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:980px){.rtq{grid-template-columns:1fr}.rtq .rtq-steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rtq-vs,.rtq .rtq-steps{grid-template-columns:1fr}}
+
 /* el camino de Pegasus: etapas con "Estamos acá" */
 .pg-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:48px}
 .pg-track{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:clamp(72px,9vw,120px)}
@@ -1571,8 +1598,8 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
 
     <figure class="lin-film rv">
-      <video src="video/agregacion.mp4" poster="video/agregacion.jpg" muted loop playsinline preload="none" aria-label="Simulación de cadenas de alfa-sinucleína que se apilan hasta formar una fibra"></video>
-      <figcaption><span class="mono">Simulación</span>Así se agrega la alfa-sinucleína, la proteína clave del Parkinson: una cadena se pliega, se le suman otras y juntas forman una fibra.</figcaption>
+      <video src="video/agregacion.mp4" poster="video/agregacion.jpg" muted loop playsinline preload="none" aria-label="Modelo de la agregación de alfa-sinucleína en fibras amiloides"></video>
+      <figcaption><span class="mono">Modelo de agregación</span>En condiciones normales, la alfa-sinucleína es una proteína soluble y sin una estructura definida. En el Parkinson adopta una conformación rica en láminas beta, se ensambla en oligómeros y forma fibras amiloides que actúan como semillas y propagan el mal plegamiento. Estas fibras son el componente principal de los cuerpos de Lewy.</figcaption>
     </figure>
 
     <div class="lin">
@@ -1620,16 +1647,21 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
     </div>
 
     <div class="rtq rv" id="rt-quic">
-      <div class="rtq-head">
+      <div class="rtq-intro">
         <span class="mono kicker">En marcha · Diagnóstico temprano</span>
-        <h3>RT-QuIC con insumos de producción local</h3>
-        <p>La RT-QuIC es una técnica que amplifica en el laboratorio cantidades mínimas de alfa-sinucleína mal plegada, una señal de la enfermedad de Parkinson. Hoy se usa sobre todo en líquido cefalorraquídeo, una muestra difícil de obtener. Estamos trabajando para que pueda hacerse en el país y, en el futuro, con una muestra de sangre.</p>
+        <h3>RT-QuIC: un biomarcador que detecta la proteína del Parkinson</h3>
+        <p>Un <b>biomarcador</b> es una señal medible en el cuerpo que indica que una enfermedad está presente o avanzando. La mayoría de los biomarcadores neurológicos que se usan hoy, como NfL, GFAP o pTau, miden <em>cuánta</em> proteína hay, y pueden subir también por otras causas.</p>
+        <p>La RT-QuIC, un ensayo de amplificación de semillas (SAA), mide otra cosa: si en la muestra hay alfa-sinucleína mal plegada capaz de transmitir su forma a otras proteínas, la marca bioquímica de la enfermedad de Parkinson. Puede detectar un agregado entre mil millones de moléculas normales.</p>
+        <div class="rtq-vs"><div class="rtq-vs-c"><span class="mono">Biomarcadores de concentración</span><b>NfL · GFAP · pTau</b><p>Miden cantidad o daño. Son indirectos.</p></div><div class="rtq-vs-c on"><span class="mono">Biomarcador funcional</span><b>RT-QuIC (SAA)</b><p>Detecta la forma de la proteína que propaga la enfermedad.</p></div></div>
       </div>
-      <ol class="rtq-steps">
-        <li class="done"><span class="mono">01</span><h4>Proyecto OEA</h4><p>Un proyecto financiado por la Organización de los Estados Americanos (OEA) nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas y en la producción local de sus insumos.</p></li>
-        <li class="now"><span class="mono">02 · En curso</span><h4>Puesta a punto en el IMMCA</h4><p>Estamos realizando el setup de la RT-QuIC para validar la tecnología con insumos de producción local.</p></li>
-        <li class="now"><span class="mono">03 · En curso</span><h4>Hacia muestras de sangre</h4><p>Gracias a un proyecto PIETR del CONICET estamos implementando nueva tecnología para trasladar el ensayo a muestras de sangre: la RT-QuIC sobre vesículas extracelulares de origen neuronal aisladas de plasma.</p></li>
-      </ol>
+      <div class="rtq-world">
+        <h4 class="mono">Cómo avanzó en el mundo</h4>
+        <ol class="rtq-tl"><li><b>1997</b><p>Se descubre que los cuerpos de Lewy, la lesión típica del Parkinson, están formados por alfa-sinucleína.</p></li><li><b>2016</b><p>Primera detección de alfa-sinucleína agregada en líquido cefalorraquídeo con RT-QuIC.</p></li><li><b>2023</b><p>Se logra detectarla en sangre, un paso clave para un análisis más simple.</p></li><li><b>2024</b><p>La FDA emite una carta de apoyo al ensayo de alfa-sinucleína como biomarcador para investigación.</p></li></ol>
+      </div>
+      <div class="rtq-ours">
+        <h4 class="mono">Qué hacemos en el IMMCA</h4>
+        <ol class="rtq-steps"><li class="done"><span class="mono">01 · Logrado</span><h4>Proyecto OEA</h4><p>Nos permitió avanzar en la implementación de un test diagnóstico para enfermedades neurodegenerativas.</p></li><li class="done"><span class="mono">02 · Logrado</span><h4>Insumo propio</h4><p>La técnica necesita alfa-sinucleína humana recombinante, que cuesta unos USD 1.020 por miligramo. La producimos en el IMMCA: 100 mg por mes.</p></li><li class="now"><span class="mono">03 · En curso</span><h4>Validación</h4><p>Realizamos la puesta a punto con insumos de producción local, iniciamos la validación junto al ANLIS-Malbrán e implementamos sistemas de gestión de calidad.</p></li><li class="now"><span class="mono">04 · En curso</span><h4>Hacia la sangre</h4><p>Con un proyecto PIETR del CONICET aplicamos la RT-QuIC a vesículas extracelulares de origen neuronal aisladas de plasma.</p></li></ol>
+      </div>
     </div>
 
     <p class="lin-more rv">Además, ofrecemos <a href="#servicios">servicios tecnológicos</a> con nuestro equipamiento y acompañamos startups como <a href="#startups">BrinDx</a>.</p>
