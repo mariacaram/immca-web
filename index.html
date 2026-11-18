@@ -1222,6 +1222,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   padding:clamp(32px,4vw,52px);border-radius:var(--r);background:linear-gradient(135deg,#0a2540,#0e3f6b 60%,var(--accent));color:#fff}
 .gr-gente h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.02em;margin-bottom:14px;color:#fff}
 .gr-gente p{color:rgba(255,255,255,.88);font-size:16.5px;line-height:1.6}
+.gr-orden{margin-top:14px;font-size:14.5px!important;color:rgba(255,255,255,.62)!important}
 .gr-nombres{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
 .gr-nombres li{padding:9px 16px;border-radius:999px;font-size:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,transform .3s var(--ease)}
@@ -2354,7 +2355,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <div class="gr-gente rv">
       <div class="gr-gente-txt">
         <h3>Y las personas</h3>
-        <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p>
+        <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p><p class="gr-orden">A todos les debemos un montón, así que la lista cambia de orden cada vez que se abre la página.</p>
       </div>
       <ul class="gr-nombres">
           <li>Rita Raisman-Vozari</li>
@@ -2375,6 +2376,14 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <li>Griselda Alvarado</li>
           <li>Fernando Dupuy</li>
           <li>María Eugenia Mónaco</li>
+          <li>Ernesto Saade</li>
+          <li>Raúl Mostoslavski</li>
+          <li>Gustavo Mostoslavski</li>
+          <li>Elisa Colombo</li>
+          <li>Rossana Chahla</li>
+          <li>Sergio Pagani</li>
+          <li>Ing. José García</li>
+          <li>Luisa María Molina</li>
       </ul>
     </div>
   </div>
@@ -2736,6 +2745,14 @@ sform.addEventListener('submit', e => {
   const body = `Servicio: ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
   location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
 });
+
+/* ============ Agradecimientos: el orden de los nombres cambia en cada visita ============ */
+const nombres = $('.gr-nombres');
+if (nombres) {
+  const items = [...nombres.children];
+  for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
+  nombres.append(...items);
+}
 
 /* ============ Agradecimientos: si falta el logo, se muestra el nombre ============ */
 $$('.gr-logo img').forEach(im => {
