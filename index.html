@@ -731,10 +731,14 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 
 /* ---------- equipo ---------- */
 .team{border-top:1px solid var(--line)}
-.member{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:24px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
+.member{display:grid;grid-template-columns:auto 1.3fr 1fr 1fr auto;gap:24px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
 .member::before{content:"";position:absolute;inset:0;background:var(--accent-soft);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
 .member:hover::before{transform:scaleY(1)}
 .member:hover{padding-left:24px}
+.member .av{width:68px;height:68px;border-radius:50%;overflow:hidden;background:var(--bg-2);
+  box-shadow:0 0 0 1px var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.member .av img{width:100%;height:100%;object-fit:cover;display:block}
+.member:hover .av{transform:scale(1.06);box-shadow:0 0 0 2px var(--accent-bright)}
 .member h3{font-size:clamp(22px,2.4vw,32px);font-weight:500}
 .member .role{color:var(--text)}
 .member .deg{color:var(--muted)}
@@ -744,7 +748,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .team-more div{padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-2)}
 .team-more b{display:block;font-size:20px;font-weight:600;margin-bottom:6px}
 .team-more span{color:var(--muted);font-size:15px}
-@media (max-width:820px){.member{grid-template-columns:1fr auto;gap:6px 16px}.member .role,.member .deg{grid-column:1}.member .go{grid-row:1/4;grid-column:2}.team-more{grid-template-columns:1fr}}
+@media (max-width:820px){.member{grid-template-columns:auto 1fr auto;gap:4px 16px}.member .av{grid-row:1/4;grid-column:1;width:56px;height:56px;align-self:center}.member h3{grid-column:2}.member .role,.member .deg{grid-column:2}.member .go{grid-row:1/4;grid-column:3;align-self:center}.team-more{grid-template-columns:1fr}}
 
 /* ---------- videos del laboratorio ---------- */
 .reels{margin-top:clamp(88px,11vw,150px)}
@@ -1951,13 +1955,13 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <img src="img/equipo-laboratorio.jpg" alt="Integrantes del IMMCA con guardapolvo en el laboratorio de cultivo del instituto" loading="lazy">
     </figure>
     <div class="team">
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener" aria-label="Rosana Chehín, ficha en CONICET"><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener" aria-label="César Luis Ávila, ficha en CONICET"><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/16251" target="_blank" rel="noopener" aria-label="Esteban Vera Pingitore, ficha en CONICET"><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/22601" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15880" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/329877" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
-      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/325889" target="_blank" rel="noopener" aria-label="Rodrigo Tomás Grau, ficha en CONICET"><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener" aria-label="Rosana Chehín, ficha en CONICET"><span class="av"><img src="img/equipo/rosana-chehin.webp" alt="Retrato ilustrado de Rosana Chehín" loading="lazy" width="440" height="440"></span><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener" aria-label="César Luis Ávila, ficha en CONICET"><span class="av"><img src="img/equipo/cesar-luis-avila.webp" alt="Retrato ilustrado de César Luis Ávila" loading="lazy" width="440" height="440"></span><h3>César Luis Ávila</h3><span class="role">Vicedirector, Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/16251" target="_blank" rel="noopener" aria-label="Esteban Vera Pingitore, ficha en CONICET"><span class="av"><img src="img/equipo/esteban-vera-pingitore.webp" alt="Retrato ilustrado de Esteban Vera Pingitore" loading="lazy" width="440" height="440"></span><h3>Esteban Vera Pingitore</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/22601" target="_blank" rel="noopener" aria-label="Analía Silvina Chaves, ficha en CONICET"><span class="av"><img src="img/equipo/analia-silvina-chaves.webp" alt="Retrato ilustrado de Analía Silvina Chaves" loading="lazy" width="440" height="440"></span><h3>Analía Silvina Chaves</h3><span class="role">Investigadora Adjunta</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/15880" target="_blank" rel="noopener" aria-label="Sergio Benjamín Socías, ficha en CONICET"><span class="av"><img src="img/equipo/sergio-benjamin-socias.webp" alt="Retrato ilustrado de Sergio Benjamín Socías" loading="lazy" width="440" height="440"></span><h3>Sergio Benjamín Socías</h3><span class="role">Investigador Adjunto</span><span class="deg">Dr. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/329877" target="_blank" rel="noopener" aria-label="Diego Ploper, ficha en CONICET"><span class="av"><img src="img/equipo/diego-ploper.webp" alt="Retrato ilustrado de Diego Ploper" loading="lazy" width="440" height="440"></span><h3>Diego Ploper</h3><span class="role">Investigador Adjunto</span><span class="deg">PhD</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/325889" target="_blank" rel="noopener" aria-label="Rodrigo Tomás Grau, ficha en CONICET"><span class="av"><img src="img/equipo/rodrigo-tomas-grau.webp" alt="Retrato ilustrado de Rodrigo Tomás Grau" loading="lazy" width="440" height="440"></span><h3>Rodrigo Tomás Grau</h3><span class="role">Investigador Asistente</span><span class="deg">Dr. en Ciencias Biológicas</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
     </div>
     <div class="rrhh">
       <div class="rrhh-counts rv">
