@@ -506,6 +506,13 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
   transition:transform .6s var(--ease)}
 .fac-figs figure:hover img{transform:translateY(-5px)}
 .fac-figs figcaption{margin-top:11px;color:var(--dim);font-size:11.5px;line-height:1.45}
+.fac-code pre{margin:0;aspect-ratio:1;border-radius:16px;background:#0e1420;overflow:auto;
+  padding:18px 16px;transition:transform .6s var(--ease)}
+.fac-code:hover pre{transform:translateY(-5px)}
+.fac-code code{font-family:"JetBrains Mono",monospace;font-size:10.5px;line-height:1.65;
+  color:#cfe6f5;white-space:pre;display:block}
+.fac-code .c{color:#7f9bb0}
+.fac-code .s{color:#8fdcff}
 .fac-lista{align-self:center}
 .fac-lista h4{margin-top:0}
 .fac-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
@@ -1834,25 +1841,39 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="fac-txt">
           <i class="ph-thin ph-microscope"></i>
           <h3>Microscopía y análisis de imágenes</h3>
-          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales, aplicando el mismo criterio a cada imagen del experimento, sin la variabilidad del conteo a ojo.</p>
-          <p>Las imágenes de al lado son un campo real analizado con nuestro pipeline: el contorno de cada célula lo trazó el programa, no una mano.</p>
+          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Nuestros pipelines de análisis, asistidos por inteligencia artificial, delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales, aplicando el mismo criterio a cada imagen del experimento, sin la variabilidad del conteo a ojo.</p>
+          <p>Todo corre en <b>Python</b>, con el código versionado: el mismo análisis se puede volver a correr y da el mismo resultado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes; contarlas como tales es pseudorreplicación y produce valores de p absurdamente chicos. Agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
           <h4 class="mono">Equipamiento</h4>
           <ul>
             <li>Microscopio confocal Zeiss LSM 800</li>
             <li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li>
           </ul>
-          <h4 class="mono">Análisis</h4>
+          <h4 class="mono">Cómo procedemos</h4>
           <ul>
-            <li>Segmentación automática de células y núcleos</li>
-            <li>Conteo y medición de agregados y puncta, célula por célula</li>
+            <li>Segmentación automática de células y núcleos con Cellpose</li>
+            <li>Detección y medición de agregados y puncta, célula por célula</li>
             <li>Colocalización entre canales y análisis de compartimentos</li>
+            <li>Agregación célula → campo → réplica biológica</li>
+            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg por múltiples comparaciones</li>
             <li>Validación contra conteo manual ciego antes de publicar</li>
           </ul>
         </div>
         <div class="fac-figs">
-          <figure><img src="img/ill/analisis-nucleos.webp" alt="Núcleos celulares con el contorno de cada célula trazado automáticamente" loading="lazy"><figcaption class="mono">Cada célula y cada núcleo, delimitados automáticamente</figcaption></figure>
           <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
           <figure><img src="img/ill/analisis-canales.webp" alt="El mismo contorno celular aplicado a otro canal de fluorescencia" loading="lazy"><figcaption class="mono">El mismo contorno se aplica a todos los canales, para medir y comparar</figcaption></figure>
+          <figure class="fac-code"><pre><code><span class="c"># La unidad estadística nunca es la célula:</span>
+<span class="c"># las de un mismo campo no son independientes.</span>
+fields, reps = aggregate_levels(
+    df_cells, metric,
+    condition_col=<span class="s">&quot;condicion&quot;</span>,
+    field_col=<span class="s">&quot;campo&quot;</span>,
+    replicate_col=<span class="s">&quot;replica&quot;</span>)
+
+res = compare_all_to_control(
+    fields, metric,
+    control=<span class="s">&quot;Ctrl&quot;</span>,
+    test=<span class="s">&quot;mannwhitney&quot;</span>,
+    correction=<span class="s">&quot;bh&quot;</span>)</code></pre><figcaption class="mono">Nuestro código de análisis, en Python</figcaption></figure>
         </div>
       </article>
       <article class="fac rv">
