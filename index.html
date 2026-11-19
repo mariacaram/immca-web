@@ -965,6 +965,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .svc-row{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,56px);align-items:start;padding:38px 0;border-bottom:1px solid var(--line);position:relative}
 .svc-row h3{font-size:clamp(26px,3vw,42px);font-weight:500;transition:transform .5s var(--ease),color .3s}
 .svc-row p{color:var(--muted);max-width:48ch}
+.svc-sub b{display:block;color:var(--accent);font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.02em;margin-bottom:6px;font-weight:500}
 .svc-row i.arr{font-size:26px;color:var(--muted);transition:all .4s var(--ease)}
 .svc-row:hover h3{transform:translateX(12px);color:var(--accent)}
 .svc-row:hover i.arr{color:var(--accent);transform:rotate(-45deg)}
@@ -1595,15 +1596,15 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <a class="mis-card rv" href="#pegasus">
         <span class="mis-img"><img src="img/mesada.jpg" alt="" loading="lazy"></span>
         <span class="mis-k mono">Desarrollo terapéutico</span>
-        <h3>DAD9-Pegasus, el primer agonista dopaminérgico con actividad neuroprotectora</h3>
-        <p>Los tratamientos actuales alivian los síntomas reponiendo la dopamina que falta, pero no frenan el avance de la enfermedad. DAD9-Pegasus reúne las dos cosas en una sola molécula: activa los receptores de dopamina y, en modelos experimentales, interfiere con la agregación de alfa-sinucleína, el estrés oxidativo y la neuroinflamación. Completó la etapa preclínica y todavía no se probó en personas.</p>
+        <h3>Pegasus, un candidato terapéutico para el Parkinson</h3>
+        <p>Los tratamientos actuales alivian los síntomas reponiendo la dopamina que falta, pero no frenan el avance de la enfermedad. DAD9-Pegasus combina actividad dopaminérgica y neuroprotectora en modelos experimentales. SkyBio LLC, licenciataria de la tecnología, completó el programa preclínico a través de KeifeRX y preparó la documentación para la reunión pre-IND con la FDA. Todavía no se probó en personas.</p>
         <span class="mis-go">Conocé el desarrollo de Pegasus <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="mis-card rv" href="#rt-quic">
         <span class="mis-img"><img src="img/microscopia-confocal.jpg" alt="" loading="lazy"></span>
         <span class="mis-k mono">Investigación diagnóstica</span>
-        <h3>RT-QuIC, una nueva vía para estudiar el Parkinson</h3>
-        <p>Junto al ANLIS-Malbrán validamos un ensayo que detecta alfa-sinucleína mal plegada en líquido cefalorraquídeo. En paralelo, exploramos su aplicación en sangre.</p>
+        <h3>RT-QuIC para el estudio del Parkinson</h3>
+        <p>Junto con el ANLIS-Malbrán estamos implementando un ensayo para detectar formas agregadas de alfa-sinucleína en líquido cefalorraquídeo. El próximo paso es su validación con muestras clínicas. En paralelo, exploramos su aplicación en sangre.</p>
         <span class="mis-go">Conocé el proyecto RT-QuIC <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="mis-card rv" href="#sociedad">
@@ -1654,7 +1655,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 <section class="sec" id="instituto">
   <div class="wrap">
     <div class="stats-intro rv">
-      <h2>Un instituto joven, creado en 2018.</h2>
+      <h2>Un instituto de investigación traslacional en Tucumán.</h2>
       <p class="lead">Ciencia básica, clínica y vinculación con empresas, con el respaldo de CONICET, la UNT y el SIPROSA.</p>
     </div>
     <div class="stats">
@@ -1726,7 +1727,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="tl-item">
         <div class="tl-year">2017</div>
-        <h3>Un antibiótico contra el Parkinson</h3>
+        <h3>La doxiciclina remodela agregados de alfa-sinucleína en modelos experimentales</h3>
         <p>Scientific Reports publica cómo la doxiciclina remodela los oligómeros tóxicos de alfa-sinucleína. El trabajo recorre los medios del país.</p>
       </article>
       <article class="tl-item key">
@@ -1843,7 +1844,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Infraestructura y equipamiento</h2>
-      <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular, y herramientas de análisis para sacarle a cada experimento todo lo que tiene para dar.</p>
+      <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán: once salas y <b>120 equipos</b> bajo un plan de mantenimiento y calibración documentado, equipo por equipo, con responsable y frecuencia asignados. Equipamiento y herramientas de análisis cuantitativo para investigación biomédica.</p>
     </div>
     <div class="infra">
       <article class="fac rv">
@@ -1851,8 +1852,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <span class="fac-n mono">01</span>
           <i class="ph-thin ph-microscope"></i>
           <h3>Microscopía y análisis de imágenes</h3>
-          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Nuestros pipelines de análisis, asistidos por inteligencia artificial, delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales, aplicando el mismo criterio a cada imagen del experimento, sin la variabilidad del conteo a ojo.</p>
-          <p>Todo corre en <b>Python</b>, con el código versionado: el mismo análisis se puede volver a correr y da el mismo resultado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes; contarlas como tales es pseudorreplicación y produce valores de p absurdamente chicos. Agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
+          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Cuantificamos con flujos de análisis reproducibles, asistidos por inteligencia artificial, que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales.</p>
+          <p>Todo corre en <b>Python</b>, con el código versionado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes. Definimos la unidad experimental según el diseño de cada estudio: agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
         </div>
         <div class="fac-figs">
           <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
@@ -1875,7 +1876,8 @@ res = compare_all_to_control(
           <h4 class="mono">Equipamiento</h4>
           <ul>
             <li>Microscopio confocal Zeiss LSM 800</li>
-            <li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li>
+            <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
+            <li>Microscopio de contraste de fase Zeiss Primovert</li>
           </ul>
           <h4 class="mono">Cómo procedemos</h4>
           <ul>
@@ -1883,7 +1885,7 @@ res = compare_all_to_control(
             <li>Detección y medición de agregados y puncta, célula por célula</li>
             <li>Colocalización entre canales y análisis de compartimentos</li>
             <li>Agregación célula → campo → réplica biológica</li>
-            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg por múltiples comparaciones</li>
+            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
             <li>Validación contra conteo manual ciego antes de publicar</li>
           </ul>
         </div>
@@ -1902,9 +1904,12 @@ res = compare_all_to_control(
         <div class="fac-specs">
           <h4 class="mono">Equipamiento</h4>
           <ul>
-            <li>Cabina de seguridad biológica clase II</li>
-            <li>Estufa de CO₂ con autoesterilización</li>
+            <li>Cabina de seguridad biológica clase II Biobase</li>
+            <li>Estufa de CO₂ Thermo Scientific BB150, con autoesterilización</li>
             <li>Microscopio de contraste de fase Zeiss Primovert</li>
+            <li>Tanque de nitrógeno líquido MVE ET-20, para el banco de células</li>
+            <li>Baño termostático y centrífuga de mesada</li>
+            <li>Micropipetas Eppendorf Research Plus</li>
           </ul>
         </div>
       </article>
@@ -1912,21 +1917,29 @@ res = compare_all_to_control(
         <div class="fac-txt">
           <span class="fac-n mono">03</span>
           <i class="ph-thin ph-dna"></i>
-          <h3>Producción de proteínas</h3>
-          <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección de proteínas por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
+          <h3>Producción y purificación de proteínas</h3>
+          <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
         </div>
         <div class="fac-figs">
           <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy" style="object-position:center 46%"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
           <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
         </div>
         <div class="fac-specs">
-          <h4 class="mono">Equipamiento</h4>
+          <h4 class="mono">Purificación</h4>
           <ul>
-            <li>Cromatógrafo FPLC ÄKTA pure</li>
-            <li>Microfluidizador LM20</li>
-            <li>Ultracentrífuga refrigerada Sorvall Lynx 4000</li>
-            <li>Electroforesis Bio-Rad Mini-PROTEAN</li>
+            <li>Cromatógrafo FPLC Cytiva ÄKTA pure 25 L</li>
+            <li>Microfluidizador Microfluidics LM20</li>
+            <li>Ultracentrífuga refrigerada Thermo Sorvall LYNX 4000</li>
+            <li>Centrífuga refrigerada Thermo Sorvall ST 8R</li>
+            <li>Sonicador Sonics VCX130</li>
+          </ul>
+          <h4 class="mono">Detección y control</h4>
+          <ul>
+            <li>Electroforesis BioRad Mini-PROTEAN Tetra y Mini Sub-Cell GT</li>
             <li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li>
+            <li>Espectrofotómetro de microvolumen DeNovix DS-11+</li>
+            <li>Espectrofotómetro UV/visible Genesys 10S</li>
+            <li>Balanza analítica Ohaus PA224</li>
           </ul>
         </div>
       </article>
@@ -1934,33 +1947,71 @@ res = compare_all_to_control(
         <div class="fac-txt">
           <span class="fac-n mono">04</span>
           <i class="ph-thin ph-wave-sine"></i>
-          <h3>Biofísica y espectroscopía</h3>
+          <h3>Biofísica, espectroscopía y analítica</h3>
           <p>Acá se sigue en tiempo real cómo una proteína se pliega, se agrega o deja de hacerlo frente a un compuesto. Medimos cinéticas de agregación, tamaño y estabilidad de partículas en suspensión, y ensayos ópticos en microplaca, incluidos los inmunoensayos.</p>
         </div>
         <div class="fac-lista">
           <h4 class="mono">Equipamiento</h4>
           <ul>
-            <li>Espectrofluorómetro Horiba Fluoromax-4</li>
-            <li>Lector multimodo TECAN Spark</li>
-            <li>Dispersión dinámica de luz y potencial Z</li>
-            <li>Espectrofotómetro de microvolumen DeNovix DS-11</li>
+            <li>Espectrofluorómetro Horiba Fluoromax-4CP</li>
+            <li>Dispersión dinámica de luz y potencial zeta Horiba SZ-100V2</li>
+            <li>Lector multimodo TECAN Spark 1000</li>
+            <li>Lector de microplacas BMG Labtech FLUOstar Omega</li>
+            <li>Potenciostato PalmSens4, para biosensado electroquímico</li>
+            <li>pH-metro Orion Star A2115</li>
           </ul>
         </div>
       </article>
       <article class="fac rv">
         <div class="fac-txt">
           <span class="fac-n mono">05</span>
+          <i class="ph-thin ph-bug"></i>
+          <h3>Ensayos con organismos modelo</h3>
+          <p>Sala dedicada a los ensayos in vivo del instituto, con su propia cabina de seguridad biológica. Es donde se trabaja con <i>C.&nbsp;elegans</i>, el modelo que usamos para ver si un compuesto protege neuronas en un organismo entero y no solo en una placa.</p>
+        </div>
+        <div class="fac-lista">
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Cabina de seguridad biológica clase II Biobase, exclusiva de la sala</li>
+            <li>Estufa de cultivo de temperatura controlada Neuation iTherm CH25</li>
+            <li>Lupa estereoscópica</li>
+            <li>Agitador y centrífuga propios de la sala</li>
+          </ul>
+        </div>
+      </article>
+      <article class="fac rv">
+        <div class="fac-txt">
+          <span class="fac-n mono">06</span>
+          <i class="ph-thin ph-test-tube"></i>
+          <h3>Microbiología y biología molecular</h3>
+          <p>Expresión en bacterias, cultivos con agitación controlada y el trabajo de biología molecular que sostiene a la producción de proteínas: clonado, amplificación y control de los constructos.</p>
+        </div>
+        <div class="fac-lista">
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Incubadora con agitación Infors HT Multitron Standard</li>
+            <li>Estufa de cultivo Thermo Scientific HERATHERM IMC 18</li>
+            <li>Termociclador DLab TC1000-G</li>
+            <li>Fuente de electroforesis Cole-Parmer E3000-E</li>
+          </ul>
+        </div>
+      </article>
+      <article class="fac rv">
+        <div class="fac-txt">
+          <span class="fac-n mono">07</span>
           <i class="ph-thin ph-snowflake"></i>
-          <h3>Apoyo al laboratorio</h3>
+          <h3>Conservación y apoyo</h3>
           <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
         </div>
         <div class="fac-lista">
           <h4 class="mono">Equipamiento</h4>
           <ul>
-            <li>Ultrafreezer −85 °C</li>
-            <li>Termomezcladores Eppendorf</li>
-            <li>Equipo de agua ultrapura</li>
-            <li>Autoclave, lavadora y estufa de secado</li>
+            <li>Ultrafreezer Panasonic MDF-U55V, −85 °C</li>
+            <li>Freezers −20 °C y heladeras de laboratorio</li>
+            <li>Autoclave Panasonic MLS-3751L</li>
+            <li>Desionizador de agua Apema Osmoion 15-2-U</li>
+            <li>Termomezcladores y agitadores Eppendorf y DLab</li>
+            <li>Lavadora y estufa de secado de material</li>
           </ul>
         </div>
       </article>
@@ -2287,7 +2338,7 @@ res = compare_all_to_control(
         <span class="mono kicker rv">Nuestro equipo</span>
         <h2 class="rv">Más allá del laboratorio</h2>
       </div>
-      <p class="lead rv">Además de hacer ciencia, nos divertimos. Somos competitivos, un poco locos y no le tenemos miedo al ridículo: festejos de fin de año, desafíos, bailes y mucho humor. Así somos dentro y fuera del laboratorio.</p>
+      <p class="lead rv">La vida en el IMMCA también incluye encuentros, celebraciones y actividades que compartimos fuera del laboratorio.</p>
     </div>
     <div class="vida-fotos">
       <figure class="rv"><img src="img/vida/mundial-camisetas.jpg" alt="Integrantes del instituto con la camiseta argentina, en la sala de reuniones" loading="lazy"></figure>
@@ -2380,7 +2431,7 @@ res = compare_all_to_control(
   <div class="wrap">
     <div class="sec-head">
       <span class="mono kicker rv">Innovación</span>
-      <h2 class="rv">Conocimiento que se patenta</h2>
+      <h2 class="rv">Patentes, licencias y desarrollos tecnológicos</h2>
       <p class="lead rv">Dos familias de patentes internacionales. Son titulares el CONICET, la UNT, la UBA y el SIPROSA; la licenciataria es SkyBio LLC.</p>
     </div>
     <div class="patents">
@@ -2402,8 +2453,8 @@ res = compare_all_to_control(
       </article>
       <article class="pat rv">
         <span class="num mono">Aristaeus · WO 2023/214381</span>
-        <h3>Diagnóstico temprano de enfermedades neurodegenerativas</h3>
-        <p>Biosensor basado en derivados de tetraciclinas que se unen a la alfa-sinucleína agregada. Fases nacionales presentadas en ocho países. Licenciada a SkyBio LLC.</p>
+        <h3>Aristaeus, tecnología de biocaptura para investigación diagnóstica</h3>
+        <p>Derivados de tetraciclinas que reconocen formas agregadas de alfa-sinucleína, para su incorporación en plataformas de biosensado. Fases nacionales presentadas en ocho países. Licenciada a SkyBio LLC.</p>
         <span class="status"><i class="ph-fill ph-seal-check"></i>Acción oficial favorable en EE. UU., noviembre de 2026</span>
       </article>
       <article class="pat pat-fda rv">
@@ -2433,7 +2484,7 @@ res = compare_all_to_control(
     </div>
 
     <dl class="pg-state rv">
-      <div><dt>Patente</dt><dd>Aprobada en Estados Unidos y la Unión Europea. En trámite en otros seis países.</dd></div>
+      <div><dt>Patente</dt><dd>Familia de ocho jurisdicciones: concedida en Estados Unidos y en la Unión Europea, en trámite en otras seis. Estado al 19 de noviembre de 2026.</dd></div>
       <div><dt>Licencia</dt><dd>Exclusiva a SkyBio LLC desde 2025. Los titulares de la patente son el CONICET, la UNT, la UBA y el SIPROSA.</dd></div>
       <div><dt>Evidencia</dt><dd>Preclínica completa, en modelos celulares y animales. Todavía no se probó en personas.</dd></div>
       <div><dt>Próximo paso</dt><dd>Reunión pre-IND con la FDA, prevista para febrero de 2027.</dd></div>
@@ -2445,7 +2496,7 @@ res = compare_all_to_control(
         <span class="pg-n mono">01</span>
         <img class="pg-ill" src="img/ill/pegasus-escalado.svg" alt="Tres recipientes de tamaño creciente con un sello de aprobación" width="320" height="320" loading="lazy">
         <h3>Escalado de producción y patentes</h3>
-        <p>SkyBio LLC completó el escalado de la síntesis de Pegasus con certificación GMP. La tecnología cuenta con patentes en ocho jurisdicciones y fue licenciada en exclusiva a SkyBio LLC.</p>
+        <p>SkyBio LLC completó el escalado de la síntesis de Pegasus con certificación GMP. La familia de patentes cubre ocho jurisdicciones: concedida en Estados Unidos y en la Unión Europea, y en trámite en otras seis. La tecnología está licenciada en exclusiva a SkyBio LLC.</p>
       </li>
       <li class="done">
         <span class="pg-n mono">02</span>
@@ -2543,7 +2594,7 @@ res = compare_all_to_control(
       <div class="step" data-i="8"><span class="node"></span>
         <span class="step-year mono">Transferencia</span>
         <h3>Protección y licencia</h3>
-        <p>Patente internacional aprobada en Estados Unidos y en la Unión Europea, y en trámite en otros países. Son titulares el CONICET, la UNT, la UBA y el SIPROSA. La licencia exclusiva a SkyBio LLC fue aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública.</p>
+        <p>Familia de patentes en ocho jurisdicciones: concedida en Estados Unidos y en la Unión Europea, y en trámite en otras seis. Son titulares el CONICET, la UNT, la UBA y el SIPROSA. La licencia exclusiva a SkyBio LLC fue aprobada por la Resolución 1204/SPS/25 del Ministerio de Salud Pública.</p>
         <div class="chips"><span class="chip ok">EE.&nbsp;UU.</span><span class="chip ok">Unión Europea</span><span class="chip">SkyBio LLC</span></div>
       </div>
       <div class="step" data-i="9"><span class="node"></span>
@@ -2587,13 +2638,13 @@ res = compare_all_to_control(
     <div class="svc" id="svc">
       <article class="svc-row rv" data-svc="Moduladores de la agregación proteica">
         <div class="svc-head2">
-          <h3>Ensayos de neuroprotección in vitro</h3>
-          <p class="svc-q">¿Tu compuesto, extracto o formulación tiene propiedades neuroprotectoras?</p>
+          <h3>Evaluación del potencial neuroprotector in vitro</h3>
+          <p class="svc-q">¿Tu compuesto, extracto o formulación tiene potencial neuroprotector?</p>
         </div>
         <div>
           <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de potenciales moduladores de la agregación de proteínas asociadas a enfermedades neurodegenerativas</p>
-          <p>Evaluamos el potencial neuroprotector de compuestos, extractos y formulaciones mediante ensayos in vitro. Según el objetivo del proyecto, estudiamos la actividad antiinflamatoria y antioxidante, el estrés lisosomal y el efecto sobre la agregación de tau y alfa-sinucleína y sobre la propagación intercelular de la patología.</p>
-          <p>El servicio cubre además el <b>análisis de muestras biológicas</b>, con metodologías basadas en la detección o amplificación de proteínas agregadas con capacidad de propagar la patología entre células. Se aplica en investigación, en la selección de compuestos y en la evaluación de estrategias diagnósticas, no como análisis clínico.</p>
+          <p>Diseñamos ensayos in vitro para caracterizar candidatos y comparar formulaciones. Según el objetivo del proyecto, evaluamos su actividad antioxidante y antiinflamatoria, su efecto sobre el estrés lisosomal y sobre la agregación de alfa-sinucleína y tau, así como sobre la propagación intercelular de agregados.</p>
+          <p class="svc-sub"><b>Aplicaciones en investigación diagnóstica</b>Detección y amplificación de proteínas agregadas con capacidad de propagar la patología entre células, en muestras biológicas. Se aplica en investigación, en la selección de compuestos y en la evaluación de estrategias diagnósticas, no como análisis clínico.</p>
           <p class="svc-who"><b>Para quién</b>Empresas farmacéuticas, biotecnológicas y de ingredientes, y grupos de investigación que quieran caracterizar un candidato, comparar formulaciones o seleccionar cuáles llevar a la siguiente etapa.</p>
           <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos · Citrícola</span>
           <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/estudio-de-agregacion-proteica-y-evaluacion-de-muestras-asociadas-a-enfermedades-neurodegenerativas/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
@@ -2729,7 +2780,7 @@ res = compare_all_to_control(
   <div class="wrap">
     <div class="sec-head">
       <span class="mono kicker rv">Habilitaciones y certificaciones</span>
-      <h2 class="rv">En condiciones de trabajar con muestras reales</h2>
+      <h2 class="rv">Habilitación sanitaria y gestión de calidad</h2>
       <p class="lead rv">Investigar con muestras de pacientes exige permisos y sistemas de gestión que no todo instituto tiene. Estos son los nuestros, con el estado en que está cada uno.</p>
     </div>
 
@@ -2944,7 +2995,7 @@ res = compare_all_to_control(
         <div class="field"><label for="cf-mail">Correo electrónico</label><input id="cf-mail" name="mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
         <div class="field"><label for="cf-motivo">Motivo</label><select id="cf-motivo" name="motivo"><option>Colaboración científica</option><option>Servicios</option><option>Becas y doctorado</option><option>Prensa</option><option>Otro</option></select></div>
         <div class="field full"><label for="cf-msg">Mensaje</label><textarea id="cf-msg" name="mensaje" rows="5" required></textarea><small class="err">Contanos en qué podemos ayudarte.</small></div>
-        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar mensaje <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con el mensaje listo para enviar.</p></div>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Preparar correo <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con el mensaje listo para enviar.</p></div>
       </form>
     </div>
     <div class="contact-card rv">
