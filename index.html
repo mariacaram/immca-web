@@ -703,7 +703,16 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .unite-paths .mono{color:var(--accent)}
 .unite-paths h3{font-size:24px;margin:12px 0 10px}
 .unite-paths p{color:var(--muted);font-size:15.5px}
-.unite-why{margin-top:56px}
+.unite-why{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.62fr);
+  gap:0 clamp(28px,4vw,64px);align-items:start}
+.unite-why>h3,.unite-why>ul,.unite-why>.unite-cta{grid-column:1}
+.unite-foto{grid-column:2;grid-row:1/4;margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.unite-foto img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 42%;display:block;
+  transition:transform 1.4s var(--ease)}
+.unite-foto:hover img{transform:scale(1.04)}
+@media (max-width:900px){.unite-why{grid-template-columns:1fr}
+  .unite-foto{grid-column:1;grid-row:auto;margin-bottom:26px}
+  .unite-foto img{aspect-ratio:4/3}}
 .unite-why h3{font-size:clamp(24px,2.4vw,32px);margin-bottom:22px}
 .unite-why ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;margin-bottom:32px}
 .unite-why li{display:flex;gap:14px;align-items:flex-start;font-size:16px;color:var(--muted)}
@@ -2645,6 +2654,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="rv up up-3"><span class="up-n">03</span><i class="ph-thin ph-flask up-ic"></i><h3>Posdoctorado</h3><p>Con becas posdoctorales del CONICET, para sumarte a una línea en marcha o proponer una propia.</p></article>
     </div>
     <div class="unite-why">
+      <figure class="unite-foto rv">
+        <img src="img/unite-mesada.webp" alt="Tres integrantes del instituto trabajando juntos en la mesada, preparando muestras" loading="lazy">
+      </figure>
       <h3 class="rv">Por qué formarte acá</h3>
       <ul>
         <li class="rv"><i class="ph ph-first-aid-kit"></i><span><b>Cerca de la clínica.</b> Trabajamos con médicos y profesionales de la salud sobre preguntas que surgen de la práctica clínica.</span></li>
