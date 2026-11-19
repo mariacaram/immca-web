@@ -118,7 +118,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .nav{position:fixed;top:0;left:0;right:0;z-index:40;height:72px;transition:transform .5s var(--ease),background .4s,border-color .4s;border-bottom:1px solid transparent}
 .nav.scrolled{background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-bottom-color:var(--line)}
 .nav.hide{transform:translateY(-100%)}
-.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:clamp(22px,2.4vw,36px)}
 .brand{display:flex;align-items:center;gap:14px}
 .nav .brand{transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .nav:not(.brand-on) .brand:not(:focus-visible){opacity:0;transform:translateY(-6px);pointer-events:none}
@@ -127,7 +127,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .brand-word{font-family:"Fira Sans",sans-serif;font-weight:400;font-size:25px;letter-spacing:.01em;line-height:1;color:#3E0A0D}
 .brand-long{font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:300;text-transform:uppercase;font-size:17px;letter-spacing:.02em;line-height:1.2;color:var(--muted);margin-top:14px}
 .brand-sub{border-left:1px solid var(--line-2);padding-left:14px;color:var(--muted);line-height:1.25;font-size:11px}
-.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links{display:flex;gap:4px;align-items:center;padding-left:6px}
 .nav-links a{padding:8px 11px;border-radius:999px;font-size:14.5px;color:var(--muted);white-space:nowrap;transition:color .3s,background .3s}
 .nav-links>a,.dd>a{display:inline-flex;align-items:center;gap:4px}
 .dd>a i{font-size:12px;opacity:.6;transition:transform .3s}
@@ -142,10 +142,10 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .msub{display:flex;flex-wrap:wrap;gap:4px 18px;padding:6px 0 10px;border-bottom:1px solid var(--line)}
 .mmenu .msub a{font-size:17px;font-weight:500;color:var(--muted);border:0;padding:2px 0}
 @media (max-width:1366px){.nav-links{gap:0}.nav-links>a,.dd>a{padding:8px 9px;font-size:14px}.brand-sub{display:none}}
-@media (max-width:1280px){.nav .wrap{gap:12px}.nav-links>a,.dd>a{padding:7px 6px;font-size:13px}.dd>a i{display:none}.nav-cta{padding:0 14px;font-size:14px;height:38px}.brand-word{font-size:21px}.brand{gap:10px}.brand-iso{width:28px}}
+@media (max-width:1280px){.nav .wrap{gap:22px}.nav-links>a,.dd>a{padding:7px 6px;font-size:13px}.dd>a i{display:none}.nav-cta{padding:0 14px;font-size:14px;height:38px}.brand-word{font-size:21px}.brand{gap:10px}.brand-iso{width:28px}}
 @media (min-width:1181px){.nav-links>a,.dd>a{font-size:clamp(13px,.98vw,15px);padding:7px clamp(5px,.55vw,11px)}.brand-sub{display:none}}
 @media (min-width:1700px){.brand-sub{display:block}}
-@media (max-width:1180px){.nav-links>a,.dd>a{padding:7px 4px;font-size:12.5px}.nav .wrap{gap:8px}.nav-cta{padding:0 12px;font-size:13.5px}}
+@media (max-width:1180px){.nav-links>a,.dd>a{padding:7px 4px;font-size:12.5px}.nav .wrap{gap:18px}.nav-cta{padding:0 12px;font-size:13.5px}}
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
 .nav-cta{height:42px;padding:0 20px;font-size:15px;flex-shrink:0}
 .burger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);place-items:center;font-size:20px}
@@ -1622,7 +1622,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <div class="wrap">
       <div class="hm-label mono"><span class="hm-count">01</span><span class="hm-of">/ 06</span><span class="hm-cap">Nuestra sede · Dorrego 1080</span></div>
       <div class="hm-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <a class="hero-scroll mono" href="#mision" tabindex="-1">Qué hacemos<span class="line"></span></a>
+      <a class="hero-scroll mono" href="#investigacion" tabindex="-1">Qué hacemos<span class="line"></span></a>
     </div>
   </div>
 
@@ -1636,37 +1636,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 </section>
 
 <!-- EN QUÉ ESTAMOS TRABAJANDO -->
-<section class="sec mis" id="mision">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="mono kicker rv">Qué hacemos</span>
-      <h2 class="rv">En qué estamos trabajando</h2>
-    </div>
-    <div class="mis-grid">
-      <a class="mis-card rv" href="#pegasus">
-        <span class="mis-img"><img src="img/mesada.jpg" alt="" loading="lazy"></span>
-        <span class="mis-k mono">Desarrollo terapéutico</span>
-        <h3>Pegasus, un candidato terapéutico para el Parkinson</h3>
-        <p>Los tratamientos actuales alivian los síntomas reponiendo la dopamina que falta, pero no frenan el avance de la enfermedad. DAD9-Pegasus combina actividad dopaminérgica y neuroprotectora en modelos experimentales. SkyBio LLC, licenciataria de la tecnología, completó el programa preclínico a través de KeifeRX y preparó la documentación para la reunión pre-IND con la FDA. Todavía no se probó en personas.</p>
-        <span class="mis-go">Conocé el desarrollo de Pegasus <i class="ph ph-arrow-right"></i></span>
-      </a>
-      <a class="mis-card rv" href="#rt-quic">
-        <span class="mis-img"><img src="img/microscopia-confocal.jpg" alt="" loading="lazy"></span>
-        <span class="mis-k mono">Investigación diagnóstica</span>
-        <h3>RT-QuIC para el estudio del Parkinson</h3>
-        <p>Junto con el ANLIS-Malbrán estamos implementando un ensayo para detectar formas agregadas de alfa-sinucleína en líquido cefalorraquídeo. El próximo paso es su validación con muestras clínicas. En paralelo, exploramos su aplicación en sangre.</p>
-        <span class="mis-go">Conocé el proyecto RT-QuIC <i class="ph ph-arrow-right"></i></span>
-      </a>
-      <a class="mis-card rv" href="#sociedad">
-        <span class="mis-img"><img src="img/parkinson-casa-historica.jpg" alt="" loading="lazy"></span>
-        <span class="mis-k mono">Comunidad</span>
-        <h3>Tucumán se ilumina de rojo por el Parkinson</h3>
-        <p>En el Día Mundial del Parkinson nos reunimos frente a la Casa Histórica con pacientes, familias y equipos de salud.</p>
-        <span class="mis-go">Conocé nuestro trabajo con la comunidad <i class="ph ph-arrow-right"></i></span>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- NOTICIAS -->
 <section class="sec" id="noticias">
