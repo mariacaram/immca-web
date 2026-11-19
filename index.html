@@ -118,7 +118,11 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .nav{position:fixed;top:0;left:0;right:0;z-index:40;height:72px;transition:transform .5s var(--ease),background .4s,border-color .4s;border-bottom:1px solid transparent}
 .nav.scrolled{background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);border-bottom-color:var(--line)}
 .nav.hide{transform:translateY(-100%)}
-.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:clamp(22px,2.4vw,36px)}
+.nav .wrap{height:100%;max-width:none;padding-inline:clamp(18px,2.6vw,44px);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(12px,1.6vw,28px)}
+.nav .wrap>.brand{grid-column:1;justify-self:start;min-width:0}
+.nav .nav-links{grid-column:2;justify-self:center}
+.nav .nav-cta{grid-column:3;justify-self:end}
+.nav .burger{grid-column:3;justify-self:end}
 .brand{display:flex;align-items:center;gap:14px}
 .nav .brand{transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .nav:not(.brand-on) .brand:not(:focus-visible){opacity:0;transform:translateY(-6px);pointer-events:none}
@@ -127,7 +131,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .brand-word{font-family:"Fira Sans",sans-serif;font-weight:400;font-size:25px;letter-spacing:.01em;line-height:1;color:#3E0A0D}
 .brand-long{font-family:"Fira Sans Extra Condensed",sans-serif;font-weight:300;text-transform:uppercase;font-size:17px;letter-spacing:.02em;line-height:1.2;color:var(--muted);margin-top:14px}
 .brand-sub{border-left:1px solid var(--line-2);padding-left:14px;color:var(--muted);line-height:1.25;font-size:11px}
-.nav-links{display:flex;gap:4px;align-items:center;padding-left:6px}
+.nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{padding:8px 11px;border-radius:999px;font-size:14.5px;color:var(--muted);white-space:nowrap;transition:color .3s,background .3s}
 .nav-links>a,.dd>a{display:inline-flex;align-items:center;gap:4px}
 .dd>a i{font-size:12px;opacity:.6;transition:transform .3s}
