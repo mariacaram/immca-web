@@ -2889,7 +2889,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p>Contanos qué necesitás y te respondemos con disponibilidad, condiciones y presupuesto.</p>
         <p class="sq-who"><i class="ph ph-user-circle"></i><span>Responsable de servicios<br><b>Sabrina Sequeira</b></span></p><p class="sq-mail"><span class="mono">O escribile directamente</span><span class="sq-copy"><b id="sq-addr">…</b><button type="button" class="sq-btn" id="sq-cp">Copiar</button></span></p>
       </div>
-      <form class="cform sq-form rv" id="sform" novalidate>
+      <form class="cform sq-form rv" id="sform" data-key="" novalidate>
         <div class="field"><label for="sf-nombre">Nombre y apellido</label><input id="sf-nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
         <div class="field"><label for="sf-org">Institución o empresa</label><input id="sf-org" autocomplete="organization"></div>
         <div class="field"><label for="sf-mail">Correo electrónico</label><input id="sf-mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
@@ -2906,7 +2906,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <option>Otro</option>
         </select></div>
         <div class="field full"><label for="sf-msg">Descripción de la muestra o del pedido</label><textarea id="sf-msg" rows="5" required placeholder="Tipo y cantidad de muestras, plazos, objetivo del estudio…"></textarea><small class="err">Contanos qué necesitás.</small></div>
+        <label class="hp"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">No completar</label>
         <div class="full cform-foot"><button class="btn btn-primary" type="submit">Abrir consulta en mi correo <i class="ph ph-envelope-simple"></i></button><p class="hint">Se abre tu programa de correo con la consulta ya escrita. Revisala y enviala desde ahí.</p></div>
+        <p class="cform-estado full" id="sf-estado" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </div>
@@ -3658,7 +3660,7 @@ const sqCp = $('#sq-cp');
 if (sqCp) sqCp.addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(sqTo); sqCp.textContent = 'Copiada'; sqCp.classList.add('ok'); setTimeout(() => { sqCp.textContent = 'Copiar'; sqCp.classList.remove('ok'); }, 1800); } catch (e) {}
 });
-sform.addEventListener('submit', e => {
+sform.addEventListener('submit', async e => {
   e.preventDefault();
   let ok = true;
   [['sf-nombre', v => v.trim().length > 1], ['sf-mail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)], ['sf-msg', v => v.trim().length > 4]].forEach(([id, test]) => {
@@ -3667,7 +3669,52 @@ sform.addEventListener('submit', e => {
   if (!ok) return;
   const v = id => $('#' + id).value.trim();
   const body = `Servicio: ${v('sf-svc')}\n\n${v('sf-msg')}\n\n${v('sf-nombre')}${v('sf-org') ? '\n' + v('sf-org') : ''}\n${v('sf-mail')}${v('sf-tel') ? '\n' + v('sf-tel') : ''}`;
-  location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+
+  // sin clave de envio, el formulario sigue abriendo el correo del visitante
+  if (!sform.dataset.key) {
+    location.href = `mailto:${sqTo}?subject=${encodeURIComponent('[Servicios IMMCA] ' + v('sf-svc'))}&body=${encodeURIComponent(body)}`;
+    return;
+  }
+
+  const btn = sform.querySelector('button[type="submit"]');
+  const estado = $('#sf-estado');
+  const etiqueta = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Enviando…';
+  estado.hidden = true;
+  estado.className = 'cform-estado full';
+
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', Accept: 'application/json'},
+      body: JSON.stringify({
+        access_key: sform.dataset.key,
+        subject: '[Servicios IMMCA] ' + v('sf-svc'),
+        from_name: 'Servicios tecnológicos del IMMCA',
+        name: v('sf-nombre'),
+        email: v('sf-mail'),
+        organizacion: v('sf-org'),
+        telefono: v('sf-tel'),
+        servicio: v('sf-svc'),
+        message: body,
+        botcheck: sform.querySelector('[name="botcheck"]').checked
+      })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || !d.success) throw new Error(d.message || 'no se pudo enviar');
+    sform.reset();
+    estado.textContent = 'Listo, recibimos tu consulta. Te respondemos al correo que nos dejaste.';
+    estado.classList.add('ok');
+  } catch (err) {
+    estado.innerHTML = 'No pudimos enviar la consulta. Escribinos directamente a ' +
+      `<a href="mailto:${sqTo}">${sqTo}</a>.`;
+    estado.classList.add('bad');
+  } finally {
+    estado.hidden = false;
+    btn.disabled = false;
+    btn.innerHTML = etiqueta;
+  }
 });
 
 /* ============ Agradecimientos: el orden de los nombres cambia en cada visita ============ */
