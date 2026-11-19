@@ -3526,7 +3526,6 @@ mmq.add('(min-width:769px) and (prefers-reduced-motion:no-preference)', () => {
   const dist = () => track.scrollWidth - innerWidth;
   gsap.to(track, {x: () => -dist(), ease: 'none', scrollTrigger: {trigger: '.tl', start: 'top top', end: () => `+=${dist()}`, pin: '.tl-pin', scrub: 1, invalidateOnRefresh: true,
     onUpdate: s => gsap.set('#tlbar', {scaleX: s.progress})}});
-  gsap.from('.tl-item', {opacity: .25, stagger: .1, scrollTrigger: {trigger: '.tl', start: 'top top', end: () => `+=${dist()}`, scrub: true}});
 });
 mmq.add('(max-width:768px) and (prefers-reduced-motion:no-preference)', () => {
   $$('.tl-item').forEach(it => gsap.from(it, {opacity: 0, y: 30, duration: 1, ease: 'expo.out', scrollTrigger: {trigger: it, start: 'top 88%'}}));
