@@ -341,8 +341,17 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 /* ---------- alumni ---------- */
 .alum{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.alum-i{background:var(--bg);padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;
+.alum-i{background:var(--bg);padding:clamp(22px,2.2vw,30px);display:grid;
+  grid-template-columns:auto minmax(0,1fr);gap:0 clamp(16px,1.6vw,24px);align-content:start;
   transition:background .4s var(--ease)}
+.alum-foto{grid-column:1;grid-row:1/5;width:clamp(74px,7vw,96px);aspect-ratio:1;border-radius:50%;
+  overflow:hidden;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center}
+.alum-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.alum-ini{color:var(--accent);font-size:17px;letter-spacing:.06em}
+.alum-i>h3,.alum-i>.alum-dest,.alum-i>.alum-rol,.alum-i>.alum-sede{grid-column:2}
+@media (max-width:520px){.alum-i{grid-template-columns:1fr}
+  .alum-foto{grid-row:auto;margin-bottom:14px}
+  .alum-i>h3,.alum-i>.alum-dest,.alum-i>.alum-rol,.alum-i>.alum-sede{grid-column:1}}
 .alum-i:hover{background:var(--bg-2)}
 .alum-i h3{font-size:clamp(19px,1.7vw,23px);letter-spacing:-.01em;margin-bottom:10px}
 .alum-dest{color:var(--accent);font-size:15.5px;font-weight:600;line-height:1.4;margin-bottom:8px}
@@ -3348,42 +3357,49 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     </div>
     <ul class="alum">
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">MBM</span>
           <h3>María Belén Machin</h3>
           <p class="alum-dest">Massachusetts General Hospital Cancer Center y Harvard Medical School</p>
           <p class="alum-rol">Investigadora posdoctoral. Estudia el metabolismo de las células tumorales que hacen metástasis. Pew Latin American Fellow desde 2023.</p>
           <span class="alum-sede mono">Boston, Estados Unidos</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">FGL</span>
           <h3>Florencia González Lizárraga</h3>
           <p class="alum-dest">Puna Bio</p>
           <p class="alum-rol">Responsable de biología molecular en una empresa de biotecnología agrícola nacida del CONICET, que trabaja con microorganismos extremófilos de la Puna.</p>
           <span class="alum-sede mono">Argentina</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto"><img src="img/alumni/cecilia-vera.webp" alt="Cecilia Vera en el INBIONATEC, su laboratorio actual" loading="lazy" width="300" height="300"></span>
           <h3>Cecilia Vera</h3>
           <p class="alum-dest">INBIONATEC, CONICET y Universidad Nacional de Santiago del Estero</p>
           <p class="alum-rol">Investigadora asistente del CONICET. Trabaja en fotoquímica y en terapia fotodinámica antimicrobiana.</p>
           <span class="alum-sede mono">Santiago del Estero, Argentina</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">CTB</span>
           <h3>Clarisa Torres Bugeau</h3>
           <p class="alum-dest">Instituto de Maternidad y Ginecología Nuestra Señora de las Mercedes, SIPROSA</p>
           <p class="alum-rol">Jefa del laboratorio de microbiología, que atiende a unas 3.500 personas por mes.</p>
           <span class="alum-sede mono">San Miguel de Tucumán</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">AMC</span>
           <h3>Alejandro de Athayde Moncorvo Collado</h3>
           <p class="alum-dest">Cuerpo de Investigaciones Fiscales, Ministerio Público de Salta</p>
           <p class="alum-rol">Trabaja en genética forense y biología molecular aplicada a la investigación judicial.</p>
           <span class="alum-sede mono">Salta, Argentina</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">EV</span>
           <h3>Eva Vélez</h3>
           <p class="alum-dest">CERELA, CONICET</p>
           <p class="alum-rol">Investigadora asistente del CONICET. Estudia cómo los probióticos modulan la respuesta inmune en las alergias y busca nuevos biomarcadores. Enseña Inmunología en la FBQyF-UNT.</p>
           <span class="alum-sede mono">San Miguel de Tucumán</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto alum-ini" aria-hidden="true">LM</span>
           <h3>Luciana Medina</h3>
           <p class="alum-dest">Medpace</p>
           <p class="alum-rol">De la investigación básica a la clínica: trabaja en una empresa internacional que gestiona ensayos clínicos para la industria farmacéutica y biotecnológica.</p>
