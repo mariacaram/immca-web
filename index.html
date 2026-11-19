@@ -497,8 +497,10 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
   border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,38px);background:var(--bg-2)}
 .infra-ia>.ia-txt>i{font-size:32px;color:var(--accent)}
 .infra-ia h3{font-size:clamp(21px,2vw,26px);margin:18px 0 10px}
+.infra-ia h4{color:var(--accent);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:22px 0 0}
+.infra-ia ul+h4{margin-top:24px}
 .infra-ia p{color:var(--muted);font-size:16px;line-height:1.55;max-width:56ch}
-.infra-ia ul{list-style:none;margin-top:18px;border-top:1px solid var(--line)}
+.infra-ia ul{list-style:none;margin-top:10px;border-top:1px solid var(--line)}
 .infra-ia li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
 .ia-figs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
 .ia-figs figure{margin:0}
@@ -1818,17 +1820,35 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular, y herramientas de análisis para sacarle a cada experimento todo lo que tiene para dar.</p>
     </div>
     <div class="infra">
+      <article class="infra-ia rv">
+        <div class="ia-txt">
+          <i class="ph-thin ph-microscope"></i>
+          <h3>Microscopía y análisis de imágenes</h3>
+          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que segmentan cada célula, detectan agregados y miden intensidades aplicando el mismo criterio a todas las imágenes del experimento, sin la variabilidad del conteo a ojo.</p>
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Microscopio confocal Zeiss LSM 800</li>
+            <li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li>
+          </ul>
+          <h4 class="mono">Análisis</h4>
+          <ul>
+            <li>Segmentación automática de células y núcleos</li>
+            <li>Conteo y medición de agregados y puncta, célula por célula</li>
+            <li>Colocalización entre canales y análisis de compartimentos</li>
+            <li>Validación contra conteo manual ciego antes de publicar</li>
+          </ul>
+        </div>
+        <div class="ia-figs">
+          <figure><img src="img/hero-confocal-3.jpg" alt="Imagen de microscopía confocal de células en cultivo del IMMCA" loading="lazy"><figcaption class="mono">La imagen que sale del microscopio</figcaption></figure>
+          <figure><img src="img/ill/analisis-segmentacion.svg" alt="Esquema: el pipeline delimita cada célula y marca los puntos que encuentra adentro" loading="lazy"><figcaption class="mono">El pipeline delimita cada célula y marca lo que encuentra</figcaption></figure>
+          <figure><img src="img/ill/analisis-medicion.svg" alt="Esquema: cada célula analizada aporta un valor medido" loading="lazy"><figcaption class="mono">Y devuelve una medición por célula, comparable entre condiciones</figcaption></figure>
+        </div>
+      </article>
       <article class="infra-room rv">
         <i class="ph-thin ph-flask"></i>
         <h3>Cultivo celular</h3>
         <p>Sala con esclusa y presión positiva con filtro HEPA, para trabajar con líneas como SH-SY5Y, HEK y BV2.</p>
         <ul><li>Cabina de seguridad biológica clase II</li><li>Estufa de CO₂ con autoesterilización</li><li>Microscopio de contraste de fase Zeiss Primovert</li></ul>
-      </article>
-      <article class="infra-room rv">
-        <i class="ph-thin ph-microscope"></i>
-        <h3>Microscopía</h3>
-        <p>Imágenes de alta resolución de células, tejidos y organismos modelo.</p>
-        <ul><li>Microscopio confocal Zeiss LSM 800</li><li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li></ul>
       </article>
       <article class="infra-room rv">
         <i class="ph-thin ph-dna"></i>
@@ -1853,24 +1873,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <h3>Abiertos a otros grupos</h3>
         <p>Investigadores, empresas y organismos pueden usar este equipamiento a través de nuestros servicios tecnológicos.</p>
         <a class="pj-link" href="#servicios">Ver los servicios <i class="ph ph-arrow-right"></i></a>
-      </article>
-      <article class="infra-ia rv">
-        <div class="ia-txt">
-          <i class="ph-thin ph-graph"></i>
-          <h3>Análisis de imágenes asistido por IA</h3>
-          <p>El microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que segmentan cada célula, detectan agregados y miden intensidades aplicando el mismo criterio a todas las imágenes del experimento, sin la variabilidad del conteo a ojo.</p>
-          <ul>
-            <li>Segmentación automática de células y núcleos</li>
-            <li>Conteo y medición de agregados y puncta, célula por célula</li>
-            <li>Colocalización entre canales y análisis de compartimentos</li>
-            <li>Validación contra conteo manual ciego antes de publicar</li>
-          </ul>
-        </div>
-        <div class="ia-figs">
-          <figure><img src="img/hero-confocal-3.jpg" alt="Imagen de microscopía confocal de células en cultivo del IMMCA" loading="lazy"><figcaption class="mono">La imagen que sale del microscopio</figcaption></figure>
-          <figure><img src="img/ill/analisis-segmentacion.svg" alt="Esquema: el pipeline delimita cada célula y marca los puntos que encuentra adentro" loading="lazy"><figcaption class="mono">El pipeline delimita cada célula y marca lo que encuentra</figcaption></figure>
-          <figure><img src="img/ill/analisis-medicion.svg" alt="Esquema: cada célula analizada aporta un valor medido" loading="lazy"><figcaption class="mono">Y devuelve una medición por célula, comparable entre condiciones</figcaption></figure>
-        </div>
       </article>
     </div>
   </div>
