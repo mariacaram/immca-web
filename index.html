@@ -500,6 +500,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .fac-figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-content:start}
 .fac-txt:has(+.fac-figs>figure:nth-child(3)){grid-column:auto}
 .fac-figs:has(figure:nth-child(3)){grid-template-columns:repeat(3,1fr)}
+.fac-figs:has(figure:nth-child(4)){grid-template-columns:repeat(2,1fr)}
 .fac-figs figure{margin:0}
 .fac-figs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;background:#10141c;
   transition:transform .6s var(--ease)}
@@ -1833,7 +1834,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="fac-txt">
           <i class="ph-thin ph-microscope"></i>
           <h3>Microscopía y análisis de imágenes</h3>
-          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que segmentan cada célula, detectan agregados y miden intensidades aplicando el mismo criterio a todas las imágenes del experimento, sin la variabilidad del conteo a ojo.</p>
+          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales, aplicando el mismo criterio a cada imagen del experimento, sin la variabilidad del conteo a ojo.</p>
+          <p>Las imágenes de al lado son un campo real analizado con nuestro pipeline: el contorno de cada célula lo trazó el programa, no una mano.</p>
           <h4 class="mono">Equipamiento</h4>
           <ul>
             <li>Microscopio confocal Zeiss LSM 800</li>
@@ -1848,9 +1850,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           </ul>
         </div>
         <div class="fac-figs">
-          <figure><img src="img/hero-confocal-3.jpg" alt="Imagen de microscopía confocal de células en cultivo del IMMCA" loading="lazy"><figcaption class="mono">La imagen que sale del microscopio</figcaption></figure>
-          <figure><img src="img/ill/analisis-segmentacion.svg" alt="Esquema: el pipeline delimita cada célula y marca los puntos que encuentra adentro" loading="lazy"><figcaption class="mono">El pipeline delimita cada célula y marca lo que encuentra</figcaption></figure>
-          <figure><img src="img/ill/analisis-medicion.svg" alt="Esquema: cada célula analizada aporta un valor medido" loading="lazy"><figcaption class="mono">Y devuelve una medición por célula, comparable entre condiciones</figcaption></figure>
+          <figure><img src="img/ill/analisis-nucleos.webp" alt="Núcleos celulares con el contorno de cada célula trazado automáticamente" loading="lazy"><figcaption class="mono">Cada célula y cada núcleo, delimitados automáticamente</figcaption></figure>
+          <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
+          <figure><img src="img/ill/analisis-canales.webp" alt="El mismo contorno celular aplicado a otro canal de fluorescencia" loading="lazy"><figcaption class="mono">El mismo contorno se aplica a todos los canales, para medir y comparar</figcaption></figure>
         </div>
       </article>
       <article class="fac rv">
