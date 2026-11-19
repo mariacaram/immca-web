@@ -486,36 +486,35 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 @media (max-width:640px){.lin{grid-template-columns:1fr}.ln-a,.ln-b,.ln-c,.ln-d,.ln-e{grid-column:span 1;min-height:420px}}
 
 /* infraestructura */
-.infra{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.infra-room{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--bg)}
-.infra-room>i{font-size:32px;color:var(--accent)}
-.infra-room h3{font-size:21px;margin:18px 0 8px}
-.infra-room p{color:var(--muted);font-size:15.5px}
-.room-figs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.room-figs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;background:var(--bg-2);transition:transform .6s var(--ease)}
-.room-figs img:hover{transform:translateY(-3px)}
-.room-figs.una{grid-template-columns:1fr}
-.infra-room ul{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
-.infra-room li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
-.infra-ia{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,52px);
-  border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,38px);background:var(--bg-2)}
-.infra-ia>.ia-txt>i{font-size:32px;color:var(--accent)}
-.infra-ia h3{font-size:clamp(21px,2vw,26px);margin:18px 0 10px}
-.infra-ia h4{color:var(--accent);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:22px 0 0}
-.infra-ia ul+h4{margin-top:24px}
-.infra-ia p{color:var(--muted);font-size:16px;line-height:1.55;max-width:56ch}
-.infra-ia ul{list-style:none;margin-top:10px;border-top:1px solid var(--line)}
-.infra-ia li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
-.ia-figs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
-.ia-figs figure{margin:0}
-.ia-figs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;display:block;background:#10141c;
+.infra{display:grid;gap:clamp(16px,2vw,24px)}
+.fac{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,56px);
+  border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,40px);background:var(--bg)}
+.fac:nth-of-type(even){background:var(--bg-2)}
+.fac:nth-of-type(even) .fac-txt{order:2}
+.fac-txt>i{font-size:34px;color:var(--accent)}
+.fac h3{font-size:clamp(22px,2.1vw,28px);letter-spacing:-.01em;margin:18px 0 12px}
+.fac p{color:var(--muted);font-size:16.5px;line-height:1.55;max-width:58ch}
+.fac h4{color:var(--accent);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:24px 0 0}
+.fac ul{list-style:none;margin-top:10px;border-top:1px solid var(--line)}
+.fac li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.fac-figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-content:start}
+.fac-txt:has(+.fac-figs>figure:nth-child(3)){grid-column:auto}
+.fac-figs:has(figure:nth-child(3)){grid-template-columns:repeat(3,1fr)}
+.fac-figs figure{margin:0}
+.fac-figs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;background:#10141c;
   transition:transform .6s var(--ease)}
-.ia-figs figure:hover img{transform:translateY(-4px)}
-.ia-figs figcaption{margin-top:10px;color:var(--dim);font-size:11.5px;line-height:1.45}
-@media (max-width:1000px){.infra-ia{grid-template-columns:1fr}}
-@media (max-width:560px){.ia-figs{grid-template-columns:1fr}}
-
-.infra-note{background:var(--bg-2);display:flex;flex-direction:column}
+.fac-figs figure:hover img{transform:translateY(-5px)}
+.fac-figs figcaption{margin-top:11px;color:var(--dim);font-size:11.5px;line-height:1.45}
+.fac-lista{align-self:center}
+.fac-lista h4{margin-top:0}
+.fac-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+  border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,2.6vw,34px);
+  background:linear-gradient(135deg,var(--bg-2),#fff)}
+.fac-cta>div>i{font-size:30px;color:var(--accent)}
+.fac-cta h3{font-size:22px;margin:12px 0 6px}
+.fac-cta p{color:var(--muted);font-size:16px;max-width:56ch}
+@media (max-width:1000px){.fac{grid-template-columns:1fr}.fac:nth-of-type(even) .fac-txt{order:0}}
+@media (max-width:560px){.fac-figs,.fac-figs:has(figure:nth-child(3)){grid-template-columns:1fr}}
 @media (max-width:980px){.infra{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.infra{grid-template-columns:1fr}}
 
@@ -1830,8 +1829,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular, y herramientas de análisis para sacarle a cada experimento todo lo que tiene para dar.</p>
     </div>
     <div class="infra">
-      <article class="infra-ia rv">
-        <div class="ia-txt">
+      <article class="fac rv">
+        <div class="fac-txt">
           <i class="ph-thin ph-microscope"></i>
           <h3>Microscopía y análisis de imágenes</h3>
           <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que segmentan cada célula, detectan agregados y miden intensidades aplicando el mismo criterio a todas las imágenes del experimento, sin la variabilidad del conteo a ojo.</p>
@@ -1848,49 +1847,87 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
             <li>Validación contra conteo manual ciego antes de publicar</li>
           </ul>
         </div>
-        <div class="ia-figs">
+        <div class="fac-figs">
           <figure><img src="img/hero-confocal-3.jpg" alt="Imagen de microscopía confocal de células en cultivo del IMMCA" loading="lazy"><figcaption class="mono">La imagen que sale del microscopio</figcaption></figure>
           <figure><img src="img/ill/analisis-segmentacion.svg" alt="Esquema: el pipeline delimita cada célula y marca los puntos que encuentra adentro" loading="lazy"><figcaption class="mono">El pipeline delimita cada célula y marca lo que encuentra</figcaption></figure>
           <figure><img src="img/ill/analisis-medicion.svg" alt="Esquema: cada célula analizada aporta un valor medido" loading="lazy"><figcaption class="mono">Y devuelve una medición por célula, comparable entre condiciones</figcaption></figure>
         </div>
       </article>
-      <article class="infra-room rv">
-        <i class="ph-thin ph-flask"></i>
-        <h3>Cultivo celular</h3>
-        <p>Sala con esclusa y presión positiva con filtro HEPA, para trabajar con líneas como SH-SY5Y, HEK y BV2.</p>
-        <div class="room-figs">
-          <img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy">
-          <img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO2" loading="lazy">
+      <article class="fac rv">
+        <div class="fac-txt">
+          <i class="ph-thin ph-flask"></i>
+          <h3>Cultivo celular</h3>
+          <p>Sala con esclusa y presión positiva con filtro HEPA, donde se mantienen y tratan las líneas celulares con las que trabajamos: SH-SY5Y, HEK y BV2, entre otras. Es el punto de partida de casi todos los ensayos del instituto, desde la evaluación de compuestos hasta los modelos de agregación de proteínas.</p>
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Cabina de seguridad biológica clase II</li>
+            <li>Estufa de CO₂ con autoesterilización</li>
+            <li>Microscopio de contraste de fase Zeiss Primovert</li>
+          </ul>
         </div>
-        <ul><li>Cabina de seguridad biológica clase II</li><li>Estufa de CO₂ con autoesterilización</li><li>Microscopio de contraste de fase Zeiss Primovert</li></ul>
-      </article>
-      <article class="infra-room rv">
-        <i class="ph-thin ph-dna"></i>
-        <h3>Producción de proteínas</h3>
-        <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección de proteínas por electroforesis y Western blot.</p>
-        <div class="room-figs">
-          <img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy" style="object-position:center 46%">
-          <img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%">
+        <div class="fac-figs">
+          <figure><img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
+          <figure><img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO₂" loading="lazy"><figcaption class="mono">La sala de cultivo, con la estufa de CO₂ al fondo</figcaption></figure>
         </div>
-        <ul><li>Cromatógrafo FPLC ÄKTA pure</li><li>Microfluidizador LM20</li><li>Ultracentrífuga refrigerada Sorvall Lynx 4000</li><li>Electroforesis Bio-Rad Mini-PROTEAN</li><li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li></ul>
       </article>
-      <article class="infra-room rv">
-        <i class="ph-thin ph-wave-sine"></i>
-        <h3>Biofísica y espectroscopía</h3>
-        <p>Agregación de proteínas, tamaño de partículas y ensayos ópticos en microplaca.</p>
-        <ul><li>Espectrofluorómetro Horiba Fluoromax-4</li><li>Lector multimodo TECAN Spark</li><li>Dispersión dinámica de luz y potencial Z</li><li>Espectrofotómetro de microvolumen DeNovix DS-11</li></ul>
+      <article class="fac rv">
+        <div class="fac-txt">
+          <i class="ph-thin ph-dna"></i>
+          <h3>Producción de proteínas</h3>
+          <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección de proteínas por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Cromatógrafo FPLC ÄKTA pure</li>
+            <li>Microfluidizador LM20</li>
+            <li>Ultracentrífuga refrigerada Sorvall Lynx 4000</li>
+            <li>Electroforesis Bio-Rad Mini-PROTEAN</li>
+            <li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li>
+          </ul>
+        </div>
+        <div class="fac-figs">
+          <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy" style="object-position:center 46%"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
+          <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
+        </div>
       </article>
-      <article class="infra-room rv">
-        <i class="ph-thin ph-snowflake"></i>
-        <h3>Apoyo al laboratorio</h3>
-        <p>Conservación de muestras y preparación de material.</p>
-        <ul><li>Ultrafreezer −85 °C</li><li>Termomezcladores Eppendorf</li><li>Equipo de agua ultrapura</li><li>Autoclave, lavadora y estufa de secado</li></ul>
+      <article class="fac rv">
+        <div class="fac-txt">
+          <i class="ph-thin ph-wave-sine"></i>
+          <h3>Biofísica y espectroscopía</h3>
+          <p>Acá se sigue en tiempo real cómo una proteína se pliega, se agrega o deja de hacerlo frente a un compuesto. Medimos cinéticas de agregación, tamaño y estabilidad de partículas en suspensión, y ensayos ópticos en microplaca, incluidos los inmunoensayos.</p>
+        </div>
+        <div class="fac-lista">
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Espectrofluorómetro Horiba Fluoromax-4</li>
+            <li>Lector multimodo TECAN Spark</li>
+            <li>Dispersión dinámica de luz y potencial Z</li>
+            <li>Espectrofotómetro de microvolumen DeNovix DS-11</li>
+          </ul>
+        </div>
       </article>
-      <article class="infra-room infra-note rv">
-        <i class="ph-thin ph-handshake"></i>
-        <h3>Abiertos a otros grupos</h3>
-        <p>Investigadores, empresas y organismos pueden usar este equipamiento a través de nuestros servicios tecnológicos.</p>
-        <a class="pj-link" href="#servicios">Ver los servicios <i class="ph ph-arrow-right"></i></a>
+      <article class="fac rv">
+        <div class="fac-txt">
+          <i class="ph-thin ph-snowflake"></i>
+          <h3>Apoyo al laboratorio</h3>
+          <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
+        </div>
+        <div class="fac-lista">
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Ultrafreezer −85 °C</li>
+            <li>Termomezcladores Eppendorf</li>
+            <li>Equipo de agua ultrapura</li>
+            <li>Autoclave, lavadora y estufa de secado</li>
+          </ul>
+        </div>
+      </article>
+      <article class="fac-cta rv">
+        <div>
+          <i class="ph-thin ph-handshake"></i>
+          <h3>Abiertos a otros grupos</h3>
+          <p>Investigadores, empresas y organismos pueden usar este equipamiento a través de nuestros servicios tecnológicos.</p>
+        </div>
+        <a class="btn btn-ghost" href="#servicios">Ver los servicios <i class="ph ph-arrow-right"></i></a>
       </article>
     </div>
   </div>
