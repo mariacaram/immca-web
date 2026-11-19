@@ -635,9 +635,17 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .infra{display:grid}
 .fac-row{border-bottom:1px solid var(--line)}
 .fac-row:first-of-type{border-top:1px solid var(--line)}
-.fac-row .lhead{grid-template-columns:auto auto minmax(0,1.05fr) minmax(0,1fr) auto;gap:20px;padding:20px 8px}
-.fac-row .lhead>i{font-size:22px;color:var(--accent-bright)}
-.fac-row .fac-n{color:var(--accent);font-size:12px;letter-spacing:.14em;margin:0}
+.fac-row .lhead{grid-template-columns:auto auto minmax(0,1.05fr) minmax(0,1fr) auto;
+  gap:clamp(14px,1.6vw,24px);padding:clamp(18px,2vw,26px) 8px;align-items:center}
+.fac-row .lhead>i{width:clamp(42px,3.6vw,52px);height:clamp(42px,3.6vw,52px);border-radius:50%;
+  display:grid;place-items:center;font-size:clamp(21px,1.8vw,26px);color:var(--accent-bright);
+  background:var(--accent-soft);transition:background .45s var(--ease),color .45s var(--ease),
+  transform .5s var(--ease)}
+.fac-row:hover .lhead>i,.fac-row.open .lhead>i{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.fac-row .fac-n{color:var(--accent);font-size:clamp(30px,3vw,44px);font-weight:300;
+  letter-spacing:-.05em;line-height:.9;opacity:.26;margin:0;
+  transition:opacity .45s var(--ease)}
+.fac-row:hover .fac-n,.fac-row.open .fac-n{opacity:.55}
 .fac-row .lhead h3{font-size:clamp(18px,1.7vw,23px);font-weight:500;letter-spacing:-.01em;margin:0;max-width:none}
 .fac-cuerpo{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
   gap:10px clamp(28px,4vw,60px);align-items:start;padding-bottom:30px}
@@ -652,7 +660,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
   .fac-cuerpo .fac-specs ul{columns:1}}
 @media (max-width:900px){
   .fac-row .lhead{grid-template-columns:auto 1fr auto;gap:4px 14px;padding:16px 4px}
-  .fac-row .lhead>i{display:none}
+  .fac-row .lhead>i{width:36px;height:36px;font-size:18px;grid-row:1/3;align-self:center}
   .fac-row .fac-n{grid-column:1;grid-row:1/3;align-self:center}
   .fac-row .lhead h3,.fac-row .lsum{grid-column:2}
   .fac-row .lhead .go{grid-row:1/3;grid-column:3;align-self:center}
@@ -2076,7 +2084,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-microscopia">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-microscopiap">
           <span class="fac-n mono">01</span>
-          <i class="ph-thin ph-microscope" aria-hidden="true"></i>
+          <i class="ph ph-microscope" aria-hidden="true"></i>
           <h3>Microscopía y análisis de imágenes</h3>
           <span class="lsum">Confocal, fluorescencia y contraste de fase</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
@@ -2107,7 +2115,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-cultivos">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-cultivosp">
           <span class="fac-n mono">02</span>
-          <i class="ph-thin ph-flask" aria-hidden="true"></i>
+          <i class="ph ph-flask" aria-hidden="true"></i>
           <h3>Cultivos celulares</h3>
           <span class="lsum">Sala con presión positiva, donde empieza casi todo</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
@@ -2140,7 +2148,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-proteinas">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-proteinasp">
           <span class="fac-n mono">03</span>
-          <i class="ph-thin ph-dna" aria-hidden="true"></i>
+          <i class="ph ph-dna" aria-hidden="true"></i>
           <h3>Producción y purificación de proteínas</h3>
           <span class="lsum">De la expresión bacteriana al Western blot</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
@@ -2180,7 +2188,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-biofisica">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-biofisicap">
           <span class="fac-n mono">04</span>
-          <i class="ph-thin ph-wave-sine" aria-hidden="true"></i>
+          <i class="ph ph-wave-sine" aria-hidden="true"></i>
           <h3>Biofísica, espectroscopía y analítica</h3>
           <span class="lsum">Agregación en tiempo real, tamaño de partículas y microplaca</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
@@ -2209,7 +2217,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-invivo">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-invivop">
           <span class="fac-n mono">05</span>
-          <i class="ph-thin ph-bug" aria-hidden="true"></i>
+          <i class="ph ph-bug" aria-hidden="true"></i>
           <h3>Ensayos con organismos modelo</h3>
           <span class="lsum">Sala propia para el trabajo con C. elegans</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
@@ -2236,7 +2244,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <article class="lrow fac-row rv" id="fac-microbiologia">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-microbiologiap">
           <span class="fac-n mono">06</span>
-          <i class="ph-thin ph-test-tube" aria-hidden="true"></i>
+          <i class="ph ph-test-tube" aria-hidden="true"></i>
           <h3>Microbiología y biología molecular</h3>
           <span class="lsum">Cultivos con agitación y control de los constructos</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
