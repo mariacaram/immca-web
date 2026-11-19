@@ -397,6 +397,18 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .rrhh-lists li span{color:var(--muted);font-size:14px;text-align:right}
 .src{color:var(--dim);margin-top:18px}
 .src a{color:var(--accent)}
+.rpers li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 14px;align-items:center;
+  padding:12px 0;border-top:1px solid var(--line)}
+.rpers li:first-child{border-top:0}
+.rpers li>a,.rpers li>.rnom{grid-column:2;align-self:end;font-size:16px;text-align:left;color:var(--text)}
+.rpers li>a:hover{color:var(--accent)}
+.rpers .rrol{grid-column:2;align-self:start;text-align:left;color:var(--muted);font-size:13.5px;line-height:1.35}
+.rav{grid-row:1/3;width:52px;height:52px;border-radius:50%;overflow:hidden;background:var(--bg);
+  border:1px solid var(--line);display:grid;place-items:center}
+.rav img{width:100%;height:100%;object-fit:cover;display:block}
+.rav-ini{color:var(--accent);font-size:15px;letter-spacing:.04em;font-family:var(--mono,inherit)}
+@media (max-width:820px){.rrhh-lists li{flex-direction:row}}
+
 @media (max-width:820px){.rrhh-lists{grid-template-columns:1fr}.rrhh-lists li{flex-direction:column;gap:2px}.rrhh-lists li span{text-align:left}}
 
 /* producción CyT (BICyT) */
@@ -2459,20 +2471,20 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <div class="rrhh-lists">
         <div class="rv">
           <h3 class="mono">Becarios y doctorandos</h3>
-          <ul>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/339437" target="_blank" rel="noopener">María del Milagro Terán</a><span>Beca posdoctoral, temas estratégicos</span></li>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/457388" target="_blank" rel="noopener">Ana Valentina Budeguer Isa</a><span>Beca doctoral, temas estratégicos</span></li>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/457527" target="_blank" rel="noopener">María Laura Guayán</a><span>Beca doctoral, temas estratégicos</span></li>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/469804" target="_blank" rel="noopener">Álvaro Luna Mercado</a><span>Beca doctoral</span></li>
-            <li><span>Estefanía Soliz Santander</span><span>Terminando su tesis doctoral</span></li>
-            <li><span>Agustín Stagnetto</span><span>Terminando su tesis doctoral</span></li>
+          <ul class="rpers">
+            <li><span class="rav rav-ini" aria-hidden="true">MT</span><a href="https://bicyt.conicet.gov.ar/fichas/persona/339437" target="_blank" rel="noopener">María del Milagro Terán</a><span class="rrol">Beca posdoctoral, temas estratégicos</span></li>
+            <li><span class="rav"><img src="img/equipo/ana-valentina-budeguer.webp" alt="Retrato ilustrado de Ana Valentina Budeguer Isa" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/457388" target="_blank" rel="noopener">Ana Valentina Budeguer Isa</a><span class="rrol">Beca doctoral, temas estratégicos</span></li>
+            <li><span class="rav"><img src="img/equipo/maria-laura-guayan.webp" alt="Retrato ilustrado de María Laura Guayán Alperín" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/457527" target="_blank" rel="noopener">María Laura Guayán Alperín</a><span class="rrol">Beca doctoral, temas estratégicos</span></li>
+            <li><span class="rav"><img src="img/equipo/alvaro-luna-mercado.webp" alt="Retrato ilustrado de Álvaro Luna Mercado" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/469804" target="_blank" rel="noopener">Álvaro Luna Mercado</a><span class="rrol">Beca doctoral</span></li>
+            <li><span class="rav"><img src="img/equipo/estefania-soliz-santander.webp" alt="Retrato ilustrado de Estefanía Soliz Santander" loading="lazy" width="200" height="200"></span><span class="rnom">Estefanía Soliz Santander</span><span class="rrol">Terminando su tesis doctoral</span></li>
+            <li><span class="rav"><img src="img/equipo/agustin-stagnetto.webp" alt="Retrato ilustrado de Agustín Stagnetto" loading="lazy" width="200" height="200"></span><span class="rnom">Agustín Stagnetto</span><span class="rrol">Terminando su tesis doctoral</span></li>
           </ul>
         </div>
         <div class="rv">
           <h3 class="mono">Personal de apoyo</h3>
-          <ul>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/348975" target="_blank" rel="noopener">Luciana María Sari</a><span>Profesional adjunta</span></li>
-            <li><a href="https://bicyt.conicet.gov.ar/fichas/persona/340168" target="_blank" rel="noopener">Sabrina Sequeira</a><span>Profesional asistente</span></li>
+          <ul class="rpers">
+            <li><span class="rav"><img src="img/equipo/luciana-maria-sari.webp" alt="Retrato ilustrado de Luciana María Sari" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/348975" target="_blank" rel="noopener">Luciana María Sari</a><span class="rrol">Profesional adjunta</span></li>
+            <li><span class="rav"><img src="img/equipo/sabrina-sequeira.webp" alt="Retrato ilustrado de Sabrina Sequeira" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/340168" target="_blank" rel="noopener">Sabrina Sequeira</a><span class="rrol">Profesional asistente</span></li>
           </ul>
         </div>
       </div>
