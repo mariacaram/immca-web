@@ -573,11 +573,12 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 /* más allá del laboratorio */
 .vida{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .vida-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
-.vida-fotos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.vida-fotos figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.vida-fotos{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,44px);margin-bottom:24px;align-items:center}
+.vida-fotos figure{margin:0;width:min(100%,360px);border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
 .vida-fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
 .vida-fotos figure:hover img{transform:scale(1.04)}
-.vida-pie{grid-column:1/-1;color:var(--dim);font-size:12px}
+.vida-pie{align-self:center;color:var(--muted);font-size:15.5px;line-height:1.5;max-width:34ch}
+.vida-fotos img{aspect-ratio:3/4}
 @media (max-width:760px){.vida-fotos{grid-template-columns:1fr}}
 .vida-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
 .vida-grid .ig-embed iframe{height:560px}
@@ -1257,7 +1258,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
 .sq-btn:hover{background:#005a93}
 .sq-btn.ok{background:#1a9e62}
 .gr-dark{background:var(--bg)}
-.gr-dark img{filter:none!important;opacity:1!important;max-height:none;max-width:none;width:76%;padding:16px 20px;border-radius:14px;background:#33297E;box-sizing:border-box}
+.gr-dark img{max-height:none;max-width:none;width:76%;padding:16px 20px;border-radius:14px;background:#33297E;box-sizing:border-box}
 a.gr-dark:hover{background:var(--accent-soft)}
 .field.picked select{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 @media (max-width:1000px){.pg-state{grid-template-columns:repeat(2,1fr)}}
@@ -1864,8 +1865,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <p>Todo corre en <b>Python</b>, con el código versionado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes. Definimos la unidad experimental según el diseño de cada estudio: agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
         </div>
         <div class="fac-figs">
+          <figure><img src="img/confocal-adquisicion.webp" alt="Investigador trabajando en el microscopio, con las células en la pantalla" loading="lazy"><figcaption class="mono">La adquisición, en el microscopio del instituto</figcaption></figure>
           <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
-          <figure><img src="img/ill/analisis-canales.webp" alt="El mismo contorno celular aplicado a otro canal de fluorescencia" loading="lazy"><figcaption class="mono">El mismo contorno se aplica a todos los canales, para medir y comparar</figcaption></figure>
           <figure class="fac-code"><pre><code><span class="c"># La unidad estadística nunca es la célula:</span>
 <span class="c"># las de un mismo campo no son independientes.</span>
 fields, reps = aggregate_levels(
@@ -1879,7 +1880,7 @@ res = compare_all_to_control(
     control=<span class="s">&quot;Ctrl&quot;</span>,
     test=<span class="s">&quot;mannwhitney&quot;</span>,
     correction=<span class="s">&quot;bh&quot;</span>)</code></pre><figcaption class="mono">Nuestro código de análisis, en Python</figcaption></figure>
-        </div>
+</div>
         <div class="fac-specs">
           <h4 class="mono">Equipamiento</h4>
           <ul>
@@ -1906,8 +1907,8 @@ res = compare_all_to_control(
           <p>Sala con esclusa y presión positiva con filtro HEPA, donde se mantienen y tratan las líneas celulares con las que trabajamos: SH-SY5Y, HEK y BV2, entre otras. Es el punto de partida de casi todos los ensayos del instituto, desde la evaluación de compuestos hasta los modelos de agregación de proteínas.</p>
         </div>
         <div class="fac-figs">
-          <figure><img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
-          <figure><img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO₂" loading="lazy"><figcaption class="mono">La sala de cultivo, con la estufa de CO₂ al fondo</figcaption></figure>
+          <figure><img src="img/cultivo-cabina.webp" alt="Investigadora trabajando con placas dentro de la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
+          <figure><img src="img/cultivo-placa.webp" alt="Manos con guantes sosteniendo una placa de cultivo bajo el microscopio" loading="lazy"><figcaption class="mono">Control de un cultivo en el microscopio invertido</figcaption></figure>
         </div>
         <div class="fac-specs">
           <h4 class="mono">Equipamiento</h4>
@@ -2349,9 +2350,8 @@ res = compare_all_to_control(
       <p class="lead rv">La vida en el IMMCA también incluye encuentros, celebraciones y actividades que compartimos fuera del laboratorio.</p>
     </div>
     <div class="vida-fotos">
-      <figure class="rv"><img src="img/vida/mundial-camisetas.jpg" alt="Integrantes del instituto con la camiseta argentina, en la sala de reuniones" loading="lazy"></figure>
       <figure class="rv"><img src="img/vida/mundial-risas.jpg" alt="Risas en la sala mientras se proyecta el partido" loading="lazy"></figure>
-      <p class="vida-pie mono rv">El día de partido, la sala de reuniones se convierte en tribuna.</p>
+      <p class="vida-pie rv">El día de partido, la sala de reuniones se convierte en tribuna.</p>
     </div>
     <div class="vida-grid">
       <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DSdodqJjZIq/" target="_blank" rel="noopener" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio"><img src="img/ig/DSdodqJjZIq.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
