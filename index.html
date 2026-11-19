@@ -486,43 +486,52 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 @media (max-width:640px){.lin{grid-template-columns:1fr}.ln-a,.ln-b,.ln-c,.ln-d,.ln-e{grid-column:span 1;min-height:420px}}
 
 /* infraestructura */
-.infra{display:grid;gap:clamp(16px,2vw,24px)}
-.fac{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,56px);
-  border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,40px);background:var(--bg)}
-.fac:nth-of-type(even){background:var(--bg-2)}
-.fac:nth-of-type(even) .fac-txt{order:2}
-.fac-txt>i{font-size:34px;color:var(--accent)}
-.fac h3{font-size:clamp(22px,2.1vw,28px);letter-spacing:-.01em;margin:18px 0 12px}
-.fac p{color:var(--muted);font-size:16.5px;line-height:1.55;max-width:58ch}
-.fac h4{color:var(--accent);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin:24px 0 0}
-.fac ul{list-style:none;margin-top:10px;border-top:1px solid var(--line)}
-.fac li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
-.fac-figs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-content:start}
-.fac-txt:has(+.fac-figs>figure:nth-child(3)){grid-column:auto}
-.fac-figs:has(figure:nth-child(3)){grid-template-columns:repeat(3,1fr)}
-.fac-figs:has(figure:nth-child(4)){grid-template-columns:repeat(2,1fr)}
-.fac-figs figure{margin:0}
-.fac-figs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;background:#10141c;
-  transition:transform .6s var(--ease)}
-.fac-figs figure:hover img{transform:translateY(-5px)}
-.fac-figs figcaption{margin-top:11px;color:var(--dim);font-size:11.5px;line-height:1.45}
-.fac-code pre{margin:0;aspect-ratio:1;border-radius:16px;background:#0e1420;overflow:auto;
-  padding:18px 16px;transition:transform .6s var(--ease)}
-.fac-code:hover pre{transform:translateY(-5px)}
-.fac-code code{font-family:"JetBrains Mono",monospace;font-size:10.5px;line-height:1.65;
-  color:#cfe6f5;white-space:pre;display:block}
+.infra{display:grid}
+.fac{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:8px clamp(28px,4vw,72px);
+  padding:clamp(40px,4.4vw,68px) 0;border-top:1px solid var(--line);align-items:start}
+.fac>.fac-txt{grid-column:1;grid-row:1/span 2}
+.fac:first-of-type{border-top:0;padding-top:4px}
+.fac-n{display:block;color:var(--accent);font-size:12px;letter-spacing:.14em;margin-bottom:14px}
+.fac-txt>i{font-size:24px;color:var(--accent-bright);display:block;margin-bottom:10px}
+.fac h3{font-size:clamp(21px,1.9vw,27px);letter-spacing:-.015em;line-height:1.15;margin:0 0 14px;max-width:20ch}
+.fac p{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:52ch;margin-bottom:12px}
+.fac p b{color:var(--text);font-weight:600}
+.fac h4{color:var(--dim);font-size:10.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  margin:26px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.fac ul{list-style:none;margin:0}
+.fac li{position:relative;padding:5px 0 5px 16px;font-size:14px;line-height:1.45;color:var(--text)}
+.fac li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;border-radius:50%;
+  background:var(--line-2)}
+.fac-side{display:contents}
+.fac-specs{grid-column:2;margin-top:4px}
+.fac-specs ul{columns:2;column-gap:36px}
+.fac-specs li{break-inside:avoid}
+.fac-figs{grid-column:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1vw,16px);align-content:start}
+.fac-figs:has(figure:nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+.fac-figs figure{margin:0;min-width:0}
+.fac-figs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;background:#0e1420;
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.fac-figs figure:hover img{transform:translateY(-3px);box-shadow:0 18px 34px -26px rgba(10,37,64,.55)}
+.fac-figs figcaption{margin-top:9px;color:var(--dim);font-size:10.5px;line-height:1.4;letter-spacing:.01em}
+.fac-code pre{margin:0;aspect-ratio:4/3;border-radius:10px;background:#0e1420;overflow:hidden;padding:14px 13px}
+.fac-code code{font-family:"JetBrains Mono",monospace;font-size:9.5px;line-height:1.6;color:#cfe6f5;
+  white-space:pre;display:block}
 .fac-code .c{color:#7f9bb0}
 .fac-code .s{color:#8fdcff}
-.fac-lista{align-self:center}
+.fac-lista{align-self:start}
 .fac-lista h4{margin-top:0}
+.fac-lista ul{columns:2;column-gap:36px}
+.fac-lista li{break-inside:avoid}
 .fac-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
-  border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,2.6vw,34px);
-  background:linear-gradient(135deg,var(--bg-2),#fff)}
-.fac-cta>div>i{font-size:30px;color:var(--accent)}
-.fac-cta h3{font-size:22px;margin:12px 0 6px}
-.fac-cta p{color:var(--muted);font-size:16px;max-width:56ch}
-@media (max-width:1000px){.fac{grid-template-columns:1fr}.fac:nth-of-type(even) .fac-txt{order:0}}
-@media (max-width:560px){.fac-figs,.fac-figs:has(figure:nth-child(3)){grid-template-columns:1fr}}
+  margin-top:clamp(32px,3.5vw,52px);padding:clamp(24px,2.4vw,32px) clamp(24px,2.4vw,34px);
+  border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line)}
+.fac-cta>div>i{font-size:26px;color:var(--accent)}
+.fac-cta h3{font-size:20px;margin:10px 0 6px;max-width:none}
+.fac-cta p{color:var(--muted);font-size:15.5px;max-width:54ch;margin:0}
+@media (max-width:1000px){.fac{grid-template-columns:1fr}.fac-lista ul,.fac-specs ul{columns:1}
+  .fac>.fac-txt{grid-column:1;grid-row:auto}.fac-figs,.fac-specs{grid-column:1}}
+@media (max-width:560px){.fac-figs,.fac-figs:has(figure:nth-child(3)){grid-template-columns:repeat(2,1fr)}
+  .fac-code{grid-column:1/-1}}
 @media (max-width:980px){.infra{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.infra{grid-template-columns:1fr}}
 
@@ -1839,24 +1848,11 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <div class="infra">
       <article class="fac rv">
         <div class="fac-txt">
+          <span class="fac-n mono">01</span>
           <i class="ph-thin ph-microscope"></i>
           <h3>Microscopía y análisis de imágenes</h3>
           <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Nuestros pipelines de análisis, asistidos por inteligencia artificial, delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales, aplicando el mismo criterio a cada imagen del experimento, sin la variabilidad del conteo a ojo.</p>
           <p>Todo corre en <b>Python</b>, con el código versionado: el mismo análisis se puede volver a correr y da el mismo resultado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes; contarlas como tales es pseudorreplicación y produce valores de p absurdamente chicos. Agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Microscopio confocal Zeiss LSM 800</li>
-            <li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li>
-          </ul>
-          <h4 class="mono">Cómo procedemos</h4>
-          <ul>
-            <li>Segmentación automática de células y núcleos con Cellpose</li>
-            <li>Detección y medición de agregados y puncta, célula por célula</li>
-            <li>Colocalización entre canales y análisis de compartimentos</li>
-            <li>Agregación célula → campo → réplica biológica</li>
-            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg por múltiples comparaciones</li>
-            <li>Validación contra conteo manual ciego antes de publicar</li>
-          </ul>
         </div>
         <div class="fac-figs">
           <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
@@ -1875,12 +1871,35 @@ res = compare_all_to_control(
     test=<span class="s">&quot;mannwhitney&quot;</span>,
     correction=<span class="s">&quot;bh&quot;</span>)</code></pre><figcaption class="mono">Nuestro código de análisis, en Python</figcaption></figure>
         </div>
+        <div class="fac-specs">
+          <h4 class="mono">Equipamiento</h4>
+          <ul>
+            <li>Microscopio confocal Zeiss LSM 800</li>
+            <li>Microscopio invertido de fluorescencia Zeiss Axio Vert con cámara de cultivo</li>
+          </ul>
+          <h4 class="mono">Cómo procedemos</h4>
+          <ul>
+            <li>Segmentación automática de células y núcleos con Cellpose</li>
+            <li>Detección y medición de agregados y puncta, célula por célula</li>
+            <li>Colocalización entre canales y análisis de compartimentos</li>
+            <li>Agregación célula → campo → réplica biológica</li>
+            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg por múltiples comparaciones</li>
+            <li>Validación contra conteo manual ciego antes de publicar</li>
+          </ul>
+        </div>
       </article>
       <article class="fac rv">
         <div class="fac-txt">
+          <span class="fac-n mono">02</span>
           <i class="ph-thin ph-flask"></i>
           <h3>Cultivos celulares</h3>
           <p>Sala con esclusa y presión positiva con filtro HEPA, donde se mantienen y tratan las líneas celulares con las que trabajamos: SH-SY5Y, HEK y BV2, entre otras. Es el punto de partida de casi todos los ensayos del instituto, desde la evaluación de compuestos hasta los modelos de agregación de proteínas.</p>
+        </div>
+        <div class="fac-figs">
+          <figure><img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
+          <figure><img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO₂" loading="lazy"><figcaption class="mono">La sala de cultivo, con la estufa de CO₂ al fondo</figcaption></figure>
+        </div>
+        <div class="fac-specs">
           <h4 class="mono">Equipamiento</h4>
           <ul>
             <li>Cabina de seguridad biológica clase II</li>
@@ -1888,16 +1907,19 @@ res = compare_all_to_control(
             <li>Microscopio de contraste de fase Zeiss Primovert</li>
           </ul>
         </div>
-        <div class="fac-figs">
-          <figure><img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
-          <figure><img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO₂" loading="lazy"><figcaption class="mono">La sala de cultivo, con la estufa de CO₂ al fondo</figcaption></figure>
-        </div>
       </article>
       <article class="fac rv">
         <div class="fac-txt">
+          <span class="fac-n mono">03</span>
           <i class="ph-thin ph-dna"></i>
           <h3>Producción de proteínas</h3>
           <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección de proteínas por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
+        </div>
+        <div class="fac-figs">
+          <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy" style="object-position:center 46%"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
+          <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
+        </div>
+        <div class="fac-specs">
           <h4 class="mono">Equipamiento</h4>
           <ul>
             <li>Cromatógrafo FPLC ÄKTA pure</li>
@@ -1907,13 +1929,10 @@ res = compare_all_to_control(
             <li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li>
           </ul>
         </div>
-        <div class="fac-figs">
-          <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy" style="object-position:center 46%"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
-          <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
-        </div>
       </article>
       <article class="fac rv">
         <div class="fac-txt">
+          <span class="fac-n mono">04</span>
           <i class="ph-thin ph-wave-sine"></i>
           <h3>Biofísica y espectroscopía</h3>
           <p>Acá se sigue en tiempo real cómo una proteína se pliega, se agrega o deja de hacerlo frente a un compuesto. Medimos cinéticas de agregación, tamaño y estabilidad de partículas en suspensión, y ensayos ópticos en microplaca, incluidos los inmunoensayos.</p>
@@ -1930,6 +1949,7 @@ res = compare_all_to_control(
       </article>
       <article class="fac rv">
         <div class="fac-txt">
+          <span class="fac-n mono">05</span>
           <i class="ph-thin ph-snowflake"></i>
           <h3>Apoyo al laboratorio</h3>
           <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
