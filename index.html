@@ -3816,8 +3816,12 @@ const mmq = gsap.matchMedia();
 mmq.add('(min-width:769px) and (prefers-reduced-motion:no-preference)', () => {
   const track = $('#tltrack');
   const dist = () => track.scrollWidth - innerWidth;
-  gsap.to(track, {x: () => -dist(), ease: 'none', scrollTrigger: {trigger: '.tl', start: 'top top', end: () => `+=${dist()}`, pin: '.tl-pin', scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
-    onUpdate: s => gsap.set('#tlbar', {scaleX: s.progress})}});
+  // fromTo y no to: al recalcular (abrir un panel dispara un refresh) GSAP vuelve
+  // a tomar el punto de partida. Con `to` tomaba la posicion en la que estuviera
+  // el riel en ese momento, y el riel quedaba clavado mientras la barra avanzaba.
+  gsap.fromTo(track, {x: 0}, {x: () => -dist(), ease: 'none', immediateRender: false,
+    scrollTrigger: {trigger: '.tl', start: 'top top', end: () => `+=${dist()}`, pin: '.tl-pin', scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
+      onUpdate: s => gsap.set('#tlbar', {scaleX: s.progress})}});
   // el recorrido depende del ancho real del riel: si las fuentes o las fotos
   // cambian ese ancho despues del armado, hay que volver a medirlo
   const remedir = () => ScrollTrigger.refresh();
