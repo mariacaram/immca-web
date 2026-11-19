@@ -1017,6 +1017,28 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .svc-row:hover i.arr{color:var(--accent);transform:rotate(-45deg)}
 @media (max-width:820px){.svc-row{grid-template-columns:1fr;gap:10px}.svc-row i.arr{display:none}}
 
+.svc-fila{border-bottom:1px solid var(--line)}
+.svc-fila:first-of-type{border-top:1px solid var(--line)}
+.svc-fila .lhead{grid-template-columns:auto minmax(0,1.15fr) minmax(0,1fr) auto;gap:22px;padding:20px 8px}
+.svc-n{color:var(--accent);font-size:12px;letter-spacing:.14em}
+.svc-fila .lhead h3{font-size:clamp(18px,1.7vw,23px);font-weight:500;letter-spacing:-.01em;margin:0;max-width:none}
+.svc-fila .lsum.svc-q{color:var(--muted);font-size:15px;font-style:normal}
+.svc-cuerpo{max-width:none;padding-bottom:30px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:8px clamp(26px,3.5vw,56px);align-items:start}
+.svc-cuerpo p{color:var(--muted);font-size:15.5px;line-height:1.55;max-width:58ch;margin-bottom:12px}
+.svc-cuerpo .svc-real{grid-column:2;grid-row:1;margin-bottom:16px}
+.svc-cuerpo .svc-who{grid-column:2}
+.svc-cuerpo .svc-tags{grid-column:2}
+.svc-cuerpo .svc-links{grid-column:1/-1;margin-top:10px}
+@media (max-width:1000px){.svc-cuerpo{grid-template-columns:1fr}
+  .svc-cuerpo .svc-real,.svc-cuerpo .svc-who,.svc-cuerpo .svc-tags,.svc-cuerpo .svc-links{grid-column:1;grid-row:auto}}
+@media (max-width:900px){
+  .svc-fila .lhead{grid-template-columns:auto 1fr auto;gap:4px 14px;padding:16px 4px}
+  .svc-n{grid-column:1;grid-row:1/3;align-self:center}
+  .svc-fila .lhead h3,.svc-fila .lsum{grid-column:2}
+  .svc-fila .lhead .go{grid-row:1/3;grid-column:3;align-self:center}
+}
+
 /* ---------- noticias ---------- */
 .news-scroller{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 24px;scrollbar-width:none;cursor:grab}
 .news-scroller::-webkit-scrollbar{display:none}
@@ -2742,99 +2764,141 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <p class="lead rv">Servicios Tecnológicos de Alto Nivel (STAN) del CONICET para empresas, organismos públicos e instituciones de I+D. Cinco de ellos están en <a class="inline" href="https://plasenoa.ar/?s=IMMCA&amp;post_type=product" target="_blank" rel="noopener">PLASENOA</a>, la plataforma de servicios del CONICET NOA Sur.</p>
     </div>
     <div class="svc" id="svc">
-      <article class="svc-row rv" data-svc="Moduladores de la agregación proteica">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Moduladores de la agregación proteica">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-1">
+          <span class="svc-n mono">01</span>
           <h3>Evaluación del potencial neuroprotector in vitro</h3>
-          <p class="svc-q">¿Tu compuesto, extracto o formulación tiene potencial neuroprotector?</p>
+          <span class="lsum svc-q">¿Tu compuesto, extracto o formulación tiene potencial neuroprotector?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de potenciales moduladores de la agregación de proteínas asociadas a enfermedades neurodegenerativas</p>
-          <p>Diseñamos ensayos in vitro para caracterizar candidatos y comparar formulaciones. Según el objetivo del proyecto, evaluamos su actividad antioxidante y antiinflamatoria, su efecto sobre el estrés lisosomal y sobre la agregación de alfa-sinucleína y tau, así como sobre la propagación intercelular de agregados.</p>
-          <p class="svc-sub"><b>Aplicaciones en investigación diagnóstica</b>Detección y amplificación de proteínas agregadas con capacidad de propagar la patología entre células, en muestras biológicas. Se aplica en investigación, en la selección de compuestos y en la evaluación de estrategias diagnósticas, no como análisis clínico.</p>
-          <p class="svc-who"><b>Para quién</b>Empresas farmacéuticas, biotecnológicas y de ingredientes, y grupos de investigación que quieran caracterizar un candidato, comparar formulaciones o seleccionar cuáles llevar a la siguiente etapa.</p>
-          <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos · Citrícola</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/estudio-de-agregacion-proteica-y-evaluacion-de-muestras-asociadas-a-enfermedades-neurodegenerativas/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+        <div class="lpanel" id="svc-1" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de potenciales moduladores de la agregación de proteínas asociadas a enfermedades neurodegenerativas</p>
+              <p>Diseñamos ensayos in vitro para caracterizar candidatos y comparar formulaciones. Según el objetivo del proyecto, evaluamos su actividad antioxidante y antiinflamatoria, su efecto sobre el estrés lisosomal y sobre la agregación de alfa-sinucleína y tau, así como sobre la propagación intercelular de agregados.</p>
+              <p class="svc-sub"><b>Aplicaciones en investigación diagnóstica</b>Detección y amplificación de proteínas agregadas con capacidad de propagar la patología entre células, en muestras biológicas. Se aplica en investigación, en la selección de compuestos y en la evaluación de estrategias diagnósticas, no como análisis clínico.</p>
+              <p class="svc-who"><b>Para quién</b>Empresas farmacéuticas, biotecnológicas y de ingredientes, y grupos de investigación que quieran caracterizar un candidato, comparar formulaciones o seleccionar cuáles llevar a la siguiente etapa.</p>
+              <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos · Citrícola</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/estudio-de-agregacion-proteica-y-evaluacion-de-muestras-asociadas-a-enfermedades-neurodegenerativas/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Efectos biológicos en cultivos celulares">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Efectos biológicos en cultivos celulares">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-2">
+          <span class="svc-n mono">02</span>
           <h3>Ensayos de citotoxicidad y respuesta celular</h3>
-          <p class="svc-q">¿Cómo responden las células a tu producto?</p>
+          <span class="lsum svc-q">¿Cómo responden las células a tu producto?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de efectos biológicos en cultivos celulares</p>
-          <p>Citotoxicidad, actividad metabólica, daño de membrana, estrés oxidativo y respuesta inflamatoria. Comparamos concentraciones y formulaciones para elegir candidatos antes de pasar a modelos más complejos.</p>
-          <p class="svc-who"><b>Para quién</b>Empresas, instituciones y grupos de investigación que necesiten evaluar formulaciones, productos biotecnológicos, extractos, compuestos, principios activos o materiales.</p>
-          <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Animales · Ambiente · Agroindustria</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/evaluacion-de-actividad-biologica-citotoxicidad-y-respuesta-celular/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+        <div class="lpanel" id="svc-2" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de efectos biológicos en cultivos celulares</p>
+              <p>Citotoxicidad, actividad metabólica, daño de membrana, estrés oxidativo y respuesta inflamatoria. Comparamos concentraciones y formulaciones para elegir candidatos antes de pasar a modelos más complejos.</p>
+              <p class="svc-who"><b>Para quién</b>Empresas, instituciones y grupos de investigación que necesiten evaluar formulaciones, productos biotecnológicos, extractos, compuestos, principios activos o materiales.</p>
+              <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Animales · Ambiente · Agroindustria</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/evaluacion-de-actividad-biologica-citotoxicidad-y-respuesta-celular/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Microscopía confocal">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Microscopía confocal">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-3">
+          <span class="svc-n mono">03</span>
           <h3>Microscopía confocal de fluorescencia y análisis de imágenes</h3>
-          <p class="svc-q">¿Dónde están tus marcadores y cómo se distribuyen en la muestra?</p>
+          <span class="lsum svc-q">¿Dónde están tus marcadores y cómo se distribuyen en la muestra?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Obtención y análisis de imágenes por microscopía confocal</p>
-          <p>Obtenemos imágenes de fluorescencia de alta resolución con un Zeiss LSM&nbsp;800, con láseres de 405, 488, 561 y 640&nbsp;nm. Localizamos marcadores, analizamos su colocalización y la morfología de la muestra, y generamos reconstrucciones en tres dimensiones. Trabajamos con células, tejidos y materiales compatibles con fluorescencia.</p>
-          <p>Contamos además con software especializado para el análisis y la cuantificación de las imágenes, de modo que el servicio puede entregar tanto las imágenes como los datos medidos sobre ellas.</p>
-          <p class="svc-who"><b>Para quién</b>Empresas, instituciones y grupos de investigación que necesiten visualizar estructuras, moléculas o procesos en células, tejidos u otras muestras compatibles con fluorescencia.</p>
-          <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/obtencion-y-analisis-de-imagenes-por-microscopia-confocal/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+        <div class="lpanel" id="svc-3" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Obtención y análisis de imágenes por microscopía confocal</p>
+              <p>Obtenemos imágenes de fluorescencia de alta resolución con un Zeiss LSM&nbsp;800, con láseres de 405, 488, 561 y 640&nbsp;nm. Localizamos marcadores, analizamos su colocalización y la morfología de la muestra, y generamos reconstrucciones en tres dimensiones. Trabajamos con células, tejidos y materiales compatibles con fluorescencia.</p>
+              <p>Contamos además con software especializado para el análisis y la cuantificación de las imágenes, de modo que el servicio puede entregar tanto las imágenes como los datos medidos sobre ellas.</p>
+              <p class="svc-who"><b>Para quién</b>Empresas, instituciones y grupos de investigación que necesiten visualizar estructuras, moléculas o procesos en células, tejidos u otras muestras compatibles con fluorescencia.</p>
+              <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/obtencion-y-analisis-de-imagenes-por-microscopia-confocal/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Tamaño y estabilidad de partículas">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Tamaño y estabilidad de partículas">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-4">
+          <span class="svc-n mono">04</span>
           <h3>Tamaño de partículas por DLS y potencial zeta</h3>
-          <p class="svc-q">¿De qué tamaño son tus partículas? ¿Cambian durante el almacenamiento?</p>
+          <span class="lsum svc-q">¿De qué tamaño son tus partículas? ¿Cambian durante el almacenamiento?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis de tamaño, distribución y estabilidad de partículas en suspensión</p>
-          <p>Medimos el tamaño y la distribución de partículas en suspensión mediante dispersión dinámica de luz (DLS), desde la escala nanométrica hasta la micrométrica. También medimos el potencial zeta, con el HORIBA SZ-100V2.</p>
-          <p>Podés comparar formulaciones y lotes, o seguir los cambios en el tamaño y la distribución de las partículas durante el almacenamiento para evaluar la estabilidad de la dispersión.</p>
-          <p class="svc-who"><b>Para quién</b>Sectores farmacéutico, biotecnológico, alimentario, agroindustrial, ambiental, minero, veterinario y de materiales.</p>
-          <span class="svc-tags mono"><b>PLASENOA</b>Salud · Alimentos · Calidad · Energía · Minería · Ambiente</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/analisis-de-tamano-distribucion-y-estabilidad-de-particulas-en-suspension/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+        <div class="lpanel" id="svc-4" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis de tamaño, distribución y estabilidad de partículas en suspensión</p>
+              <p>Medimos el tamaño y la distribución de partículas en suspensión mediante dispersión dinámica de luz (DLS), desde la escala nanométrica hasta la micrométrica. También medimos el potencial zeta, con el HORIBA SZ-100V2.</p>
+              <p>Podés comparar formulaciones y lotes, o seguir los cambios en el tamaño y la distribución de las partículas durante el almacenamiento para evaluar la estabilidad de la dispersión.</p>
+              <p class="svc-who"><b>Para quién</b>Sectores farmacéutico, biotecnológico, alimentario, agroindustrial, ambiental, minero, veterinario y de materiales.</p>
+              <span class="svc-tags mono"><b>PLASENOA</b>Salud · Alimentos · Calidad · Energía · Minería · Ambiente</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/analisis-de-tamano-distribucion-y-estabilidad-de-particulas-en-suspension/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Absorbancia, fluorescencia y luminiscencia">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Absorbancia, fluorescencia y luminiscencia">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-5">
+          <span class="svc-n mono">05</span>
           <h3>Lectura de microplacas por absorbancia, fluorescencia y luminiscencia</h3>
-          <p class="svc-q">¿Cuánto hay en tu muestra y cómo cambia con el tiempo?</p>
+          <span class="lsum svc-q">¿Cuánto hay en tu muestra y cómo cambia con el tiempo?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis de muestras por absorbancia, fluorescencia y luminiscencia</p>
-          <p>Leemos tus muestras en microplaca con un lector multimodo TECAN Spark&nbsp;1000, en los tres modos de detección: absorbancia, fluorescencia y luminiscencia. Hacemos ensayos colorimétricos, fluorométricos y luminométricos, midiendo en un punto o siguiendo el cambio a lo largo del tiempo.</p>
-          <p>Podés medir cinéticas, actividad enzimática y curvas de concentración y respuesta, y comparar muchas muestras, concentraciones o condiciones en una misma corrida.</p>
-          <p class="svc-who"><b>Para quién</b>Empresas, emprendimientos, instituciones y grupos de investigación que necesiten medir, detectar o comparar sustancias o procesos.</p>
-          <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Calidad · Ambiente · Agroindustria</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/analisis-de-muestras-por-absorbancia-fluorescencia-y-luminiscencia/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+        <div class="lpanel" id="svc-5" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis de muestras por absorbancia, fluorescencia y luminiscencia</p>
+              <p>Leemos tus muestras en microplaca con un lector multimodo TECAN Spark&nbsp;1000, en los tres modos de detección: absorbancia, fluorescencia y luminiscencia. Hacemos ensayos colorimétricos, fluorométricos y luminométricos, midiendo en un punto o siguiendo el cambio a lo largo del tiempo.</p>
+              <p>Podés medir cinéticas, actividad enzimática y curvas de concentración y respuesta, y comparar muchas muestras, concentraciones o condiciones en una misma corrida.</p>
+              <p class="svc-who"><b>Para quién</b>Empresas, emprendimientos, instituciones y grupos de investigación que necesiten medir, detectar o comparar sustancias o procesos.</p>
+              <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Calidad · Ambiente · Agroindustria</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/analisis-de-muestras-por-absorbancia-fluorescencia-y-luminiscencia/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Análisis estadístico de datos">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Análisis estadístico de datos">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-6">
+          <span class="svc-n mono">06</span>
           <h3>Análisis estadístico de datos experimentales</h3>
-          <p class="svc-q">¿Qué te dicen los datos de tu experimento?</p>
+          <span class="lsum svc-q">¿Qué te dicen los datos de tu experimento?</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis estadístico de datos</p>
-          <p>Procesamos, analizamos e interpretamos tus datos para ayudarte a comparar grupos o tratamientos y comunicar los resultados en informes, publicaciones o presentaciones.</p>
-          <p class="svc-who"><b>Para quién</b>Grupos de investigación y empresas con datos experimentales de proyectos de I+D.</p>
-          <span class="svc-tags mono">STAN CONICET</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a></span>
+        <div class="lpanel" id="svc-6" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Análisis estadístico de datos</p>
+              <p>Procesamos, analizamos e interpretamos tus datos para ayudarte a comparar grupos o tratamientos y comunicar los resultados en informes, publicaciones o presentaciones.</p>
+              <p class="svc-who"><b>Para quién</b>Grupos de investigación y empresas con datos experimentales de proyectos de I+D.</p>
+              <span class="svc-tags mono">STAN CONICET</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="svc-row rv" data-svc="Anticuerpos anti-SARS-CoV-2">
-        <div class="svc-head2">
+      <article class="lrow svc-fila rv" data-svc="Anticuerpos anti-SARS-CoV-2">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="svc-7">
+          <span class="svc-n mono">07</span>
           <h3>InmunoCoviTuc <span class="svc-sep">|</span> Anticuerpos anti-SARS-CoV-2 por ELISA</h3>
-          <p class="svc-q">Un test desarrollado en Tucumán para medir la respuesta de anticuerpos.</p>
+          <span class="lsum svc-q">Un test desarrollado en Tucumán para medir la respuesta de anticuerpos.</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div>
-          <p class="svc-real"><span class="mono">Nombre del servicio</span>Determinación de anticuerpos anti-SARS-CoV-2 por ELISA</p>
-          <p>InmunoCoviTuc nació durante la pandemia en el IMMCA. El ensayo mide en suero los anticuerpos dirigidos contra el dominio RBD de la proteína Spike del SARS-CoV-2. Fue transferido al Laboratorio de Salud Pública del SIPROSA y se utilizó en estudios de respuesta a la vacunación. <a class="inline" href="https://immca.conicet.gov.ar/inmunocovituc-ictuc/" target="_blank" rel="noopener">Ver la nota del instituto</a>.</p>
-          <p class="svc-who"><b>Para quién</b>Instituciones de salud y grupos de investigación que necesiten medir la respuesta de anticuerpos después de la vacunación o de una infección por SARS-CoV-2.</p>
-          <span class="svc-tags mono">STAN CONICET</span>
-          <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a></span>
+        <div class="lpanel" id="svc-7" inert>
+          <div class="lpanel-in">
+            <div class="svc-cuerpo">
+              <p class="svc-real"><span class="mono">Nombre del servicio</span>Determinación de anticuerpos anti-SARS-CoV-2 por ELISA</p>
+              <p>InmunoCoviTuc nació durante la pandemia en el IMMCA. El ensayo mide en suero los anticuerpos dirigidos contra el dominio RBD de la proteína Spike del SARS-CoV-2. Fue transferido al Laboratorio de Salud Pública del SIPROSA y se utilizó en estudios de respuesta a la vacunación. <a class="inline" href="https://immca.conicet.gov.ar/inmunocovituc-ictuc/" target="_blank" rel="noopener">Ver la nota del instituto</a>.</p>
+              <p class="svc-who"><b>Para quién</b>Instituciones de salud y grupos de investigación que necesiten medir la respuesta de anticuerpos después de la vacunación o de una infección por SARS-CoV-2.</p>
+              <span class="svc-tags mono">STAN CONICET</span>
+              <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a></span>
+            </div>
+          </div>
         </div>
       </article>
     </div>
@@ -2858,7 +2922,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p>Contanos qué necesitás y te respondemos con disponibilidad, condiciones y presupuesto.</p>
         <p class="sq-who"><i class="ph ph-user-circle"></i><span>Responsable de servicios<br><b>Sabrina Sequeira</b></span></p><p class="sq-mail"><span class="mono">O escribile directamente</span><span class="sq-copy"><b id="sq-addr">…</b><button type="button" class="sq-btn" id="sq-cp">Copiar</button></span></p>
       </div>
-      <form class="cform sq-form rv" id="sform" data-key="" novalidate>
+      <form class="cform sq-form rv" id="sform" data-key="6ecfcd4d-3a80-46bc-9b19-8b399bc9adfe" novalidate>
         <div class="field"><label for="sf-nombre">Nombre y apellido</label><input id="sf-nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
         <div class="field"><label for="sf-org">Institución o empresa</label><input id="sf-org" autocomplete="organization"></div>
         <div class="field"><label for="sf-mail">Correo electrónico</label><input id="sf-mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
@@ -2876,7 +2940,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         </select></div>
         <div class="field full"><label for="sf-msg">Descripción de la muestra o del pedido</label><textarea id="sf-msg" rows="5" required placeholder="Tipo y cantidad de muestras, plazos, objetivo del estudio…"></textarea><small class="err">Contanos qué necesitás.</small></div>
         <label class="hp"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">No completar</label>
-        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Abrir consulta en mi correo <i class="ph ph-envelope-simple"></i></button><p class="hint">Se abre tu programa de correo con la consulta ya escrita. Revisala y enviala desde ahí.</p></div>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar consulta <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Te respondemos al correo que nos dejes.</p></div>
         <p class="cform-estado full" id="sf-estado" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
@@ -3618,7 +3682,7 @@ const sqTo = ['sabriseq', 'gmail.com'].join('@');
 const sform = $('#sform');
 // cada servicio de la lista abre el formulario con ese servicio elegido
 $$('.svc-ask').forEach(r => r.addEventListener('click', () => {
-  const t = r.closest('.svc-row').dataset.svc, sel = $('#sf-svc');
+  const t = r.closest('[data-svc]').dataset.svc, sel = $('#sf-svc');
   const o = [...sel.options].find(o => o.text === t);
   if (o) { sel.value = o.value; const f = sel.closest('.field'); f.classList.add('picked'); setTimeout(() => f.classList.remove('picked'), 2200); }
 }));
