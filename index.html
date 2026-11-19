@@ -493,6 +493,22 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .infra-room p{color:var(--muted);font-size:15.5px}
 .infra-room ul{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
 .infra-room li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.infra-ia{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,52px);
+  border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,38px);background:var(--bg-2)}
+.infra-ia>.ia-txt>i{font-size:32px;color:var(--accent)}
+.infra-ia h3{font-size:clamp(21px,2vw,26px);margin:18px 0 10px}
+.infra-ia p{color:var(--muted);font-size:16px;line-height:1.55;max-width:56ch}
+.infra-ia ul{list-style:none;margin-top:18px;border-top:1px solid var(--line)}
+.infra-ia li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.ia-figs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
+.ia-figs figure{margin:0}
+.ia-figs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;display:block;background:#10141c;
+  transition:transform .6s var(--ease)}
+.ia-figs figure:hover img{transform:translateY(-4px)}
+.ia-figs figcaption{margin-top:10px;color:var(--dim);font-size:11.5px;line-height:1.45}
+@media (max-width:1000px){.infra-ia{grid-template-columns:1fr}}
+@media (max-width:560px){.ia-figs{grid-template-columns:1fr}}
+
 .infra-note{background:var(--bg-2);display:flex;flex-direction:column}
 @media (max-width:980px){.infra{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.infra{grid-template-columns:1fr}}
@@ -1799,7 +1815,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Infraestructura y equipamiento</h2>
-      <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular.</p>
+      <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán, con equipamiento de alta complejidad para biología molecular y celular, y herramientas de análisis para sacarle a cada experimento todo lo que tiene para dar.</p>
     </div>
     <div class="infra">
       <article class="infra-room rv">
@@ -1837,6 +1853,24 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <h3>Abiertos a otros grupos</h3>
         <p>Investigadores, empresas y organismos pueden usar este equipamiento a través de nuestros servicios tecnológicos.</p>
         <a class="pj-link" href="#servicios">Ver los servicios <i class="ph ph-arrow-right"></i></a>
+      </article>
+      <article class="infra-ia rv">
+        <div class="ia-txt">
+          <i class="ph-thin ph-graph"></i>
+          <h3>Análisis de imágenes asistido por IA</h3>
+          <p>El microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Contamos con pipelines de análisis asistidos por inteligencia artificial que segmentan cada célula, detectan agregados y miden intensidades aplicando el mismo criterio a todas las imágenes del experimento, sin la variabilidad del conteo a ojo.</p>
+          <ul>
+            <li>Segmentación automática de células y núcleos</li>
+            <li>Conteo y medición de agregados y puncta, célula por célula</li>
+            <li>Colocalización entre canales y análisis de compartimentos</li>
+            <li>Validación contra conteo manual ciego antes de publicar</li>
+          </ul>
+        </div>
+        <div class="ia-figs">
+          <figure><img src="img/hero-confocal-3.jpg" alt="Imagen de microscopía confocal de células en cultivo del IMMCA" loading="lazy"><figcaption class="mono">La imagen que sale del microscopio</figcaption></figure>
+          <figure><img src="img/ill/analisis-segmentacion.svg" alt="Esquema: el pipeline delimita cada célula y marca los puntos que encuentra adentro" loading="lazy"><figcaption class="mono">El pipeline delimita cada célula y marca lo que encuentra</figcaption></figure>
+          <figure><img src="img/ill/analisis-medicion.svg" alt="Esquema: cada célula analizada aporta un valor medido" loading="lazy"><figcaption class="mono">Y devuelve una medición por célula, comparable entre condiciones</figcaption></figure>
+        </div>
       </article>
     </div>
   </div>

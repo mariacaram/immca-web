@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="bgm" cx="50%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#112c44"/>
+      <stop offset="100%" stop-color="#0a1420"/>
+    </radialGradient>
+    <linearGradient id="lnm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A8E4FF"/>
+      <stop offset="100%" stop-color="#27ADE3"/>
+    </linearGradient>
+    <pattern id="dotm" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="1.6" cy="1.6" r="1.1" fill="#27ADE3" opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="320" height="320" fill="url(#bgm)"/>
+  <rect x="18" y="18" width="284" height="284" fill="url(#dotm)"/>
+  <g fill="none" stroke="#27ADE3" opacity=".22">
+    <circle cx="160" cy="160" r="62"/><circle cx="160" cy="160" r="94"/><circle cx="160" cy="160" r="126"/>
+  </g>
+  <g fill="none" stroke="#27ADE3" stroke-width="2.4" opacity=".75" stroke-linecap="round">
+    <path d="M18 40V18h22"/><path d="M280 18h22v22"/><path d="M302 280v22h-22"/><path d="M40 302H18v-22"/>
+  </g>
+  <g stroke="#27ADE3" stroke-width="2.4" stroke-linecap="round" opacity=".5">
+    <path d="M70 240h180"/><path d="M70 240V86"/>
+  </g>
+  <rect x="83" y="168" width="26" height="72" rx="7" fill="url(#lnm)" opacity=".75"/>
+  <circle cx="96" cy="168" r="6" fill="#A8E4FF"/>
+  <rect x="115" y="122" width="26" height="118" rx="7" fill="url(#lnm)" opacity=".75"/>
+  <circle cx="128" cy="122" r="6" fill="#A8E4FF"/>
+  <rect x="147" y="184" width="26" height="56" rx="7" fill="url(#lnm)" opacity=".75"/>
+  <circle cx="160" cy="184" r="6" fill="#A8E4FF"/>
+  <rect x="179" y="94" width="26" height="146" rx="7" fill="url(#lnm)" opacity=".75"/>
+  <circle cx="192" cy="94" r="6" fill="#A8E4FF"/>
+  <rect x="211" y="144" width="26" height="96" rx="7" fill="url(#lnm)" opacity=".75"/>
+  <circle cx="224" cy="144" r="6" fill="#A8E4FF"/>
+  <path d="M70 196h180" stroke="#A8E4FF" stroke-width="2.4" stroke-dasharray="6 9"
+        stroke-linecap="round" opacity=".7"/>
+  <g font-family="monospace" font-size="13" fill="#A8E4FF" opacity=".75">
+    <text x="70" y="270">por célula</text>
+    <text x="250" y="270" text-anchor="end">n</text>
+  </g>
+</svg>
