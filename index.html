@@ -643,6 +643,14 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .vida-pie{align-self:center;color:var(--muted);font-size:15.5px;line-height:1.5;max-width:34ch}
 .vida-fotos img{aspect-ratio:3/4}
 @media (max-width:760px){.vida-fotos{grid-template-columns:1fr}}
+.vida-mundial{margin-bottom:28px}
+.vida-mundial .vida-pie{max-width:46ch;margin-bottom:18px}
+.vida-tira{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.vida-tira figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.vida-tira img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.vida-tira figure:hover img{transform:scale(1.04)}
+@media (max-width:900px){.vida-tira{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.vida-tira{grid-template-columns:1fr}}
 .vida-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
 .vida-grid .ig-embed iframe{height:560px}
 .vida .social{display:inline-flex}
@@ -2495,9 +2503,14 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </div>
       <p class="lead rv">La vida en el IMMCA también incluye encuentros, celebraciones y actividades que compartimos fuera del laboratorio.</p>
     </div>
-    <div class="vida-fotos">
-      <figure class="rv"><img src="img/vida/mundial-risas.jpg" alt="Risas en la sala mientras se proyecta el partido" loading="lazy"></figure>
+    <div class="vida-mundial">
       <p class="vida-pie rv">El día de partido, la sala de reuniones se convierte en tribuna.</p>
+      <div class="vida-tira">
+        <figure class="rv"><img src="img/vida/mundial-himno.webp" alt="Integrantes del instituto de pie, escuchando el himno frente a la proyección del partido" loading="lazy"></figure>
+        <figure class="rv"><img src="img/vida/mundial-risas.jpg" alt="Risas en la sala mientras se proyecta el partido" loading="lazy"></figure>
+        <figure class="rv"><img src="img/vida/mundial-selfie.webp" alt="Selfie del grupo reunido en la sala antes del partido" loading="lazy"></figure>
+        <figure class="rv"><img src="img/vida/mundial-festejo.webp" alt="Foto grupal al final del partido, con el resultado en la pantalla" loading="lazy"></figure>
+      </div>
     </div>
     <div class="vida-grid">
       <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DSdodqJjZIq/" target="_blank" rel="noopener" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio"><img src="img/ig/DSdodqJjZIq.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
