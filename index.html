@@ -425,12 +425,21 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 
 /* ---------- timeline horizontal ---------- */
 .tl{position:relative;overflow:hidden;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tl-pin{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:clamp(76px,9vh,96px) 0 clamp(32px,5vh,56px)}
+.tl-pin{padding:clamp(72px,8vh,96px) 0 clamp(36px,5vh,60px)}
 .tl-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(26px,4.5vh,56px)}
 .tl-head h2{max-width:14ch}
 .tl-progress{width:220px;height:2px;background:var(--line);border-radius:2px;overflow:hidden;flex-shrink:0}
 .tl-progress i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
-.tl-track{display:flex;gap:24px;padding-left:var(--gutter);padding-right:30vw;will-change:transform}
+.tl-track{display:flex;gap:24px;padding:4px var(--gutter) 22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.tl-track::-webkit-scrollbar{height:8px}
+.tl-track::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px}
+.tl-track:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
+.tl-item{scroll-snap-align:start}
+.tl-ctrl{display:flex;align-items:center;gap:14px}
+.tl-fl{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:var(--bg);display:grid;place-items:center;color:var(--text);cursor:pointer;flex-shrink:0;transition:background .3s,border-color .3s,opacity .3s}
+.tl-fl:hover:not(:disabled){background:var(--accent);border-color:var(--accent);color:#fff}
+.tl-fl:disabled{opacity:.3;cursor:default}
+.tl-fl i{font-size:18px}
 .tl-item{flex:0 0 clamp(290px,30vw,420px);border-top:1px solid var(--line-2);padding-top:24px;position:relative}
 .tl-item::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--bg-2);border:1px solid var(--accent)}
 .tl-item.key::before{background:var(--accent);box-shadow:0 0 0 6px var(--accent-soft)}
@@ -438,22 +447,15 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .tl-item h3{margin:14px 0 8px;font-size:21px}
 .tl-item p{color:var(--muted);font-size:15.5px;line-height:1.5;max-width:36ch}
 @media (max-width:768px){
-  .tl-pin{min-height:0;padding:88px 0}
+  .tl-pin{padding:88px 0}
   .tl-head{flex-direction:column;align-items:start}
-  .tl-progress{display:none}
-  .tl-track{flex-direction:column;padding-right:var(--gutter);gap:40px}
+  .tl-ctrl{display:none}
+  .tl-track{flex-direction:column;padding:0 var(--gutter);gap:40px;overflow-x:visible}
   .tl-item{flex:none}
 }
 /* con "reducir movimiento" activado no hay recorrido horizontal: el riel
    se lee como una columna, para que no quede clavado en los primeros hitos */
-@media (prefers-reduced-motion:reduce){
-  .tl-pin{min-height:0;padding:88px 0}
-  .tl-head{flex-direction:column;align-items:start}
-  .tl-progress{display:none}
-  .tl-track{flex-direction:column;padding-right:var(--gutter);gap:40px;transform:none!important}
-  .tl-item{flex:none;max-width:68ch}
-  .tl-img{max-height:none;aspect-ratio:16/9}
-}
+
 
 /* ---------- bento líneas ---------- */
 .sec-head{max-width:820px;margin-bottom:64px}
@@ -1986,10 +1988,14 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <div class="wrap">
       <div class="tl-head">
         <h2 class="rv">Cómo llegamos hasta acá</h2>
-        <div class="tl-progress" aria-hidden="true"><i id="tlbar"></i></div>
+        <div class="tl-ctrl">
+          <div class="tl-progress" aria-hidden="true"><i id="tlbar"></i></div>
+          <button class="tl-fl" data-dir="-1" aria-label="Ver hitos anteriores"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+          <button class="tl-fl" data-dir="1" aria-label="Ver hitos siguientes"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+        </div>
       </div>
     </div>
-    <div class="tl-track" id="tltrack">
+    <div class="tl-track" id="tltrack" tabindex="0" role="group" aria-label="Hitos del instituto, recorrido horizontal">
       <article class="tl-item">
         <div class="tl-year">1996</div>
         <h3>Biofísica en el País Vasco</h3>
@@ -3892,34 +3898,37 @@ if (!reduce) gsap.to('#manifesto .w', {
   scrollTrigger: {trigger: man, start: 'top 78%', end: 'bottom 55%', scrub: .6}
 });
 
-/* ============ Timeline horizontal ============ */
-const mmq = gsap.matchMedia();
-mmq.add('(min-width:769px) and (prefers-reduced-motion:no-preference)', () => {
-  const track = $('#tltrack');
-  const dist = () => track.scrollWidth - innerWidth;
-  // fromTo y no to: al recalcular (abrir un panel dispara un refresh) GSAP vuelve
-  // a tomar el punto de partida. Con `to` tomaba la posicion en la que estuviera
-  // el riel en ese momento, y el riel quedaba clavado mientras la barra avanzaba.
-  gsap.fromTo(track, {x: 0}, {x: () => -dist(), ease: 'none', immediateRender: false,
-    scrollTrigger: {trigger: '.tl', start: 'top top', end: () => `+=${dist()}`, pin: '.tl-pin', scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
-      onUpdate: s => gsap.set('#tlbar', {scaleX: s.progress})}});
-  // el recorrido depende del ancho real del riel: si las fuentes o las fotos
-  // cambian ese ancho despues del armado, hay que volver a medirlo
-  const remedir = () => ScrollTrigger.refresh();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(remedir);
-  track.querySelectorAll('img').forEach(im => {
-    if (!im.complete) im.addEventListener('load', remedir, {once: true});
-  });
-  if (window.ResizeObserver) {
-    let ancho = track.scrollWidth;
-    new ResizeObserver(() => {
-      if (Math.abs(track.scrollWidth - ancho) > 2) { ancho = track.scrollWidth; remedir(); }
-    }).observe(track);
+/* ============ Timeline: riel con desplazamiento propio ============ */
+/* Antes la sección se fijaba a la pantalla y el riel se movía con el scroll
+   vertical. Dependía de medidas que cambiaban (fuentes, fotos, alto de la
+   ventana) y a veces el riel quedaba clavado a mitad de camino. Ahora el riel
+   se desplaza solo, con la rueda, el trackpad, las flechas o arrastrando. */
+(() => {
+  const riel = $('#tltrack'), barra = $('#tlbar');
+  if (!riel) return;
+  const paso = () => {
+    const it = riel.querySelector('.tl-item');
+    return it ? it.getBoundingClientRect().width + 24 : 320;
+  };
+  const pintarBarra = () => {
+    const max = riel.scrollWidth - riel.clientWidth;
+    if (barra) gsap.set(barra, {scaleX: max > 0 ? riel.scrollLeft / max : 0});
+    $$('.tl-fl').forEach(b => {
+      const atras = b.dataset.dir === '-1';
+      b.disabled = atras ? riel.scrollLeft < 8 : riel.scrollLeft > max - 8;
+    });
+  };
+  riel.addEventListener('scroll', pintarBarra, {passive: true});
+  addEventListener('resize', pintarBarra);
+  $$('.tl-fl').forEach(b => b.addEventListener('click', () => {
+    riel.scrollBy({left: paso() * (+b.dataset.dir), behavior: 'smooth'});
+  }));
+  pintarBarra();
+  if (!matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    $$('.tl-item').forEach(it => gsap.from(it, {opacity: 0, y: 24, duration: .9, ease: 'expo.out',
+      scrollTrigger: {trigger: '.tl', start: 'top 75%'}}));
   }
-});
-mmq.add('(max-width:768px) and (prefers-reduced-motion:no-preference)', () => {
-  $$('.tl-item').forEach(it => gsap.from(it, {opacity: 0, y: 30, duration: 1, ease: 'expo.out', scrollTrigger: {trigger: it, start: 'top 88%'}}));
-});
+})();
 
 /* ============ Pipeline: línea que se dibuja y pasos que se encienden ============ */
 const steps = $$('.step'), figs = $$('.pipe-fig img'), dl = $('#drawline');
