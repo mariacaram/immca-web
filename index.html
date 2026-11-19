@@ -507,6 +507,31 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 
 /* infraestructura */
 .infra{display:grid}
+.fac-row{border-bottom:1px solid var(--line)}
+.fac-row:first-of-type{border-top:1px solid var(--line)}
+.fac-row .lhead{grid-template-columns:auto auto minmax(0,1.05fr) minmax(0,1fr) auto;gap:20px;padding:20px 8px}
+.fac-row .lhead>i{font-size:22px;color:var(--accent-bright)}
+.fac-row .fac-n{color:var(--accent);font-size:12px;letter-spacing:.14em;margin:0}
+.fac-row .lhead h3{font-size:clamp(18px,1.7vw,23px);font-weight:500;letter-spacing:-.01em;margin:0;max-width:none}
+.fac-cuerpo{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:10px clamp(28px,4vw,60px);align-items:start;padding-bottom:30px}
+.fac-cuerpo>.fac-txt{grid-column:1;grid-row:1}
+.fac-cuerpo .fac-figs{grid-column:2;grid-row:1}
+.fac-cuerpo .fac-specs{grid-column:1/-1;grid-row:2;margin-top:10px}
+.fac-cuerpo .fac-specs ul{columns:3;column-gap:40px}
+.fac-cuerpo .fac-specs h4:first-child{margin-top:0}
+@media (max-width:1000px){.fac-cuerpo{grid-template-columns:1fr}
+  .fac-cuerpo>.fac-txt{grid-column:1;grid-row:auto}
+  .fac-cuerpo .fac-figs,.fac-cuerpo .fac-specs{grid-column:1;grid-row:auto}
+  .fac-cuerpo .fac-specs ul{columns:1}}
+@media (max-width:900px){
+  .fac-row .lhead{grid-template-columns:auto 1fr auto;gap:4px 14px;padding:16px 4px}
+  .fac-row .lhead>i{display:none}
+  .fac-row .fac-n{grid-column:1;grid-row:1/3;align-self:center}
+  .fac-row .lhead h3,.fac-row .lsum{grid-column:2}
+  .fac-row .lhead .go{grid-row:1/3;grid-column:3;align-self:center}
+}
+
 .fac{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:8px clamp(28px,4vw,72px);
   padding:clamp(40px,4.4vw,68px) 0;border-top:1px solid var(--line);align-items:start}
 .fac>.fac-txt{grid-column:1;grid-row:1/span 2}
@@ -1493,7 +1518,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <a href="#instituto">El instituto</a>
           <a href="#historia">Historia</a>
           <a href="#proyecto">Proyecto institucional</a>
-          <a href="#infraestructura">Infraestructura</a>
+          <a href="#infraestructura">Facilities</a>
           <a href="#directora">Autoridades</a>
           <a href="#habilitaciones">Habilitaciones</a>
           <a href="#agradecimientos">Agradecimientos</a>
@@ -1538,7 +1563,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
   </div>
   <nav class="mm-body" aria-label="Menú">
-    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Infraestructura</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
+    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Facilities</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
@@ -1864,176 +1889,262 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 <section class="sec" id="infraestructura" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="rv">Infraestructura y equipamiento</h2>
+      <h2 class="rv">Facilities</h2>
       <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán: once salas y <b>120 equipos</b> bajo un plan de mantenimiento y calibración documentado, equipo por equipo, con responsable y frecuencia asignados. Equipamiento y herramientas de análisis cuantitativo para investigación biomédica.</p>
     </div>
     <div class="infra">
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-microscopia">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-microscopiap">
           <span class="fac-n mono">01</span>
-          <i class="ph-thin ph-microscope"></i>
+          <i class="ph-thin ph-microscope" aria-hidden="true"></i>
           <h3>Microscopía y análisis de imágenes</h3>
-          <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Cuantificamos con flujos de análisis reproducibles, asistidos por inteligencia artificial, que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales.</p>
-          <p>Todo corre en <b>Python</b>, con el código versionado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes. Definimos la unidad experimental según el diseño de cada estudio: agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
+          <span class="lsum">Confocal, fluorescencia y cuantificación reproducible en Python</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-figs">
-          <figure><img src="img/confocal-adquisicion.webp" alt="Investigador trabajando en el microscopio, con las células en la pantalla" loading="lazy"><figcaption class="mono">La adquisición, en el microscopio del instituto</figcaption></figure>
-          <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
-          <figure class="fac-code"><pre><code><span class="c"># La unidad estadística nunca es la célula:</span>
-<span class="c"># las de un mismo campo no son independientes.</span>
-fields, reps = aggregate_levels(
+        <div class="lpanel" id="fac-microscopiap" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Cuantificamos con flujos de análisis reproducibles, asistidos por inteligencia artificial, que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales.</p>
+                <p>Todo corre en <b>Python</b>, con el código versionado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes. Definimos la unidad experimental según el diseño de cada estudio: agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
+              </div>
+              <div class="fac-figs">
+    <figure><img src="img/confocal-adquisicion.webp" alt="Investigador trabajando en el microscopio, con las células en la pantalla" loading="lazy"><figcaption class="mono">La adquisición, en el microscopio del instituto</figcaption></figure>
+    <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
+    <figure class="fac-code"><pre><code><span class="c"># La unidad estadística nunca es la célula:</span>
+    <span class="c"># las de un mismo campo no son independientes.</span>
+    fields, reps = aggregate_levels(
     df_cells, metric,
     condition_col=<span class="s">&quot;condicion&quot;</span>,
     field_col=<span class="s">&quot;campo&quot;</span>,
     replicate_col=<span class="s">&quot;replica&quot;</span>)
-
-res = compare_all_to_control(
+    res = compare_all_to_control(
     fields, metric,
     control=<span class="s">&quot;Ctrl&quot;</span>,
     test=<span class="s">&quot;mannwhitney&quot;</span>,
     correction=<span class="s">&quot;bh&quot;</span>)</code></pre><figcaption class="mono">Nuestro código de análisis, en Python</figcaption></figure>
-</div>
-        <div class="fac-specs">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Microscopio confocal Zeiss LSM 800</li>
-            <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
-            <li>Microscopio de contraste de fase Zeiss Primovert</li>
-          </ul>
-          <h4 class="mono">Cómo procedemos</h4>
-          <ul>
-            <li>Segmentación automática de células y núcleos con Cellpose</li>
-            <li>Detección y medición de agregados y puncta, célula por célula</li>
-            <li>Colocalización entre canales y análisis de compartimentos</li>
-            <li>Agregación célula → campo → réplica biológica</li>
-            <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
-            <li>Validación contra conteo manual ciego antes de publicar</li>
-          </ul>
+    </div>
+    <div class="fac-specs">
+    <h4 class="mono">Equipamiento</h4>
+    <ul>
+    <li>Microscopio confocal Zeiss LSM 800</li>
+    <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
+    <li>Microscopio de contraste de fase Zeiss Primovert</li>
+    </ul>
+    <h4 class="mono">Cómo procedemos</h4>
+    <ul>
+    <li>Segmentación automática de células y núcleos con Cellpose</li>
+    <li>Detección y medición de agregados y puncta, célula por célula</li>
+    <li>Colocalización entre canales y análisis de compartimentos</li>
+    <li>Agregación célula → campo → réplica biológica</li>
+    <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
+    <li>Validación contra conteo manual ciego antes de publicar</li>
+    </ul>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Microscopio confocal Zeiss LSM 800</li>
+                <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
+                <li>Microscopio de contraste de fase Zeiss Primovert</li>
+                </ul>
+                <h4 class="mono">Cómo procedemos</h4>
+                <ul>
+                <li>Segmentación automática de células y núcleos con Cellpose</li>
+                <li>Detección y medición de agregados y puncta, célula por célula</li>
+                <li>Colocalización entre canales y análisis de compartimentos</li>
+                <li>Agregación célula → campo → réplica biológica</li>
+                <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
+                <li>Validación contra conteo manual ciego antes de publicar</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-cultivos">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-cultivosp">
           <span class="fac-n mono">02</span>
-          <i class="ph-thin ph-flask"></i>
+          <i class="ph-thin ph-flask" aria-hidden="true"></i>
           <h3>Cultivos celulares</h3>
-          <p>Sala con esclusa y presión positiva con filtro HEPA, donde se mantienen y tratan las líneas celulares con las que trabajamos: SH-SY5Y, HEK y BV2, entre otras. Es el punto de partida de casi todos los ensayos del instituto, desde la evaluación de compuestos hasta los modelos de agregación de proteínas.</p>
+          <span class="lsum">Sala con presión positiva, donde empieza casi todo</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-figs">
-          <figure><img src="img/cultivo-cabina.webp" alt="Investigadora trabajando con placas dentro de la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
-          <figure><img src="img/cultivo-placa.webp" alt="Manos con guantes sosteniendo una placa de cultivo bajo el microscopio" loading="lazy"><figcaption class="mono">Control de un cultivo en el microscopio invertido</figcaption></figure>
-        </div>
-        <div class="fac-specs">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Cabina de seguridad biológica clase II Biobase</li>
-            <li>Estufa de CO₂ Thermo Scientific BB150, con autoesterilización</li>
-            <li>Microscopio de contraste de fase Zeiss Primovert</li>
-            <li>Tanque de nitrógeno líquido MVE ET-20, para el banco de células</li>
-            <li>Baño termostático y centrífuga de mesada</li>
-            <li>Micropipetas Eppendorf Research Plus</li>
-          </ul>
+        <div class="lpanel" id="fac-cultivosp" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Sala con esclusa y presión positiva con filtro HEPA, donde se mantienen y tratan las líneas celulares con las que trabajamos: SH-SY5Y, HEK y BV2, entre otras. Es el punto de partida de casi todos los ensayos del instituto, desde la evaluación de compuestos hasta los modelos de agregación de proteínas.</p>
+              </div>
+              <div class="fac-figs">
+    <figure><img src="img/cultivo-cabina.webp" alt="Investigadora trabajando con placas dentro de la cabina de seguridad biológica" loading="lazy"><figcaption class="mono">Trabajo en la cabina de seguridad biológica</figcaption></figure>
+    <figure><img src="img/cultivo-placa.webp" alt="Manos con guantes sosteniendo una placa de cultivo bajo el microscopio" loading="lazy"><figcaption class="mono">Control de un cultivo en el microscopio invertido</figcaption></figure>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Cabina de seguridad biológica clase II Biobase</li>
+                <li>Estufa de CO₂ Thermo Scientific BB150, con autoesterilización</li>
+                <li>Microscopio de contraste de fase Zeiss Primovert</li>
+                <li>Tanque de nitrógeno líquido MVE ET-20, para el banco de células</li>
+                <li>Baño termostático y centrífuga de mesada</li>
+                <li>Micropipetas Eppendorf Research Plus</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-proteinas">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-proteinasp">
           <span class="fac-n mono">03</span>
-          <i class="ph-thin ph-dna"></i>
+          <i class="ph-thin ph-dna" aria-hidden="true"></i>
           <h3>Producción y purificación de proteínas</h3>
-          <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
+          <span class="lsum">De la expresión bacteriana al Western blot</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-figs">
-          <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
-          <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
-        </div>
-        <div class="fac-specs">
-          <h4 class="mono">Purificación</h4>
-          <ul>
-            <li>Cromatógrafo FPLC Cytiva ÄKTA pure 25 L</li>
-            <li>Microfluidizador Microfluidics LM20</li>
-            <li>Ultracentrífuga refrigerada Thermo Sorvall LYNX 4000</li>
-            <li>Centrífuga refrigerada Thermo Sorvall ST 8R</li>
-            <li>Sonicador Sonics VCX130</li>
-          </ul>
-          <h4 class="mono">Detección y control</h4>
-          <ul>
-            <li>Electroforesis BioRad Mini-PROTEAN Tetra y Mini Sub-Cell GT</li>
-            <li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li>
-            <li>Espectrofotómetro de microvolumen DeNovix DS-11+</li>
-            <li>Espectrofotómetro UV/visible Genesys 10S</li>
-            <li>Balanza analítica Ohaus PA224</li>
-          </ul>
+        <div class="lpanel" id="fac-proteinasp" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Expresión, ruptura celular y purificación de proteínas recombinantes como alfa-sinucleína y tau, y detección por electroforesis y Western blot. Producimos el material que usan nuestros propios ensayos y también otros laboratorios del país.</p>
+              </div>
+              <div class="fac-figs">
+    <figure><img src="img/akta-purificacion.jpg" alt="Dos integrantes del equipo junto al cromatógrafo ÄKTA pure durante una purificación" loading="lazy"><figcaption class="mono">Purificación en el ÄKTA pure</figcaption></figure>
+    <figure><img src="img/azure-western.jpg" alt="Equipo de imágenes Azure Biosystems 600, para Western blot y geles" loading="lazy" style="object-position:center 42%"><figcaption class="mono">El Azure 600, para Western blot y geles</figcaption></figure>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Purificación</h4>
+                <ul>
+                <li>Cromatógrafo FPLC Cytiva ÄKTA pure 25 L</li>
+                <li>Microfluidizador Microfluidics LM20</li>
+                <li>Ultracentrífuga refrigerada Thermo Sorvall LYNX 4000</li>
+                <li>Centrífuga refrigerada Thermo Sorvall ST 8R</li>
+                <li>Sonicador Sonics VCX130</li>
+                </ul>
+                <h4 class="mono">Detección y control</h4>
+                <ul>
+                <li>Electroforesis BioRad Mini-PROTEAN Tetra y Mini Sub-Cell GT</li>
+                <li>Sistema de imágenes Azure Biosystems 600, para Western blot y geles</li>
+                <li>Espectrofotómetro de microvolumen DeNovix DS-11+</li>
+                <li>Espectrofotómetro UV/visible Genesys 10S</li>
+                <li>Balanza analítica Ohaus PA224</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-biofisica">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-biofisicap">
           <span class="fac-n mono">04</span>
-          <i class="ph-thin ph-wave-sine"></i>
+          <i class="ph-thin ph-wave-sine" aria-hidden="true"></i>
           <h3>Biofísica, espectroscopía y analítica</h3>
-          <p>Acá se sigue en tiempo real cómo una proteína se pliega, se agrega o deja de hacerlo frente a un compuesto. Medimos cinéticas de agregación, tamaño y estabilidad de partículas en suspensión, y ensayos ópticos en microplaca, incluidos los inmunoensayos.</p>
+          <span class="lsum">Agregación en tiempo real, tamaño de partículas y microplaca</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-lista">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Espectrofluorómetro Horiba Fluoromax-4CP</li>
-            <li>Dispersión dinámica de luz y potencial zeta Horiba SZ-100V2</li>
-            <li>Lector multimodo TECAN Spark 1000</li>
-            <li>Lector de microplacas BMG Labtech FLUOstar Omega</li>
-            <li>Potenciostato PalmSens4, para biosensado electroquímico</li>
-            <li>pH-metro Orion Star A2115</li>
-          </ul>
+        <div class="lpanel" id="fac-biofisicap" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Acá se sigue en tiempo real cómo una proteína se pliega, se agrega o deja de hacerlo frente a un compuesto. Medimos cinéticas de agregación, tamaño y estabilidad de partículas en suspensión, y ensayos ópticos en microplaca, incluidos los inmunoensayos.</p>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Espectrofluorómetro Horiba Fluoromax-4CP</li>
+                <li>Dispersión dinámica de luz y potencial zeta Horiba SZ-100V2</li>
+                <li>Lector multimodo TECAN Spark 1000</li>
+                <li>Lector de microplacas BMG Labtech FLUOstar Omega</li>
+                <li>Potenciostato PalmSens4, para biosensado electroquímico</li>
+                <li>pH-metro Orion Star A2115</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-invivo">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-invivop">
           <span class="fac-n mono">05</span>
-          <i class="ph-thin ph-bug"></i>
+          <i class="ph-thin ph-bug" aria-hidden="true"></i>
           <h3>Ensayos con organismos modelo</h3>
-          <p>Sala dedicada a los ensayos in vivo del instituto, con su propia cabina de seguridad biológica. Es donde se trabaja con <i>C.&nbsp;elegans</i>, el modelo que usamos para ver si un compuesto protege neuronas en un organismo entero y no solo en una placa.</p>
+          <span class="lsum">Sala propia para el trabajo con C. elegans</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-lista">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Cabina de seguridad biológica clase II Biobase, exclusiva de la sala</li>
-            <li>Estufa de cultivo de temperatura controlada Neuation iTherm CH25</li>
-            <li>Lupa estereoscópica</li>
-            <li>Agitador y centrífuga propios de la sala</li>
-          </ul>
+        <div class="lpanel" id="fac-invivop" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Sala dedicada a los ensayos in vivo del instituto, con su propia cabina de seguridad biológica. Es donde se trabaja con <i>C.&nbsp;elegans</i>, el modelo que usamos para ver si un compuesto protege neuronas en un organismo entero y no solo en una placa.</p>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Cabina de seguridad biológica clase II Biobase, exclusiva de la sala</li>
+                <li>Estufa de cultivo de temperatura controlada Neuation iTherm CH25</li>
+                <li>Lupa estereoscópica</li>
+                <li>Agitador y centrífuga propios de la sala</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-microbiologia">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-microbiologiap">
           <span class="fac-n mono">06</span>
-          <i class="ph-thin ph-test-tube"></i>
+          <i class="ph-thin ph-test-tube" aria-hidden="true"></i>
           <h3>Microbiología y biología molecular</h3>
-          <p>Expresión en bacterias, cultivos con agitación controlada y el trabajo de biología molecular que sostiene a la producción de proteínas: clonado, amplificación y control de los constructos.</p>
+          <span class="lsum">Cultivos con agitación y control de los constructos</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-lista">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Incubadora con agitación Infors HT Multitron Standard</li>
-            <li>Estufa de cultivo Thermo Scientific HERATHERM IMC 18</li>
-            <li>Termociclador DLab TC1000-G</li>
-            <li>Fuente de electroforesis Cole-Parmer E3000-E</li>
-          </ul>
+        <div class="lpanel" id="fac-microbiologiap" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Expresión en bacterias, cultivos con agitación controlada y el trabajo de biología molecular que sostiene a la producción de proteínas: clonado, amplificación y control de los constructos.</p>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Incubadora con agitación Infors HT Multitron Standard</li>
+                <li>Estufa de cultivo Thermo Scientific HERATHERM IMC 18</li>
+                <li>Termociclador DLab TC1000-G</li>
+                <li>Fuente de electroforesis Cole-Parmer E3000-E</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
-      <article class="fac rv">
-        <div class="fac-txt">
+      <article class="lrow fac-row rv" id="fac-apoyo">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-apoyop">
           <span class="fac-n mono">07</span>
-          <i class="ph-thin ph-snowflake"></i>
+          <i class="ph-thin ph-snowflake" aria-hidden="true"></i>
           <h3>Conservación y apoyo</h3>
-          <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
+          <span class="lsum">Ultrafreezer, autoclave y agua ultrapura</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
-        <div class="fac-lista">
-          <h4 class="mono">Equipamiento</h4>
-          <ul>
-            <li>Ultrafreezer Panasonic MDF-U55V, −85 °C</li>
-            <li>Freezers −20 °C y heladeras de laboratorio</li>
-            <li>Autoclave Panasonic MLS-3751L</li>
-            <li>Desionizador de agua Apema Osmoion 15-2-U</li>
-            <li>Termomezcladores y agitadores Eppendorf y DLab</li>
-            <li>Lavadora y estufa de secado de material</li>
-          </ul>
+        <div class="lpanel" id="fac-apoyop" inert>
+          <div class="lpanel-in">
+            <div class="fac-cuerpo">
+              <div class="fac-txt">
+                <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
+              </div>
+              <div class="fac-specs">
+                <h4 class="mono">Equipamiento</h4>
+                <ul>
+                <li>Ultrafreezer Panasonic MDF-U55V, −85 °C</li>
+                <li>Freezers −20 °C y heladeras de laboratorio</li>
+                <li>Autoclave Panasonic MLS-3751L</li>
+                <li>Desionizador de agua Apema Osmoion 15-2-U</li>
+                <li>Termomezcladores y agitadores Eppendorf y DLab</li>
+                <li>Lavadora y estufa de secado de material</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
       <article class="fac-cta rv">
