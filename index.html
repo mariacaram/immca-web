@@ -243,8 +243,9 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){padding-left:0;border-left:0}.stat{border-top:1px solid var(--line)}}
 
 /* ---------- manifiesto ---------- */
-.manifesto{font-size:clamp(28px,3.6vw,52px);font-weight:500;letter-spacing:-.025em;line-height:1.18;max-width:1100px}
-.manifesto .w{opacity:.16;transition:none}
+.man-head{padding-top:6px;border-top:1px solid var(--line);margin-bottom:clamp(22px,2.4vw,34px)}
+.manifesto{font-size:clamp(20px,2.15vw,32px);font-weight:500;letter-spacing:-.016em;line-height:1.42;max-width:30ch;max-width:min(92%,880px)}
+.manifesto .w{display:inline-block;opacity:.12;filter:blur(5px);transform:translateY(.22em);will-change:opacity,filter,transform}
 .manifesto .w.hl{color:var(--accent)}
 
 /* ---------- timeline horizontal ---------- */
@@ -1433,7 +1434,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   .clip{clip-path:none!important}
   .marq-track{animation:none}
   .aurora i{animation:none}
-  .manifesto .w{opacity:1!important}
+  .manifesto .w{opacity:1!important;filter:none!important;transform:none!important}
   .pre{display:none}
   .step{opacity:1}
   *{scroll-behavior:auto!important}
@@ -1684,7 +1685,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 <!-- MANIFIESTO -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <p class="manifesto" id="manifesto">Empezamos como un pequeño grupo de biofísica de proteínas. Cuando nuestras preguntas se acercaron a la enfermedad de Parkinson, formamos un consorcio con el equipo de la Dra. Rita Raisman-Vozari en el Instituto del Cerebro de París, donde cada grupo aprendió del otro. Esa alianza, y los subsidios que trajo, nos dieron la masa crítica para cubrir una vacancia estratégica del norte argentino: un instituto de investigación biomédica.</p>
+    <div class="man-head rv"><span class="mono kicker">Cómo nació el IMMCA</span></div>
+    <p class="manifesto" id="manifesto">El instituto nació de un grupo de biofísica de proteínas. Cuando nuestras preguntas se aproximaron a la enfermedad de Parkinson, conformamos un consorcio con el equipo de la Dra. Rita Raisman-Vozari en el Instituto del Cerebro de París, una colaboración en la que cada grupo incorporó la experiencia del otro. Esa alianza, y el financiamiento que trajo consigo, aportaron la masa crítica necesaria para cubrir una vacancia estratégica en el norte argentino: la de un instituto de investigación biomédica.</p>
   </div>
 </section>
 
@@ -3344,9 +3346,15 @@ $$('[data-count]').forEach(el => {
 
 /* ============ Manifiesto: palabras que se encienden ============ */
 const man = $('#manifesto');
-const key = ['Parkinson,', 'medicina', 'traslacional.'];
-man.innerHTML = man.textContent.trim().split(/\s+/).map(w => `<span class="w${key.includes(w) ? ' hl' : ''}">${w}</span>`).join(' ');
-if (!reduce) gsap.to('#manifesto .w', {opacity: 1, stagger: .1, ease: 'none', scrollTrigger: {trigger: man, start: 'top 80%', end: 'bottom 45%', scrub: true}});
+const key = ['biofísica', 'de', 'proteínas.', 'Parkinson,', 'vacancia', 'estratégica', 'biomédica.'];
+const destacar = (w, i, todas) => key.includes(w) &&
+  (w !== 'de' || todas[i + 1] === 'proteínas.');
+man.innerHTML = man.textContent.trim().split(/\s+/)
+  .map((w, i, t) => `<span class="w${destacar(w, i, t) ? ' hl' : ''}">${w}</span>`).join(' ');
+if (!reduce) gsap.to('#manifesto .w', {
+  opacity: 1, filter: 'blur(0px)', y: 0, stagger: .08, ease: 'none',
+  scrollTrigger: {trigger: man, start: 'top 78%', end: 'bottom 55%', scrub: .6}
+});
 
 /* ============ Timeline horizontal ============ */
 const mmq = gsap.matchMedia();
