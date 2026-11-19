@@ -258,6 +258,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .alum-dest{color:var(--accent);font-size:15.5px;font-weight:600;line-height:1.4;margin-bottom:8px}
 .alum-rol{color:var(--muted);font-size:15px;line-height:1.5;margin-bottom:14px}
 .alum-sede{margin-top:auto;color:var(--dim);font-size:11.5px;letter-spacing:.04em}
+.alum-i:last-child:nth-child(odd){grid-column:1/-1}
 @media (max-width:820px){.alum{grid-template-columns:1fr}}
 
 /* ---------- manifiesto ---------- */
@@ -1150,7 +1151,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 32px;overflow:hidden}
    Barra institucional arriba, menú blanco y banner con sigla, nombre completo,
    dependencias y "Unidad Ejecutora", como en los sitios de las UE. */
 .ubar{position:absolute;top:0;left:0;right:0;height:40px;z-index:41;background:#fff;border-bottom:1px solid var(--line)}
-.ubar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ubar .wrap{height:100%;display:flex;align-items:center;justify-content:flex-end;gap:18px}
 .ubar-conicet{display:flex;align-items:center;gap:12px;color:var(--muted)}
 .ubar-conicet img{height:26px;width:auto}
 .ubar-conicet span{font-size:11px;letter-spacing:.04em}
@@ -1474,7 +1475,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="ubar" aria-label="Accesos institucionales">
   <div class="wrap">
-    <a class="ubar-conicet" href="https://www.conicet.gov.ar" target="_blank" rel="noopener"><img src="logos/conicet.svg" alt="CONICET"><span class="mono">Unidad Ejecutora · CONICET · UNT · SIPROSA</span></a>
     <div class="lang" role="group" aria-label="Idioma"><a href="./" hreflang="es" lang="es" title="Español" class="on" aria-current="page"><svg class="flag" viewBox="0 0 18 12" aria-hidden="true"><rect width="18" height="12" fill="#74ACDF"/><rect y="4" width="18" height="4" fill="#fff"/><circle cx="9" cy="6" r="1.25" fill="#F6B40E"/></svg><span>ES</span></a><a href="en.html" hreflang="en" lang="en" title="English"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukc-es"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukc-es)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></a><a href="fr.html" hreflang="fr" lang="fr" title="Français"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg><span>FR</span></a></div>
     <nav class="ubar-links mono" aria-label="Enlaces institucionales"><a href="https://noasur.conicet.gov.ar/" target="_blank" rel="noopener">CCT NOA Sur</a><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">Ficha CONICET</a></nav>
   </div>
@@ -2980,6 +2980,18 @@ res = compare_all_to_control(
           <p class="alum-rol">Trabaja en genética forense y biología molecular aplicada a la investigación judicial.</p>
           <span class="alum-sede mono">Salta, Argentina</span>
         </li>
+        <li class="alum-i rv">
+          <h3>Eva Vélez</h3>
+          <p class="alum-dest">CERELA, CONICET</p>
+          <p class="alum-rol">Investigadora asistente del CONICET. Estudia cómo los probióticos modulan la respuesta inmune en las alergias y busca nuevos biomarcadores. Enseña Inmunología en la FBQyF-UNT.</p>
+          <span class="alum-sede mono">San Miguel de Tucumán</span>
+        </li>
+        <li class="alum-i rv">
+          <h3>Luciana Medina</h3>
+          <p class="alum-dest">Medpace</p>
+          <p class="alum-rol">De la investigación básica a la clínica: trabaja en una empresa internacional que gestiona ensayos clínicos para la industria farmacéutica y biotecnológica.</p>
+          <span class="alum-sede mono">Madrid, España</span>
+        </li>
     </ul>
   </div>
 </section>
@@ -3348,15 +3360,15 @@ if (reduce) { $('#pre').remove(); }
 else {
   // el isotipo se arma: cada barra llega desde afuera y encastra
   // cada cara del triángulo es una de las tres instituciones: llegan de a una
-  intro.from('.pre-iso .b1', {x: -90, y: -52, rotate: -28, opacity: 0, transformOrigin: '50% 50%', duration: 1.35}, 0)
-       .to('.pre-inst span:nth-child(1)', {opacity: 1, duration: .5}, .5)
-       .from('.pre-iso .b2', {x: 90, y: -52, rotate: 28, opacity: 0, transformOrigin: '50% 50%', duration: 1.35}, .5)
-       .to('.pre-inst span:nth-child(2)', {opacity: 1, duration: .5}, 1)
-       .from('.pre-iso .b3', {y: 90, opacity: 0, duration: 1.35}, 1)
-       .to('.pre-inst span:nth-child(3)', {opacity: 1, duration: .5}, 1.5)
-       .to('.pre-word span', {y: 0, duration: 1}, 1.85)
-       .to('.pre-bar i', {scaleX: 1, duration: 1, ease: 'power2.inOut'}, '<.1')
-       .to('.pre', {yPercent: -100, duration: .85, ease: 'expo.inOut'}, '+=.15')
+  intro.from('.pre-iso .b1', {x: -90, y: -52, rotate: -28, opacity: 0, transformOrigin: '50% 50%', duration: 1.08}, 0)
+       .to('.pre-inst span:nth-child(1)', {opacity: 1, duration: .4}, .4)
+       .from('.pre-iso .b2', {x: 90, y: -52, rotate: 28, opacity: 0, transformOrigin: '50% 50%', duration: 1.08}, .4)
+       .to('.pre-inst span:nth-child(2)', {opacity: 1, duration: .4}, .8)
+       .from('.pre-iso .b3', {y: 90, opacity: 0, duration: 1.08}, .8)
+       .to('.pre-inst span:nth-child(3)', {opacity: 1, duration: .4}, 1.2)
+       .to('.pre-word span', {y: 0, duration: .8}, 1.48)
+       .to('.pre-bar i', {scaleX: 1, duration: .8, ease: 'power2.inOut'}, '<.08')
+       .to('.pre', {yPercent: -100, duration: .68, ease: 'expo.inOut'}, '+=.12')
        .set('.pre', {display: 'none'});
   intro.from('.hero-media', {opacity: 0, scale: 1.08, duration: 2.2, ease: 'power2.out'}, '-=.7')
        .from('.hero h1 .ln>span', {yPercent: 110, duration: 1.2, stagger: .1}, '<.2')
