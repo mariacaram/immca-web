@@ -491,6 +491,9 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .infra-room>i{font-size:32px;color:var(--accent)}
 .infra-room h3{font-size:21px;margin:18px 0 8px}
 .infra-room p{color:var(--muted);font-size:15.5px}
+.room-figs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.room-figs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;background:var(--bg-2);transition:transform .6s var(--ease)}
+.room-figs img:hover{transform:translateY(-3px)}
 .infra-room ul{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
 .infra-room li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
 .infra-ia{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,52px);
@@ -1848,6 +1851,10 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <i class="ph-thin ph-flask"></i>
         <h3>Cultivo celular</h3>
         <p>Sala con esclusa y presión positiva con filtro HEPA, para trabajar con líneas como SH-SY5Y, HEK y BV2.</p>
+        <div class="room-figs">
+          <img src="img/cultivo-cabina.jpg" alt="Dos integrantes del equipo trabajando en la cabina de seguridad biológica" loading="lazy">
+          <img src="img/cultivo-sala.jpg" alt="Trabajo en la sala de cultivo, junto a la estufa de CO2" loading="lazy">
+        </div>
         <ul><li>Cabina de seguridad biológica clase II</li><li>Estufa de CO₂ con autoesterilización</li><li>Microscopio de contraste de fase Zeiss Primovert</li></ul>
       </article>
       <article class="infra-room rv">
