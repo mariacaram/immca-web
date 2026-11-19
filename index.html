@@ -581,7 +581,7 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 @media (max-width:620px){.infra{grid-template-columns:1fr}}
 
 /* startups */
-.startup{display:grid;grid-template-columns:1.5fr .5fr;gap:clamp(32px,6vw,96px);align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:clamp(28px,5vw,64px)}
+.startup{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(32px,6vw,96px);align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:clamp(28px,5vw,64px)}
 .startup h2{margin-bottom:18px}
 .startup .lead{margin-bottom:18px}
 .startup-txt>p:not(.lead){color:var(--muted);max-width:64ch}
@@ -589,6 +589,11 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .startup-facts b{display:block;font-size:17px;margin-bottom:4px}
 .startup-facts span{color:var(--muted);font-size:14.5px;line-height:1.45}
 .startup .social{display:inline-flex}
+.startup-link{margin-top:4px}
+.startup-foto{margin:0}
+.startup-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);display:block;background:var(--bg-2);transition:transform .7s var(--ease)}
+.startup-foto:hover img{transform:translateY(-4px)}
+.startup-foto figcaption{margin-top:11px;color:var(--dim);font-size:11.5px;line-height:1.45}
 .startup-mark{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,rgba(39,173,227,.22),rgba(0,114,187,.08) 60%,transparent 70%)}
 .startup-mark i{font-size:clamp(80px,10vw,150px);color:var(--accent)}
 @media (max-width:900px){.startup{grid-template-columns:1fr}.startup-mark{display:none}.startup-facts{grid-template-columns:1fr}}
@@ -1556,6 +1561,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <a href="#equipo" aria-haspopup="true">Nuestro equipo<i class="ph ph-caret-down"></i></a>
         <div class="dd-menu">
           <a href="#equipo">Integrantes</a>
+          <a href="#alumni">Alumni</a>
           <a href="#vida">Más allá del laboratorio</a>
           <a href="#unite">Unite al IMMCA</a>
         </div>
@@ -1592,7 +1598,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   <nav class="mm-body" aria-label="Menú">
     <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Facilities</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
-    <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
+    <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#alumni">Alumni</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">05</span>Innovación<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#produccion">Patentes</a><a href="#pegasus">El camino de Pegasus</a><a href="#startups">Startups</a></div></details>
     <a class="mm-l" href="#servicios"><span class="mono">06</span>Servicios tecnológicos<i class="ph ph-arrow-right"></i></a>
@@ -2742,15 +2748,20 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <div class="startup-txt">
         <span class="mono kicker">Startups nacidas en el IMMCA</span>
         <h2>BrinDx</h2>
-        <p class="lead">Una empresa de base tecnológica para diagnosticar antes las enfermedades neurodegenerativas, empezando por el Parkinson.</p>
-        <p>Surgió cuando integrantes del instituto decidieron crear una empresa para llevar sus desarrollos al mercado. Su equipo reúne a estudiantes y graduados de la UNT con investigadores del CONICET y del SIPROSA. Trabaja en nanorradiotrazadores para diagnóstico por imágenes, ofrece proteínas recombinantes y kits de ensayo para investigación. Junto con el instituto, busca adaptar la técnica RT-QuIC con insumos locales para que funcione en sangre.</p>
+        <p class="lead">Una empresa de base tecnológica nacida en el instituto, para detectar las enfermedades neurodegenerativas antes de que aparezcan los síntomas.</p>
+        <p>Cuando aparece el primer síntoma, la enfermedad lleva años avanzando en silencio. BrinDx trabaja sobre esa ventana previa, con dos desarrollos en paralelo: <b>radiotrazadores</b> para ver por imágenes los agregados de proteína en etapas tempranas, y la detección de marcadores en <b>vesículas extracelulares aisladas de sangre</b>, una vía menos invasiva que la punción lumbar.</p>
+        <p>Su equipo reúne a estudiantes y graduados de la UNT con investigadores del CONICET y del SIPROSA. Ofrece además proteínas recombinantes y kits de ensayo para investigación, y junto con el instituto busca adaptar la técnica RT-QuIC con insumos locales para que funcione en sangre.</p>
         <ul class="startup-facts">
           <li><b>1.º premio IB50K 2024</b><span>Concurso de planes de negocio del Instituto Balseiro, entre 34 proyectos de todo el país</span></li>
           <li><b>Inversor ángel</b></li>
           <li><b>Próximo paso</b><span>Patentar sus nanoanticuerpos</span></li>
         </ul>
+        <a class="btn btn-ghost startup-link" href="https://brindx.com" target="_blank" rel="noopener">Más información en brindx.com <i class="ph ph-arrow-up-right"></i></a>
       </div>
-      <div class="startup-mark" aria-hidden="true"><i class="ph-thin ph-rocket-launch"></i></div>
+      <figure class="startup-foto">
+        <img src="img/brindx-laboratorio.webp" alt="Dos integrantes del equipo trabajando en el microscopio del instituto" loading="lazy">
+        <figcaption class="mono">En el laboratorio del instituto, donde nació la empresa</figcaption>
+      </figure>
     </div>
   </div>
 </section>
