@@ -256,17 +256,32 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .ext .sec-head{margin-bottom:clamp(36px,4vw,52px)}
 .ext-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.ext-card{background:var(--bg);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;
-  text-decoration:none;color:inherit;transition:background .4s var(--ease)}
+.ext-card{position:relative;overflow:hidden;background:var(--bg);
+  padding:clamp(28px,3vw,42px);display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:4px clamp(18px,2vw,30px);align-content:start;
+  text-decoration:none;color:inherit;transition:background .5s var(--ease)}
+.ext-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s var(--ease)}
 .ext-card:hover{background:var(--bg-2)}
-.ext-card .ext-n{color:var(--accent);font-size:12px;letter-spacing:.14em;margin-bottom:18px}
-.ext-card>i{font-size:30px;color:var(--accent-bright);margin-bottom:16px}
-.ext-card h3{font-size:clamp(20px,1.8vw,25px);letter-spacing:-.01em;line-height:1.2;margin-bottom:12px;max-width:22ch}
-.ext-card p{color:var(--muted);font-size:15.5px;line-height:1.55;margin-bottom:22px}
-.ext-go{margin-top:auto;color:var(--accent);font-size:12px;letter-spacing:.1em;
+.ext-card:hover::after{transform:scaleX(1)}
+.ext-card .ext-n{grid-column:1;grid-row:1/3;color:var(--accent);
+  font-size:clamp(52px,5.6vw,86px);font-weight:300;letter-spacing:-.05em;line-height:.86;
+  opacity:.22;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.ext-card:hover .ext-n{opacity:.5;transform:translateY(-2px)}
+.ext-card>i{grid-column:2;grid-row:1;justify-self:start;font-size:28px;color:var(--accent-bright);
+  margin-bottom:10px;transition:transform .6s var(--ease)}
+.ext-card:hover>i{transform:translateY(-3px)}
+.ext-card h3{grid-column:2;font-size:clamp(20px,1.8vw,25px);letter-spacing:-.01em;line-height:1.2;
+  margin-bottom:12px;max-width:22ch}
+.ext-card p{grid-column:2;color:var(--muted);font-size:15.5px;line-height:1.55;margin-bottom:22px}
+.ext-go{grid-column:2;color:var(--accent);font-size:12px;letter-spacing:.1em;
   display:inline-flex;align-items:center;gap:8px}
-.ext-card:hover .ext-go i{transform:translateX(4px)}
+.ext-card:hover .ext-go i{transform:translateX(5px)}
 .ext-go i{font-size:14px;transition:transform .35s var(--ease)}
+@media (max-width:560px){.ext-card{grid-template-columns:1fr}
+  .ext-card .ext-n{grid-column:1;grid-row:auto;line-height:1;margin-bottom:6px}
+  .ext-card>i,.ext-card h3,.ext-card p,.ext-go{grid-column:1}}
 .ext-sub{font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:-.01em;
   margin-top:clamp(56px,7vw,96px);padding-bottom:14px;border-bottom:1px solid var(--line)}
 .ext-sub+.soc-cards{margin-top:28px}
@@ -1582,8 +1597,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .svc-how{margin-top:clamp(48px,6vw,72px);padding:clamp(30px,4vw,46px);border-radius:var(--r);background:var(--bg-2);border:1px solid var(--line)}
 .svc-how h3{font-size:clamp(22px,2.2vw,30px);margin-bottom:26px;letter-spacing:-.02em}
 .svc-how ol{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
-.svc-how li{position:relative;padding-top:16px;border-top:2px solid var(--accent-soft)}
-.svc-how li .mono{display:block;color:var(--accent);margin-bottom:8px}
+.svc-how li{position:relative;padding-top:14px;border-top:2px solid var(--accent-soft)}
+.svc-how li .mono{display:block;color:var(--accent);font-size:clamp(38px,4.2vw,58px);font-weight:300;letter-spacing:-.04em;line-height:1;margin:2px 0 14px;opacity:.9}
 .svc-how li b{display:block;font-size:16px;margin-bottom:6px}
 .svc-how li p{color:var(--muted);font-size:14.5px;line-height:1.5}
 @media (max-width:1000px){.svc-how ol{grid-template-columns:repeat(2,1fr)}}
@@ -1704,7 +1719,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <a href="#instituto">El instituto</a>
           <a href="#historia">Historia</a>
           <a href="#proyecto">Proyecto institucional</a>
-          <a href="#infraestructura">Facilities</a>
+          <a href="#infraestructura">Plataformas</a>
           <a href="#directora">Autoridades</a>
           <a href="#habilitaciones">Habilitaciones</a>
           <a href="#agradecimientos">Agradecimientos</a>
@@ -1750,7 +1765,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
   </div>
   <nav class="mm-body" aria-label="Menú">
-    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Facilities</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
+    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Plataformas</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#alumni">Alumni</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
@@ -1950,8 +1965,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="tl-item">
         <div class="tl-year">2021</div>
-        <h3>Biosensor para Parkinson</h3>
-        <p>Convenio Aristaeus: un dispositivo de diagnóstico basado en derivados de tetraciclinas que se unen a un biomarcador de la enfermedad.</p>
+        <h3>Se firma el convenio Aristaeus</h3>
+        <p>Se acuerda el desarrollo conjunto de Aristaeus, un dispositivo de diagnóstico basado en derivados de tetraciclinas que se unen a un biomarcador de la enfermedad.</p>
       </article>
       <article class="tl-item key">
         <div class="tl-year">2024</div>
@@ -2007,7 +2022,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     </div>
 
     <div class="pi-model">
-      <p class="mono pi-ref rv">El modelo: el Instituto del Cerebro (ICM) del Hospital Pitié-Salpêtrière, París</p>
       <div class="pi-actors">
         <article class="pi-actor rv">
           <i class="ph-thin ph-microscope"></i>
@@ -2047,7 +2061,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 <section class="sec" id="infraestructura" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="rv">Facilities</h2>
+      <h2 class="rv">Plataformas</h2>
       <p class="lead rv">Laboratorios propios en Dorrego 1080, San Miguel de Tucumán: once salas y <b>120 equipos</b> bajo un plan de mantenimiento y calibración documentado, equipo por equipo, con responsable y frecuencia asignados. Equipamiento y herramientas de análisis cuantitativo para investigación biomédica.</p>
     </div>
     <div class="infra">
@@ -2056,48 +2070,19 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <span class="fac-n mono">01</span>
           <i class="ph-thin ph-microscope" aria-hidden="true"></i>
           <h3>Microscopía y análisis de imágenes</h3>
-          <span class="lsum">Confocal, fluorescencia y cuantificación reproducible en Python</span>
+          <span class="lsum">Confocal, fluorescencia y contraste de fase</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
         <div class="lpanel" id="fac-microscopiap" inert>
           <div class="lpanel-in">
             <div class="fac-cuerpo">
               <div class="fac-txt">
-                <p>Imágenes de alta resolución de células, tejidos y organismos modelo. Pero el microscopio es la mitad del trabajo: la otra mitad es convertir esas imágenes en números. Cuantificamos con flujos de análisis reproducibles, asistidos por inteligencia artificial, que delimitan cada célula y cada núcleo, detectan los agregados que hay adentro y miden intensidades en todos los canales.</p>
-                <p>Todo corre en <b>Python</b>, con el código versionado. Y con una regla que no negociamos: <b>la unidad estadística nunca es la célula</b>. Las células de un mismo campo comparten pocillo, tinción y óptica, así que no son réplicas independientes. Definimos la unidad experimental según el diseño de cada estudio: agregamos célula a campo y campo a réplica biológica, y recién ahí comparamos.</p>
+                <p>Imágenes de fluorescencia de alta resolución de células, tejidos y organismos modelo, con series en profundidad y reconstrucción en tres dimensiones. La plataforma reúne el confocal, la fluorescencia invertida y el contraste de fase, de modo que una misma muestra puede seguirse desde el cultivo hasta la imagen final.</p>
+                <p>Contamos además con flujos propios de cuantificación de imágenes, asistidos por inteligencia artificial, que usamos en nuestras investigaciones.</p>
               </div>
               <div class="fac-figs">
-    <figure><img src="img/confocal-adquisicion.webp" alt="Investigador trabajando en el microscopio, con las células en la pantalla" loading="lazy"><figcaption class="mono">La adquisición, en el microscopio del instituto</figcaption></figure>
-    <figure><img src="img/ill/analisis-puncta.webp" alt="Agregados fluorescentes detectados uno por uno dentro de cada célula" loading="lazy"><figcaption class="mono">Cada agregado, detectado y contado dentro de su célula</figcaption></figure>
-    <figure class="fac-code"><pre><code><span class="c"># La unidad estadística nunca es la célula:</span>
-    <span class="c"># las de un mismo campo no son independientes.</span>
-    fields, reps = aggregate_levels(
-    df_cells, metric,
-    condition_col=<span class="s">&quot;condicion&quot;</span>,
-    field_col=<span class="s">&quot;campo&quot;</span>,
-    replicate_col=<span class="s">&quot;replica&quot;</span>)
-    res = compare_all_to_control(
-    fields, metric,
-    control=<span class="s">&quot;Ctrl&quot;</span>,
-    test=<span class="s">&quot;mannwhitney&quot;</span>,
-    correction=<span class="s">&quot;bh&quot;</span>)</code></pre><figcaption class="mono">Nuestro código de análisis, en Python</figcaption></figure>
-    </div>
-    <div class="fac-specs">
-    <h4 class="mono">Equipamiento</h4>
-    <ul>
-    <li>Microscopio confocal Zeiss LSM 800</li>
-    <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
-    <li>Microscopio de contraste de fase Zeiss Primovert</li>
-    </ul>
-    <h4 class="mono">Cómo procedemos</h4>
-    <ul>
-    <li>Segmentación automática de células y núcleos con Cellpose</li>
-    <li>Detección y medición de agregados y puncta, célula por célula</li>
-    <li>Colocalización entre canales y análisis de compartimentos</li>
-    <li>Agregación célula → campo → réplica biológica</li>
-    <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
-    <li>Validación contra conteo manual ciego antes de publicar</li>
-    </ul>
+                <figure><img src="img/confocal-adquisicion.webp" alt="Investigador trabajando en el microscopio, con las células en la pantalla" loading="lazy"><figcaption class="mono">La adquisición, en el microscopio del instituto</figcaption></figure>
+                <figure><img src="img/hero-confocal-1.jpg" alt="Imagen de microscopía confocal obtenida en el instituto" loading="lazy"><figcaption class="mono">Una imagen confocal del instituto</figcaption></figure>
               </div>
               <div class="fac-specs">
                 <h4 class="mono">Equipamiento</h4>
@@ -2105,15 +2090,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
                 <li>Microscopio confocal Zeiss LSM 800</li>
                 <li>Microscopio invertido de fluorescencia Zeiss Axiovert A1 FL-LED</li>
                 <li>Microscopio de contraste de fase Zeiss Primovert</li>
-                </ul>
-                <h4 class="mono">Cómo procedemos</h4>
-                <ul>
-                <li>Segmentación automática de células y núcleos con Cellpose</li>
-                <li>Detección y medición de agregados y puncta, célula por célula</li>
-                <li>Colocalización entre canales y análisis de compartimentos</li>
-                <li>Agregación célula → campo → réplica biológica</li>
-                <li>Comparaciones no paramétricas de Mann-Whitney, con corrección de Benjamini-Hochberg</li>
-                <li>Validación contra conteo manual ciego antes de publicar</li>
                 </ul>
               </div>
             </div>
@@ -2276,40 +2252,11 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           </div>
         </div>
       </article>
-      <article class="lrow fac-row rv" id="fac-apoyo">
-        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="fac-apoyop">
-          <span class="fac-n mono">07</span>
-          <i class="ph-thin ph-snowflake" aria-hidden="true"></i>
-          <h3>Conservación y apoyo</h3>
-          <span class="lsum">Ultrafreezer, autoclave y agua ultrapura</span>
-          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
-        </div>
-        <div class="lpanel" id="fac-apoyop" inert>
-          <div class="lpanel-in">
-            <div class="fac-cuerpo">
-              <div class="fac-txt">
-                <p>Lo que sostiene a todo lo demás: la conservación de las muestras, la preparación del material y el agua con la que se hace cada solución. Sin esto, ninguno de los otros equipos sirve de nada.</p>
-              </div>
-              <div class="fac-specs">
-                <h4 class="mono">Equipamiento</h4>
-                <ul>
-                <li>Ultrafreezer Panasonic MDF-U55V, −85 °C</li>
-                <li>Freezers −20 °C y heladeras de laboratorio</li>
-                <li>Autoclave Panasonic MLS-3751L</li>
-                <li>Desionizador de agua Apema Osmoion 15-2-U</li>
-                <li>Termomezcladores y agitadores Eppendorf y DLab</li>
-                <li>Lavadora y estufa de secado de material</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
       <article class="fac-cta rv">
         <div>
           <i class="ph-thin ph-handshake"></i>
           <h3>Abiertos a otros grupos</h3>
-          <p>Investigadores, empresas y organismos pueden usar este equipamiento a través de nuestros servicios tecnológicos.</p>
+          <p>Investigadores, empresas y organismos pueden acceder a estas plataformas a través de nuestros servicios tecnológicos.</p>
         </div>
         <a class="btn btn-ghost" href="#servicios">Ver los servicios <i class="ph ph-arrow-right"></i></a>
       </article>
@@ -2410,7 +2357,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-ciencia-basica">
           <span class="lthumb"><img src="img/celulas-hela.jpg" alt="Células en cultivo con mitocondrias y citoesqueleto marcados" loading="lazy"></span>
           <span class="ln-n">01</span>
-          <h3>Bases moleculares de la neurodegeneración</h3>
+          <h3>Bases moleculares, celulares y genéticas de las enfermedades neurodegenerativas</h3>
           <span class="lsum">Cómo se enferman las neuronas y por qué se agregan las proteínas</span>
           <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
@@ -2427,7 +2374,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-terapeuticos">
           <span class="lthumb"><img src="img/cuerpo-lewy.jpg" alt="Cuerpo de Lewy teñido para alfa-sinucleína en una neurona" loading="lazy"></span>
           <span class="ln-n">02</span>
-          <h3>Desarrollos terapéuticos</h3>
+          <h3>Diseño y evaluación de estrategias terapéuticas con potencial neuroprotector</h3>
           <span class="lsum">Tetraciclinas rediseñadas para proteger neuronas</span>
           <span class="vt">VT</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
@@ -2444,7 +2391,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-diagnostico">
           <span class="lthumb"><img src="img/neurona-pc12.jpg" alt="Neurona PC-12 vista con microscopía de fluorescencia multicolor" loading="lazy"></span>
           <span class="ln-n">03</span>
-          <h3>Desarrollos diagnósticos</h3>
+          <h3>Desarrollo de métodos diagnósticos para enfermedades neurodegenerativas</h3>
           <span class="lsum">Detectar la enfermedad antes de los síntomas motores</span>
           <span class="vt">VT</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
@@ -2478,7 +2425,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-proteinas">
           <span class="lthumb"><img src="img/laboratorio-equipo.jpg" alt="Laboratorio de producción y purificación de proteínas" loading="lazy"></span>
           <span class="ln-n">04</span>
-          <h3>Desarrollo de la plataforma de proteínas recombinantes</h3>
+          <h3>Aplicaciones tecnológicas de agregados amiloides</h3>
           <span class="lsum">Proteínas para otros laboratorios, y biomateriales para la industria</span>
           <span class="vt">VT</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
         </div>
@@ -2493,7 +2440,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
     </div>
 
-    <p class="lin-more rv">Además, ofrecemos <a href="#servicios">servicios tecnológicos</a> con nuestro equipamiento y acompañamos startups como <a href="#startups">BrinDx</a>.</p>
   </div>
 </section>
 
@@ -2687,7 +2633,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Producción científica</h2>
-      <p class="lead rv">Tres décadas de trabajos del grupo, incluidos los anteriores a la creación del instituto en 2018. Por eso son más que los 30 artículos que contamos en las cifras del IMMCA. Los de acceso abierto se leen acá mismo; el resto, en la revista.</p>
+      <p class="lead rv">Todas las publicaciones del equipo, incluidas las anteriores a la creación del instituto. Las de acceso abierto se leen acá mismo.</p>
     </div>
     <div class="lib-tools rv">
       <label class="search" for="q"><i class="ph ph-magnifying-glass"></i><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar publicaciones</span><input id="q" type="search" placeholder="Buscar por título, autor o revista" autocomplete="off"></label>
@@ -2952,7 +2898,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
             <div class="svc-cuerpo">
               <p class="svc-real"><span class="mono">Nombre del servicio</span>Evaluación de potenciales moduladores de la agregación de proteínas asociadas a enfermedades neurodegenerativas</p>
               <p>Diseñamos ensayos in vitro para caracterizar candidatos y comparar formulaciones. Según el objetivo del proyecto, evaluamos su actividad antioxidante y antiinflamatoria, su efecto sobre el estrés lisosomal y sobre la agregación de alfa-sinucleína y tau, así como sobre la propagación intercelular de agregados.</p>
-              <p class="svc-sub"><b>Aplicaciones en investigación diagnóstica</b>Detección y amplificación de proteínas agregadas con capacidad de propagar la patología entre células, en muestras biológicas. Se aplica en investigación, en la selección de compuestos y en la evaluación de estrategias diagnósticas, no como análisis clínico.</p>
               <p class="svc-who"><b>Para quién</b>Empresas farmacéuticas, biotecnológicas y de ingredientes, y grupos de investigación que quieran caracterizar un candidato, comparar formulaciones o seleccionar cuáles llevar a la siguiente etapa.</p>
               <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Frutales y frescos · Citrícola</span>
               <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/estudio-de-agregacion-proteica-y-evaluacion-de-muestras-asociadas-a-enfermedades-neurodegenerativas/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
@@ -2990,8 +2935,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <div class="lpanel-in">
             <div class="svc-cuerpo">
               <p class="svc-real"><span class="mono">Nombre del servicio</span>Obtención y análisis de imágenes por microscopía confocal</p>
-              <p>Obtenemos imágenes de fluorescencia de alta resolución con un Zeiss LSM&nbsp;800, con láseres de 405, 488, 561 y 640&nbsp;nm. Localizamos marcadores, analizamos su colocalización y la morfología de la muestra, y generamos reconstrucciones en tres dimensiones. Trabajamos con células, tejidos y materiales compatibles con fluorescencia.</p>
-              <p>Contamos además con software especializado para el análisis y la cuantificación de las imágenes, de modo que el servicio puede entregar tanto las imágenes como los datos medidos sobre ellas.</p>
+              <p>Obtenemos imágenes de fluorescencia de alta resolución con un Zeiss LSM&nbsp;800, con láseres de 405, 488, 561 y 640&nbsp;nm, incluidas series en profundidad para reconstrucciones en tres dimensiones. Trabajamos con células, tejidos y materiales compatibles con fluorescencia, y entregamos las imágenes en formato original para que puedas analizarlas.</p>
               <p class="svc-who"><b>Para quién</b>Empresas, instituciones y grupos de investigación que necesiten visualizar estructuras, moléculas o procesos en células, tejidos u otras muestras compatibles con fluorescencia.</p>
               <span class="svc-tags mono"><b>PLASENOA</b>Salud y cosmética · Alimentos · Ambiente · Agroindustria</span>
               <span class="svc-links"><a class="svc-ask" href="#consulta-servicios">Consultar por este servicio <i class="ph ph-arrow-right"></i></a><a class="svc-doc" href="https://plasenoa.ar/product/obtencion-y-analisis-de-imagenes-por-microscopia-confocal/" target="_blank" rel="noopener">Ficha técnica <i class="ph ph-arrow-up-right"></i></a></span>
