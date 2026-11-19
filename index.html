@@ -383,18 +383,18 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 
 /* ---------- timeline horizontal ---------- */
 .tl{position:relative;overflow:hidden;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.tl-pin{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 56px}
-.tl-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:56px}
+.tl-pin{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:clamp(76px,9vh,96px) 0 clamp(32px,5vh,56px)}
+.tl-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(26px,4.5vh,56px)}
 .tl-head h2{max-width:14ch}
 .tl-progress{width:220px;height:2px;background:var(--line);border-radius:2px;overflow:hidden;flex-shrink:0}
 .tl-progress i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
 .tl-track{display:flex;gap:24px;padding-left:var(--gutter);padding-right:30vw;will-change:transform}
-.tl-item{flex:0 0 clamp(290px,30vw,420px);border-top:1px solid var(--line-2);padding-top:28px;position:relative}
+.tl-item{flex:0 0 clamp(290px,30vw,420px);border-top:1px solid var(--line-2);padding-top:24px;position:relative}
 .tl-item::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--bg-2);border:1px solid var(--accent)}
 .tl-item.key::before{background:var(--accent);box-shadow:0 0 0 6px var(--accent-soft)}
-.tl-year{font-size:clamp(44px,4.4vw,64px);font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--text)}
-.tl-item h3{margin:18px 0 10px;font-size:22px}
-.tl-item p{color:var(--muted);font-size:16px;max-width:36ch}
+.tl-year{font-size:clamp(40px,4vw,60px);font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--text)}
+.tl-item h3{margin:14px 0 8px;font-size:21px}
+.tl-item p{color:var(--muted);font-size:15.5px;line-height:1.5;max-width:36ch}
 @media (max-width:768px){
   .tl-pin{min-height:0;padding:88px 0}
   .tl-head{flex-direction:column;align-items:start}
@@ -1024,6 +1024,13 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* ---------- equipo ---------- */
+.team-tit{color:var(--accent);font-size:12.5px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;margin:clamp(34px,4vw,52px) 0 10px}
+.av-ini{color:var(--accent);font-size:17px;letter-spacing:.06em;display:grid;place-items:center}
+.member .go-off{border-color:transparent}
+.rrhh .member h3{font-size:clamp(19px,1.9vw,25px)}
+.rrhh .member{padding:20px 8px}
+.rrhh .member:hover{padding-left:20px}
 .team{border-top:1px solid var(--line)}
 .member{display:grid;grid-template-columns:auto 1.3fr 1fr 1fr auto;gap:24px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
 .member::before{content:"";position:absolute;inset:0;background:var(--accent-soft);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
@@ -1649,7 +1656,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .hab-nota i{color:var(--accent);font-size:20px;flex-shrink:0;margin-top:1px}
 @media (max-width:900px){.hab-grid{grid-template-columns:1fr}}
 
-.tl-img{margin:-10px 0 20px;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+.tl-img{margin:-10px 0 16px;border-radius:14px;overflow:hidden;aspect-ratio:16/10;
+  max-height:clamp(112px,17vh,190px);background:var(--bg-2)}
 .tl-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .tl-item:hover .tl-img img{transform:scale(1.04)}
 .tl-item:has(.tl-img){padding-top:22px}
@@ -2529,25 +2537,19 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div><b>6</b><span>Becarios y doctorandos</span></div>
         <div><b>2</b><span>Personal de apoyo</span></div>
       </div>
-      <div class="rrhh-lists">
-        <div class="rv">
-          <h3 class="mono">Becarios y doctorandos</h3>
-          <ul class="rpers">
-            <li><span class="rav rav-ini" aria-hidden="true">MT</span><a href="https://bicyt.conicet.gov.ar/fichas/persona/339437" target="_blank" rel="noopener">María del Milagro Terán</a><span class="rrol">Beca posdoctoral, temas estratégicos</span></li>
-            <li><span class="rav"><img src="img/equipo/ana-valentina-budeguer.webp" alt="Retrato ilustrado de Ana Valentina Budeguer Isa" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/457388" target="_blank" rel="noopener">Ana Valentina Budeguer Isa</a><span class="rrol">Beca doctoral, temas estratégicos</span></li>
-            <li><span class="rav"><img src="img/equipo/maria-laura-guayan.webp" alt="Retrato ilustrado de María Laura Guayán Alperín" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/457527" target="_blank" rel="noopener">María Laura Guayán Alperín</a><span class="rrol">Beca doctoral, temas estratégicos</span></li>
-            <li><span class="rav"><img src="img/equipo/alvaro-luna-mercado.webp" alt="Retrato ilustrado de Álvaro Luna Mercado" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/469804" target="_blank" rel="noopener">Álvaro Luna Mercado</a><span class="rrol">Beca doctoral</span></li>
-            <li><span class="rav"><img src="img/equipo/estefania-soliz-santander.webp" alt="Retrato ilustrado de Estefanía Soliz Santander" loading="lazy" width="200" height="200"></span><span class="rnom">Estefanía Soliz Santander</span><span class="rrol">Terminando su tesis doctoral</span></li>
-            <li><span class="rav"><img src="img/equipo/agustin-stagnetto.webp" alt="Retrato ilustrado de Agustín Stagnetto" loading="lazy" width="200" height="200"></span><span class="rnom">Agustín Stagnetto</span><span class="rrol">Terminando su tesis doctoral</span></li>
-          </ul>
-        </div>
-        <div class="rv">
-          <h3 class="mono">Personal de apoyo</h3>
-          <ul class="rpers">
-            <li><span class="rav"><img src="img/equipo/luciana-maria-sari.webp" alt="Retrato ilustrado de Luciana María Sari" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/348975" target="_blank" rel="noopener">Luciana María Sari</a><span class="rrol">Profesional adjunta</span></li>
-            <li><span class="rav"><img src="img/equipo/sabrina-sequeira.webp" alt="Retrato ilustrado de Sabrina Sequeira" loading="lazy" width="200" height="200"></span><a href="https://bicyt.conicet.gov.ar/fichas/persona/340168" target="_blank" rel="noopener">Sabrina Sequeira</a><span class="rrol">Profesional asistente</span></li>
-          </ul>
-        </div>
+      <h3 class="team-tit mono rv">Becarios y doctorandos</h3>
+      <div class="team">
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/339437" target="_blank" rel="noopener" aria-label="María del Milagro Terán, ficha en CONICET"><span class="av av-ini" aria-hidden="true">MT</span><h3>María del Milagro Terán</h3><span class="role">Beca posdoctoral</span><span class="deg">Temas estratégicos</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/457388" target="_blank" rel="noopener" aria-label="Ana Valentina Budeguer Isa, ficha en CONICET"><span class="av"><img src="img/equipo/ana-valentina-budeguer.webp" alt="Retrato ilustrado de Ana Valentina Budeguer Isa" loading="lazy" width="440" height="440"></span><h3>Ana Valentina Budeguer Isa</h3><span class="role">Beca doctoral</span><span class="deg">Temas estratégicos</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/457527" target="_blank" rel="noopener" aria-label="María Laura Guayán Alperín, ficha en CONICET"><span class="av"><img src="img/equipo/maria-laura-guayan.webp" alt="Retrato ilustrado de María Laura Guayán Alperín" loading="lazy" width="440" height="440"></span><h3>María Laura Guayán Alperín</h3><span class="role">Beca doctoral</span><span class="deg">Temas estratégicos</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/469804" target="_blank" rel="noopener" aria-label="Álvaro Luna Mercado, ficha en CONICET"><span class="av"><img src="img/equipo/alvaro-luna-mercado.webp" alt="Retrato ilustrado de Álvaro Luna Mercado" loading="lazy" width="440" height="440"></span><h3>Álvaro Luna Mercado</h3><span class="role">Beca doctoral</span><span class="deg">CONICET</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <div class="member rv"><span class="av"><img src="img/equipo/estefania-soliz-santander.webp" alt="Retrato ilustrado de Estefanía Soliz Santander" loading="lazy" width="440" height="440"></span><h3>Estefanía Soliz Santander</h3><span class="role">Doctoranda</span><span class="deg">Terminando su tesis</span><span class="go go-off" aria-hidden="true"></span></div>
+      <div class="member rv"><span class="av"><img src="img/equipo/agustin-stagnetto.webp" alt="Retrato ilustrado de Agustín Stagnetto" loading="lazy" width="440" height="440"></span><h3>Agustín Stagnetto</h3><span class="role">Doctorando</span><span class="deg">Terminando su tesis</span><span class="go go-off" aria-hidden="true"></span></div>
+      </div>
+      <h3 class="team-tit mono rv">Personal de apoyo</h3>
+      <div class="team">
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/348975" target="_blank" rel="noopener" aria-label="Luciana María Sari, ficha en CONICET"><span class="av"><img src="img/equipo/luciana-maria-sari.webp" alt="Retrato ilustrado de Luciana María Sari" loading="lazy" width="440" height="440"></span><h3>Luciana María Sari</h3><span class="role">Profesional adjunta</span><span class="deg">Personal de apoyo</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
+      <a class="member rv" href="https://bicyt.conicet.gov.ar/fichas/persona/340168" target="_blank" rel="noopener" aria-label="Sabrina Sequeira, ficha en CONICET"><span class="av"><img src="img/equipo/sabrina-sequeira.webp" alt="Retrato ilustrado de Sabrina Sequeira" loading="lazy" width="440" height="440"></span><h3>Sabrina Sequeira</h3><span class="role">Profesional asistente</span><span class="deg">Personal de apoyo</span><span class="go" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span></a>
       </div>
       <p class="src mono rv">Fuente: ficha oficial del IMMCA en <a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">CONICET (BICyT)</a>, más dos doctorandos que están terminando su tesis en el instituto. A esto se suman docentes de la UNT, tesistas y estudiantes de grado.</p>
     </div>
@@ -3345,8 +3347,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <li class="alum-i rv">
           <span class="alum-foto alum-ini" aria-hidden="true">LM</span>
           <h3>Luciana Medina</h3>
-          <p class="alum-dest">Medpace</p>
-          <p class="alum-rol">De la investigación básica a la clínica: trabaja en una empresa internacional que gestiona ensayos clínicos para la industria farmacéutica y biotecnológica.</p>
+          <p class="alum-dest">Medpace, investigación clínica</p>
+          <p class="alum-rol">Regulatory Submissions Coordinator&nbsp;III. Prepara la documentación con la que los ensayos clínicos se presentan ante las agencias regulatorias. Entró en 2021 y ya recorrió los cuatro niveles del puesto.</p>
           <span class="alum-sede mono">Madrid, España</span>
         </li>
     </ul>
@@ -3380,6 +3382,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p><p class="gr-orden">A todos les debemos un montón, así que la lista cambia de orden cada vez que se abre la página.</p>
       </div>
       <ul class="gr-nombres">
+          <li>Dr. Luis Medina Ruiz</li>
           <li>Rita Raisman-Vozari</li>
           <li>Clarisa Salado</li>
           <li>Claude Burgio</li>
