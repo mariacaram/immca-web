@@ -550,6 +550,12 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 /* más allá del laboratorio */
 .vida{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .vida-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:44px}
+.vida-fotos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.vida-fotos figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.vida-fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.vida-fotos figure:hover img{transform:scale(1.04)}
+.vida-pie{grid-column:1/-1;color:var(--dim);font-size:12px}
+@media (max-width:760px){.vida-fotos{grid-template-columns:1fr}}
 .vida-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
 .vida-grid .ig-embed iframe{height:560px}
 .vida .social{display:inline-flex}
@@ -2202,6 +2208,11 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <h2 class="rv">Más allá del laboratorio</h2>
       </div>
       <p class="lead rv">Además de hacer ciencia, nos divertimos. Somos competitivos, un poco locos y no le tenemos miedo al ridículo: festejos de fin de año, desafíos, bailes y mucho humor. Así somos dentro y fuera del laboratorio.</p>
+    </div>
+    <div class="vida-fotos">
+      <figure class="rv"><img src="img/vida/mundial-camisetas.jpg" alt="Integrantes del instituto con la camiseta argentina, en la sala de reuniones" loading="lazy"></figure>
+      <figure class="rv"><img src="img/vida/mundial-risas.jpg" alt="Risas en la sala mientras se proyecta el partido" loading="lazy"></figure>
+      <p class="vida-pie mono rv">El día de partido, la sala de reuniones se convierte en tribuna.</p>
     </div>
     <div class="vida-grid">
       <figure class="ig-embed rv"><a class="ig-card" href="https://www.instagram.com/reel/DSdodqJjZIq/" target="_blank" rel="noopener" title="Reel del IMMCA: equipo, dentro y fuera del laboratorio"><img src="img/ig/DSdodqJjZIq.jpg" alt="" loading="lazy"><span class="ig-play"><i class="ph-fill ph-play"></i></span><span class="ig-tag"><i class="ph ph-instagram-logo"></i>Ver en Instagram <i class="ph ph-arrow-up-right"></i></span></a></figure>
