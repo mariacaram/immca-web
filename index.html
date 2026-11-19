@@ -242,6 +242,12 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .stats-intro h2{font-size:clamp(30px,3.6vw,52px)}
 @media (max-width:900px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){padding-left:0;border-left:0}.stat{border-top:1px solid var(--line)}}
 
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cform-estado{margin-top:4px;padding:14px 16px;border-radius:12px;font-size:15px;line-height:1.45}
+.cform-estado.ok{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-bright)}
+.cform-estado.bad{background:#fdf0f0;color:#9b2226;border:1px solid #e9bcbc}
+.cform-estado a{text-decoration:underline;text-underline-offset:3px;color:inherit}
+
 /* ---------- manifiesto ---------- */
 .man-head{padding-top:6px;border-top:1px solid var(--line);margin-bottom:clamp(22px,2.4vw,34px)}
 .manifesto{font-size:clamp(20px,2.15vw,32px);font-weight:500;letter-spacing:-.016em;line-height:1.42;max-width:30ch;max-width:min(92%,880px)}
@@ -2992,12 +2998,14 @@ res = compare_all_to_control(
     <div>
       <h2 class="rv">Investiguemos <span class="accent">juntos</span>.</h2>
       <p class="lead rv" style="margin-top:28px">Colaboraciones científicas, servicios, becas o prensa: escribinos o acercate al instituto.</p>
-      <form class="cform rv" id="cform" data-email="immca@unt.edu.ar" novalidate hidden>
+      <form class="cform rv" id="cform" data-email="immca@unt.edu.ar" data-key="88cb3c13-77a2-434a-91d4-72ddf33ab50f" novalidate hidden>
         <div class="field"><label for="cf-nombre">Nombre y apellido</label><input id="cf-nombre" name="nombre" autocomplete="name" required><small class="err">Escribí tu nombre.</small></div>
         <div class="field"><label for="cf-mail">Correo electrónico</label><input id="cf-mail" name="mail" type="email" autocomplete="email" required><small class="err">Revisá el correo: falta algo o tiene un error.</small></div>
         <div class="field"><label for="cf-motivo">Motivo</label><select id="cf-motivo" name="motivo"><option>Colaboración científica</option><option>Servicios</option><option>Becas y doctorado</option><option>Prensa</option><option>Otro</option></select></div>
         <div class="field full"><label for="cf-msg">Mensaje</label><textarea id="cf-msg" name="mensaje" rows="5" required></textarea><small class="err">Contanos en qué podemos ayudarte.</small></div>
-        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Preparar correo <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Se abre tu correo con el mensaje listo para enviar.</p></div>
+        <label class="hp"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">No completar</label>
+        <div class="full cform-foot"><button class="btn btn-primary" type="submit">Enviar mensaje <i class="ph ph-paper-plane-tilt"></i></button><p class="hint">Te respondemos al correo que nos dejes.</p></div>
+        <p class="cform-estado full" id="cf-estado" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
     <div class="contact-card rv">
@@ -3399,15 +3407,52 @@ if (!reduce) gsap.from('.countries li', {opacity: 0, scale: .85, duration: .6, s
 const cf = $('#cform');
 if (cf.dataset.email) {
   cf.hidden = false;
-  cf.addEventListener('submit', e => {
+  cf.addEventListener('submit', async e => {
     e.preventDefault();
     let ok = true;
     [['cf-nombre', v => v.trim().length > 1], ['cf-mail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)], ['cf-msg', v => v.trim().length > 4]].forEach(([id, test]) => {
       const f = $('#' + id), good = test(f.value); f.closest('.field').classList.toggle('bad', !good); f.setAttribute('aria-invalid', !good); if (!good && ok) { f.focus(); ok = false; }
     });
     if (!ok) return;
-    const body = `${$('#cf-msg').value}\n\n${$('#cf-nombre').value}\n${$('#cf-mail').value}`;
-    location.href = `mailto:${cf.dataset.email}?subject=${encodeURIComponent('[Web IMMCA] ' + $('#cf-motivo').value)}&body=${encodeURIComponent(body)}`;
+
+    const btn = cf.querySelector('button[type="submit"]');
+    const estado = $('#cf-estado');
+    const etiqueta = btn.innerHTML;
+    const motivo = $('#cf-motivo').value;
+    btn.disabled = true;
+    btn.innerHTML = 'Enviando…';
+    estado.hidden = true;
+    estado.className = 'cform-estado full';
+
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', Accept: 'application/json'},
+        body: JSON.stringify({
+          access_key: cf.dataset.key,
+          subject: '[Web IMMCA] ' + motivo,
+          from_name: 'Web del IMMCA',
+          name: $('#cf-nombre').value.trim(),
+          email: $('#cf-mail').value.trim(),
+          motivo,
+          message: $('#cf-msg').value.trim(),
+          botcheck: cf.querySelector('[name="botcheck"]').checked
+        })
+      });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok || !d.success) throw new Error(d.message || 'no se pudo enviar');
+      cf.reset();
+      estado.textContent = 'Listo, recibimos tu mensaje. Te respondemos al correo que nos dejaste.';
+      estado.classList.add('ok');
+    } catch (err) {
+      estado.innerHTML = 'No pudimos enviar el mensaje. Escribinos directamente a ' +
+        `<a href="mailto:${cf.dataset.email}">${cf.dataset.email}</a>.`;
+      estado.classList.add('bad');
+    } finally {
+      estado.hidden = false;
+      btn.disabled = false;
+      btn.innerHTML = etiqueta;
+    }
   });
 }
 // los botones con data-motivo abren el formulario de contacto con ese motivo elegido
