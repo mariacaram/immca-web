@@ -1675,6 +1675,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .gr-nombres li{padding:9px 16px;border-radius:999px;font-size:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,transform .3s var(--ease)}
 .gr-nombres li:hover{background:rgba(255,255,255,.24);transform:translateY(-2px)}
+.gr-nombres li.gr-fija{background:rgba(255,255,255,.92);color:#0a2540;font-weight:600;border-color:rgba(255,255,255,.92)}
+.gr-nombres li.gr-fija:hover{background:#fff;transform:translateY(-2px)}
 @media (max-width:980px){.gr-logos{grid-template-columns:repeat(3,1fr)}.gr-gente{grid-template-columns:1fr}}
 @media (max-width:620px){.gr-logos{grid-template-columns:repeat(2,1fr)}.gr-logo{min-height:112px;padding:24px 18px}}
 
@@ -3683,9 +3685,13 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     <div class="gr-gente rv">
       <div class="gr-gente-txt">
         <h3>Y las personas</h3>
-        <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p><p class="gr-orden">A todos les debemos un montón, así que la lista cambia de orden cada vez que se abre la página.</p>
+        <p>Además de las autoridades de nuestras tres instituciones, queremos agradecer a quienes siempre están disponibles, sin importar la hora ni el día.</p><p class="gr-orden">A todos les debemos un montón, así que el resto de la lista cambia de orden cada vez que se abre la página.</p>
       </div>
       <ul class="gr-nombres">
+          <li class="gr-fija" data-fija>Mónica Tirado</li>
+          <li>Gabriela Apfelbau</li>
+          <li>Mateo Martínez</li>
+          <li>Roxana Toledo</li>
           <li>Dr. Luis Medina Ruiz</li>
           <li>Rita Raisman-Vozari</li>
           <li>Clarisa Salado</li>
@@ -4362,9 +4368,10 @@ sform.addEventListener('submit', async e => {
 /* ============ Agradecimientos: el orden de los nombres cambia en cada visita ============ */
 const nombres = $('.gr-nombres');
 if (nombres) {
-  const items = [...nombres.children];
+  const fijas = [...nombres.children].filter(li => li.hasAttribute('data-fija'));
+  const items = [...nombres.children].filter(li => !li.hasAttribute('data-fija'));
   for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
-  nombres.append(...items);
+  nombres.append(...fijas, ...items);
 }
 
 /* ============ Agradecimientos: si falta el logo, se muestra el nombre ============ */
