@@ -150,7 +150,7 @@ body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opa
 .mmenu .msub a{font-size:17px;font-weight:500;color:var(--muted);border:0;padding:2px 0}
 @media (max-width:1366px){.nav-links{gap:0}.nav-links>a,.dd>a{padding:8px 9px;font-size:14px}.brand-sub{display:none}}
 @media (max-width:1280px){.nav .wrap{gap:22px}.nav-links>a,.dd>a{padding:7px 6px;font-size:13px}.dd>a i{display:none}.nav-cta{padding:0 14px;font-size:14px;height:38px}.brand-word{font-size:21px}.brand{gap:10px}.brand-iso{width:28px}}
-@media (min-width:1181px){.nav-links>a,.dd>a{font-size:clamp(15px,.98vw,15px);padding:7px clamp(5px,.55vw,11px)}.brand-sub{display:none}}
+@media (min-width:1181px){.nav-links>a,.dd>a{font-size:clamp(13.3px,.98vw,15px);padding:7px clamp(4px,.5vw,11px)}.brand-sub{display:none}}
 @media (min-width:1700px){.brand-sub{display:block}}
 @media (max-width:1180px){.nav-links>a,.dd>a{padding:7px 4px;font-size:12.5px}.nav .wrap{gap:18px}.nav-cta{padding:0 12px;font-size:13.5px}}
 .nav-links a:hover,.nav-links a.on{color:var(--text);background:rgba(17,17,17,.05)}
@@ -1904,7 +1904,13 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
           <a href="#unite">Join IMMCA</a>
         </div>
       </div>
-      <a href="#biblioteca">Scientific output</a><a href="#congresos">International conferences</a>
+      <div class="dd">
+        <a href="#biblioteca" aria-haspopup="true">Scientific output<i class="ph ph-caret-down"></i></a>
+        <div class="dd-menu">
+          <a href="#biblioteca">Articles</a>
+          <a href="#congresos">International conferences</a>
+        </div>
+      </div>
       <div class="dd">
         <a href="#produccion" aria-haspopup="true">Innovation<i class="ph ph-caret-down"></i></a>
         <div class="dd-menu">
@@ -1937,7 +1943,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     <details class="mm-g"><summary><span class="mono">01</span>Who we are<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">The institute</a><a href="#historia">History</a><a href="#proyecto">Institutional project</a><a href="#infraestructura">Platforms</a><a href="#equipo">Leadership</a><a href="#habilitaciones">Authorisations</a><a href="#agradecimientos">Acknowledgements</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Research lines<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Our team<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Members</a><a href="#alumni">Alumni</a><a href="#vida">Beyond the laboratory</a><a href="#unite">Join IMMCA</a></div></details>
-    <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Scientific output<i class="ph ph-arrow-right"></i></a>
+    <details class="mm-g"><summary><span class="mono">04</span>Scientific output<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#biblioteca">Articles</a><a href="#congresos">International conferences</a></div></details>
     <details class="mm-g"><summary><span class="mono">05</span>Innovation<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#produccion">Patents</a><a href="#pegasus">The Pegasus pathway</a><a href="#startups">Startups</a></div></details>
     <a class="mm-l" href="#servicios"><span class="mono">06</span>Technology services<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">07</span>Outreach<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#extension">Outreach at the IMMCA</a><a href="#sociedad">Reaching out to patients and families</a><a href="#divulgacion">Science outreach</a></div></details>
