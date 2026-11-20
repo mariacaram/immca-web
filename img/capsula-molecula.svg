@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" role="img" aria-label="Una cápsula abierta en dos mitades con una molécula de bolas y varillas que sale del hueco">
+  <defs>
+    <linearGradient id="cm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EDF3F8"/>
+      <stop offset="1" stop-color="#D9E4EC"/>
+    </linearGradient>
+    <linearGradient id="cm-azul" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#62C9EF"/>
+      <stop offset=".5" stop-color="#27ADE3"/>
+      <stop offset="1" stop-color="#0369AE"/>
+    </linearGradient>
+    <linearGradient id="cm-rojo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F79C92"/>
+      <stop offset=".5" stop-color="#E8604C"/>
+      <stop offset="1" stop-color="#BB3627"/>
+    </linearGradient>
+    <linearGradient id="cm-brillo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cm-atomo" cx=".33" cy=".27" r=".88">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".32" stop-color="#D6DDE3"/>
+      <stop offset=".7" stop-color="#939EA9"/>
+      <stop offset="1" stop-color="#56626E"/>
+    </radialGradient>
+    <filter id="cm-sombra" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#243442" flood-opacity=".3"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#cm-bg)"/>
+
+  <!-- las dos mitades, separadas y apenas inclinadas -->
+  <g transform="rotate(-7 300 200)" filter="url(#cm-sombra)">
+    <path d="M237 130 H105 a70 70 0 0 0 0 140 h132 Z" fill="url(#cm-azul)"/>
+    <path d="M224 145 H118 a55 55 0 0 0 0 34 h106 Z" fill="url(#cm-brillo)"/>
+    <ellipse cx="237" cy="200" rx="15" ry="70" fill="#06537F" opacity=".8"/>
+    <ellipse cx="237" cy="200" rx="8" ry="55" fill="#02374F" opacity=".5"/>
+
+    <path d="M363 130 H495 a70 70 0 0 1 0 140 H363 Z" fill="url(#cm-rojo)"/>
+    <path d="M376 145 h106 a55 55 0 0 1 0 34 H376 Z" fill="url(#cm-brillo)"/>
+    <ellipse cx="363" cy="200" rx="15" ry="70" fill="#9A2A1D" opacity=".75"/>
+    <ellipse cx="363" cy="200" rx="8" ry="55" fill="#6E1B11" opacity=".45"/>
+  </g>
+
+  <!-- la molécula sale del hueco -->
+  <g stroke="#5A6773" stroke-width="10" stroke-linecap="round" fill="none" opacity=".93">
+    <path d="M300 205 232 152M300 205 368 168M300 205 362 268M300 205 240 262M300 205 312 100"/>
+    <path d="M232 152 192 104M368 168 426 122M362 268 420 318M240 262 188 312"/>
+  </g>
+  <g fill="url(#cm-atomo)" filter="url(#cm-sombra)">
+    <circle cx="300" cy="205" r="31"/>
+    <circle cx="232" cy="152" r="21"/>
+    <circle cx="368" cy="168" r="24"/>
+    <circle cx="362" cy="268" r="22"/>
+    <circle cx="240" cy="262" r="19"/>
+    <circle cx="312" cy="100" r="17"/>
+    <circle cx="192" cy="104" r="15"/>
+    <circle cx="426" cy="122" r="16"/>
+    <circle cx="420" cy="318" r="15"/>
+    <circle cx="188" cy="312" r="14"/>
+  </g>
+</svg>
