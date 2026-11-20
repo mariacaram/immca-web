@@ -642,16 +642,12 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
   transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
 .lhead:hover::before{transform:scaleY(1)}
 .lhead:hover{padding-left:20px}
-.lthumb{width:92px;height:66px;border-radius:12px;overflow:hidden;background:var(--bg-2)}
+.lthumb{width:92px;height:66px;border-radius:12px;overflow:hidden;background:var(--bg-2);box-shadow:inset 0 0 0 1px rgba(16,42,67,.07)}
 .lthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
-.lthumb.marca{background:#fff;border:1px solid var(--line);display:grid;place-items:center;padding:7px 9px}
-.lthumb.marca img{width:100%;height:auto;max-height:100%;object-fit:contain;transition:transform .8s var(--ease)}
-.lthumb.ico{display:grid;place-items:center;color:#fff;background:linear-gradient(140deg,var(--accent) 0%,var(--celeste) 100%)}
-.lthumb.ico i{font-size:30px;transition:transform .8s var(--ease)}
-.lhead:hover .lthumb.ico i{transform:scale(1.12)}
 .lhead:hover .lthumb img{transform:scale(1.07)}
 .ln-n{font-size:40px;font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--accent)}
 .lhead .ln-n{font-size:30px}
+.ln-h{font-size:clamp(17px,1.5vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--text);margin:6px 0 12px;max-width:52ch}
 .ln-marca{display:inline-flex;align-items:center;gap:16px;margin:2px 0 20px;padding:13px 20px;border:1px solid var(--line-2);border-radius:12px;background:var(--bg);color:var(--dim);transition:border-color .4s var(--ease),background .4s var(--ease),color .4s var(--ease)}
 .ln-marca img{width:clamp(180px,20vw,230px);height:auto;display:block}
 .ln-marca i{font-size:17px}
@@ -2450,7 +2446,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <div class="lin">
       <article class="lrow rv" id="ciencia-basica">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-ciencia-basica">
-          <span class="lthumb"><img src="img/celulas-hela.jpg" alt="Células en cultivo con mitocondrias y citoesqueleto marcados" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/01-neurona.svg" alt="Una neurona con agregados de proteína en el cuerpo celular" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">01</span>
           <h3>Bases moleculares, celulares y genéticas de las enfermedades neurodegenerativas</h3>
           <span class="lsum">Cómo se enferman las neuronas y por qué se agregan las proteínas</span>
@@ -2467,7 +2463,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="terapeuticos">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-terapeuticos">
-          <span class="lthumb"><img src="img/capsula-molecula.svg" alt="Ilustración de una cápsula abierta con una molécula entre sus dos mitades" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/02-capsula.svg" alt="Una cápsula abierta en dos mitades con una molécula entre ellas" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">02</span>
           <h3>Diseño y evaluación de estrategias terapéuticas con potencial neuroprotector</h3>
           <span class="lsum">Tetraciclinas rediseñadas para proteger neuronas</span>
@@ -2484,7 +2480,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="diagnostico">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-diagnostico">
-          <span class="lthumb"><img src="img/tubos-diagnostico.svg" alt="Ilustración de una gradilla con tubos de muestra y un tubo con código de barras" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/03-tubos.svg" alt="Tres tubos de muestra con tapas de colores" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">03</span>
           <h3>Desarrollo de métodos diagnósticos para enfermedades neurodegenerativas</h3>
           <span class="lsum">Detectar la enfermedad antes de los síntomas motores</span>
@@ -2518,7 +2514,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="proteinas">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-proteinas">
-          <span class="lthumb"><img src="img/laboratorio-equipo.jpg" alt="Laboratorio de producción y purificación de proteínas" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/04-fibra.svg" alt="Una fibra amiloide con enzimas unidas a lo largo" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">04</span>
           <h3>Aplicaciones tecnológicas de agregados amiloides</h3>
           <span class="lsum">Proteínas para otros laboratorios, y biomateriales para la industria</span>
@@ -2535,7 +2531,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="genomica">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-genomica">
-          <span class="lthumb marca"><img src="img/socios/gp2.svg" alt="Global Parkinson's Genetics Program" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/05-adn.svg" alt="Una doble hélice de ADN" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">05</span>
           <h3>Genómica del Parkinson en poblaciones latinoamericanas</h3>
           <span class="lsum">La genética descrita en Europa no alcanza para explicar lo que pasa acá</span>
@@ -2545,7 +2541,8 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <div class="lpanel-in">
             <p>Casi todo lo que se sabe sobre la genética del Parkinson se descubrió en poblaciones de ascendencia europea. Latinoamérica tiene otra historia: una mezcla de ancestría indígena, europea y africana en proporciones que cambian de región en región. Las variantes que allá explican la enfermedad acá pueden ser raras o significar otra cosa. La mutación G2019S del gen <i>LRRK2</i>, la causa genética conocida más frecuente en varias poblaciones, es poco común entre los latinoamericanos con menor ascendencia europea.</p>
             <p>César Ávila conduce el nodo del noroeste argentino. Desde 2023 organiza, junto a neurólogos del Hospital Padilla, el reclutamiento de pacientes y la caracterización genética de la población con Parkinson de la región. Ese trabajo entra en LARGE-PD, el consorcio latinoamericano de genética del Parkinson que coordina Ignacio Mata desde la Cleveland Clinic y que reúne instituciones de más de una docena de países.</p>
-            <p>LARGE-PD es, a su vez, el brazo latinoamericano del <b>Programa Global de Genética de Parkinson (GP2)</b>, que se propone <i>descubrir la arquitectura genética de la enfermedad de Parkinson</i>. Es un programa ambicioso: genotipar a más de 250.000 voluntarios en todo el mundo para comprender mejor esa arquitectura genética. GP2 es un programa de recursos de Aligning Science Across Parkinson's (ASAP), implementado por la Fundación Michael J. Fox, y pone los datos a disposición de la comunidad científica.</p>
+            <h4 class="ln-h">Descubriendo la arquitectura genética de la enfermedad de Parkinson</h4>
+            <p>LARGE-PD es, a su vez, el brazo latinoamericano del GP2. El Programa Global de Genética de Parkinson (GP2) es un ambicioso programa para genotipar a más de 250.000 voluntarios en todo el mundo para comprender mejor la arquitectura genética de la enfermedad de Parkinson (EP). GP2 es un programa de recursos de Aligning Science Across Parkinson's (ASAP) e implementado por la Fundación Michael J. Fox.</p>
             <a class="ln-marca" href="https://gp2.org/es/" target="_blank" rel="noopener" aria-label="Sitio del Programa Global de Genética de Parkinson"><img src="img/socios/gp2.svg" alt="Global Parkinson's Genetics Program" loading="lazy" width="200" height="40"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
             <p>El primer resultado del instituto dentro de GP2 ya está publicado: un trabajo en <i>Movement Disorders</i>, con Ávila como primer autor, que analizó el gen <i>DNAJC13</i> en más de 44.000 pacientes y 27.000 controles de ancestrías diversas y no encontró evidencia que sostenga su papel en la enfermedad. Descartar un gen candidato también es un resultado.</p>
             <ul class="ln-out"><li>Consorcio LARGE-PD</li><li>GP2</li><li>Hospital Padilla</li></ul>
@@ -2555,7 +2552,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="intestino-cerebro">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-intestino-cerebro">
-          <span class="lthumb"><img src="img/eje-intestino-cerebro.svg" alt="Ilustración del eje intestino-cerebro: un cerebro y un intestino unidos por flechas en los dos sentidos" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/06-eje.svg" alt="Un cerebro y un intestino unidos por flechas en los dos sentidos" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">06</span>
           <h3>El eje intestino-cerebro en la enfermedad de Parkinson</h3>
           <span class="lsum">Buscar la enfermedad en el apéndice, años antes del temblor</span>
@@ -2579,7 +2576,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       </article>
       <article class="lrow rv" id="citrus">
         <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-citrus">
-          <span class="lthumb"><img src="img/limon-rama.webp" alt="Limones maduros en la rama de un limonero" loading="lazy"></span>
+          <span class="lthumb"><img src="img/lineas/07-limon.svg" alt="Un limón con una hoja y los compuestos que se extraen de la cáscara" loading="lazy" width="200" height="144"></span>
           <span class="ln-n">07</span>
           <h3>Compuestos naturales de la cáscara de limón con potencial neuroprotector</h3>
           <span class="lsum">En convenio con la EEAOC, buscar moléculas útiles en el residuo de la industria citrícola</span>

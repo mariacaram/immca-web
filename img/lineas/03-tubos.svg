@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 144" width="200" height="144" role="img" aria-label="Tres tubos de muestra con tapas de colores">
+  <defs><linearGradient id="f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2F8FC"/><stop offset="1" stop-color="#DFEAF2"/></linearGradient><filter id="s" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#23353F" flood-opacity=".18"/></filter></defs>
+  <rect width="200" height="144" fill="url(#f)"/>
+  <g filter="url(#s)">
+    <rect x="60" y="34" width="23" height="14" rx="4" fill="#E25C48"/>
+    <path d="M60 48h23v45a11.5 11.5 0 0 1-23 0Z" fill="#FDFEFF"/>
+    <path d="M60 74h23v19a11.5 11.5 0 0 1-23 0Z" fill="#E25C48"/>
+    <path d="M64 54h5v38" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".6"/>
+    <rect x="89" y="34" width="23" height="14" rx="4" fill="#F6C445"/>
+    <path d="M89 48h23v45a11.5 11.5 0 0 1-23 0Z" fill="#FDFEFF"/>
+    <path d="M89 82h23v11a11.5 11.5 0 0 1-23 0Z" fill="#E25C48"/>
+    <path d="M93 54h5v38" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".6"/>
+    <rect x="118" y="34" width="23" height="14" rx="4" fill="#35B4E8"/>
+    <path d="M118 48h23v45a11.5 11.5 0 0 1-23 0Z" fill="#FDFEFF"/>
+    <path d="M118 70h23v23a11.5 11.5 0 0 1-23 0Z" fill="#E25C48"/>
+    <path d="M122 54h5v38" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".6"/>
+  </g>
+</svg>
