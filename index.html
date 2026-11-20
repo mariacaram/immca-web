@@ -1756,7 +1756,11 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .tl-item{display:flex;flex-direction:column}
 .tl-item:hover .tl-img img{transform:scale(1.04)}
 button.tl-img{display:block;width:100%;padding:0;border:0;background:var(--bg-2);cursor:zoom-in;position:relative}
-.tl-gal-n{position:absolute;right:9px;bottom:9px;display:inline-flex;align-items:center;gap:6px;
+button.tl-img::after{content:"";position:absolute;inset:0;background:rgba(10,32,50,.42);opacity:0;transition:opacity .4s var(--ease);pointer-events:none}
+button.tl-img::before{content:"";position:absolute;left:50%;top:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:rgba(255,255,255,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a2540' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6'/%3E%3C/svg%3E") center/21px no-repeat;opacity:0;transform:scale(.8);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none;z-index:2}
+button.tl-img:hover::after,button.tl-img:focus-visible::after{opacity:1}
+button.tl-img:hover::before,button.tl-img:focus-visible::before{opacity:1;transform:scale(1)}
+.tl-gal-n{z-index:3;position:absolute;right:9px;bottom:9px;display:inline-flex;align-items:center;gap:6px;
   font-family:"JetBrains Mono",monospace;font-size:12.5px;color:#fff;background:rgba(14,28,40,.72);
   backdrop-filter:blur(3px);border-radius:999px;padding:5px 11px;transition:background .3s}
 .tl-gal-n i{font-size:15px}
@@ -2095,6 +2099,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
         <p>Con becas Houssay, programas BEC.AR, ECOS-Sud, Egide y el convenio UNT-París, nuestros becarios hacen estancias en el ICM y recibimos investigadores como profesores invitados. Los subsidios nacionales e internacionales nos permiten equipar el laboratorio y alcanzar la masa crítica necesaria para pedir un instituto propio.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/fachada-equipo.jpg" alt="El equipo del instituto frente a la sede"></div>
         <div class="tl-year">2016</div>
         <h3>Primera solicitud de creación del IMMCA</h3>
         <p>El crecimiento del grupo de investigación en el INSIBIO y la necesidad de fortalecer la investigación biomédica en el norte argentino dieron origen a una propuesta conjunta del CONICET, la UNT y el SIPROSA. Las tres instituciones, con culturas organizacionales diferentes, compartían un objetivo: facilitar el trabajo cotidiano entre investigadores y equipos de salud. Para ello, propusieron trasladar el grupo desde el INSIBIO e instalar un laboratorio dentro del sistema público de salud.</p>
@@ -2110,7 +2115,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item">
         <button class="tl-img tl-gal" type="button" data-gal="mudanza" aria-label="Ver las diecinueve fotos de la mudanza y el armado">
           <img src="img/mudanza/m08.webp" alt="El grupo sentado entre cajas durante la mudanza al nuevo laboratorio">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>19</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>19 fotos</span>
         </button>
         <div class="tl-year">2018</div>
         <h3>La mudanza del INSIBIO y el armado del laboratorio</h3>
@@ -2121,7 +2126,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item key">
         <button class="tl-img tl-gal" type="button" data-gal="inauguracion" aria-label="Ver las cuatro fotos de la inauguración">
           <img src="img/inauguracion/i02.webp" alt="El equipo y los invitados reunidos el día de la inauguración del IMMCA">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>4</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>4 fotos</span>
         </button>
         <div class="tl-year">2018</div>
         <h3>Inauguración del IMMCA</h3>
@@ -2131,7 +2136,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item">
         <button class="tl-img tl-gal" type="button" data-gal="burgio" aria-label="Ver el video y las doce fotos del Ing. Claude Burgio en el instituto">
           <img src="img/inauguracion/burgio.webp" alt="El Ing. Claude Burgio hablando con micrófono durante el festejo de la inauguración">
-          <span class="tl-gal-n"><i class="ph ph-play-circle" aria-hidden="true"></i>Video + 12</span>
+          <span class="tl-gal-n"><i class="ph ph-play-circle" aria-hidden="true"></i>Video y 12 fotos</span>
         </button>
         <div class="tl-year">2018</div>
         <h3>El inversor que apostó antes de los resultados</h3>
@@ -2141,13 +2146,14 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item">
         <button class="tl-img tl-gal" type="button" data-gal="senado" aria-label="Ver las ocho fotos de la entrega en el Senado de la Nación">
           <img src="img/senado/s01.webp" alt="El equipo del IMMCA con la bandera de Tucumán en el Senado de la Nación">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>8</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>8 fotos</span>
         </button>
         <div class="tl-year">2018</div>
         <h3>Mención de Honor del Senado de la Nación</h3>
         <p>El Senado de la Nación distinguió nuestro trabajo con la Mención de Honor Domingo Faustino Sarmiento. Viajamos a Buenos Aires a recibirla, el mismo año en que se inauguraba el instituto.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/lab/inmunofluorescencia.webp" alt="Células en cultivo marcadas por inmunofluorescencia, en verde y azul"></div>
         <div class="tl-year">2018</div>
         <h3>Una pista molecular para diseñar nuevos fármacos</h3>
         <p>En un trabajo liderado por Sergio Socías y publicado en <i>Progress in Neurobiology</i>, identificamos un rasgo químico compartido por las tetraciclinas y otros compuestos capaces de interferir con la agregación de proteínas. Propusimos que ese rasgo podía explicar cómo estas moléculas interactúan con los agregados.</p>
@@ -2170,7 +2176,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item">
         <button class="tl-img tl-gal" type="button" data-gal="pandemia" aria-label="Ver las veintiuna fotos del instituto durante la pandemia">
           <img src="img/pandemia/elisa-portada.webp" alt="Placas de ELISA con los pocillos teñidos de azul, reveladas en el laboratorio">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>21</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>21 fotos</span>
         </button>
         <div class="tl-year rango">2020–2022</div>
         <h3>InmunoCoviTuc, un test desarrollado en Tucumán</h3>
@@ -2187,7 +2193,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item key">
         <button class="tl-img tl-gal" type="button" data-gal="diputados" aria-label="Ver las diecisiete fotos de la distinción en la Cámara de Diputados">
           <img src="img/diputados/portada.webp" alt="El equipo del IMMCA con las banderas de la UNT y del CONICET en la Cámara de Diputados">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>17</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>17 fotos</span>
         </button>
         <div class="tl-year">2022</div>
         <h3>Mención de Honor Juan Bautista Alberdi</h3>
@@ -2201,11 +2207,13 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
         <p>Organizamos, junto a neurólogos del Hospital Padilla, el reclutamiento de pacientes con Parkinson del noroeste argentino y su caracterización genética. Ese trabajo se integra a LARGE-PD, el consorcio latinoamericano de genética del Parkinson, y a través de él al Programa Global de Genética de Parkinson (GP2).</p>
       </article>
       <article class="tl-item key">
+        <div class="tl-img"><img src="img/lab/img_5018.webp" alt="Trabajo en la mesada del instituto"></div>
         <div class="tl-year">2024</div>
         <h3>Pegasus: patente aprobada</h3>
         <p>La patente del candidato a fármaco para Parkinson se aprueba en Estados Unidos y en la Unión Europea, y sigue en trámite en otros seis países.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/brindx-laboratorio.webp" alt="Trabajo de laboratorio sobre el biosensor"></div>
         <div class="tl-year">2024</div>
         <h3>Aristaeus entra en fases nacionales</h3>
         <p>La solicitud de patente de Aristaeus pasa a las fases nacionales: el trámite deja de ser una única presentación internacional y se abre, país por país, en cada territorio donde se busca proteger la tecnología.</p>
@@ -2226,13 +2234,14 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <article class="tl-item">
         <button class="tl-img tl-gal" type="button" data-gal="malbran" aria-label="Ver las tres fotos del trabajo con el Malbrán">
           <img src="img/malbran/portada.webp" alt="La entrada del IMMCA">
-          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>3</span>
+          <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>3 fotos</span>
         </button>
         <div class="tl-year">2026</div>
         <h3>Empezamos a trabajar con el Malbrán</h3>
         <p>Comenzamos a trabajar junto al Instituto Malbrán en la puesta a punto del RT-QuIC, la técnica que amplifica la alfa-sinucleína mal plegada hasta hacerla detectable cuando hay muy poca.</p>
       </article>
       <article class="tl-item">
+        <div class="tl-img"><img src="img/lab/cabina-pipeteo.webp" alt="Pipeteando dentro de la cabina de seguridad biológica"></div>
         <div class="tl-year">2026</div>
         <h3>Pegasus: preclínica completa bajo normas de la FDA</h3>
         <p>Los estudios preclínicos regulatorios se realizaron en tres especies animales, bajo normas de la FDA y liderados por FeifeRx, y confirmaron los resultados que habíamos obtenido en el IMMCA.</p>
@@ -2995,7 +3004,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
         <b>AD/PD 2024 · Lisboa</b>
         <span>Presentamos los resultados sobre un derivado no antibiótico de la doxiciclina ante la comunidad internacional de Parkinson y Alzheimer.</span>
       </span>
-      <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>5</span>
+      <span class="tl-gal-n"><i class="ph ph-images" aria-hidden="true"></i>5 fotos</span>
     </button>
   </div>
 </section>
