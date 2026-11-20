@@ -1077,7 +1077,21 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .dir-figs div+div{padding-left:16px;border-left:1px solid var(--line)}
 .dir-figs b{display:block;font-size:clamp(34px,3.4vw,50px);font-weight:300;letter-spacing:-.04em;line-height:1}
 .dir-figs div>span{display:block;color:var(--muted);font-size:15.5px;margin-top:8px;line-height:1.35}
-.dir-tabs{margin-top:44px}
+.dir-ficha{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:clamp(22px,3vw,44px);align-items:start;padding:4px 8px 6px}
+.dir-foto{margin:0}
+.dir-foto img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:14px;filter:saturate(.95)}
+.dir-foto figcaption{margin-top:11px;font-size:14px;line-height:1.5;color:var(--dim)}
+.dir-foto figcaption a{color:var(--accent);display:inline-flex;align-items:center;gap:5px}
+.dir-ficha-txt p{color:var(--muted);font-size:16.5px;line-height:1.6;margin-bottom:14px;max-width:62ch}
+.dir-destacado{font-size:18px!important}
+.dir-ficha-txt strong{color:var(--text);font-weight:600}
+.dir-dist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;padding:0 8px;margin-top:30px}
+.dir-dist li{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.dir-dist i{color:var(--accent);font-size:19px;flex-shrink:0;margin-top:1px}
+.dir-dist b{display:block;font-weight:600;font-size:15.5px;line-height:1.35}
+.dir-dist small{display:block;color:var(--dim);font-size:14px;margin-top:4px;line-height:1.4}
+@media (max-width:760px){.dir-ficha{grid-template-columns:1fr}.dir-foto img{max-width:300px}}
+.dir-tabs{margin-top:40px;padding:0 8px}
 .tabs-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
 .tabs-nav button{padding:9px 16px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted);font-size:15.5px;transition:all .3s}
 .tabs-nav button[aria-selected="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
@@ -1088,14 +1102,6 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .tab-panel .row span:last-child{color:var(--text);font-size:16px}
 @media (max-width:900px){.dir{grid-template-columns:1fr}.portrait{max-width:420px}.dir-figs{grid-template-columns:1fr 1fr}.dir-figs div:nth-child(3){padding-left:0;border-left:0}.dir-figs div{border-top:1px solid var(--line);padding-bottom:18px}}
 
-/* marquee de distinciones (único marquee de la página) */
-.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;margin-top:clamp(64px,8vw,110px);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marq-track{display:flex;gap:56px;width:max-content;animation:marq 60s linear infinite}
-.marq:hover .marq-track{animation-play-state:paused}
-.marq-item{display:flex;align-items:center;gap:14px;white-space:nowrap;font-size:clamp(18px,1.8vw,24px);font-weight:500;letter-spacing:-.01em}
-.marq-item i{color:var(--accent);font-size:22px}
-.marq-item small{color:var(--muted);font-weight:400;font-size:.78em}
-@keyframes marq{to{transform:translateX(-50%)}}
 
 /* ---------- equipo ---------- */
 .team-tit{color:var(--accent);font-size:15.5px;font-weight:500;letter-spacing:.12em;
@@ -1769,7 +1775,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1!important;transform:none!important}
   .clip{clip-path:none!important}
-  .marq-track{animation:none}
   .aurora i{animation:none}
   .manifesto .w{opacity:1!important;filter:none!important;transform:none!important}
   .pre{display:none}
@@ -1811,7 +1816,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
           <a href="#historia">Historia</a>
           <a href="#proyecto">Proyecto institucional</a>
           <a href="#infraestructura">Plataformas</a>
-          <a href="#directora">Autoridades</a>
+          <a href="#equipo">Autoridades</a>
           <a href="#habilitaciones">Habilitaciones</a>
           <a href="#agradecimientos">Agradecimientos</a>
         </div>
@@ -1856,7 +1861,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
     <button class="burger mclose" id="mclose" aria-label="Cerrar menú" style="display:grid"><i class="ph ph-x"></i></button>
   </div>
   <nav class="mm-body" aria-label="Menú">
-    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Plataformas</a><a href="#directora">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
+    <details class="mm-g"><summary><span class="mono">01</span>Quiénes somos<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#instituto">El instituto</a><a href="#historia">Historia</a><a href="#proyecto">Proyecto institucional</a><a href="#infraestructura">Plataformas</a><a href="#equipo">Autoridades</a><a href="#habilitaciones">Habilitaciones</a><a href="#agradecimientos">Agradecimientos</a></div></details>
     <a class="mm-l" href="#investigacion"><span class="mono">02</span>Líneas de investigación<i class="ph ph-arrow-right"></i></a>
     <details class="mm-g"><summary><span class="mono">03</span>Nuestro equipo<i class="ph ph-caret-down"></i></summary><div class="mm-sub"><a href="#equipo">Integrantes</a><a href="#alumni">Alumni</a><a href="#vida">Más allá del laboratorio</a><a href="#unite">Unite al IMMCA</a></div></details>
     <a class="mm-l" href="#biblioteca"><span class="mono">04</span>Producción científica<i class="ph ph-arrow-right"></i></a>
@@ -1976,7 +1981,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
       <div class="ficha-name"><dt class="mono">Nombre oficial</dt><dd>Instituto de Investigaciones en Medicina Molecular y Celular Aplicada</dd></div>
       <div><dt class="mono">Tipo</dt><dd>Unidad Ejecutora del CONICET</dd></div>
       <div><dt class="mono">Dependencias</dt><dd>CONICET · UNT · SIPROSA</dd></div>
-      <div><dt class="mono">Dirección</dt><dd><a href="#directora">Dra. Rosana N. Chehín</a></dd></div>
+      <div><dt class="mono">Dirección</dt><dd><a href="#equipo">Dra. Rosana N. Chehín</a></dd></div>
       <div><dt class="mono">Vicedirección</dt><dd><a href="https://bicyt.conicet.gov.ar/fichas/persona/15785" target="_blank" rel="noopener">Dr. César Luis Ávila</a></dd></div>
       <div><dt class="mono">Sede</dt><dd><a href="#contacto">Pasaje Dorrego 1080, San Miguel de Tucumán</a></dd></div>
       <div><dt class="mono">Ficha oficial</dt><dd><a href="https://bicyt.conicet.gov.ar/fichas/u/immca" target="_blank" rel="noopener">CONICET BICyT <i class="ph ph-arrow-up-right"></i></a></dd></div>
@@ -2355,79 +2360,6 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- DIRECTORA -->
-<section class="sec" id="directora">
-  <div class="wrap dir">
-    <div>
-      <figure class="portrait clip" id="portrait">
-        <img src="img/rosana-chehin.jpg" alt="Retrato de la Dra. Rosana Chehín con guardapolvo del IMMCA en el laboratorio" loading="lazy">
-      </figure>
-      <div class="portrait-cap mono">
-        <span>Directora por concurso desde 2021</span>
-        <a href="https://orcid.org/0000-0003-3504-7952" target="_blank" rel="noopener">ORCID <i class="ph ph-arrow-up-right"></i></a>
-      </div>
-    </div>
-    <div>
-      <h2 class="rv">Dra. Rosana Chehín</h2>
-      <p class="dir-role rv">Directora del IMMCA</p>
-      <div class="dir-bio rv">
-        <p><strong>Investigadora Principal del CONICET y Profesora Titular de Química Biológica en la Universidad Nacional de Tucumán.</strong> Bioquímica con el primer promedio de su promoción y Doctora en Bioquímica con calificación sobresaliente.</p>
-        <p>Se formó en espectroscopía de proteínas en la Universidad del País Vasco y fue profesora invitada en la Universidad Paris-Est. Fue Secretaria de Ciencia, Arte e Innovación Tecnológica de la UNT y hoy integra la Academia de Ciencias Médicas de Tucumán y el comité editorial de Frontiers in Aging Neuroscience.</p>
-      </div>
-      <div class="dir-figs">
-        <div class="rv"><b data-count="52">52</b><span>artículos en revistas internacionales</span></div>
-        <div class="rv"><b data-count="3">3</b><span>patentes como inventora en toda su carrera</span></div>
-        <div class="rv"><b data-count="9">9</b><span>tesis doctorales dirigidas</span></div>
-        <div class="rv"><b>+<span data-count="30">30</span></b><span>becarios e investigadores formados</span></div>
-      </div>
-      <div class="dir-tabs rv">
-        <div class="tabs-nav" role="tablist">
-          <button role="tab" aria-selected="true" data-tab="t-cargos">Cargos</button>
-          <button role="tab" aria-selected="false" data-tab="t-form">Formación</button>
-          <button role="tab" aria-selected="false" data-tab="t-proy">Proyectos recientes</button>
-        </div>
-        <div class="tab-panel on" id="t-cargos" role="tabpanel">
-          <div class="row"><span class="mono">2021</span><span>Directora del IMMCA (CONICET, UNT, SIPROSA)</span></div>
-          <div class="row"><span class="mono">2022</span><span>Profesora Titular, Química Biológica II, FBQF, UNT</span></div>
-          <div class="row"><span class="mono">2019</span><span>Consejo Directivo del CCT CONICET NOA Sur</span></div>
-          <div class="row"><span class="mono">2018</span><span>Investigadora Principal del CONICET</span></div>
-          <div class="row"><span class="mono">2014</span><span>Secretaria de Ciencia, Arte e Innovación Tecnológica, UNT (hasta 2016)</span></div>
-        </div>
-        <div class="tab-panel" id="t-form" role="tabpanel">
-          <div class="row"><span class="mono">1991</span><span>Bioquímica, UNT. Primer promedio de la promoción</span></div>
-          <div class="row"><span class="mono">1995</span><span>Doctora en Bioquímica, UNT. Calificación 10</span></div>
-          <div class="row"><span class="mono">1996</span><span>Posdoctorado, Universidad del País Vasco (Gobierno Vasco)</span></div>
-          <div class="row"><span class="mono">2011</span><span>Profesora invitada, Glycanes Research Team, Université Paris-Est</span></div>
-          <div class="row"><span class="mono">2013</span><span>Estancia en INSERM, Instituto del Cerebro (ICM), París</span></div>
-        </div>
-        <div class="tab-panel" id="t-proy" role="tabpanel">
-          <div class="row"><span class="mono">2025</span><span>Optimización de Pegasus para su aplicación clínica (CONICET PIETR)</span></div>
-          <div class="row"><span class="mono">2024</span><span>Nuevas tecnologías diagnósticas para el sistema público de salud (Mincyt y Minsal)</span></div>
-          <div class="row"><span class="mono">2022</span><span>France Alzheimer: tetraciclinas multimodales, nodo argentino</span></div>
-          <div class="row"><span class="mono">2022</span><span>Test diagnóstico para enfermedades neurodegenerativas (PITES)</span></div>
-          <div class="row"><span class="mono">2022</span><span>Inmuno-radiotrazadores para diagnóstico premotor del Parkinson (PICT)</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="marq" aria-label="Distinciones">
-    <div class="marq-track">
-      <!-- duplicado para el loop -->
-      <span class="marq-item"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
-      <span class="marq-item"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
-      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
-      <span class="marq-item"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
-      <span class="marq-item"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
-      <span class="marq-item"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-medal"></i>Premio Ponce Hornos <small>Sociedad Argentina de Biofísica, 2009</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-trophy"></i>Mejor innovación tecnológica en Salud <small>Premios NOATIC, 2013</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor D. F. Sarmiento <small>Senado de la Nación, 2018</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-star"></i>Mención al Valor Científico <small>Senado de la Nación, 2021</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-seal-check"></i>Mención de Honor J. B. Alberdi <small>Cámara de Diputados, 2022</small></span>
-      <span class="marq-item" aria-hidden="true"><i class="ph ph-graduation-cap"></i>Mejor egresada del Doctorado <small>Federación Argentina de Mujeres Universitarias, 1996</small></span>
-    </div>
-  </div>
-</section>
 
 <!-- LÍNEAS DE INVESTIGACIÓN (unifica líneas y proyectos) -->
 <section class="sec" id="investigacion">
@@ -2623,17 +2555,65 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <div class="member" role="button" tabindex="0" aria-expanded="false" aria-controls="cv-rosana-chehin"><span class="av"><img src="img/equipo/rosana-chehin.webp" alt="Retrato ilustrado de Rosana Chehín" loading="lazy" width="440" height="440"></span><h3>Rosana Chehín</h3><span class="role">Directora, Investigadora Principal</span><span class="deg">Dra. en Bioquímica</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span></div>
         <div class="cv" id="cv-rosana-chehin" inert>
           <div class="cv-in">
-            <p class="cv-lead">Dirige el IMMCA y el grupo de neurobiofísica donde nacieron Pegasus y Aristaeus. Su trabajo gira alrededor de cómo las proteínas se pliegan, se agregan y dañan a la neurona.</p>
-            <dl class="cv-dl">
-          <div><dt class="mono">Formación</dt><dd>Bioquímica (UNT, 1991), primer promedio de su promoción. Doctora en Bioquímica (UNT, 1995), con una tesis sobre la interacción de las hormonas tiroideas con sistemas modelo de membrana.</dd></div>
-          <div><dt class="mono">Cargos</dt><dd>Investigadora Principal del CONICET. Profesora Titular con dedicación exclusiva de Química Biológica, en el Instituto de Química Biológica «Dr. Bernabé Bloj» de la FBQF-UNT. Directora del IMMCA por concurso. Integra el Consejo Directivo del CONICET NOA Sur y el comité editorial de <i>Frontiers in Aging Neuroscience</i>.</dd></div>
-          <div><dt class="mono">Formación de recursos humanos</dt><dd>Dirigió 18 becarios del CONICET, 8 investigadores asistentes y 6 tesis doctorales, todas aprobadas con la máxima calificación.</dd></div>
-          <div><dt class="mono">Producción y proyectos</dt><dd>51 publicaciones, 30 de ellas con rol protagónico. Dirigió 24 proyectos de investigación, 7 internacionales.</dd></div>
-          <div><dt class="mono">Patentes</dt><dd>Coautora de las dos patentes del instituto, licenciadas a SkyBio LLC: el transportador de fármacos al sistema nervioso central (2021) y el dispositivo de detección de biomarcadores de enfermedades neurodegenerativas (2022).</dd></div>
-          <div><dt class="mono">Distinciones</dt><dd>Mención de Honor Domingo Faustino Sarmiento, del Senado de la Nación (2018). Mención de Honor Juan Bautista Alberdi, de la Cámara de Diputados (2022).</dd></div>
-            </dl>
+            <div class="dir-ficha">
+              <figure class="dir-foto">
+                <img src="img/rosana-chehin.jpg" alt="Retrato de la Dra. Rosana Chehín con guardapolvo del IMMCA en el laboratorio" loading="lazy">
+                <figcaption>Directora por concurso desde 2021. <a href="https://orcid.org/0000-0003-3504-7952" target="_blank" rel="noopener">ORCID <i class="ph ph-arrow-up-right"></i></a></figcaption>
+              </figure>
+              <div class="dir-ficha-txt">
+                <p class="dir-destacado"><strong>Investigadora Principal del CONICET y Profesora Titular de Química Biológica en la Universidad Nacional de Tucumán.</strong> Bioquímica con el primer promedio de su promoción y Doctora en Bioquímica con calificación sobresaliente.</p>
+                <p>Se formó en espectroscopía de proteínas en la Universidad del País Vasco y fue profesora invitada en la Universidad Paris-Est. Fue Secretaria de Ciencia, Arte e Innovación Tecnológica de la UNT y hoy integra la Academia de Ciencias Médicas de Tucumán y el comité editorial de <i>Frontiers in Aging Neuroscience</i>.</p>
+                <div class="dir-figs">
+                  <div><b>52</b><span>artículos en revistas internacionales</span></div>
+                  <div><b>3</b><span>patentes como inventora en toda su carrera</span></div>
+                  <div><b>9</b><span>tesis doctorales dirigidas</span></div>
+                  <div><b>+30</b><span>becarios e investigadores formados</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dir-tabs">
+              <div class="tabs-nav" role="tablist">
+                <button role="tab" aria-selected="true" data-tab="t-cargos">Cargos</button>
+                <button role="tab" aria-selected="false" data-tab="t-form">Formación</button>
+                <button role="tab" aria-selected="false" data-tab="t-proy">Proyectos recientes</button>
+              </div>
+              <div class="tab-panel on" id="t-cargos" role="tabpanel">
+                <div class="row"><span class="mono">2021</span><span>Directora del IMMCA (CONICET, UNT, SIPROSA)</span></div>
+                <div class="row"><span class="mono">2022</span><span>Profesora Titular, Química Biológica II, FBQF, UNT</span></div>
+                <div class="row"><span class="mono">2019</span><span>Consejo Directivo del CCT CONICET NOA Sur</span></div>
+                <div class="row"><span class="mono">2018</span><span>Investigadora Principal del CONICET</span></div>
+                <div class="row"><span class="mono">2014</span><span>Secretaria de Ciencia, Arte e Innovación Tecnológica, UNT (hasta 2016)</span></div>
+              </div>
+              <div class="tab-panel" id="t-form" role="tabpanel">
+                <div class="row"><span class="mono">1991</span><span>Bioquímica, UNT. Primer promedio de la promoción</span></div>
+                <div class="row"><span class="mono">1995</span><span>Doctora en Bioquímica, UNT. Calificación 10</span></div>
+                <div class="row"><span class="mono">1996</span><span>Posdoctorado, Universidad del País Vasco (Gobierno Vasco)</span></div>
+                <div class="row"><span class="mono">2011</span><span>Profesora invitada, Glycanes Research Team, Université Paris-Est</span></div>
+                <div class="row"><span class="mono">2013</span><span>Estancia en INSERM, Instituto del Cerebro (ICM), París</span></div>
+              </div>
+              <div class="tab-panel" id="t-proy" role="tabpanel">
+                <div class="row"><span class="mono">2025</span><span>Optimización de Pegasus para su aplicación clínica (CONICET PIETR)</span></div>
+                <div class="row"><span class="mono">2024</span><span>Nuevas tecnologías diagnósticas para el sistema público de salud (Mincyt y Minsal)</span></div>
+                <div class="row"><span class="mono">2022</span><span>France Alzheimer: tetraciclinas multimodales, nodo argentino</span></div>
+                <div class="row"><span class="mono">2022</span><span>Test diagnóstico para enfermedades neurodegenerativas (PITES)</span></div>
+                <div class="row"><span class="mono">2022</span><span>Inmuno-radiotrazadores para diagnóstico premotor del Parkinson (PICT)</span></div>
+              </div>
+            </div>
+
+            <ul class="dir-dist">
+              <li><i class="ph ph-medal" aria-hidden="true"></i><span><b>Premio Ponce Hornos</b><small>Sociedad Argentina de Biofísica, 2009</small></span></li>
+              <li><i class="ph ph-trophy" aria-hidden="true"></i><span><b>Mejor innovación tecnológica en Salud</b><small>Premios NOATIC, 2013</small></span></li>
+              <li><i class="ph ph-seal-check" aria-hidden="true"></i><span><b>Mención de Honor D. F. Sarmiento</b><small>Senado de la Nación, 2018</small></span></li>
+              <li><i class="ph ph-star" aria-hidden="true"></i><span><b>Mención al Valor Científico</b><small>Senado de la Nación, 2021</small></span></li>
+              <li><i class="ph ph-seal-check" aria-hidden="true"></i><span><b>Mención de Honor J. B. Alberdi</b><small>Cámara de Diputados, 2022</small></span></li>
+              <li><i class="ph ph-graduation-cap" aria-hidden="true"></i><span><b>Mejor egresada del Doctorado</b><small>Federación Argentina de Mujeres Universitarias, 1996</small></span></li>
+            </ul>
+
             <p class="cv-links"><a href="https://scholar.google.com/citations?hl=en&amp;user=Q5wwJfEAAAAJ" target="_blank" rel="noopener">Google Scholar <i class="ph ph-arrow-up-right"></i></a><a href="https://bicyt.conicet.gov.ar/fichas/persona/1123" target="_blank" rel="noopener">Ficha oficial en CONICET <i class="ph ph-arrow-up-right"></i></a></p>
           </div>
+        </div>
+      </div>
         </div>
       </div>
       <div class="mwrap rv">
@@ -3687,7 +3667,7 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         <p style="color:var(--muted);font-size:15px;max-width:34ch">Unidad ejecutora de CONICET, Universidad Nacional de Tucumán y Sistema Provincial de Salud de Tucumán.</p>
         <a class="social" href="https://www.instagram.com/immca.lab/" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i>@immca.lab</a>
       </div>
-      <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#proyecto">Proyecto institucional</a></li><li><a href="#directora">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
+      <div><h4>Instituto</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#proyecto">Proyecto institucional</a></li><li><a href="#equipo">Autoridades</a></li><li><a href="#equipo">Integrantes</a></li><li><a href="#servicios">Servicios</a></li></ul></div>
       <div><h4>Producción</h4><ul><li><a href="#biblioteca">Artículos</a></li><li><a href="#produccion">Patentes</a></li><li><a href="#investigacion">Líneas de investigación</a></li><li><a href="#noticias">Noticias</a></li></ul></div>
       <div><h4>Higiene y seguridad</h4><ul><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-conicet/" target="_blank" rel="noopener">Accidentes de trabajo CONICET</a></li><li><a href="https://immca.conicet.gov.ar/accidentes-de-trabajo-unt/" target="_blank" rel="noopener">Accidentes de trabajo UNT</a></li></ul></div>
     </div>
