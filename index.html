@@ -644,6 +644,9 @@ html.mm-lock,html.mm-lock body{overflow:hidden}
 .lhead:hover{padding-left:20px}
 .lthumb{width:92px;height:66px;border-radius:12px;overflow:hidden;background:var(--bg-2)}
 .lthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.lthumb.ico{display:grid;place-items:center;color:#fff;background:linear-gradient(140deg,var(--accent) 0%,var(--celeste) 100%)}
+.lthumb.ico i{font-size:30px;transition:transform .8s var(--ease)}
+.lhead:hover .lthumb.ico i{transform:scale(1.12)}
 .lhead:hover .lthumb img{transform:scale(1.07)}
 .ln-n{font-size:40px;font-weight:300;letter-spacing:-.04em;line-height:1;color:var(--accent)}
 .lhead .ln-n{font-size:30px}
@@ -2444,9 +2447,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
         </div>
         <div class="lpanel" id="lp-ciencia-basica" inert>
           <div class="lpanel-in">
-            <p>Estudiamos cómo la alfa-sinucleína, la tau y otras proteínas forman agregados tóxicos, con modelos experimentales propios, y la genética del Parkinson en Latinoamérica. De acá salen las preguntas que alimentan a las demás líneas.</p>
+            <p>Estudiamos cómo la alfa-sinucleína, la tau y otras proteínas forman agregados tóxicos, con modelos experimentales propios. De acá salen las preguntas que alimentan a las demás líneas.</p>
             <p>En condiciones normales, la alfa-sinucleína es una proteína soluble y sin una estructura definida. En el Parkinson adopta una conformación rica en láminas beta, se ensambla en oligómeros y forma fibras amiloides que actúan como semillas y propagan el mal plegamiento. Esas fibras son el componente principal de los cuerpos de Lewy.</p>
-            <ul class="ln-out"><li>Consorcio LARGE-PD</li><li>Modelos celulares y C.&nbsp;elegans</li></ul>
+            <ul class="ln-out"><li>Modelos celulares y C.&nbsp;elegans</li><li>Microscopía confocal</li></ul>
             <div class="lder"><span class="mono">Seguir por acá</span><a href="#biblioteca">Ver las publicaciones <i class="ph ph-arrow-right"></i></a></div>
           </div>
         </div>
@@ -2516,6 +2519,63 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
             <p>Con las mismas fibras amiloides trabajamos en otra dirección: usarlas como soporte para inmovilizar enzimas de interés industrial, con aplicaciones en biodiésel, vinos y aceite de oliva.</p>
             <ul class="ln-out"><li>Proteínas para investigación</li><li>Usos industriales</li></ul>
             <div class="lder"><span class="mono">Seguir por acá</span><a href="#servicios">Ver los servicios tecnológicos <i class="ph ph-arrow-right"></i></a><a href="#startups">Conocé BrinDx <i class="ph ph-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </article>
+      <article class="lrow rv" id="genomica">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-genomica">
+          <span class="lthumb ico" aria-hidden="true"><i class="ph ph-dna"></i></span>
+          <span class="ln-n">05</span>
+          <h3>Genómica del Parkinson en poblaciones latinoamericanas</h3>
+          <span class="lsum">La genética descrita en Europa no alcanza para explicar lo que pasa acá</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
+        </div>
+        <div class="lpanel" id="lp-genomica" inert>
+          <div class="lpanel-in">
+            <p>Casi todo lo que se sabe sobre la genética del Parkinson se descubrió en poblaciones de ascendencia europea. Latinoamérica tiene otra historia: una mezcla de ancestría indígena, europea y africana en proporciones que cambian de región en región. Las variantes que allá explican la enfermedad acá pueden ser raras o significar otra cosa. La mutación G2019S del gen <i>LRRK2</i>, la causa genética conocida más frecuente en varias poblaciones, es poco común entre los latinoamericanos con menor ascendencia europea.</p>
+            <p>César Ávila conduce el nodo del noroeste argentino. Desde 2023 organiza, junto a neurólogos del Hospital Padilla, el reclutamiento de pacientes y la caracterización genética de la población con Parkinson de la región. Ese trabajo entra en LARGE-PD, el consorcio latinoamericano de genética del Parkinson que coordina Ignacio Mata desde la Cleveland Clinic y que reúne instituciones de más de una docena de países.</p>
+            <p>LARGE-PD es, a su vez, el brazo latinoamericano del <b>Global Parkinson's Genetics Program (GP2)</b>, un programa de la iniciativa Aligning Science Across Parkinson's que implementa la Michael J. Fox Foundation. GP2 se propuso secuenciar y armonizar datos genéticos de cientos de miles de personas en todo el mundo, con foco explícito en las poblaciones que la genética había dejado afuera, y poner esos datos a disposición de la comunidad científica.</p>
+            <p>El primer resultado del instituto dentro de GP2 ya está publicado: un trabajo en <i>Movement Disorders</i>, con Ávila como primer autor, que analizó el gen <i>DNAJC13</i> en más de 44.000 pacientes y 27.000 controles de ancestrías diversas y no encontró evidencia que sostenga su papel en la enfermedad. Descartar un gen candidato también es un resultado.</p>
+            <ul class="ln-out"><li>Consorcio LARGE-PD</li><li>GP2</li><li>Hospital Padilla</li></ul>
+            <div class="lder"><span class="mono">Seguir por acá</span><a href="https://gp2.org" target="_blank" rel="noopener">Qué es GP2 <i class="ph ph-arrow-up-right"></i></a><a href="#biblioteca">Ver las publicaciones <i class="ph ph-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </article>
+      <article class="lrow rv" id="intestino-cerebro">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-intestino-cerebro">
+          <span class="lthumb ico" aria-hidden="true"><i class="ph ph-brain"></i></span>
+          <span class="ln-n">06</span>
+          <h3>El eje intestino-cerebro en la enfermedad de Parkinson</h3>
+          <span class="lsum">Buscar la enfermedad en el apéndice, años antes del temblor</span>
+          <span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
+        </div>
+        <div class="lpanel" id="lp-intestino-cerebro" inert>
+          <div class="lpanel-in">
+            <p>Hace tiempo que el Parkinson dejó de pensarse como una enfermedad solo del cerebro. Hay evidencia de que, en una parte de los pacientes, la alfa-sinucleína empieza a plegarse mal en el sistema nervioso del intestino y viaja hacia el cerebro por el nervio vago, años o incluso décadas antes del primer síntoma motor. Es la hipótesis de Braak, y los modelos que hoy se llaman <i>body-first</i>.</p>
+            <p>El apéndice entró en escena cuando se vio que no es el órgano inútil que se creía: es tejido linfoide en contacto directo con la microbiota, y acumula alfa-sinucleína. Nos interesa como ventana. Es un tejido que se extrae por indicación quirúrgica habitual y que podría guardar la huella temprana de la enfermedad.</p>
+            <p>Con un convenio de colaboración con el <b>Sanatorio 9 de Julio</b> y el laboratorio de anatomía patológica <b>PatLab</b>, armamos un circuito que no existía en el medio local: quirófano, patología e investigación conectados. Cada apéndice extraído, con el consentimiento del paciente, se procesa bajo tiempos controlados y se conserva por duplicado —fijado en formol e incluido en parafina, y congelado a −196&nbsp;°C— con trazabilidad clínica completa.</p>
+            <p>Sobre ese material corren tres análisis: RT-QuIC, que amplifica la alfa-sinucleína mal plegada y la detecta aunque haya muy poca; inmunohistoquímica de alfa-sinucleína total y fosforilada en la serina 129, cuantificada con algoritmos de segmentación automática; y medición de marcadores inflamatorios. Esta etapa es de puesta a punto: el objetivo es dejar una plataforma validada y una colección de muestras bien hecha, todavía no conclusiones clínicas.</p>
+            <ul class="ln-out"><li>Sanatorio 9 de Julio</li><li>PatLab</li><li>RT-QuIC</li></ul>
+            <div class="lder"><span class="mono">Seguir por acá</span><a href="#diagnostico">Cómo funciona el RT-QuIC <i class="ph ph-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </article>
+      <article class="lrow rv" id="citrus">
+        <div class="lhead" role="button" tabindex="0" aria-expanded="false" aria-controls="lp-citrus">
+          <span class="lthumb ico" aria-hidden="true"><i class="ph ph-leaf"></i></span>
+          <span class="ln-n">07</span>
+          <h3>Compuestos naturales de la cáscara de limón con potencial neuroprotector</h3>
+          <span class="lsum">Buscar en el residuo de la industria citrícola moléculas que frenen la agregación</span>
+          <span class="vt">VT</span><span class="go" aria-hidden="true"><i class="ph ph-caret-down"></i></span>
+        </div>
+        <div class="lpanel" id="lp-citrus" inert>
+          <div class="lpanel-in">
+            <p>Tucumán es el principal productor y exportador de limón del mundo. De cada fruta que entra a la industria queda la cáscara, el residuo de mayor volumen. Ahí hay compuestos fenólicos con capacidad antioxidante, y la pregunta es si alguno sirve para frenar la agregación de proteínas que está detrás de las enfermedades neurodegenerativas.</p>
+            <p>Trabajamos con un convenio con la <b>Estación Experimental Agroindustrial Obispo Colombres (EEAOC)</b>, que prepara los extractos a partir de las variedades Génova, Eureka, Lisboa y Limoneira, con distintos procesos de extracción: maceración prolongada y fluido subcrítico con etanol, este último compatible con uso alimentario. En el instituto los caracterizamos y los ensayamos.</p>
+            <p>El circuito tiene tres pasos. Caracterización electroquímica, que describe el perfil redox de cada extracto y permite comparar procesos a igual masa. Control de citotoxicidad en cultivo celular, para descartar que el extracto dañe a la célula. Y ensayos de agregación de alfa-sinucleína y de tau, siguiendo la cinética de formación de fibras para ver si el extracto la retrasa o la reduce.</p>
+            <p>El proyecto está en etapa de tamizaje: primero hay que decidir qué variedad y qué proceso de extracción concentran la actividad, y recién después identificar las moléculas responsables. Los resultados obtenidos hasta ahora son preliminares y no están publicados.</p>
+            <ul class="ln-out"><li>Convenio con la EEAOC</li><li>Cuatro variedades de limón</li><li>Perfil redox</li></ul>
+            <div class="lder"><span class="mono">Seguir por acá</span><a href="https://www.eeaoc.gob.ar" target="_blank" rel="noopener">Qué es la EEAOC <i class="ph ph-arrow-up-right"></i></a></div>
           </div>
         </div>
       </article>
