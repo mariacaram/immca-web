@@ -1759,6 +1759,9 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .tl-img{margin:-10px 0 16px;border-radius:14px;overflow:hidden;aspect-ratio:16/10;
   max-height:clamp(112px,17vh,190px);background:var(--bg-2)}
 .tl-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tl-cred{margin-top:12px;font-size:13px;line-height:1.45}
+.tl-cred a{color:var(--dim);display:inline-flex;align-items:center;gap:5px}
+.tl-cred a:hover{color:var(--accent)}
 /* los hitos sin foto reservan el mismo espacio, para que los años queden alineados */
 .tl-item:not(:has(.tl-img))::after{content:"";display:block;margin:-10px 0 16px;aspect-ratio:16/10;max-height:clamp(112px,17vh,190px);order:-1}
 .tl-item{display:flex;flex-direction:column}
@@ -2179,6 +2182,7 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
         <h3>Naissance de Pegasus et signature de la convention de développement</h3>
         <p>Pegasus est né d’une question&nbsp;: pouvions-nous ajouter une fonction nouvelle à une tétracycline tout en conservant sa capacité à protéger les neurones&nbsp;? Pour explorer cette idée, nous avons conçu une molécule associant un dérivé non antibiotique de la doxycycline à de la dopamine, synthétisée avec le groupe du Dr Oscar Varela (CIHIDECAR, CONICET–UBA). L’objectif était de réunir dans un même candidat deux actions importantes pour la maladie de Parkinson&nbsp;: activer les récepteurs dopaminergiques et protéger les neurones.</p>
         <p>La même année, le CONICET, l’UNT, le SIPROSA, la Faculté des sciences exactes et naturelles de l’UBA et SkyBio ont signé une convention pour faire avancer le développement de Pegasus.</p>
+              <p class="tl-cred mono"><a href="https://doi.org/10.1021/acschemneuro.4c00169" target="_blank" rel="noopener">Figure&nbsp;: Ploper et al., ACS Chem. Neurosci. 2024 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
       </article>
       <article class="tl-item">
         <div class="tl-img"><img src="img/lineas/01-confocal.webp" alt="Cellules en culture vues par microscopie confocale"></div>
