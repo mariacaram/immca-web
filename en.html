@@ -1676,10 +1676,15 @@ a.gr-logo.sin-logo:hover{color:var(--accent)}
 .gr-orden{margin-top:14px;font-size:16px!important;color:rgba(255,255,255,.62)!important}
 .gr-nombres{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
 .gr-nombres li{padding:9px 16px;border-radius:999px;font-size:15px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,transform .3s var(--ease)}
-.gr-nombres li:hover{background:rgba(255,255,255,.24);transform:translateY(-2px)}
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;cursor:default;transform-origin:50% 50%;
+  animation:gr-flota var(--gr-dur,7s) ease-in-out var(--gr-del,0s) infinite;
+  transition:background .35s var(--ease),scale .45s var(--ease),box-shadow .45s var(--ease),border-color .35s var(--ease)}
+@keyframes gr-flota{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.gr-nombres li:hover{background:rgba(255,255,255,.3);border-color:rgba(255,255,255,.5);
+  scale:1.18;z-index:3;animation-play-state:paused;box-shadow:0 16px 30px -16px rgba(0,0,0,.5)}
 .gr-nombres li.gr-fija{background:rgba(255,255,255,.92);color:#0a2540;font-weight:600;border-color:rgba(255,255,255,.92)}
-.gr-nombres li.gr-fija:hover{background:#fff;transform:translateY(-2px)}
+.gr-nombres li.gr-fija:hover{background:#fff;border-color:#fff}
+@media (prefers-reduced-motion:reduce){.gr-nombres li{animation:none}}
 @media (max-width:980px){.gr-logos{grid-template-columns:repeat(3,1fr)}.gr-gente{grid-template-columns:1fr}}
 @media (max-width:620px){.gr-logos{grid-template-columns:repeat(2,1fr)}.gr-logo{min-height:112px;padding:24px 18px}}
 
@@ -3691,6 +3696,13 @@ button.tl-img:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
           <span class="alum-sede mono">Buenos Aires, Argentina</span>
         </li>
         <li class="alum-i rv">
+          <span class="alum-foto"><img src="img/alumni/maria-elisa-vazquez.webp" alt="Portrait of María Elisa Vazquez in her laboratory" loading="lazy" width="400" height="400"></span>
+          <h3>María Elisa Vazquez</h3>
+          <p class="alum-dest">Institute of Experimental Pathology (IPE), CONICET</p>
+          <p class="alum-rol">CONICET postdoctoral fellow, after a doctorate in Biological Sciences on strategies to prevent <i>Trypanosoma cruzi</i> infection. She works with molecular biology techniques: primer design, PCR, RT-qPCR and gene cloning.</p>
+          <span class="alum-sede mono">Salta, Argentina</span>
+        </li>
+        <li class="alum-i rv">
           <span class="alum-foto"><img src="img/alumni/silvia-navarro.webp" alt="Portrait of Silvia Navarro signing the institute’s visitors’ book" loading="lazy" width="400" height="400"></span>
           <h3>Silvia Navarro</h3>
           <p class="alum-dest">Newcastle, United Kingdom</p>
@@ -4473,6 +4485,11 @@ if (nombres) {
   const items = [...nombres.children].filter(li => !li.hasAttribute('data-fija'));
   for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
   nombres.append(...fijas, ...items);
+  // cada nombre flota con su propio ritmo, para que no suban y bajen todos juntos
+  [...nombres.children].forEach(li => {
+    li.style.setProperty('--gr-dur', (5.5 + Math.random() * 4).toFixed(2) + 's');
+    li.style.setProperty('--gr-del', (-Math.random() * 6).toFixed(2) + 's');
+  });
 }
 
 /* ============ Agradecimientos: si falta el logo, se muestra el nombre ============ */
